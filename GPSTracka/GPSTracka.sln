@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GPSTracka", "GPSTracka.csproj", "{9CE302D9-0F5E-4BB2-8913-E3F2E4968373}"
+EndProject
+Project("{B900F1C2-3D47-4FEC-85B3-04AAF18C3634}") = "GPSTrackaDeploy", "..\gpstrdeploy\gpstrdeploy.vddproj", "{1347CA8C-3D13-410D-938D-B46448CE97AC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9CE302D9-0F5E-4BB2-8913-E3F2E4968373}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CE302D9-0F5E-4BB2-8913-E3F2E4968373}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CE302D9-0F5E-4BB2-8913-E3F2E4968373}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{9CE302D9-0F5E-4BB2-8913-E3F2E4968373}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CE302D9-0F5E-4BB2-8913-E3F2E4968373}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CE302D9-0F5E-4BB2-8913-E3F2E4968373}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{1347CA8C-3D13-410D-938D-B46448CE97AC}.Debug|Any CPU.ActiveCfg = Debug
+		{1347CA8C-3D13-410D-938D-B46448CE97AC}.Release|Any CPU.ActiveCfg = Release
+		{1347CA8C-3D13-410D-938D-B46448CE97AC}.Release|Any CPU.Build.0 = Release
+		{1347CA8C-3D13-410D-938D-B46448CE97AC}.Release|Any CPU.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,10 @@
+D:\Projects\GPSTracka\GPSTracka\bin\Debug\GPSTracka.exe
+D:\Projects\GPSTracka\GPSTracka\bin\Debug\GPSTracka.pdb
+D:\Projects\GPSTracka\GPSTracka\obj\Debug\ResolveAssemblyReference.cache
+D:\Projects\GPSTracka\GPSTracka\obj\Debug\GPSTracka.Properties.Resources.resources
+D:\Projects\GPSTracka\GPSTracka\obj\Debug\GPSTracka.csproj.GenerateResource.Cache
+D:\Projects\GPSTracka\GPSTracka\obj\Debug\GPSTracka.exe
+D:\Projects\GPSTracka\GPSTracka\obj\Debug\GPSTracka.pdb
+D:\Projects\GPSTracka\GPSTracka\bin\Debug\SharpGps.xml
+D:\Projects\GPSTracka\GPSTracka\obj\Debug\GPSTracka.GPSTracka.resources
+D:\Projects\GPSTracka\GPSTracka\bin\Debug\SharpGps.dll
