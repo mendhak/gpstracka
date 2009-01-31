@@ -6,6 +6,17 @@ EndProject
 Project("{B900F1C2-3D47-4FEC-85B3-04AAF18C3634}") = "GPSTrackaDeploy", "..\gpstrdeploy\gpstrdeploy.vddproj", "{1347CA8C-3D13-410D-938D-B46448CE97AC}"
 EndProject
 Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs09.codeplex.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = GPSTracka.csproj
+		SccLocalPath1 = .
+		SccProjectUniqueName2 = ..\\gpstrdeploy\\gpstrdeploy.vddproj
+		SccProjectName2 = ../gpstrdeploy
+		SccLocalPath2 = ..\\gpstrdeploy
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
