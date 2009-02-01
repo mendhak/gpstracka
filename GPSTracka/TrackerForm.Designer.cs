@@ -98,6 +98,12 @@
             this.ComboBoxCOMPorts.Items.Add("COM2");
             this.ComboBoxCOMPorts.Items.Add("COM3");
             this.ComboBoxCOMPorts.Items.Add("COM4");
+            this.ComboBoxCOMPorts.Items.Add("COM5");
+            this.ComboBoxCOMPorts.Items.Add("COM6");
+            this.ComboBoxCOMPorts.Items.Add("COM7");
+            this.ComboBoxCOMPorts.Items.Add("COM8");
+            this.ComboBoxCOMPorts.Items.Add("COM9");
+            this.ComboBoxCOMPorts.Items.Add("COM0");
             this.ComboBoxCOMPorts.Location = new System.Drawing.Point(40, 219);
             this.ComboBoxCOMPorts.Name = "ComboBoxCOMPorts";
             this.ComboBoxCOMPorts.Size = new System.Drawing.Size(55, 22);
