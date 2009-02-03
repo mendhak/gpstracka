@@ -29,17 +29,17 @@ namespace GPSTracka
 
         private static System.Threading.Timer preventSleepTimer = null;
 
-
+        public bool settingsFileExists = false;
         public static GPSHandler GPS;
-        public static bool LogEverything = false; 
-       
+        public static bool LogEverything = false;
+
 
 
         public GPSTracka()
         {
             InitializeComponent();
-          
-            
+
+
             string[] portNames = SerialPort.GetPortNames();
             foreach (string port in portNames)
             {
@@ -48,9 +48,9 @@ namespace GPSTracka
 
         }
 
-       
 
-       
+
+
 
 
         private void GPSEventHandler(object sender, GPSHandler.GPSEventArgs e)
@@ -188,7 +188,7 @@ namespace GPSTracka
         private void writeExceptionToTextBox(Exception ex)
         {
 
-            
+
 
             string errorMessage = String.Concat("\r\n\r\n",
                             "****ERROR****", "\r\n",
@@ -264,6 +264,19 @@ namespace GPSTracka
                 {
                     GPS.Dispose();
                 }
+
+                //Now save settings to file.
+                string currentDir = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
+                string settingsFile = currentDir + "\\settings.cfg";
+
+               //com1,4800,300,True,True
+            //COMPort,baud,seconds,totextbox,tologfile
+                TextWriter writer = new StreamWriter(settingsFile, false);
+                writer.WriteLine(ComboBoxCOMPorts.Text + "," + ComboBaudRate.Text + "," +
+                    NumericUpDownInterval.Value.ToString() + "," + CheckBoxToTextBox.Checked.ToString() +
+                    "," + CheckBoxToFile.Checked.ToString());
+                writer.Close();
+
             }
             catch
             {
@@ -291,11 +304,80 @@ namespace GPSTracka
         private void GPSTracka_Load(object sender, EventArgs e)
         {
 
+            //Read from CFG file
+            //com1,4800,300,True,True
+            //COMPort,baud,seconds,totextbox,tologfile
+            string currentDir = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
+
+            string settingsFile = currentDir + "\\settings.cfg";
+            string settingsRawLine = String.Empty;
+            string settingsCOMPort = String.Empty;
+            string settingsBaudRate = String.Empty;
+            int settingsSeconds = 60;
+            bool settingsToTextBox = true;
+            bool settingsToLogFile = false;
+
+            try
+            {
+                if (!File.Exists(settingsFile))
+                {
+                    //Create it
+                    StreamWriter stream = File.CreateText(settingsFile);
+                    stream.WriteLine("COM1,4800,300,1,1");
+                    stream.Close();
+                    settingsFileExists = true;
+                }
+                else
+                {
+                    StreamReader stream = File.OpenText(settingsFile);
+                    settingsRawLine = stream.ReadToEnd();
+                    stream.Close();
+                    settingsFileExists = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                settingsFileExists = false;
+            }
+
+
+            if (!String.IsNullOrEmpty(settingsRawLine))
+            {
+                string[] allSettings = settingsRawLine.Split(',');
+
+                settingsCOMPort = allSettings[0];
+                settingsBaudRate = allSettings[1];
+                settingsSeconds = Int32.Parse(allSettings[2]);
+                settingsToTextBox = Boolean.Parse(allSettings[3]);
+                settingsToLogFile = Boolean.Parse(allSettings[4]);
+            }
+
 
             TextBoxRawLog.ScrollBars = ScrollBars.Vertical;
-
             ComboBoxCOMPorts.SelectedIndex = 0;
             ComboBaudRate.SelectedIndex = 0;
+
+
+            if (settingsFileExists)
+            {
+
+                if (!String.IsNullOrEmpty(settingsCOMPort))
+                {
+                    ComboBoxCOMPorts.SelectedItem = settingsCOMPort;
+                }
+
+                if (!String.IsNullOrEmpty(settingsBaudRate))
+                {
+                    ComboBoxCOMPorts.SelectedItem = settingsBaudRate;
+                }
+
+                NumericUpDownInterval.Value = settingsSeconds;
+                CheckBoxToTextBox.Checked = settingsToTextBox;
+                CheckBoxToFile.Checked = settingsToLogFile;
+            }
+
+
+
 
             GPS = new GPSHandler(this); //Initialize GPS handler
             GPS.TimeOut = 50; //Set timeout to 5 seconds
