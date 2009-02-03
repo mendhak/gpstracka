@@ -44,6 +44,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.ButtonLogAll = new System.Windows.Forms.Button();
             this.TextBoxCls = new System.Windows.Forms.Button();
+            this.ComboBaudRate = new System.Windows.Forms.ComboBox();
+            this.LabelBaudRate = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ButtonStartStop
@@ -67,7 +69,7 @@
             this.TextBoxRawLog.Location = new System.Drawing.Point(3, 29);
             this.TextBoxRawLog.Multiline = true;
             this.TextBoxRawLog.Name = "TextBoxRawLog";
-            this.TextBoxRawLog.Size = new System.Drawing.Size(234, 184);
+            this.TextBoxRawLog.Size = new System.Drawing.Size(234, 154);
             this.TextBoxRawLog.TabIndex = 1;
             // 
             // NumericUpDownInterval
@@ -173,12 +175,34 @@
             this.TextBoxCls.Text = "Cls";
             this.TextBoxCls.Click += new System.EventHandler(this.TextBoxCls_Click);
             // 
+            // ComboBaudRate
+            // 
+            this.ComboBaudRate.Items.Add("4800");
+            this.ComboBaudRate.Items.Add("9600");
+            this.ComboBaudRate.Items.Add("19200");
+            this.ComboBaudRate.Items.Add("38400");
+            this.ComboBaudRate.Items.Add("57600");
+            this.ComboBaudRate.Items.Add("115200");
+            this.ComboBaudRate.Location = new System.Drawing.Point(96, 194);
+            this.ComboBaudRate.Name = "ComboBaudRate";
+            this.ComboBaudRate.Size = new System.Drawing.Size(100, 22);
+            this.ComboBaudRate.TabIndex = 20;
+            // 
+            // LabelBaudRate
+            // 
+            this.LabelBaudRate.Location = new System.Drawing.Point(10, 196);
+            this.LabelBaudRate.Name = "LabelBaudRate";
+            this.LabelBaudRate.Size = new System.Drawing.Size(80, 20);
+            this.LabelBaudRate.Text = "Baud Rate:";
+            // 
             // GPSTracka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(240, 268);
+            this.Controls.Add(this.LabelBaudRate);
+            this.Controls.Add(this.ComboBaudRate);
             this.Controls.Add(this.TextBoxCls);
             this.Controls.Add(this.ButtonLogAll);
             this.Controls.Add(this.label4);
@@ -216,6 +240,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button ButtonLogAll;
         private System.Windows.Forms.Button TextBoxCls;
+        private System.Windows.Forms.ComboBox ComboBaudRate;
+        private System.Windows.Forms.Label LabelBaudRate;
     }
 }
 

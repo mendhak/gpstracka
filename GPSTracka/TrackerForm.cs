@@ -212,12 +212,14 @@ namespace GPSTracka
                 try
                 {
                     string comPort = ComboBoxCOMPorts.Text;
+                    int baudRate = Convert.ToInt32(ComboBaudRate.Text);
+
                     if (String.IsNullOrEmpty(comPort))
                     {
                         comPort = "COM1";
                     }
 
-                    GPS.Start(comPort, 4800); //Open serial port x at 4800baud
+                    GPS.Start(comPort, baudRate); //Open serial port comPort at baudRate //COM1 at 4800
 
 
                 }
@@ -274,6 +276,7 @@ namespace GPSTracka
             TextBoxRawLog.ScrollBars = ScrollBars.Vertical;
 
             ComboBoxCOMPorts.SelectedIndex = 0;
+            ComboBaudRate.SelectedIndex = 0;
 
             GPS = new GPSHandler(this); //Initialize GPS handler
             GPS.TimeOut = 50; //Set timeout to 5 seconds
