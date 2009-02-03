@@ -6,7 +6,6 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-        private System.Windows.Forms.MainMenu mainMenu1;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -30,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GPSTracka));
-            this.mainMenu1 = new System.Windows.Forms.MainMenu();
             this.ButtonStartStop = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer();
             this.TextBoxRawLog = new System.Windows.Forms.TextBox();
@@ -40,12 +38,15 @@
             this.CheckBoxToFile = new System.Windows.Forms.CheckBox();
             this.CheckBoxToTextBox = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.ButtonLogAll = new System.Windows.Forms.Button();
             this.TextBoxCls = new System.Windows.Forms.Button();
             this.ComboBaudRate = new System.Windows.Forms.ComboBox();
             this.LabelBaudRate = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ButtonStartStop
@@ -69,12 +70,14 @@
             this.TextBoxRawLog.Location = new System.Drawing.Point(3, 29);
             this.TextBoxRawLog.Multiline = true;
             this.TextBoxRawLog.Name = "TextBoxRawLog";
-            this.TextBoxRawLog.Size = new System.Drawing.Size(234, 154);
+            this.TextBoxRawLog.Size = new System.Drawing.Size(234, 175);
             this.TextBoxRawLog.TabIndex = 1;
             // 
             // NumericUpDownInterval
             // 
-            this.NumericUpDownInterval.Location = new System.Drawing.Point(144, 219);
+            this.NumericUpDownInterval.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.NumericUpDownInterval.Location = new System.Drawing.Point(40, 29);
             this.NumericUpDownInterval.Maximum = new decimal(new int[] {
             50000,
             0,
@@ -96,31 +99,24 @@
             // 
             // ComboBoxCOMPorts
             // 
-            this.ComboBoxCOMPorts.Items.Add("COM1");
-            this.ComboBoxCOMPorts.Items.Add("COM2");
-            this.ComboBoxCOMPorts.Items.Add("COM3");
-            this.ComboBoxCOMPorts.Items.Add("COM4");
-            this.ComboBoxCOMPorts.Items.Add("COM5");
-            this.ComboBoxCOMPorts.Items.Add("COM6");
-            this.ComboBoxCOMPorts.Items.Add("COM7");
-            this.ComboBoxCOMPorts.Items.Add("COM8");
-            this.ComboBoxCOMPorts.Items.Add("COM9");
-            this.ComboBoxCOMPorts.Items.Add("COM0");
-            this.ComboBoxCOMPorts.Location = new System.Drawing.Point(40, 219);
+            this.ComboBoxCOMPorts.Location = new System.Drawing.Point(40, 2);
             this.ComboBoxCOMPorts.Name = "ComboBoxCOMPorts";
             this.ComboBoxCOMPorts.Size = new System.Drawing.Size(55, 22);
             this.ComboBoxCOMPorts.TabIndex = 3;
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(215, 221);
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.label1.Location = new System.Drawing.Point(132, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(12, 20);
-            this.label1.Text = "s";
+            this.label1.Size = new System.Drawing.Size(67, 20);
+            this.label1.Text = "seconds";
             // 
             // CheckBoxToFile
             // 
-            this.CheckBoxToFile.Location = new System.Drawing.Point(61, 244);
+            this.CheckBoxToFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.CheckBoxToFile.Location = new System.Drawing.Point(160, 58);
             this.CheckBoxToFile.Name = "CheckBoxToFile";
             this.CheckBoxToFile.Size = new System.Drawing.Size(71, 20);
             this.CheckBoxToFile.TabIndex = 5;
@@ -128,9 +124,11 @@
             // 
             // CheckBoxToTextBox
             // 
+            this.CheckBoxToTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.CheckBoxToTextBox.Checked = true;
             this.CheckBoxToTextBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CheckBoxToTextBox.Location = new System.Drawing.Point(127, 244);
+            this.CheckBoxToTextBox.Location = new System.Drawing.Point(54, 57);
             this.CheckBoxToTextBox.Name = "CheckBoxToTextBox";
             this.CheckBoxToTextBox.Size = new System.Drawing.Size(100, 20);
             this.CheckBoxToTextBox.TabIndex = 6;
@@ -138,89 +136,115 @@
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(106, 221);
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.label2.Location = new System.Drawing.Point(3, 31);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 20);
             this.label2.Text = "every";
             // 
-            // label3
-            // 
-            this.label3.Location = new System.Drawing.Point(10, 244);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 20);
-            this.label3.Text = "and log";
-            // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(3, 221);
+            this.label4.Location = new System.Drawing.Point(3, 4);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(36, 20);
             this.label4.Text = "Read";
             // 
             // ButtonLogAll
             // 
+            this.ButtonLogAll.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonLogAll.Location = new System.Drawing.Point(82, 3);
             this.ButtonLogAll.Name = "ButtonLogAll";
-            this.ButtonLogAll.Size = new System.Drawing.Size(77, 20);
+            this.ButtonLogAll.Size = new System.Drawing.Size(90, 20);
             this.ButtonLogAll.TabIndex = 10;
             this.ButtonLogAll.Text = "Verbose";
             this.ButtonLogAll.Click += new System.EventHandler(this.ButtonLogAll_Click);
             // 
             // TextBoxCls
             // 
-            this.TextBoxCls.Location = new System.Drawing.Point(166, 3);
+            this.TextBoxCls.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxCls.Location = new System.Drawing.Point(179, 3);
             this.TextBoxCls.Name = "TextBoxCls";
-            this.TextBoxCls.Size = new System.Drawing.Size(61, 20);
+            this.TextBoxCls.Size = new System.Drawing.Size(58, 20);
             this.TextBoxCls.TabIndex = 15;
             this.TextBoxCls.Text = "Cls";
             this.TextBoxCls.Click += new System.EventHandler(this.TextBoxCls_Click);
             // 
             // ComboBaudRate
             // 
+            this.ComboBaudRate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ComboBaudRate.Items.Add("4800");
             this.ComboBaudRate.Items.Add("9600");
             this.ComboBaudRate.Items.Add("19200");
             this.ComboBaudRate.Items.Add("38400");
             this.ComboBaudRate.Items.Add("57600");
             this.ComboBaudRate.Items.Add("115200");
-            this.ComboBaudRate.Location = new System.Drawing.Point(96, 194);
+            this.ComboBaudRate.Location = new System.Drawing.Point(124, 2);
             this.ComboBaudRate.Name = "ComboBaudRate";
-            this.ComboBaudRate.Size = new System.Drawing.Size(100, 22);
+            this.ComboBaudRate.Size = new System.Drawing.Size(75, 22);
             this.ComboBaudRate.TabIndex = 20;
             // 
             // LabelBaudRate
             // 
-            this.LabelBaudRate.Location = new System.Drawing.Point(10, 196);
+            this.LabelBaudRate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.LabelBaudRate.Location = new System.Drawing.Point(101, 4);
             this.LabelBaudRate.Name = "LabelBaudRate";
-            this.LabelBaudRate.Size = new System.Drawing.Size(80, 20);
-            this.LabelBaudRate.Text = "Baud Rate:";
+            this.LabelBaudRate.Size = new System.Drawing.Size(17, 20);
+            this.LabelBaudRate.Text = "at";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.LabelBaudRate);
+            this.panel1.Controls.Add(this.ComboBaudRate);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.CheckBoxToTextBox);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.CheckBoxToFile);
+            this.panel1.Controls.Add(this.ComboBoxCOMPorts);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.NumericUpDownInterval);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 213);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(240, 81);
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.Location = new System.Drawing.Point(205, 4);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(32, 20);
+            this.label5.Text = "baud";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label3.Location = new System.Drawing.Point(3, 58);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(45, 20);
+            this.label3.Text = "and log";
             // 
             // GPSTracka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(240, 268);
-            this.Controls.Add(this.LabelBaudRate);
-            this.Controls.Add(this.ComboBaudRate);
+            this.ClientSize = new System.Drawing.Size(240, 294);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.TextBoxCls);
             this.Controls.Add(this.ButtonLogAll);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.CheckBoxToTextBox);
-            this.Controls.Add(this.CheckBoxToFile);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.ComboBoxCOMPorts);
-            this.Controls.Add(this.NumericUpDownInterval);
             this.Controls.Add(this.TextBoxRawLog);
             this.Controls.Add(this.ButtonStartStop);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Menu = this.mainMenu1;
             this.Name = "GPSTracka";
             this.Text = "GPSTracka";
             this.Load += new System.EventHandler(this.GPSTracka_Load);
             this.Closing += new System.ComponentModel.CancelEventHandler(this.GPSTracka_Closing);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -236,12 +260,14 @@
         private System.Windows.Forms.CheckBox CheckBoxToFile;
         private System.Windows.Forms.CheckBox CheckBoxToTextBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button ButtonLogAll;
         private System.Windows.Forms.Button TextBoxCls;
         private System.Windows.Forms.ComboBox ComboBaudRate;
         private System.Windows.Forms.Label LabelBaudRate;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label3;
     }
 }
 

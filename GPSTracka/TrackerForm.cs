@@ -9,6 +9,9 @@ using System.IO;
 using SharpGis.SharpGps;
 using System.Runtime.InteropServices;
 using System.Xml;
+using Microsoft.WindowsCE.Forms;
+using System.IO.Ports;
+
 
 
 namespace GPSTracka
@@ -28,12 +31,36 @@ namespace GPSTracka
 
 
         public static GPSHandler GPS;
-        public static bool LogEverything = false;
+        public static bool LogEverything = false; 
+        bool orientationChanged = false;
+
 
         public GPSTracka()
         {
             InitializeComponent();
+            this.Resize += new EventHandler(GPSTracka_Resize);
+            
+            string[] portNames = SerialPort.GetPortNames();
+            foreach (string port in portNames)
+            {
+                this.ComboBoxCOMPorts.Items.Add(port);
+            }
 
+        }
+
+        void GPSTracka_Resize(object sender, EventArgs e)
+        {
+            if (SystemSettings.ScreenOrientation != ScreenOrientation.Angle0)
+            {
+                orientationChanged = true;
+                ResizeForm();
+            }
+
+        }
+
+        private void ResizeForm()
+        {
+            
         }
 
 
@@ -171,6 +198,9 @@ namespace GPSTracka
 
         private void writeExceptionToTextBox(Exception ex)
         {
+
+            
+
             string errorMessage = String.Concat("\r\n\r\n",
                             "****ERROR****", "\r\n",
                             ex.Message, "\r\n",
@@ -310,6 +340,7 @@ namespace GPSTracka
                 ButtonLogAll.Enabled = false;
                 CheckBoxToFile.Enabled = false;
                 ComboBoxCOMPorts.Enabled = false;
+                ComboBaudRate.Enabled = false;
                 NumericUpDownInterval.Enabled = false;
             }
             else
@@ -318,6 +349,7 @@ namespace GPSTracka
                 ButtonLogAll.Enabled = true;
                 CheckBoxToFile.Enabled = true;
                 ComboBoxCOMPorts.Enabled = true;
+                ComboBaudRate.Enabled = true;
                 NumericUpDownInterval.Enabled = true;
                 ButtonStartStop.Text = "Start";
             }

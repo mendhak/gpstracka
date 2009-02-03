@@ -50,6 +50,7 @@
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.WindowsCE.Forms" />
     <Reference Include="mscorlib" />
     <Reference Include="SharpGps, Version=0.5.2724.21462, Culture=neutral, PublicKeyToken=acb7fc3c25135948, processorArchitecture=MSIL" />
     <Reference Include="System" />
