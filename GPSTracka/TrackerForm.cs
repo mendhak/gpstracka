@@ -32,13 +32,13 @@ namespace GPSTracka
 
         public static GPSHandler GPS;
         public static bool LogEverything = false; 
-        bool orientationChanged = false;
+       
 
 
         public GPSTracka()
         {
             InitializeComponent();
-            this.Resize += new EventHandler(GPSTracka_Resize);
+          
             
             string[] portNames = SerialPort.GetPortNames();
             foreach (string port in portNames)
@@ -48,20 +48,9 @@ namespace GPSTracka
 
         }
 
-        void GPSTracka_Resize(object sender, EventArgs e)
-        {
-            if (SystemSettings.ScreenOrientation != ScreenOrientation.Angle0)
-            {
-                orientationChanged = true;
-                ResizeForm();
-            }
+       
 
-        }
-
-        private void ResizeForm()
-        {
-            
-        }
+       
 
 
         private void GPSEventHandler(object sender, GPSHandler.GPSEventArgs e)
