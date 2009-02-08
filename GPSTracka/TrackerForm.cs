@@ -70,8 +70,10 @@ namespace GPSTracka
 
         void gps_GpsCommState(object sender, GpsCommStateEventArgs e)
         {
-   
 
+
+            if (LogEverything)
+            {
                 switch (e.State)
                 {
                     case States.AutoDiscovery:
@@ -90,6 +92,7 @@ namespace GPSTracka
                         WriteToTextbox("Stopping.");
                         break;
                 }
+            }
 
         }
 
