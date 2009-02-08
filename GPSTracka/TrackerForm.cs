@@ -23,6 +23,26 @@ namespace GPSTracka
     {
 
 
+        public enum DevicePowerState
+        {
+
+            Unspecified = -1,
+            D0 = 0, // Full On: full power, full functionality
+            D1 = 1, // Low Power On: fully functional at low power/performance
+            D2 = 2, // Standby: partially powered with automatic wake
+            D3 = 3, // Sleep: partially powered with device initiated wake
+            D4 = 4, // Off: unpowered
+        }
+
+        private IntPtr powerHandle;
+
+        [DllImport("CoreDll.DLL", EntryPoint = "SetPowerRequirement", SetLastError = true)]
+        public static extern IntPtr SetPowerRequirement(String pvDevice, int DeviceState, int DeviceFlags, IntPtr pvSystemState, int StateFlags);
+
+
+
+        [DllImport("CoreDll.DLL", EntryPoint = "ReleasePowerRequirement", SetLastError = true)]
+        public static extern uint ReleasePowerRequirement(IntPtr hPowerReq);
 
 
         [DllImport("CoreDll.dll")]
@@ -409,6 +429,9 @@ namespace GPSTracka
             {
 
                 gps.Stop();
+                
+                ReleasePowerRequirement(powerHandle);
+                powerHandle = IntPtr.Zero;
 
                 //if (GPS != null && GPS.IsPortOpen)
                 //{
@@ -444,8 +467,6 @@ namespace GPSTracka
         {
             try
             {
-                //TODO: Use CeSetUserNotificationEx to request the app to run rather than keeping the device always on
-
                 SystemIdleTimerReset();
             }
             catch (Exception)
@@ -546,6 +567,7 @@ namespace GPSTracka
 
         private void ButtonStartStop_Click(object sender, EventArgs e)
         {
+            
 
             if (LogEverything)
             {
@@ -563,6 +585,7 @@ namespace GPSTracka
 
             if (timer1.Enabled)
             {
+                powerHandle = SetPowerRequirement(ComboBoxCOMPorts.Text + ":", (int)DevicePowerState.D0, 1, IntPtr.Zero, 0);
                 WriteToTextbox("Will begin to read GPS data after " + NumericUpDownInterval.Value.ToString() + " seconds.");
                 ButtonStartStop.Text = "Stop";
                 ButtonLogAll.Enabled = false;
@@ -573,8 +596,13 @@ namespace GPSTracka
             }
             else
             {
+
                 gps.Stop();
                 //GPS.Stop();
+
+                ReleasePowerRequirement(powerHandle);
+                powerHandle = IntPtr.Zero;
+
                 ButtonLogAll.Enabled = true;
                 CheckBoxToFile.Enabled = true;
                 ComboBoxCOMPorts.Enabled = true;

@@ -10,7 +10,8 @@ namespace GPSTracka
     {
 
 
-        [DllImport("CoreDLL")]public static extern int PowerPolicyNotify(PPNMessage dwMessage, int option);
+        [DllImport("CoreDLL")]
+        public static extern int PowerPolicyNotify(PPNMessage dwMessage, int option);
 
         public enum PPNMessage
         {
