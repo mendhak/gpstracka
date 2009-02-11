@@ -13,19 +13,14 @@ using System.IO.Ports;
 using OpenNETCF.IO.Serial.GPS;
 using OpenNETCF.IO.Serial;
 
-
-
 namespace GPSTracka
 {
 
 
     public partial class GPSTracka : Form
     {
-
-
         public enum DevicePowerState
         {
-
             Unspecified = -1,
             D0 = 0, // Full On: full power, full functionality
             D1 = 1, // Low Power On: fully functional at low power/performance
@@ -39,18 +34,15 @@ namespace GPSTracka
         [DllImport("CoreDll.DLL", EntryPoint = "SetPowerRequirement", SetLastError = true)]
         public static extern IntPtr SetPowerRequirement(String pvDevice, int DeviceState, int DeviceFlags, IntPtr pvSystemState, int StateFlags);
 
-
-
         [DllImport("CoreDll.DLL", EntryPoint = "ReleasePowerRequirement", SetLastError = true)]
         public static extern uint ReleasePowerRequirement(IntPtr hPowerReq);
-
 
         [DllImport("CoreDll.dll")]
         private static extern void SystemIdleTimerReset();
 
         private static System.Threading.Timer preventSleepTimer = null;
 
-        public bool settingsFileExists = false;
+        //public bool settingsFileExists = false;
         //public static GPSHandler GPS;
         public static GPS gps = new GPS();
         public static bool LogEverything = false;
@@ -59,14 +51,9 @@ namespace GPSTracka
         bool positionLogged = true;
         string previousSentence = String.Empty;
 
-
-
-
-
         public GPSTracka()
         {
             InitializeComponent();
-
 
             string[] portNames = SerialPort.GetPortNames();
             foreach (string port in portNames)
@@ -78,10 +65,8 @@ namespace GPSTracka
             gps.GpsSentence += new GPS.GpsSentenceEventHandler(gps_GpsSentence);
             gps.GpsCommState += new GPS.GpsCommStateEventHandler(gps_GpsCommState);
             gps.Error += new GPS.ErrorEventHandler(gps_Error);
-
         }
 
-        
         void gps_Error(object sender, Exception exception, string message, string gps_data)
         {
             WriteToTextbox(message + ". The GPS data is: " + gps_data);
@@ -90,8 +75,6 @@ namespace GPSTracka
 
         void gps_GpsCommState(object sender, GpsCommStateEventArgs e)
         {
-
-
             if (LogEverything)
             {
                 switch (e.State)
@@ -130,12 +113,8 @@ namespace GPSTracka
             }
         }
 
-
-
-
         public void WriteToTextbox(string theText)
         {
-
             if (this.TextBoxRawLog.InvokeRequired)
             {
                 UpdateTextboxDelegate theDelegate = new UpdateTextboxDelegate(WriteToTextbox);
@@ -143,11 +122,9 @@ namespace GPSTracka
             }
             else
             {
-
                 if (LogEverything || CheckBoxToTextBox.Checked)
                 {
                     this.TextBoxRawLog.Text = this.TextBoxRawLog.Text + theText + "\r\n";
-
 
                     if (TextBoxRawLog.Text.Length > 1)
                     {
@@ -156,11 +133,8 @@ namespace GPSTracka
                         TextBoxRawLog.ScrollToCaret();
                     }
                 }
-                
-
             }
         }
-
 
         void gps_Position(object sender, Position pos)
         {
@@ -188,11 +162,8 @@ namespace GPSTracka
                     StopGps();
                 }
                 positionLogged = true;
-
             }
         }
-
-
 
         //private void GPSEventHandler(object sender, GPSHandler.GPSEventArgs e)
         //{
@@ -271,7 +242,6 @@ namespace GPSTracka
 
         //}
 
-
         private void WriteToFile(double latitude, double longitude)
         {
             if (this.CheckBoxToFile.InvokeRequired)
@@ -283,7 +253,6 @@ namespace GPSTracka
             {
                 try
                 {
-
                     if (CheckBoxToFile.Checked && !LogEverything)
                     {
                         XmlDocument doc = new XmlDocument();
@@ -326,31 +295,23 @@ namespace GPSTracka
                         gpx.AppendChild(wpt);
 
                         doc.Save(currentFileName);
-                    }
-
-                   
+                    }                   
                 }
                 catch (Exception ex)
                 {
                     writeExceptionToTextBox(ex);
                 }
             }
-            
-
         }
-
 
         private void writeExceptionToTextBox(Exception ex)
         {
-
-
-
             string errorMessage = String.Concat("\r\n\r\n",
-                            "****ERROR****", "\r\n",
-                            ex.Message, "\r\n",
-                            "*************", "\r\n",
-                            ex.StackTrace, "\r\n",
-                            "*************", "\r\n");
+                "****ERROR****", "\r\n",
+                ex.Message, "\r\n",
+                "*************", "\r\n",
+                ex.StackTrace, "\r\n",
+                "*************", "\r\n");
 
             if (ex.InnerException != null)
             {
@@ -358,7 +319,6 @@ namespace GPSTracka
             }
 
             WriteToTextbox(errorMessage);
-
         }
 
 
@@ -367,19 +327,13 @@ namespace GPSTracka
             positionLogged = false;
             StartupGps();
             timer1.Enabled = true;
-            
         }
-
-
 
         private void StopGps()
         {
-
             //GPS.Stop(); //Close serial port
             gps.Stop();
             timer1.Enabled = true;
-
-
         }
 
         private void StartupGps()
@@ -396,7 +350,6 @@ namespace GPSTracka
             gps.BaudRate = (BaudRates)baudRate;
 
             gps.Start();
-
 
             //if (!GPS.IsPortOpen)
             //{
@@ -422,12 +375,10 @@ namespace GPSTracka
             //}
         }
 
-
         private void GPSTracka_Closing(object sender, CancelEventArgs e)
         {
             try
             {
-
                 gps.Stop();
                 
                 ReleasePowerRequirement(powerHandle);
@@ -444,17 +395,16 @@ namespace GPSTracka
                 //}
 
                 //Now save settings to file.
-                string currentDir = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
-                string settingsFile = currentDir + "\\settings.cfg";
+                //string currentDir = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
+                //string settingsFile = currentDir + "\\settings.cfg";
 
                 //com1,4800,300,True,True
                 //COMPort,baud,seconds,totextbox,tologfile
-                TextWriter writer = new StreamWriter(settingsFile, false);
-                writer.WriteLine(ComboBoxCOMPorts.Text + "," + ComboBaudRate.Text + "," +
-                    NumericUpDownInterval.Value.ToString() + "," + CheckBoxToTextBox.Checked.ToString() +
-                    "," + CheckBoxToFile.Checked.ToString());
-                writer.Close();
-
+                //TextWriter writer = new StreamWriter(settingsFile, false);
+                //writer.WriteLine(ComboBoxCOMPorts.Text + "," + ComboBaudRate.Text + "," +
+                //    NumericUpDownInterval.Value.ToString() + "," + CheckBoxToTextBox.Checked.ToString() +
+                //    "," + CheckBoxToFile.Checked.ToString());
+                //writer.Close();
             }
             catch
             {
@@ -472,88 +422,109 @@ namespace GPSTracka
             catch (Exception)
             {
                 // Nothing
-
             }
-
         }
 
         private void GPSTracka_Load(object sender, EventArgs e)
         {
+            //prepare Panels
+            HidePanel(aboutPanel);
+            HidePanel(settingsPanel);
+            ShowPanel(mainPanel);
+
+            //prepare form
+            this.Size = new Size(240, 294);
 
             //Read from CFG file
             //com1,4800,300,True,True
             //COMPort,baud,seconds,totextbox,tologfile
             string currentDir = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
 
-            string settingsFile = currentDir + "\\settings.cfg";
-            string settingsRawLine = String.Empty;
+            //string settingsFile = currentDir + "\\settings.cfg";
+            //string settingsRawLine = String.Empty;
             string settingsCOMPort = String.Empty;
             string settingsBaudRate = String.Empty;
             int settingsSeconds = 60;
             bool settingsToTextBox = true;
             bool settingsToLogFile = false;
+            string settingsLogFileLocation = String.Empty;
 
-            try
+            settingsCOMPort = ConfigurationManager.AppSettings["COMPort"];
+            settingsBaudRate = ConfigurationManager.AppSettings["BaudRate"];
+            TryParse(ConfigurationManager.AppSettings["PollingInterval"], out settingsSeconds);
+            TryParse(ConfigurationManager.AppSettings["LogToTextBox"], out settingsToTextBox);
+            TryParse(ConfigurationManager.AppSettings["LogToLogFile"], out settingsToLogFile);
+            settingsLogFileLocation = ConfigurationManager.AppSettings["LogFileLocation"];
+
+            if (!String.IsNullOrEmpty(settingsCOMPort))
             {
-                if (!File.Exists(settingsFile))
-                {
-                    //Create it
-                    StreamWriter stream = File.CreateText(settingsFile);
-                    stream.WriteLine("COM1,4800,300,1,1");
-                    stream.Close();
-                    settingsFileExists = true;
-                }
-                else
-                {
-                    StreamReader stream = File.OpenText(settingsFile);
-                    settingsRawLine = stream.ReadToEnd();
-                    stream.Close();
-                    settingsFileExists = true;
-                }
-            }
-            catch (Exception ex)
-            {
-                settingsFileExists = false;
+                ComboBoxCOMPorts.SelectedItem = settingsCOMPort;
             }
 
-
-            if (!String.IsNullOrEmpty(settingsRawLine))
+            if (!String.IsNullOrEmpty(settingsBaudRate))
             {
-                string[] allSettings = settingsRawLine.Split(',');
-
-                settingsCOMPort = allSettings[0];
-                settingsBaudRate = allSettings[1];
-                settingsSeconds = Int32.Parse(allSettings[2]);
-                settingsToTextBox = Boolean.Parse(allSettings[3]);
-                settingsToLogFile = Boolean.Parse(allSettings[4]);
+                ComboBoxCOMPorts.SelectedItem = settingsBaudRate;
             }
 
+            NumericUpDownInterval.Value = settingsSeconds;
+            CheckBoxToTextBox.Checked = settingsToTextBox;
+            CheckBoxToFile.Checked = settingsToLogFile;
+
+            //try
+            //{
+            //    if (!File.Exists(settingsFile))
+            //    {
+            //        //Create it
+            //        StreamWriter stream = File.CreateText(settingsFile);
+            //        stream.WriteLine("COM1,4800,300,1,1");
+            //        stream.Close();
+            //        settingsFileExists = true;
+            //    }
+            //    else
+            //    {
+            //        StreamReader stream = File.OpenText(settingsFile);
+            //        settingsRawLine = stream.ReadToEnd();
+            //        stream.Close();
+            //        settingsFileExists = true;
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    settingsFileExists = false;
+            //}
+
+
+            //if (!String.IsNullOrEmpty(settingsRawLine))
+            //{
+            //    string[] allSettings = settingsRawLine.Split(',');
+
+            //    settingsCOMPort = allSettings[0];
+            //    settingsBaudRate = allSettings[1];
+            //    settingsSeconds = Int32.Parse(allSettings[2]);
+            //    settingsToTextBox = Boolean.Parse(allSettings[3]);
+            //    settingsToLogFile = Boolean.Parse(allSettings[4]);
+            //}
 
             TextBoxRawLog.ScrollBars = ScrollBars.Vertical;
             ComboBoxCOMPorts.SelectedIndex = 0;
             ComboBaudRate.SelectedIndex = 0;
 
+            //if (settingsFileExists)
+            //{
+            //    if (!String.IsNullOrEmpty(settingsCOMPort))
+            //    {
+            //        ComboBoxCOMPorts.SelectedItem = settingsCOMPort;
+            //    }
 
-            if (settingsFileExists)
-            {
+            //    if (!String.IsNullOrEmpty(settingsBaudRate))
+            //    {
+            //        ComboBoxCOMPorts.SelectedItem = settingsBaudRate;
+            //    }
 
-                if (!String.IsNullOrEmpty(settingsCOMPort))
-                {
-                    ComboBoxCOMPorts.SelectedItem = settingsCOMPort;
-                }
-
-                if (!String.IsNullOrEmpty(settingsBaudRate))
-                {
-                    ComboBoxCOMPorts.SelectedItem = settingsBaudRate;
-                }
-
-                NumericUpDownInterval.Value = settingsSeconds;
-                CheckBoxToTextBox.Checked = settingsToTextBox;
-                CheckBoxToFile.Checked = settingsToLogFile;
-            }
-
-
-
+            //    NumericUpDownInterval.Value = settingsSeconds;
+            //    CheckBoxToTextBox.Checked = settingsToTextBox;
+            //    CheckBoxToFile.Checked = settingsToLogFile;
+            //}
 
             //GPS = new GPSHandler(this); //Initialize GPS handler
             //GPS.TimeOut = 50; //Set timeout to 5 seconds
@@ -562,20 +533,28 @@ namespace GPSTracka
             //Call keepdeviceawake every 30 seconds in its own timer
             //Cannot use existing timer because it may have 5 minute intervals.
             preventSleepTimer = new System.Threading.Timer(new System.Threading.TimerCallback(KeepDeviceAwake), null, 0, 30000);
-
         }
 
-        private void ButtonStartStop_Click(object sender, EventArgs e)
+        private void clearMenuItem_Click(object sender, EventArgs e)
         {
-            
+            TextBoxRawLog.Text = string.Empty;
+        }
 
+        private void verboseMenuItem_Click(object sender, EventArgs e)
+        {
+            LogEverything = !LogEverything;
+            verboseMenuItem.Checked = LogEverything;
+        }
+
+        private void startMenuItem_Click(object sender, EventArgs e)
+        {
             if (LogEverything)
             {
                 gps.Stop();
                 //GPS.Stop();
                 LogEverything = false;
                 timer1.Enabled = false;
-                ButtonStartStop.Text = "Start";
+                startMenuItem.Text = "Start";
                 return;
             }
 
@@ -587,8 +566,8 @@ namespace GPSTracka
             {
                 powerHandle = SetPowerRequirement(ComboBoxCOMPorts.Text + ":", (int)DevicePowerState.D0, 1, IntPtr.Zero, 0);
                 WriteToTextbox("Will begin to read GPS data after " + NumericUpDownInterval.Value.ToString() + " seconds.");
-                ButtonStartStop.Text = "Stop";
-                ButtonLogAll.Enabled = false;
+                startMenuItem.Text = "Stop";
+                verboseMenuItem.Enabled = false;
                 CheckBoxToFile.Enabled = false;
                 ComboBoxCOMPorts.Enabled = false;
                 ComboBaudRate.Enabled = false;
@@ -596,33 +575,163 @@ namespace GPSTracka
             }
             else
             {
-
                 gps.Stop();
-                //GPS.Stop();
 
                 ReleasePowerRequirement(powerHandle);
                 powerHandle = IntPtr.Zero;
 
-                ButtonLogAll.Enabled = true;
+                verboseMenuItem.Enabled = true;
                 CheckBoxToFile.Enabled = true;
                 ComboBoxCOMPorts.Enabled = true;
                 ComboBaudRate.Enabled = true;
                 NumericUpDownInterval.Enabled = true;
-                ButtonStartStop.Text = "Start";
+                startMenuItem.Text = "Start";
             }
         }
 
-        private void ButtonLogAll_Click(object sender, EventArgs e)
+        private void ShowPanel(Panel panel)
         {
-            LogEverything = true;
-            StartupGps();
-            ButtonStartStop.Text = "STOP!";
+            panel.Location = new Point(0, 0);
+            panel.Dock = DockStyle.Fill;
 
+            switch (panel.Name)
+            {
+                case "settingsPanel":
+                {
+                    this.Menu = settingsPanelMenu;
+                    break;
+                }
+                case "aboutPanel":
+                {
+                    this.Menu = aboutPanelMenu;
+                    break;
+                }
+                case "mainPanel":
+                {
+                    this.Menu = mainPanelMenu;
+                    break;
+                }
+                default:
+                {
+                    this.Menu = mainPanelMenu;
+                    break;
+                }
+            }
         }
 
-        private void TextBoxCls_Click(object sender, EventArgs e)
+        private void HidePanel(Panel panel)
         {
-            TextBoxRawLog.Text = string.Empty;
+            panel.Dock = DockStyle.None;
+            panel.Location = new Point(800, 800);
+        }
+
+        private void aboutMenuItem_Click(object sender, EventArgs e)
+        {
+            HidePanel(mainPanel);
+            HidePanel(settingsPanel);
+            ShowPanel(aboutPanel);
+        }
+
+        private void settingsMenuItem_Click(object sender, EventArgs e)
+        {
+            HidePanel(mainPanel);
+            HidePanel(aboutPanel);
+            ShowPanel(settingsPanel);
+        }
+
+        private void cancelMenuItem_Click(object sender, EventArgs e)
+        {
+            HidePanel(settingsPanel);
+            HidePanel(aboutPanel);
+            ShowPanel(mainPanel);
+        }
+
+        private void saveMenuItem_Click(object sender, EventArgs e)
+        {
+            ConfigurationManager.AppSettings["COMPort"] = ComboBoxCOMPorts.Text;
+            ConfigurationManager.AppSettings["BaudRate"] = ComboBaudRate.Text;
+            ConfigurationManager.AppSettings["PollingInterval"] = NumericUpDownInterval.Value.ToString();
+            ConfigurationManager.AppSettings["LogToTextBox"] = CheckBoxToTextBox.Checked.ToString();
+            ConfigurationManager.AppSettings["LogToLogFile"] = CheckBoxToFile.Checked.ToString();
+            ConfigurationManager.AppSettings["LogFileLocation"] = logLocationTextBox.Text;
+
+            ConfigurationManager.Save();
+
+            HidePanel(settingsPanel);
+            HidePanel(aboutPanel);
+            ShowPanel(mainPanel);
+        }
+
+        private void saveDialogButton_Click(object sender, EventArgs e)
+        {
+            DialogResult result = saveFileDialog1.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                logLocationTextBox.Text = saveFileDialog1.FileName;
+            }
+            else
+            {
+                logLocationTextBox.Text = string.Empty;
+            }
+        }
+
+        /// <summary>
+        /// Attempts to parse a number from a string
+        /// </summary>
+        /// <param name="strNumber"></param>
+        /// <param name="number"></param>
+        /// <returns></returns>
+        private static bool TryParse(string strNumber, out int number)
+        {
+            try
+            {
+                number = int.Parse(strNumber);
+                return true;
+
+            }
+            catch (Exception)
+            {
+                number = 0;
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Attempts to parse a DateTime from a string
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <param name="dateTime"></param>
+        /// <returns></returns>
+        private static bool TryParse(string inDateTime, out DateTime outDateTime)
+        {
+            try
+            {
+                if (inDateTime.EndsWith("-00:00"))
+                {
+                    inDateTime = inDateTime.Replace("-00:00", "");
+                }
+                outDateTime = DateTime.Parse(inDateTime);
+                return true;
+            }
+            catch
+            {
+                outDateTime = DateTime.MinValue;
+                return false;
+            }
+        }
+
+        private static bool TryParse(string inBoolean, out Boolean outBoolean)
+        {
+            try
+            {
+                outBoolean = Boolean.Parse(inBoolean);
+                return true;
+            }
+            catch
+            {
+                outBoolean = false;
+                return false;
+            }
         }
     }
 }
