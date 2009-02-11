@@ -44,6 +44,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.aboutLabel = new System.Windows.Forms.Label();
             this.settingsPanel = new System.Windows.Forms.Panel();
+            this.saveDialogButton = new System.Windows.Forms.Button();
+            this.logLocationTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.NumericUpDownInterval = new System.Windows.Forms.NumericUpDown();
             this.ComboBoxCOMPorts = new System.Windows.Forms.ComboBox();
@@ -60,9 +62,8 @@
             this.cancelMenuItem = new System.Windows.Forms.MenuItem();
             this.settingsPanelMenu = new System.Windows.Forms.MainMenu();
             this.saveMenuItem = new System.Windows.Forms.MenuItem();
+            this.backMenuItem = new System.Windows.Forms.MenuItem();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.logLocationTextBox = new System.Windows.Forms.TextBox();
-            this.saveDialogButton = new System.Windows.Forms.Button();
             this.mainPanel.SuspendLayout();
             this.aboutPanel.SuspendLayout();
             this.settingsPanel.SuspendLayout();
@@ -87,6 +88,8 @@
             this.TextBoxRawLog.Name = "TextBoxRawLog";
             this.TextBoxRawLog.Size = new System.Drawing.Size(240, 294);
             this.TextBoxRawLog.TabIndex = 17;
+            this.TextBoxRawLog.Text = "Don\'t forget to verify your settings in the settings screen. Use verbose to deter" +
+                "mine if you have the right port. Use clear to clean up the textbox.";
             // 
             // mainPanelMenu
             // 
@@ -155,8 +158,8 @@
             this.aboutLabel.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.aboutLabel.Location = new System.Drawing.Point(3, 230);
             this.aboutLabel.Name = "aboutLabel";
-            this.aboutLabel.Size = new System.Drawing.Size(234, 20);
-            this.aboutLabel.Text = "GPSTracka Version 1.00";
+            this.aboutLabel.Size = new System.Drawing.Size(234, 35);
+            this.aboutLabel.Text = "GPSTracka Version 1.00\r\nwww.codeplex.com/gpstracka";
             this.aboutLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // settingsPanel
@@ -179,6 +182,22 @@
             this.settingsPanel.Location = new System.Drawing.Point(495, 6);
             this.settingsPanel.Name = "settingsPanel";
             this.settingsPanel.Size = new System.Drawing.Size(240, 294);
+            // 
+            // saveDialogButton
+            // 
+            this.saveDialogButton.Location = new System.Drawing.Point(165, 233);
+            this.saveDialogButton.Name = "saveDialogButton";
+            this.saveDialogButton.Size = new System.Drawing.Size(31, 20);
+            this.saveDialogButton.TabIndex = 57;
+            this.saveDialogButton.Text = "...";
+            this.saveDialogButton.Click += new System.EventHandler(this.saveDialogButton_Click);
+            // 
+            // logLocationTextBox
+            // 
+            this.logLocationTextBox.Location = new System.Drawing.Point(12, 232);
+            this.logLocationTextBox.Name = "logLocationTextBox";
+            this.logLocationTextBox.Size = new System.Drawing.Size(150, 21);
+            this.logLocationTextBox.TabIndex = 3;
             // 
             // label1
             // 
@@ -315,27 +334,17 @@
             // settingsPanelMenu
             // 
             this.settingsPanelMenu.MenuItems.Add(this.saveMenuItem);
+            this.settingsPanelMenu.MenuItems.Add(this.backMenuItem);
             // 
             // saveMenuItem
             // 
             this.saveMenuItem.Text = "Save";
             this.saveMenuItem.Click += new System.EventHandler(this.saveMenuItem_Click);
             // 
-            // logLocationTextBox
+            // backMenuItem
             // 
-            this.logLocationTextBox.Location = new System.Drawing.Point(12, 232);
-            this.logLocationTextBox.Name = "logLocationTextBox";
-            this.logLocationTextBox.Size = new System.Drawing.Size(150, 21);
-            this.logLocationTextBox.TabIndex = 3;
-            // 
-            // saveDialogButton
-            // 
-            this.saveDialogButton.Location = new System.Drawing.Point(165, 233);
-            this.saveDialogButton.Name = "saveDialogButton";
-            this.saveDialogButton.Size = new System.Drawing.Size(31, 20);
-            this.saveDialogButton.TabIndex = 57;
-            this.saveDialogButton.Text = "...";
-            this.saveDialogButton.Click += new System.EventHandler(this.saveDialogButton_Click);
+            this.backMenuItem.Text = "Back";
+            this.backMenuItem.Click += new System.EventHandler(this.backMenuItem_Click);
             // 
             // GPSTracka
             // 
@@ -394,6 +403,7 @@
         private System.Windows.Forms.Button saveDialogButton;
         private System.Windows.Forms.TextBox logLocationTextBox;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.MenuItem backMenuItem;
     }
 }
 

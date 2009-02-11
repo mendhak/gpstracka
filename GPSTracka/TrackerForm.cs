@@ -8,7 +8,6 @@ using System.Windows.Forms;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Xml;
-using Microsoft.WindowsCE.Forms;
 using System.IO.Ports;
 using OpenNETCF.IO.Serial.GPS;
 using OpenNETCF.IO.Serial;
@@ -42,8 +41,6 @@ namespace GPSTracka
 
         private static System.Threading.Timer preventSleepTimer = null;
 
-        //public bool settingsFileExists = false;
-        //public static GPSHandler GPS;
         public static GPS gps = new GPS();
         public static bool LogEverything = false;
         public delegate void UpdateTextboxDelegate(string theText);
@@ -69,8 +66,11 @@ namespace GPSTracka
 
         void gps_Error(object sender, Exception exception, string message, string gps_data)
         {
-            WriteToTextbox(message + ". The GPS data is: " + gps_data);
-            writeExceptionToTextBox(exception);
+            if (LogEverything)
+            {
+                WriteToTextbox(message + ". The GPS data is: " + gps_data);
+                writeExceptionToTextBox(exception);
+            }
         }
 
         void gps_GpsCommState(object sender, GpsCommStateEventArgs e)
@@ -103,8 +103,8 @@ namespace GPSTracka
         {
             if (LogEverything)
             {
-                System.Threading.Thread.Sleep(190); //It might go too fast.
-                
+                System.Threading.Thread.Sleep(200); //It might go too fast.
+
                 if (e.Sentence != previousSentence)
                 {
                     this.WriteToTextbox(e.Sentence);
@@ -165,82 +165,6 @@ namespace GPSTracka
             }
         }
 
-        //private void GPSEventHandler(object sender, GPSHandler.GPSEventArgs e)
-        //{
-
-        //    try
-        //    {
-        //        if (!LogEverything)
-        //        {
-
-        //            switch (e.TypeOfEvent)
-        //            {
-
-        //                case GPSEventType.GPGLL:
-        //                    if (GPS.GPGLL.DataValid)
-        //                    {
-
-        //                        string gpsData = DateTime.Now.ToString("HHmmss") + "," + Math.Round(GPS.GPGGA.Position.Latitude, 7).ToString() + "," + Math.Round(GPS.GPGGA.Position.Longitude, 7).ToString();
-
-        //                        if (CheckBoxToTextBox.Checked)
-        //                        {
-        //                            TextBoxRawLog.Text = TextBoxRawLog.Text + gpsData + "\r\n";
-        //                            TextBoxRawLog.SelectionStart = TextBoxRawLog.Text.Length - 1;
-        //                            TextBoxRawLog.SelectionLength = 0;
-        //                            TextBoxRawLog.ScrollToCaret();
-        //                        }
-        //                        if (CheckBoxToFile.Checked)
-        //                        {
-        //                            //WriteToFile(gpsData);
-        //                            WriteToFile(Math.Round(GPS.GPGGA.Position.Latitude, 7), Math.Round(GPS.GPGGA.Position.Longitude, 7));
-        //                        }
-        //                        StopGps();
-        //                    }
-        //                    break;
-
-        //                case GPSEventType.GPGGA:
-        //                    if (GPS.GPGGA.FixQuality != SharpGis.SharpGps.NMEA.GPGGA.FixQualityEnum.Invalid)
-        //                    {
-
-        //                        string gpsData = DateTime.Now.ToString("HHmmss") + "," + Math.Round(GPS.GPGGA.Position.Latitude, 7).ToString() + "," + Math.Round(GPS.GPGGA.Position.Longitude, 7).ToString();
-
-        //                        if (CheckBoxToTextBox.Checked)
-        //                        {
-        //                            TextBoxRawLog.Text = TextBoxRawLog.Text + gpsData + "\r\n";
-        //                            TextBoxRawLog.SelectionStart = TextBoxRawLog.Text.Length - 1;
-        //                            TextBoxRawLog.SelectionLength = 0;
-        //                            TextBoxRawLog.ScrollToCaret();
-        //                        }
-        //                        if (CheckBoxToFile.Checked)
-        //                        {
-        //                            WriteToFile(Math.Round(GPS.GPGGA.Position.Latitude, 7), Math.Round(GPS.GPGGA.Position.Longitude, 7));
-        //                        }
-
-        //                        StopGps();
-        //                    }
-
-        //                    break;
-
-        //            }
-        //        }
-        //        else
-        //        {
-        //            TextBoxRawLog.Text = TextBoxRawLog.Text + e.Sentence + "\r\n";
-        //            TextBoxRawLog.SelectionStart = TextBoxRawLog.Text.Length - 1;
-        //            TextBoxRawLog.SelectionLength = 0;
-        //            TextBoxRawLog.ScrollToCaret();
-        //        }
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        writeExceptionToTextBox(ex);
-        //    }
-
-
-
-
-        //}
 
         private void WriteToFile(double latitude, double longitude)
         {
@@ -256,10 +180,24 @@ namespace GPSTracka
                     if (CheckBoxToFile.Checked && !LogEverything)
                     {
                         XmlDocument doc = new XmlDocument();
-                        string currentFileName = "\\My Documents\\GPSLogs\\" + DateTime.Now.ToString("yyyyMMdd") + ".gpx";
+                        string currentFileName = Path.Combine(logLocationTextBox.Text, DateTime.Now.ToString("yyyyMMdd") + ".gpx");
 
                         if (!File.Exists(currentFileName))
                         {
+
+                            if (!Directory.Exists(logLocationTextBox.Text))
+                            {
+                                try
+                                {
+                                    Directory.CreateDirectory(logLocationTextBox.Text);
+                                }
+                                catch
+                                {
+                                    WriteToTextbox("Cannot create the directory specified.  Try another location.");
+                                }
+
+                            }
+
                             StreamWriter stream = File.CreateText(currentFileName);
                             stream.WriteLine(@"<?xml version=""1.0""?>");
                             stream.WriteLine(@"<gpx
@@ -295,11 +233,12 @@ namespace GPSTracka
                         gpx.AppendChild(wpt);
 
                         doc.Save(currentFileName);
-                    }                   
+                    }
                 }
                 catch (Exception ex)
                 {
-                    writeExceptionToTextBox(ex);
+                    WriteToTextbox("Couldn't write location to file. Try changing locations.");
+                    //writeExceptionToTextBox(ex);
                 }
             }
         }
@@ -331,7 +270,6 @@ namespace GPSTracka
 
         private void StopGps()
         {
-            //GPS.Stop(); //Close serial port
             gps.Stop();
             timer1.Enabled = true;
         }
@@ -351,28 +289,6 @@ namespace GPSTracka
 
             gps.Start();
 
-            //if (!GPS.IsPortOpen)
-            //{
-            //    try
-            //    {
-            //        string comPort = ComboBoxCOMPorts.Text;
-            //        int baudRate = Convert.ToInt32(ComboBaudRate.Text);
-
-            //        if (String.IsNullOrEmpty(comPort))
-            //        {
-            //            comPort = "COM1";
-            //        }
-
-            //        GPS.Start(comPort, baudRate); //Open serial port comPort at baudRate //COM1 at 4800
-
-
-            //    }
-            //    catch (System.Exception ex)
-            //    {
-            //        writeExceptionToTextBox(ex);
-            //        MessageBox.Show("An error occured when trying to open port: " + ex.Message);
-            //    }
-            //}
         }
 
         private void GPSTracka_Closing(object sender, CancelEventArgs e)
@@ -380,31 +296,10 @@ namespace GPSTracka
             try
             {
                 gps.Stop();
-                
+
                 ReleasePowerRequirement(powerHandle);
                 powerHandle = IntPtr.Zero;
 
-                //if (GPS != null && GPS.IsPortOpen)
-                //{
-                //    GPS.Stop();
-                //}
-
-                //if (GPS != null)
-                //{
-                //    GPS.Dispose();
-                //}
-
-                //Now save settings to file.
-                //string currentDir = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
-                //string settingsFile = currentDir + "\\settings.cfg";
-
-                //com1,4800,300,True,True
-                //COMPort,baud,seconds,totextbox,tologfile
-                //TextWriter writer = new StreamWriter(settingsFile, false);
-                //writer.WriteLine(ComboBoxCOMPorts.Text + "," + ComboBaudRate.Text + "," +
-                //    NumericUpDownInterval.Value.ToString() + "," + CheckBoxToTextBox.Checked.ToString() +
-                //    "," + CheckBoxToFile.Checked.ToString());
-                //writer.Close();
             }
             catch
             {
@@ -435,13 +330,16 @@ namespace GPSTracka
             //prepare form
             this.Size = new Size(240, 294);
 
-            //Read from CFG file
-            //com1,4800,300,True,True
-            //COMPort,baud,seconds,totextbox,tologfile
+            //Default values
+            TextBoxRawLog.ScrollBars = ScrollBars.Vertical;
+            ComboBoxCOMPorts.SelectedIndex = 0;
+            ComboBaudRate.SelectedIndex = 0;
+
+
+            //Read from config file
             string currentDir = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
 
-            //string settingsFile = currentDir + "\\settings.cfg";
-            //string settingsRawLine = String.Empty;
+
             string settingsCOMPort = String.Empty;
             string settingsBaudRate = String.Empty;
             int settingsSeconds = 60;
@@ -466,69 +364,19 @@ namespace GPSTracka
                 ComboBoxCOMPorts.SelectedItem = settingsBaudRate;
             }
 
-            NumericUpDownInterval.Value = settingsSeconds;
+            if (!String.IsNullOrEmpty(settingsLogFileLocation))
+            {
+                logLocationTextBox.Text = settingsLogFileLocation;
+            }
+            
+            if (settingsSeconds >= 60)
+            {
+                NumericUpDownInterval.Value = settingsSeconds;
+            }
+            
             CheckBoxToTextBox.Checked = settingsToTextBox;
             CheckBoxToFile.Checked = settingsToLogFile;
 
-            //try
-            //{
-            //    if (!File.Exists(settingsFile))
-            //    {
-            //        //Create it
-            //        StreamWriter stream = File.CreateText(settingsFile);
-            //        stream.WriteLine("COM1,4800,300,1,1");
-            //        stream.Close();
-            //        settingsFileExists = true;
-            //    }
-            //    else
-            //    {
-            //        StreamReader stream = File.OpenText(settingsFile);
-            //        settingsRawLine = stream.ReadToEnd();
-            //        stream.Close();
-            //        settingsFileExists = true;
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    settingsFileExists = false;
-            //}
-
-
-            //if (!String.IsNullOrEmpty(settingsRawLine))
-            //{
-            //    string[] allSettings = settingsRawLine.Split(',');
-
-            //    settingsCOMPort = allSettings[0];
-            //    settingsBaudRate = allSettings[1];
-            //    settingsSeconds = Int32.Parse(allSettings[2]);
-            //    settingsToTextBox = Boolean.Parse(allSettings[3]);
-            //    settingsToLogFile = Boolean.Parse(allSettings[4]);
-            //}
-
-            TextBoxRawLog.ScrollBars = ScrollBars.Vertical;
-            ComboBoxCOMPorts.SelectedIndex = 0;
-            ComboBaudRate.SelectedIndex = 0;
-
-            //if (settingsFileExists)
-            //{
-            //    if (!String.IsNullOrEmpty(settingsCOMPort))
-            //    {
-            //        ComboBoxCOMPorts.SelectedItem = settingsCOMPort;
-            //    }
-
-            //    if (!String.IsNullOrEmpty(settingsBaudRate))
-            //    {
-            //        ComboBoxCOMPorts.SelectedItem = settingsBaudRate;
-            //    }
-
-            //    NumericUpDownInterval.Value = settingsSeconds;
-            //    CheckBoxToTextBox.Checked = settingsToTextBox;
-            //    CheckBoxToFile.Checked = settingsToLogFile;
-            //}
-
-            //GPS = new GPSHandler(this); //Initialize GPS handler
-            //GPS.TimeOut = 50; //Set timeout to 5 seconds
-            //GPS.NewGPSFix += new GPSHandler.NewGPSFixHandler(this.GPSEventHandler); //Hook up GPS data events to a handler
 
             //Call keepdeviceawake every 30 seconds in its own timer
             //Cannot use existing timer because it may have 5 minute intervals.
@@ -542,22 +390,36 @@ namespace GPSTracka
 
         private void verboseMenuItem_Click(object sender, EventArgs e)
         {
-            LogEverything = !LogEverything;
-            verboseMenuItem.Checked = LogEverything;
+            verboseMenuItem.Checked = !verboseMenuItem.Checked;
         }
 
         private void startMenuItem_Click(object sender, EventArgs e)
         {
-            if (LogEverything)
+
+
+            //First, check if it's verbose and we've just clicked start
+
+            if (verboseMenuItem.Checked && !LogEverything)
+            {
+                LogEverything = true;
+                StartupGps();
+                startMenuItem.Text = "Stop!";
+                return;
+            }
+
+
+
+            //Check if it's verbose and we're trying to stop it.
+            if (verboseMenuItem.Checked && LogEverything)
             {
                 gps.Stop();
-                //GPS.Stop();
                 LogEverything = false;
                 timer1.Enabled = false;
                 startMenuItem.Text = "Start";
                 return;
             }
 
+            //Else, work normally.
             timer1.Interval = Convert.ToInt16(NumericUpDownInterval.Value) * 1000;
 
             timer1.Enabled = !timer1.Enabled;
@@ -568,6 +430,7 @@ namespace GPSTracka
                 WriteToTextbox("Will begin to read GPS data after " + NumericUpDownInterval.Value.ToString() + " seconds.");
                 startMenuItem.Text = "Stop";
                 verboseMenuItem.Enabled = false;
+                logLocationTextBox.Enabled = false;
                 CheckBoxToFile.Enabled = false;
                 ComboBoxCOMPorts.Enabled = false;
                 ComboBaudRate.Enabled = false;
@@ -582,6 +445,7 @@ namespace GPSTracka
 
                 verboseMenuItem.Enabled = true;
                 CheckBoxToFile.Enabled = true;
+                logLocationTextBox.Enabled = true;
                 ComboBoxCOMPorts.Enabled = true;
                 ComboBaudRate.Enabled = true;
                 NumericUpDownInterval.Enabled = true;
@@ -597,25 +461,25 @@ namespace GPSTracka
             switch (panel.Name)
             {
                 case "settingsPanel":
-                {
-                    this.Menu = settingsPanelMenu;
-                    break;
-                }
+                    {
+                        this.Menu = settingsPanelMenu;
+                        break;
+                    }
                 case "aboutPanel":
-                {
-                    this.Menu = aboutPanelMenu;
-                    break;
-                }
+                    {
+                        this.Menu = aboutPanelMenu;
+                        break;
+                    }
                 case "mainPanel":
-                {
-                    this.Menu = mainPanelMenu;
-                    break;
-                }
+                    {
+                        this.Menu = mainPanelMenu;
+                        break;
+                    }
                 default:
-                {
-                    this.Menu = mainPanelMenu;
-                    break;
-                }
+                    {
+                        this.Menu = mainPanelMenu;
+                        break;
+                    }
             }
         }
 
@@ -648,6 +512,13 @@ namespace GPSTracka
 
         private void saveMenuItem_Click(object sender, EventArgs e)
         {
+
+            if (CheckBoxToFile.Checked && String.IsNullOrEmpty(logLocationTextBox.Text))
+            {
+                MessageBox.Show("Please select a proper file path");
+                return;
+            }
+
             ConfigurationManager.AppSettings["COMPort"] = ComboBoxCOMPorts.Text;
             ConfigurationManager.AppSettings["BaudRate"] = ComboBaudRate.Text;
             ConfigurationManager.AppSettings["PollingInterval"] = NumericUpDownInterval.Value.ToString();
@@ -667,7 +538,9 @@ namespace GPSTracka
             DialogResult result = saveFileDialog1.ShowDialog();
             if (result == DialogResult.OK)
             {
-                logLocationTextBox.Text = saveFileDialog1.FileName;
+                FileInfo fi = new FileInfo(saveFileDialog1.FileName);
+                //Parse and get the folder path
+                logLocationTextBox.Text = fi.DirectoryName;
             }
             else
             {
@@ -732,6 +605,20 @@ namespace GPSTracka
                 outBoolean = false;
                 return false;
             }
+        }
+
+
+        private void backMenuItem_Click(object sender, EventArgs e)
+        {
+
+            if (CheckBoxToFile.Checked && String.IsNullOrEmpty(logLocationTextBox.Text))
+            {
+                CheckBoxToFile.Checked = false;
+            }
+
+            HidePanel(settingsPanel);
+            HidePanel(aboutPanel);
+            ShowPanel(mainPanel);
         }
     }
 }

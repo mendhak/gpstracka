@@ -50,7 +50,6 @@
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.WindowsCE.Forms" />
     <Reference Include="mscorlib" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -92,8 +91,7 @@
     <Compile Include="UIHelper.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="lib\SharpGps.dll" />
-    <Content Include="lib\SharpGps.xml" />
+    <Content Include="GPSTracka.exe.config" />
     <Content Include="logo.jpg" />
     <Content Include="SCIENCE1.ICO" />
   </ItemGroup>
@@ -102,11 +100,6 @@
       <Project>{BF17CDE7-E5B1-4876-9B44-457F3BFDB3D9}</Project>
       <Name>OpenNETCF.IO.Serial</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="GPSTracka.exe.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
   <ProjectExtensions>

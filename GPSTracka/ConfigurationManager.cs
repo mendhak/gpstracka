@@ -46,15 +46,19 @@ namespace GPSTracka
             // Ensure configuration file exists
             if (!File.Exists(ConfigurationManager.configFile))
             {
-                throw new FileNotFoundException(String.Format("Configuration file ({0}) could not be found.", ConfigurationManager.configFile));
+                StreamWriter stream = File.CreateText(ConfigurationManager.configFile);
+                stream.WriteLine(@"<?xml version=""1.0""?>");
+                stream.WriteLine(@"<configuration><appSettings /></configuration>");
+                stream.Close();
+                //throw new FileNotFoundException(String.Format("Configuration file ({0}) could not be found.", ConfigurationManager.configFile));
             }
 
             // Load config file as an XmlDocument
-            XmlDocument myXmlDocument = new XmlDocument();
-            myXmlDocument.Load(ConfigurationManager.configFile);
+            XmlDocument configDocument = new XmlDocument();
+            configDocument.Load(ConfigurationManager.configFile);
 
             // Add keys and values to the AppSettings NameValueCollection
-            foreach (XmlNode appSettingNode in myXmlDocument.SelectNodes("/configuration/appSettings/add"))
+            foreach (XmlNode appSettingNode in configDocument.SelectNodes("/configuration/appSettings/add"))
             {
                 ConfigurationManager.AppSettings.Add(appSettingNode.Attributes["key"].Value, appSettingNode.Attributes["value"].Value);
             }
@@ -70,11 +74,11 @@ namespace GPSTracka
         public static void Save()
         {
             // Load config file as an XmlDocument
-            XmlDocument myXmlDocument = new XmlDocument();
-            myXmlDocument.Load(ConfigurationManager.configFile);
+            XmlDocument configDocument = new XmlDocument();
+            configDocument.Load(ConfigurationManager.configFile);
 
             // Get the appSettings node
-            XmlNode appSettingsNode = myXmlDocument.SelectSingleNode("/configuration/appSettings");
+            XmlNode appSettingsNode = configDocument.SelectSingleNode("/configuration/appSettings");
 
             if (appSettingsNode != null)
             {
@@ -84,14 +88,14 @@ namespace GPSTracka
                 foreach (string key in AppSettings.AllKeys)
                 {
                     // Create a new appSetting node
-                    XmlElement appSettingNode = myXmlDocument.CreateElement("add");
+                    XmlElement appSettingNode = configDocument.CreateElement("add");
 
                     // Create the key attribute and assign its value
-                    XmlAttribute keyAttribute = myXmlDocument.CreateAttribute("key");
+                    XmlAttribute keyAttribute = configDocument.CreateAttribute("key");
                     keyAttribute.Value = key;
 
                     // Create the value attribute and assign its value
-                    XmlAttribute valueAttribute = myXmlDocument.CreateAttribute("value");
+                    XmlAttribute valueAttribute = configDocument.CreateAttribute("value");
                     valueAttribute.Value = AppSettings[key];
 
                     // Append the key and value attribute to the appSetting node
@@ -104,7 +108,7 @@ namespace GPSTracka
             }
 
             // Save config file
-            myXmlDocument.Save(ConfigurationManager.configFile);
+            configDocument.Save(ConfigurationManager.configFile);
         }
 
         #endregion
