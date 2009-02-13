@@ -41,6 +41,7 @@
             this.menuItem5 = new System.Windows.Forms.MenuItem();
             this.aboutMenuItem = new System.Windows.Forms.MenuItem();
             this.aboutPanel = new System.Windows.Forms.Panel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.aboutLabel = new System.Windows.Forms.Label();
             this.settingsPanel = new System.Windows.Forms.Panel();
@@ -136,11 +137,22 @@
             // 
             // aboutPanel
             // 
+            this.aboutPanel.Controls.Add(this.linkLabel1);
             this.aboutPanel.Controls.Add(this.pictureBox1);
             this.aboutPanel.Controls.Add(this.aboutLabel);
             this.aboutPanel.Location = new System.Drawing.Point(249, 3);
             this.aboutPanel.Name = "aboutPanel";
             this.aboutPanel.Size = new System.Drawing.Size(240, 294);
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.Location = new System.Drawing.Point(3, 236);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(234, 20);
+            this.linkLabel1.TabIndex = 2;
+            this.linkLabel1.Text = "http://www.codeplex.com/gpstracka";
+            this.linkLabel1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.linkLabel1.Click += new System.EventHandler(this.linkLabel1_Click);
             // 
             // pictureBox1
             // 
@@ -156,10 +168,10 @@
             // aboutLabel
             // 
             this.aboutLabel.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.aboutLabel.Location = new System.Drawing.Point(3, 230);
+            this.aboutLabel.Location = new System.Drawing.Point(3, 209);
             this.aboutLabel.Name = "aboutLabel";
-            this.aboutLabel.Size = new System.Drawing.Size(234, 35);
-            this.aboutLabel.Text = "GPSTracka Version 1.00\r\nwww.codeplex.com/gpstracka";
+            this.aboutLabel.Size = new System.Drawing.Size(234, 26);
+            this.aboutLabel.Text = "GPSTracka Version 1.00";
             this.aboutLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // settingsPanel
@@ -404,6 +416,7 @@
         private System.Windows.Forms.TextBox logLocationTextBox;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.MenuItem backMenuItem;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
 

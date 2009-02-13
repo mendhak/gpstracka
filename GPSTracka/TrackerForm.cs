@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
@@ -62,6 +63,9 @@ namespace GPSTracka
             gps.GpsSentence += new GPS.GpsSentenceEventHandler(gps_GpsSentence);
             gps.GpsCommState += new GPS.GpsCommStateEventHandler(gps_GpsCommState);
             gps.Error += new GPS.ErrorEventHandler(gps_Error);
+
+            //set up about Label
+            aboutLabel.Text = "GPSTracka Version " + Assembly.GetExecutingAssembly().GetName().Version.ToString();
         }
 
         void gps_Error(object sender, Exception exception, string message, string gps_data)
@@ -619,6 +623,11 @@ namespace GPSTracka
             HidePanel(settingsPanel);
             HidePanel(aboutPanel);
             ShowPanel(mainPanel);
+        }
+
+        private void linkLabel1_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(linkLabel1.Text, "");
         }
     }
 }
