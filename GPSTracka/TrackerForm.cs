@@ -629,5 +629,11 @@ namespace GPSTracka
         {
             System.Diagnostics.Process.Start(linkLabel1.Text, "");
         }
+
+        private void menuExit_Click(object sender, EventArgs e)
+        {
+
+            this.Close();
+        }
     }
 }

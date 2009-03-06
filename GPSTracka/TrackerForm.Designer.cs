@@ -65,6 +65,7 @@
             this.saveMenuItem = new System.Windows.Forms.MenuItem();
             this.backMenuItem = new System.Windows.Forms.MenuItem();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.menuExit = new System.Windows.Forms.MenuItem();
             this.mainPanel.SuspendLayout();
             this.aboutPanel.SuspendLayout();
             this.settingsPanel.SuspendLayout();
@@ -109,6 +110,7 @@
             this.menuItem2.MenuItems.Add(this.settingsMenuItem);
             this.menuItem2.MenuItems.Add(this.menuItem5);
             this.menuItem2.MenuItems.Add(this.aboutMenuItem);
+            this.menuItem2.MenuItems.Add(this.menuExit);
             this.menuItem2.Text = "Options";
             // 
             // clearMenuItem
@@ -358,6 +360,11 @@
             this.backMenuItem.Text = "Back";
             this.backMenuItem.Click += new System.EventHandler(this.backMenuItem_Click);
             // 
+            // menuExit
+            // 
+            this.menuExit.Text = "Exit";
+            this.menuExit.Click += new System.EventHandler(this.menuExit_Click);
+            // 
             // GPSTracka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -417,6 +424,7 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.MenuItem backMenuItem;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.MenuItem menuExit;
     }
 }
 
