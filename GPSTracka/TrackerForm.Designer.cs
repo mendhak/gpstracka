@@ -40,11 +40,15 @@
             this.settingsMenuItem = new System.Windows.Forms.MenuItem();
             this.menuItem5 = new System.Windows.Forms.MenuItem();
             this.aboutMenuItem = new System.Windows.Forms.MenuItem();
+            this.menuExit = new System.Windows.Forms.MenuItem();
             this.aboutPanel = new System.Windows.Forms.Panel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.aboutLabel = new System.Windows.Forms.Label();
             this.settingsPanel = new System.Windows.Forms.Panel();
+            this.radioButtonKML = new System.Windows.Forms.RadioButton();
+            this.radioButtonGPX = new System.Windows.Forms.RadioButton();
+            this.groupBox5 = new GroupBox();
             this.saveDialogButton = new System.Windows.Forms.Button();
             this.logLocationTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -65,7 +69,6 @@
             this.saveMenuItem = new System.Windows.Forms.MenuItem();
             this.backMenuItem = new System.Windows.Forms.MenuItem();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.menuExit = new System.Windows.Forms.MenuItem();
             this.mainPanel.SuspendLayout();
             this.aboutPanel.SuspendLayout();
             this.settingsPanel.SuspendLayout();
@@ -137,6 +140,11 @@
             this.aboutMenuItem.Text = "About";
             this.aboutMenuItem.Click += new System.EventHandler(this.aboutMenuItem_Click);
             // 
+            // menuExit
+            // 
+            this.menuExit.Text = "Exit";
+            this.menuExit.Click += new System.EventHandler(this.menuExit_Click);
+            // 
             // aboutPanel
             // 
             this.aboutPanel.Controls.Add(this.linkLabel1);
@@ -179,6 +187,9 @@
             // settingsPanel
             // 
             this.settingsPanel.AutoScroll = true;
+            this.settingsPanel.Controls.Add(this.radioButtonKML);
+            this.settingsPanel.Controls.Add(this.radioButtonGPX);
+            this.settingsPanel.Controls.Add(this.groupBox5);
             this.settingsPanel.Controls.Add(this.saveDialogButton);
             this.settingsPanel.Controls.Add(this.logLocationTextBox);
             this.settingsPanel.Controls.Add(this.label1);
@@ -193,9 +204,33 @@
             this.settingsPanel.Controls.Add(this.groupBox1);
             this.settingsPanel.Controls.Add(this.groupBox3);
             this.settingsPanel.Controls.Add(this.groupBox4);
-            this.settingsPanel.Location = new System.Drawing.Point(495, 6);
+            this.settingsPanel.Location = new System.Drawing.Point(495, 3);
             this.settingsPanel.Name = "settingsPanel";
-            this.settingsPanel.Size = new System.Drawing.Size(240, 294);
+            this.settingsPanel.Size = new System.Drawing.Size(240, 349);
+            // 
+            // radioButtonKML
+            // 
+            this.radioButtonKML.Location = new System.Drawing.Point(12, 314);
+            this.radioButtonKML.Name = "radioButtonKML";
+            this.radioButtonKML.Size = new System.Drawing.Size(86, 20);
+            this.radioButtonKML.TabIndex = 63;
+            this.radioButtonKML.Text = "KML";
+            // 
+            // radioButtonGPX
+            // 
+            this.radioButtonGPX.Location = new System.Drawing.Point(12, 288);
+            this.radioButtonGPX.Name = "radioButtonGPX";
+            this.radioButtonGPX.Size = new System.Drawing.Size(86, 20);
+            this.radioButtonGPX.TabIndex = 62;
+            this.radioButtonGPX.Text = "GPX";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Location = new System.Drawing.Point(3, 273);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(233, 72);
+            this.groupBox5.TabIndex = 61;
+            this.groupBox5.Title = "Format";
             // 
             // saveDialogButton
             // 
@@ -332,7 +367,7 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox4.Location = new System.Drawing.Point(3, 188);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(234, 103);
+            this.groupBox4.Size = new System.Drawing.Size(234, 79);
             this.groupBox4.TabIndex = 56;
             this.groupBox4.Title = "Logging Options";
             // 
@@ -359,11 +394,6 @@
             // 
             this.backMenuItem.Text = "Back";
             this.backMenuItem.Click += new System.EventHandler(this.backMenuItem_Click);
-            // 
-            // menuExit
-            // 
-            this.menuExit.Text = "Exit";
-            this.menuExit.Click += new System.EventHandler(this.menuExit_Click);
             // 
             // GPSTracka
             // 
@@ -425,6 +455,9 @@
         private System.Windows.Forms.MenuItem backMenuItem;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.MenuItem menuExit;
+        private System.Windows.Forms.RadioButton radioButtonKML;
+        private System.Windows.Forms.RadioButton radioButtonGPX;
+        private GroupBox groupBox5;
     }
 }
 

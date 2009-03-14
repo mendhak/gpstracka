@@ -44,6 +44,10 @@ namespace GPSTracka
 
         public static GPS gps = new GPS();
         public static bool LogEverything = false;
+
+        private string latestLatitude;
+        private string latestLongitude;
+
         public delegate void UpdateTextboxDelegate(string theText);
         public delegate void UpdateFileDelegate(double latitude, double longitude);
         bool positionLogged = true;
@@ -161,6 +165,11 @@ namespace GPSTracka
 
                 if (!positionLogged)
                 {
+
+
+                    latestLatitude = Math.Round(pos.Latitude_Decimal * latMultiplier, 7).ToString();
+                    latestLongitude = Math.Round(pos.Longitude_Decimal * longMultiplier, 7).ToString();
+
                     WriteToTextbox(gpsData);
                     WriteToFile(Convert.ToDouble(Math.Round(pos.Latitude_Decimal * latMultiplier, 7)), Convert.ToDouble(Math.Round(pos.Longitude_Decimal * longMultiplier, 7)));
                     StopGps();
@@ -183,60 +192,16 @@ namespace GPSTracka
                 {
                     if (CheckBoxToFile.Checked && !LogEverything)
                     {
-                        XmlDocument doc = new XmlDocument();
-                        string currentFileName = Path.Combine(logLocationTextBox.Text, DateTime.Now.ToString("yyyyMMdd") + ".gpx");
 
-                        if (!File.Exists(currentFileName))
+                        if (radioButtonGPX.Checked)
                         {
-
-                            if (!Directory.Exists(logLocationTextBox.Text))
-                            {
-                                try
-                                {
-                                    Directory.CreateDirectory(logLocationTextBox.Text);
-                                }
-                                catch
-                                {
-                                    WriteToTextbox("Cannot create the directory specified.  Try another location.");
-                                }
-
-                            }
-
-                            StreamWriter stream = File.CreateText(currentFileName);
-                            stream.WriteLine(@"<?xml version=""1.0""?>");
-                            stream.WriteLine(@"<gpx
-                             version=""1.0""
-                             creator=""GPSTracka - http://www.mendhak.com/""
-                             xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance""
-                             xmlns=""http://www.topografix.com/GPX/1/0""
-                             xsi:schemaLocation=""http://www.topografix.com/GPX/1/0 http://www.topografix.com/GPX/1/0/gpx.xsd"">");
-                            stream.WriteLine("<time>" + DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ") + "</time><bounds />");
-                            stream.WriteLine("</gpx>");
-                            stream.Close();
+                            WriteToGPXFile(latitude, longitude);
                         }
 
-                        doc.Load(currentFileName);
-
-                        XmlNode gpx = doc.ChildNodes[1];
-
-                        XmlNode wpt = doc.CreateElement("wpt");
-
-                        XmlAttribute latAttrib = doc.CreateAttribute("lat");
-                        latAttrib.Value = latitude.ToString();
-                        wpt.Attributes.Append(latAttrib);
-
-                        XmlAttribute longAttrib = doc.CreateAttribute("lon");
-                        longAttrib.Value = longitude.ToString();
-                        wpt.Attributes.Append(longAttrib);
-
-                        XmlNode timeNode = doc.CreateElement("time");
-                        timeNode.InnerText = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ");
-
-                        wpt.AppendChild(timeNode);
-
-                        gpx.AppendChild(wpt);
-
-                        doc.Save(currentFileName);
+                        if (radioButtonKML.Checked)
+                        {
+                            WriteToKMLFile(latitude, longitude);
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -245,6 +210,126 @@ namespace GPSTracka
                     //writeExceptionToTextBox(ex);
                 }
             }
+        }
+
+        private void WriteToKMLFile(double latitude, double longitude)
+        {
+            XmlDocument doc = new XmlDocument();
+            string currentFileName = Path.Combine(logLocationTextBox.Text, DateTime.Now.ToString("yyyyMMdd") + ".kml");
+
+            if (!File.Exists(currentFileName))
+            {
+
+                if (!Directory.Exists(logLocationTextBox.Text))
+                {
+                    try
+                    {
+                        Directory.CreateDirectory(logLocationTextBox.Text);
+                    }
+                    catch
+                    {
+                        WriteToTextbox("Cannot create the directory specified.  Try another location.");
+                    }
+
+                }
+
+                StreamWriter stream = File.CreateText(currentFileName);
+                stream.WriteLine(@"<?xml version=""1.0"" encoding=""UTF-8""?>
+                                <kml xmlns=""http://www.opengis.net/kml/2.2"">
+                                <Document>
+                                <name>GPSTracka KML Output</name>
+                                </Document></kml>");
+                //stream.WriteLine("<time>" + DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ") + "</time><bounds />");
+                //stream.WriteLine("</gpx>");
+                stream.Close();
+            }
+            
+            doc.Load(currentFileName);
+
+            XmlNamespaceManager nsmgr = new XmlNamespaceManager(doc.NameTable);
+            nsmgr.AddNamespace("def", "http://www.opengis.net/kml/2.2");
+
+            //XmlNode kml = doc.ChildNodes[1].SelectSingleNode("Document");
+            XmlNode kml = doc.SelectSingleNode("/def:kml/def:Document",nsmgr);
+
+            XmlNode placemark = doc.CreateElement("Placemark");
+
+            XmlNode plName = doc.CreateElement("name");
+            plName.InnerText = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ");
+            placemark.AppendChild(plName);
+
+            XmlNode plDescription = doc.CreateElement("description");
+            plDescription.InnerText = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ");
+            placemark.AppendChild(plDescription);
+
+            XmlNode plPoint = doc.CreateElement("Point");
+            XmlNode plPointCoord = doc.CreateElement("coordinates");
+            plPointCoord.InnerText = longitude.ToString() + "," + latitude.ToString() + ",0";
+            plPoint.AppendChild(plPointCoord);
+            
+            placemark.AppendChild(plPoint);
+            
+            kml.AppendChild(placemark);
+
+            doc.Save(currentFileName);
+        }
+
+        private void WriteToGPXFile(double latitude, double longitude)
+        {
+            XmlDocument doc = new XmlDocument();
+            string currentFileName = Path.Combine(logLocationTextBox.Text, DateTime.Now.ToString("yyyyMMdd") + ".gpx");
+
+            if (!File.Exists(currentFileName))
+            {
+
+                if (!Directory.Exists(logLocationTextBox.Text))
+                {
+                    try
+                    {
+                        Directory.CreateDirectory(logLocationTextBox.Text);
+                    }
+                    catch
+                    {
+                        WriteToTextbox("Cannot create the directory specified.  Try another location.");
+                    }
+
+                }
+
+                StreamWriter stream = File.CreateText(currentFileName);
+                stream.WriteLine(@"<?xml version=""1.0""?>");
+                stream.WriteLine(@"<gpx
+                             version=""1.0""
+                             creator=""GPSTracka - http://www.mendhak.com/""
+                             xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance""
+                             xmlns=""http://www.topografix.com/GPX/1/0""
+                             xsi:schemaLocation=""http://www.topografix.com/GPX/1/0 http://www.topografix.com/GPX/1/0/gpx.xsd"">");
+                stream.WriteLine("<time>" + DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ") + "</time><bounds />");
+                stream.WriteLine("</gpx>");
+                stream.Close();
+            }
+
+            doc.Load(currentFileName);
+
+            XmlNode gpx = doc.ChildNodes[1];
+
+            XmlNode wpt = doc.CreateElement("wpt");
+
+            XmlAttribute latAttrib = doc.CreateAttribute("lat");
+            latAttrib.Value = latitude.ToString();
+            wpt.Attributes.Append(latAttrib);
+
+            XmlAttribute longAttrib = doc.CreateAttribute("lon");
+            longAttrib.Value = longitude.ToString();
+            wpt.Attributes.Append(longAttrib);
+
+            XmlNode timeNode = doc.CreateElement("time");
+            timeNode.InnerText = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ");
+
+            wpt.AppendChild(timeNode);
+
+            gpx.AppendChild(wpt);
+
+            doc.Save(currentFileName);
         }
 
         private void writeExceptionToTextBox(Exception ex)
@@ -350,6 +435,7 @@ namespace GPSTracka
             bool settingsToTextBox = true;
             bool settingsToLogFile = false;
             string settingsLogFileLocation = String.Empty;
+            string logFormat = "GPX";
 
             settingsCOMPort = ConfigurationManager.AppSettings["COMPort"];
             settingsBaudRate = ConfigurationManager.AppSettings["BaudRate"];
@@ -357,6 +443,7 @@ namespace GPSTracka
             TryParse(ConfigurationManager.AppSettings["LogToTextBox"], out settingsToTextBox);
             TryParse(ConfigurationManager.AppSettings["LogToLogFile"], out settingsToLogFile);
             settingsLogFileLocation = ConfigurationManager.AppSettings["LogFileLocation"];
+            logFormat = ConfigurationManager.AppSettings["LogFormat"];
 
             if (!String.IsNullOrEmpty(settingsCOMPort))
             {
@@ -377,9 +464,24 @@ namespace GPSTracka
             {
                 NumericUpDownInterval.Value = settingsSeconds;
             }
+
             
             CheckBoxToTextBox.Checked = settingsToTextBox;
             CheckBoxToFile.Checked = settingsToLogFile;
+
+            switch(logFormat)
+            {
+                case "GPX":
+                    radioButtonGPX.Checked = true;
+                    break;
+                case "KML":
+                    radioButtonKML.Checked = true;
+                    break;
+                default:
+                    radioButtonGPX.Checked = true;
+                    break;
+            }
+
 
 
             //Call keepdeviceawake every 30 seconds in its own timer
@@ -530,6 +632,15 @@ namespace GPSTracka
             ConfigurationManager.AppSettings["LogToLogFile"] = CheckBoxToFile.Checked.ToString();
             ConfigurationManager.AppSettings["LogFileLocation"] = logLocationTextBox.Text;
 
+            if (radioButtonKML.Checked)
+            {
+                ConfigurationManager.AppSettings["LogFormat"] = "KML";
+            }
+            else
+            {
+                ConfigurationManager.AppSettings["LogFormat"] = "GPX";
+            }
+
             ConfigurationManager.Save();
 
             HidePanel(settingsPanel);
@@ -635,5 +746,20 @@ namespace GPSTracka
 
             this.Close();
         }
+
+        //private void menuItemSend_Click(object sender, EventArgs e)
+        //{
+        //    DescInput di = new DescInput();
+        //    di.Latitude = latestLatitude;
+        //    di.Longitude = latestLongitude;
+        //    if (!String.IsNullOrEmpty(latestLatitude) && !String.IsNullOrEmpty(latestLongitude))
+        //    {
+        //        di.ShowDialog();
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Nothing to send yet.");
+        //    }
+        //}
     }
 }
