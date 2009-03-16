@@ -279,6 +279,7 @@
             // 
             // ComboBoxCOMPorts
             // 
+            this.ComboBoxCOMPorts.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.ComboBoxCOMPorts.Location = new System.Drawing.Point(61, 80);
             this.ComboBoxCOMPorts.Name = "ComboBoxCOMPorts";
             this.ComboBoxCOMPorts.Size = new System.Drawing.Size(55, 22);

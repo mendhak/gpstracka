@@ -447,12 +447,13 @@ namespace GPSTracka
 
             if (!String.IsNullOrEmpty(settingsCOMPort))
             {
-                ComboBoxCOMPorts.SelectedItem = settingsCOMPort;
+                //ComboBoxCOMPorts.SelectedItem = settingsCOMPort;
+                ComboBoxCOMPorts.Text = settingsCOMPort;
             }
 
             if (!String.IsNullOrEmpty(settingsBaudRate))
             {
-                ComboBoxCOMPorts.SelectedItem = settingsBaudRate;
+                ComboBaudRate.Text = settingsBaudRate;
             }
 
             if (!String.IsNullOrEmpty(settingsLogFileLocation))
