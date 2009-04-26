@@ -1,7 +1,5 @@
-﻿namespace GPSTracka
-{
-    partial class GPSTracka
-    {
+﻿namespace GPSTracka {
+    partial class GPSTracka {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -11,10 +9,8 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
+        protected override void Dispose(bool disposing) {
+            if (disposing && (components != null)) {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -26,8 +22,7 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
-        {
+        private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GPSTracka));
             this.timer1 = new System.Windows.Forms.Timer();
             this.mainPanel = new System.Windows.Forms.Panel();
@@ -46,23 +41,28 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.aboutLabel = new System.Windows.Forms.Label();
             this.settingsPanel = new System.Windows.Forms.Panel();
+            this.panTRackLogType = new System.Windows.Forms.Panel();
+            this.optTrack = new System.Windows.Forms.RadioButton();
+            this.optDistinct = new System.Windows.Forms.RadioButton();
+            this.panFileFormat = new System.Windows.Forms.Panel();
             this.radioButtonKML = new System.Windows.Forms.RadioButton();
             this.radioButtonGPX = new System.Windows.Forms.RadioButton();
-            this.groupBox5 = new GroupBox();
+            this.chkAltitude = new System.Windows.Forms.CheckBox();
+            this.groupBox5 = new global::GPSTracka.GroupBox();
             this.saveDialogButton = new System.Windows.Forms.Button();
             this.logLocationTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.NumericUpDownInterval = new System.Windows.Forms.NumericUpDown();
             this.ComboBoxCOMPorts = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.groupBox2 = new GroupBox();
+            this.groupBox2 = new global::GPSTracka.GroupBox();
             this.CheckBoxToFile = new System.Windows.Forms.CheckBox();
             this.CheckBoxToTextBox = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.ComboBaudRate = new System.Windows.Forms.ComboBox();
-            this.groupBox1 = new GroupBox();
-            this.groupBox3 = new GroupBox();
-            this.groupBox4 = new GroupBox();
+            this.groupBox1 = new global::GPSTracka.GroupBox();
+            this.groupBox3 = new global::GPSTracka.GroupBox();
+            this.groupBox4 = new global::GPSTracka.GroupBox();
             this.aboutPanelMenu = new System.Windows.Forms.MainMenu();
             this.cancelMenuItem = new System.Windows.Forms.MenuItem();
             this.settingsPanelMenu = new System.Windows.Forms.MainMenu();
@@ -72,6 +72,8 @@
             this.mainPanel.SuspendLayout();
             this.aboutPanel.SuspendLayout();
             this.settingsPanel.SuspendLayout();
+            this.panTRackLogType.SuspendLayout();
+            this.panFileFormat.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -187,8 +189,9 @@
             // settingsPanel
             // 
             this.settingsPanel.AutoScroll = true;
-            this.settingsPanel.Controls.Add(this.radioButtonKML);
-            this.settingsPanel.Controls.Add(this.radioButtonGPX);
+            this.settingsPanel.Controls.Add(this.panTRackLogType);
+            this.settingsPanel.Controls.Add(this.panFileFormat);
+            this.settingsPanel.Controls.Add(this.chkAltitude);
             this.settingsPanel.Controls.Add(this.groupBox5);
             this.settingsPanel.Controls.Add(this.saveDialogButton);
             this.settingsPanel.Controls.Add(this.logLocationTextBox);
@@ -208,33 +211,73 @@
             this.settingsPanel.Name = "settingsPanel";
             this.settingsPanel.Size = new System.Drawing.Size(240, 349);
             // 
+            // panTRackLogType
+            // 
+            this.panTRackLogType.Controls.Add(this.optTrack);
+            this.panTRackLogType.Controls.Add(this.optDistinct);
+            this.panTRackLogType.Location = new System.Drawing.Point(8, 298);
+            this.panTRackLogType.Name = "panTRackLogType";
+            this.panTRackLogType.Size = new System.Drawing.Size(215, 27);
+            // 
+            // optTrack
+            // 
+            this.optTrack.Location = new System.Drawing.Point(120, 4);
+            this.optTrack.Name = "optTrack";
+            this.optTrack.Size = new System.Drawing.Size(100, 20);
+            this.optTrack.TabIndex = 1;
+            this.optTrack.Text = "&Track";
+            // 
+            // optDistinct
+            // 
+            this.optDistinct.Location = new System.Drawing.Point(5, 3);
+            this.optDistinct.Name = "optDistinct";
+            this.optDistinct.Size = new System.Drawing.Size(109, 20);
+            this.optDistinct.TabIndex = 0;
+            this.optDistinct.Text = "&Distinct points";
+            // 
+            // panFileFormat
+            // 
+            this.panFileFormat.Controls.Add(this.radioButtonKML);
+            this.panFileFormat.Controls.Add(this.radioButtonGPX);
+            this.panFileFormat.Location = new System.Drawing.Point(7, 271);
+            this.panFileFormat.Name = "panFileFormat";
+            this.panFileFormat.Size = new System.Drawing.Size(117, 26);
+            // 
             // radioButtonKML
             // 
-            this.radioButtonKML.Location = new System.Drawing.Point(12, 314);
+            this.radioButtonKML.Location = new System.Drawing.Point(61, 3);
             this.radioButtonKML.Name = "radioButtonKML";
-            this.radioButtonKML.Size = new System.Drawing.Size(86, 20);
+            this.radioButtonKML.Size = new System.Drawing.Size(56, 20);
             this.radioButtonKML.TabIndex = 63;
             this.radioButtonKML.Text = "KML";
             // 
             // radioButtonGPX
             // 
-            this.radioButtonGPX.Location = new System.Drawing.Point(12, 288);
+            this.radioButtonGPX.Location = new System.Drawing.Point(5, 3);
             this.radioButtonGPX.Name = "radioButtonGPX";
-            this.radioButtonGPX.Size = new System.Drawing.Size(86, 20);
+            this.radioButtonGPX.Size = new System.Drawing.Size(56, 20);
             this.radioButtonGPX.TabIndex = 62;
             this.radioButtonGPX.Text = "GPX";
             // 
+            // chkAltitude
+            // 
+            this.chkAltitude.Location = new System.Drawing.Point(128, 274);
+            this.chkAltitude.Name = "chkAltitude";
+            this.chkAltitude.Size = new System.Drawing.Size(95, 20);
+            this.chkAltitude.TabIndex = 3;
+            this.chkAltitude.Text = "Log &altitude";
+            // 
             // groupBox5
             // 
-            this.groupBox5.Location = new System.Drawing.Point(3, 273);
+            this.groupBox5.Location = new System.Drawing.Point(3, 256);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(233, 72);
+            this.groupBox5.Size = new System.Drawing.Size(233, 80);
             this.groupBox5.TabIndex = 61;
             this.groupBox5.Title = "Format";
             // 
             // saveDialogButton
             // 
-            this.saveDialogButton.Location = new System.Drawing.Point(165, 233);
+            this.saveDialogButton.Location = new System.Drawing.Point(165, 213);
             this.saveDialogButton.Name = "saveDialogButton";
             this.saveDialogButton.Size = new System.Drawing.Size(31, 20);
             this.saveDialogButton.TabIndex = 57;
@@ -243,28 +286,28 @@
             // 
             // logLocationTextBox
             // 
-            this.logLocationTextBox.Location = new System.Drawing.Point(12, 232);
+            this.logLocationTextBox.Location = new System.Drawing.Point(12, 213);
             this.logLocationTextBox.Name = "logLocationTextBox";
             this.logLocationTextBox.Size = new System.Drawing.Size(150, 21);
             this.logLocationTextBox.TabIndex = 3;
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(107, 146);
+            this.label1.Location = new System.Drawing.Point(104, 135);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 20);
             this.label1.Text = "seconds";
             // 
             // NumericUpDownInterval
             // 
-            this.NumericUpDownInterval.Location = new System.Drawing.Point(30, 144);
+            this.NumericUpDownInterval.Location = new System.Drawing.Point(27, 133);
             this.NumericUpDownInterval.Maximum = new decimal(new int[] {
             50000,
             0,
             0,
             0});
             this.NumericUpDownInterval.Minimum = new decimal(new int[] {
-            60,
+            1,
             0,
             0,
             0});
@@ -280,14 +323,14 @@
             // ComboBoxCOMPorts
             // 
             this.ComboBoxCOMPorts.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.ComboBoxCOMPorts.Location = new System.Drawing.Point(61, 80);
+            this.ComboBoxCOMPorts.Location = new System.Drawing.Point(69, 76);
             this.ComboBoxCOMPorts.Name = "ComboBoxCOMPorts";
             this.ComboBoxCOMPorts.Size = new System.Drawing.Size(55, 22);
             this.ComboBoxCOMPorts.TabIndex = 50;
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(30, 82);
+            this.label4.Location = new System.Drawing.Point(27, 78);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(36, 20);
             this.label4.Text = "Read";
@@ -298,13 +341,13 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Location = new System.Drawing.Point(3, 60);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(234, 56);
+            this.groupBox2.Size = new System.Drawing.Size(234, 51);
             this.groupBox2.TabIndex = 48;
             this.groupBox2.Title = "Comm Port";
             // 
             // CheckBoxToFile
             // 
-            this.CheckBoxToFile.Location = new System.Drawing.Point(114, 206);
+            this.CheckBoxToFile.Location = new System.Drawing.Point(114, 193);
             this.CheckBoxToFile.Name = "CheckBoxToFile";
             this.CheckBoxToFile.Size = new System.Drawing.Size(71, 20);
             this.CheckBoxToFile.TabIndex = 32;
@@ -314,7 +357,7 @@
             // 
             this.CheckBoxToTextBox.Checked = true;
             this.CheckBoxToTextBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CheckBoxToTextBox.Location = new System.Drawing.Point(12, 206);
+            this.CheckBoxToTextBox.Location = new System.Drawing.Point(12, 193);
             this.CheckBoxToTextBox.Name = "CheckBoxToTextBox";
             this.CheckBoxToTextBox.Size = new System.Drawing.Size(99, 20);
             this.CheckBoxToTextBox.TabIndex = 31;
@@ -324,7 +367,7 @@
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.Location = new System.Drawing.Point(105, 25);
+            this.label5.Location = new System.Drawing.Point(108, 21);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(33, 20);
             this.label5.Text = "baud";
@@ -339,7 +382,7 @@
             this.ComboBaudRate.Items.Add("38400");
             this.ComboBaudRate.Items.Add("57600");
             this.ComboBaudRate.Items.Add("115200");
-            this.ComboBaudRate.Location = new System.Drawing.Point(24, 23);
+            this.ComboBaudRate.Location = new System.Drawing.Point(27, 19);
             this.ComboBaudRate.Name = "ComboBaudRate";
             this.ComboBaudRate.Size = new System.Drawing.Size(74, 22);
             this.ComboBaudRate.TabIndex = 21;
@@ -356,9 +399,9 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Location = new System.Drawing.Point(3, 122);
+            this.groupBox3.Location = new System.Drawing.Point(2, 117);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(234, 60);
+            this.groupBox3.Size = new System.Drawing.Size(234, 51);
             this.groupBox3.TabIndex = 52;
             this.groupBox3.Title = "Polling Rate";
             // 
@@ -366,9 +409,9 @@
             // 
             this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox4.Location = new System.Drawing.Point(3, 188);
+            this.groupBox4.Location = new System.Drawing.Point(3, 177);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(234, 79);
+            this.groupBox4.Size = new System.Drawing.Size(234, 70);
             this.groupBox4.TabIndex = 56;
             this.groupBox4.Title = "Logging Options";
             // 
@@ -413,6 +456,8 @@
             this.mainPanel.ResumeLayout(false);
             this.aboutPanel.ResumeLayout(false);
             this.settingsPanel.ResumeLayout(false);
+            this.panTRackLogType.ResumeLayout(false);
+            this.panFileFormat.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -459,6 +504,11 @@
         private System.Windows.Forms.RadioButton radioButtonKML;
         private System.Windows.Forms.RadioButton radioButtonGPX;
         private GroupBox groupBox5;
+        private System.Windows.Forms.CheckBox chkAltitude;
+        private System.Windows.Forms.Panel panFileFormat;
+        private System.Windows.Forms.Panel panTRackLogType;
+        private System.Windows.Forms.RadioButton optTrack;
+        private System.Windows.Forms.RadioButton optDistinct;
     }
 }
 
