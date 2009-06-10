@@ -117,215 +117,207 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ErrorIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\eventlogError.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="InfoIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\eventlogInfo.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="LineColor" xml:space="preserve">
-    <value>Line color</value>
+    <value>Barva čáry</value>
   </data>
   <data name="err_InvalidKmlPointNameFormat" xml:space="preserve">
-    <value>Given format for KML point name is invalid</value>
+    <value>Zadaný formát pro název KML bodu je neplatný</value>
   </data>
   <data name="err_InvalidKmlPointDescFormat" xml:space="preserve">
-    <value>Given format for KML point description is invalid</value>
+    <value>Zadaný formát pro popis KML bodu je neplatný</value>
   </data>
   <data name="err_InvalidLogFormat" xml:space="preserve">
-    <value>Given log format is invalid</value>
+    <value>Zadaný formát logu je neplatný</value>
   </data>
   <data name="format_KmlDescDefault" xml:space="preserve">
     <value>{0:yyyy-MM-ddTHH:mm:ssZ}</value>
   </data>
   <data name="format_TextLogDefault" xml:space="preserve">
-    <value>{4:H:mm:ss} {1},{2}, {3}</value>
+    <value>{4:H:mm:ss} {1};{2}; {3}</value>
   </data>
   <data name="PleaseWait" xml:space="preserve">
-    <value>please wait ...</value>
+    <value>prosím čekejte ...</value>
   </data>
   <data name="err_PathMustBeRooted" xml:space="preserve">
-    <value>Path must be rooted</value>
+    <value>Cesta musí být kořenovaná</value>
   </data>
   <data name="err_SelectFolderPlease" xml:space="preserve">
-    <value>Select folder, please.</value>
+    <value>Vyberze složku, prosím.</value>
   </data>
   <data name="err_PositionIsNull" xml:space="preserve">
-    <value>Position part is null.</value>
+    <value>Část pozice je null.</value>
   </data>
   <data name="GPSTrackaVersion" xml:space="preserve">
-    <value>GPSTracka Version</value>
+    <value>GPSTracka Verze</value>
   </data>
   <data name="PressStart" xml:space="preserve">
-    <value>Press Start</value>
+    <value>Klepněte na Start</value>
   </data>
   <data name="err_ErrorTitle" xml:space="preserve">
-    <value>Error:</value>
+    <value>Chyba:</value>
   </data>
   <data name="Opening" xml:space="preserve">
-    <value>Opening...</value>
+    <value>Otevírání ...</value>
   </data>
   <data name="Running" xml:space="preserve">
-    <value>Running...</value>
+    <value>Běh ...</value>
   </data>
   <data name="status_Running" xml:space="preserve">
-    <value>running...</value>
+    <value>běží...</value>
   </data>
   <data name="status_Openning" xml:space="preserve">
-    <value>openning...</value>
+    <value>otevírání...</value>
   </data>
   <data name="Stopped" xml:space="preserve">
-    <value>Stopped.</value>
+    <value>Zastaveno.</value>
   </data>
   <data name="Status_Stopped" xml:space="preserve">
-    <value>GPS stopped</value>
+    <value>GPS zastaveno</value>
   </data>
   <data name="Stopping" xml:space="preserve">
-    <value>Stopping...</value>
+    <value>Zastavování ...</value>
   </data>
   <data name="Status_Stopping" xml:space="preserve">
-    <value>GPS stopping</value>
+    <value>zastavování GPS</value>
   </data>
   <data name="err_NmeaCreateDir" xml:space="preserve">
-    <value>Cannot create directory for NMEA file {0}: {1}</value>
+    <value>Nemohu vytvořit složku pro logovací soubor NMEA {0}: {1}</value>
   </data>
   <data name="err_NmeaOpenFile" xml:space="preserve">
-    <value>Cannot open NMEA file {0}: {1}</value>
+    <value>Nemohu otevřít NMEA soubor {0}: {1}</value>
   </data>
   <data name="status_PositionReceived" xml:space="preserve">
-    <value>position received</value>
+    <value>pozice obdržena</value>
   </data>
   <data name="PointsTooNear" xml:space="preserve">
-    <value>Points too near {0:0}m</value>
+    <value>Body příliš blízko {0:0}m</value>
   </data>
   <data name="status_InvalidPosWait" xml:space="preserve">
-    <value>inv. pos. {0} - wait</value>
+    <value>nepl. poz. {0} - čekat</value>
   </data>
   <data name="status_InvalidPos" xml:space="preserve">
-    <value>inv. pos. {0}</value>
+    <value>nepl. poz. {0}</value>
   </data>
   <data name="ZeroKmH" xml:space="preserve">
     <value>0km/h</value>
   </data>
   <data name="err_WriteToFile" xml:space="preserve">
-    <value>Couldn't write location to file. Try changing locations.</value>
+    <value>Nemohu zapsat pozici do souboru. Zkuste změnit cestu.</value>
   </data>
   <data name="err_CreateDir" xml:space="preserve">
-    <value>Cannot create the directory specified.  Try another location.</value>
+    <value>Nemohu vytořit specifikovaný adresář. Zkuste jiný.</value>
   </data>
   <data name="err_ERROR" xml:space="preserve">
-    <value>ERROR</value>
+    <value>CHYBA</value>
   </data>
   <data name="ContinueInCurrentFile" xml:space="preserve">
-    <value>Do you want to continue in current file {0}?</value>
+    <value>POkračovat v aktuálním souboru {0}?</value>
   </data>
   <data name="WillBeginReading" xml:space="preserve">
-    <value>Will begin to read GPS data after {0} seconds.</value>
+    <value>GPS data se začnou načítat za {0} sekund.</value>
   </data>
   <data name="Starting" xml:space="preserve">
-    <value>starting ...</value>
+    <value>spouštění ...</value>
   </data>
   <data name="Stop" xml:space="preserve">
     <value>Stop</value>
   </data>
   <data name="Status_Stopped_simple" xml:space="preserve">
-    <value>stopped</value>
+    <value>zastaveno</value>
   </data>
   <data name="Start" xml:space="preserve">
     <value>Start</value>
   </data>
   <data name="ConfirmExit" xml:space="preserve">
-    <value>Do you really want to exit?
-GPS Logging will stop.</value>
+    <value>Přejete si skončit?
+GPS zápis bude zastaven.</value>
   </data>
   <data name="TrackSaved" xml:space="preserve">
-    <value>Current track is saved.</value>
+    <value>Aktuální trasa je uložena</value>
   </data>
   <data name="err_HelpNotAvailable" xml:space="preserve">
-    <value>Help file {0} is not availbale.
+    <value>Soubor nápovědy {0} je nedostupný.
 {1}</value>
   </data>
   <data name="Recommended" xml:space="preserve">
-    <value>Recommended:</value>
+    <value>Doporučeno:</value>
   </data>
   <data name="err_BadPath" xml:space="preserve">
-    <value>Please select a proper file path</value>
+    <value>Prosím, zvolte správnou cestu k souboru</value>
   </data>
   <data name="FormatTestInfo" xml:space="preserve">
-    <value>UTC now={0}, lon={1}, lat={2}, alt={3}, now={4}, el.unit={5}
-The result is:
+    <value>UTC teď={0}, d={1}, š={2}, {3}m n.m., teď={4}, výšk.jedn.={5}
+Výsledek je:
 </value>
   </data>
   <data name="ExapleOfFormatting" xml:space="preserve">
-    <value>Exaple of formatting</value>
+    <value>Ukázka formátování</value>
   </data>
   <data name="err_InvalidFormatString" xml:space="preserve">
-    <value>Error, the format string is invalid.
-</value>
+    <value>Chyba, formátovací řetězec je neplatný.</value>
   </data>
   <data name="err_ErrorTitleMsg" xml:space="preserve">
-    <value>Error</value>
+    <value>Chyba</value>
   </data>
   <data name="err_PowerPolicyNotifiyFailed" xml:space="preserve">
-    <value>Warning: Failed to set power policy for unattended mode. This may cause device to fall asleep and stop recording your track.</value>
+    <value>Warování: Nepodařilo se nastavit politiku energetické spotřeby pro režim bezobslužný režim, což může mít za následek, že pokud zařízení přejde do úsporného režimu (usne), trasa přestane být zaznamenávána.</value>
   </data>
   <data name="Latitude" xml:space="preserve">
-    <value>Latitude</value>
+    <value>Zem. šířka</value>
   </data>
   <data name="Longitude" xml:space="preserve">
-    <value>Longitude</value>
+    <value>Zem. délka</value>
   </data>
   <data name="Altitude" xml:space="preserve">
-    <value>Altitude</value>
+    <value>Nadm. výška</value>
   </data>
   <data name="Date" xml:space="preserve">
-    <value>Date</value>
+    <value>Datum</value>
   </data>
   <data name="Time" xml:space="preserve">
-    <value>Time</value>
+    <value>Čas</value>
   </data>
   <data name="DateTime" xml:space="preserve">
-    <value>Date + Time</value>
+    <value>Datum + Čas</value>
   </data>
   <data name="err_CSVSeparatorEmpty" xml:space="preserve">
-    <value>CSV separator cannot be empty.</value>
+    <value>Oděělovač CSV nesmí být prázdný.</value>
   </data>
   <data name="err_CSVQualifierEmpty" xml:space="preserve">
-    <value>CSV text qualifier cannot be empty.</value>
+    <value>Textový kvalifikátor CSV nesmý být prázdný.</value>
   </data>
   <data name="err_NoCSVFields" xml:space="preserve">
-    <value>Select at leas one CSV field.</value>
+    <value>Vyberte alespoň jedno CSV pole.</value>
   </data>
   <data name="err_InvalidCSVDateFormat" xml:space="preserve">
-    <value>Format of date in CSV file is invalid:</value>
+    <value>Formát data pro CSV soubor je neplatný:</value>
   </data>
   <data name="DateFormatTest" xml:space="preserve">
-    <value>Date format test</value>
+    <value>Test formátu data</value>
   </data>
   <data name="DateTestMessage" xml:space="preserve">
-    <value>Date = {0}
-Value = {1}</value>
+    <value>Datum = {0}
+Hodnota = {1}</value>
   </data>
   <data name="err_InvalidFormat" xml:space="preserve">
-    <value>The format is invalid.</value>
+    <value>Formát je neplatný.</value>
   </data>
   <data name="msg_LngChange" xml:space="preserve">
-    <value>In order change in language to take effect, you must restart GPSTracka.</value>
+    <value>Aby se změna jazyka projevila, je potřeba GPSTRacku restartovat.</value>
   </data>
   <data name="COMPort" xml:space="preserve">
-    <value>Comm port</value>
+    <value>COM port</value>
   </data>
   <data name="Format" xml:space="preserve">
-    <value>Format</value>
+    <value>Formát</value>
   </data>
   <data name="LoggingOptions" xml:space="preserve">
-    <value>Logging options</value>
+    <value>Volby záznamu</value>
   </data>
   <data name="PollingRate" xml:space="preserve">
-    <value>Polling rate</value>
+    <value>Rychlost záznamu</value>
   </data>
   <data name="Default" xml:space="preserve">
-    <value>default</value>
+    <value>výchozí</value>
   </data>
 </root>

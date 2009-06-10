@@ -1,0 +1,458 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
+	<head>
+		<title>GPSTracka nápověda</title>
+		<style type="text/css">
+		    h1,h2,h3,h4,h5,h6,h7{ text-align:center; font-family:Sans-Serif; margin-bottom:0;} 
+		    p.hrefs{margin-top:0;text-align:center;font-size:small;}   
+		    dt{font-weight:bold;}
+		    .style1 {
+                direction: ltr;
+            }
+		</style>
+	</head>
+	<body>
+        <h1>GPSTracka nápověda</h1>	
+        <p class="hrefs"><a href="#MainScreen">Hlavní obrazovka</a> | <a href="#Config">Nastavení</a> | <a href="#AdvancedConfig">Pokročilé nastavení</a></p>
+        <div id="MainScreen">
+            <h2>Hlavní obrazovka</h2>
+            <p class="hrefs"><a href="#MainScreen">Hlavní obrazovka</a> | <a href="#Config">Nastavení</a> | <a href="#AdvancedConfig">Pokročilé nastavení</a></p>
+            <dl>
+                <dt>Podrobně</dt>
+                <dd>Někdy se stává, že GPS logování nepracuje (v budově, ve vlaku, v nové zemi, z důvodů invaze mimozemšťanů atp.). Pokud zvolítepodrobný výpis, v textovém poli se začnou zobrazovat data NMEA přímo z GPS přijímače tak, jak jsou přijímána. Pokud jím rozumíte - dobré, pokud ne - vypadají dostatečně hustě a komplikovaně, abyste jimy mohli šokovat nezainteresované přátele. Jinak hledáte především řetězce GPGGA (pozice) a GPGSV (viditelné satelity). Pokud jim opravdu chcete rozumět, přečtěte si <a href="http://home.mira.net/~gnb/gps/nmea.html">informace o větách NMEA</a>. Při prvním spuštění aplikace také doporučuji zjisti jaký COM port a rychlost je potřeba nastavit pro váš GPS přijímač.</dd>
+                <dd>Poznámka: Podrobný výpis není k dispozici při použití Windows GPS meziovladače.</dd>
+                <dt>Vyčistit</dt>
+                <dd>Vyprázdní textbox.</dd>
+                <dt>Nastavení</dt>
+                <dd>Otevře okno <a href="#Config">nastavení</a>, kde je možnos určit COM port, rychlost nebo složku pro ukládání logů.</dd>
+                <dt>Konec</dt>
+                <dd>Ukončí aplikaci. Při použití při aktivním logování, bude zobrazen dotaz, jestli to myslíte vážně. Při logování do souboru se vaše data nikdy neztratí z důvodu ukončení aplikace - ať již korektního nebo z důvodu vypnutí zařízení či pádu aplikace.</dd>
+                <dt>Satelity</dt>
+                <dd>
+                    Zobrazí informace o satelitech GPS, síle signálu, jajich dostupnosti a umístění na obloze. Informace o satelitech se aktualizují jen pokud GPS zrovna běží.</dd>
+                <dt>Start</dt>
+                <dd>Jak vás asi napadne, spustí logování. Při podrobném logování zapnutém v menu uvidíte v textovém poli všechna GPS data. Jinak se ve specifikovaném intervalu budou načítat data o poloze.</dd>
+                <dd>Pokud jste nedávno zaznamenali nějaká data, zastavily jste logování a pak jste zase zmáčkli start, budete dotázáni, zda chcete pokračovat v logování do stejného souboru. Dotaz není zobrazen, pokud jste restartovali aplikaci nebo vlezli do nastavení (je založen nový soubor).</dd>
+                <dt>Stop</dt>
+                <dd>Tlačítko Start ze se začátkem logování změní na Stop. Pak jej můžete použít k ukončení záznamu.</dd>
+            </dl>
+        </div>
+        <div id="Config">
+            <h2>Nastavení</h2>
+            <p class="hrefs"><a href="#MainScreen">Hlavní obrazovka</a> | <a href="#Config">Nastavení</a> | <a href="#AdvancedConfig">Pokročilé nastavení</a></p>
+            <dl>
+                <dt>COM port</dt>
+                <dd>Nastavení odkud brát GPS data</dd>
+                <dd>
+                    <dl>
+                        <dt>Použít ovladač Windows</dt>
+                        <dd>Zaškrtněta aby se použil <a href="http://msdn.microsoft.com/en-us/library/bb202086.aspx">Windows Intermediate GPS driver</a> namísto čtení dat přímo z COM portu.</dd>
+                        <dd>Použitím Windowsího ovladače můžete vyřešit některé problémy s GPS.</dd>
+                        <dd>Použití COM portu dovoluje používat i zařízení, které nené s Windowsím ovladačem nakonfigurováno, nebo umožňuje použít několik GPS&nbsp;ovladačů zároveň.</dd>
+                        <dd>Také lze nakonfigurovat COM port tak, že čte neparzovaná data z Windows GPS ovladače.</dd>
+                        <dd>Použití Windowsího ovladače nebo čtení GPS dat z virtuálního COM portu vytvořeného Windowsím ovladačem umožňuje běh několika GPS aplikací najednou, což není možné při čtení GPS dat přímo z COM portu, ke kterému je přijímač připojen.</dd>
+                        <dd>Při použití Windowsího ovladače, není možno získat NEMEA data. Nelze vytvářet NMEA logy a nelze použít podrobný mód.</dd>
+                        <dd>Microsoftí GPS&nbsp;ovladač se konfuguruje v Start | Nastavení | Systém | Externí GPS.</dd>
+                        <dt>Číst</dt>
+                        <dd>Tento rozevírací seznam ukazuje dostupné COM porty, pro tahání GPS dat. Nastavení se může lišit přístroj od přístroje. Já jsem měl COM1. Port je nejlépe zjisti metodou pokus-omyl za použití podrobného režimu.</dd>
+                        <dd>Pokud je potřeba použít jiný port, který není v seznamu, lze jej napsat. Poznámka: Někgy se port může jmenovat GPC místo COM.</dd>
+                        <dd>V případě, že máte zařízení, které podporuje <a href="http://msdn.microsoft.com/en-us/library/bb202086.aspx">Microsft GPS Intermediate Driver</a> (asi ano; je poidporován na Windows Embedded CE 6.0 a novějších a Windows Mobile 5.0 a novějších), výstupní port ovladače (jak je nastaven v registrech) je zobrazen vpravo od combo boxu jako doporučený. Měly byste jej použít, protož umožňuje běh více GPS aplikací najednou. Například je možno při řízení auta použít navigační software (jako iGO) pro navigaci GPSTracku pro logování.</dd>
+                        <dt>Rychlost</dt>
+                        <dd style="direction: ltr">Rychlost datového přenosu. Různé GPS&nbsp;přijímače používají různé rychlosti, takže je potřeba trošku experimentovat Já používám 4800.</dd>
+                    </dl>
+                </dd>
+                <dt>Rychlost záznamu</dt>
+                <dd>Jak často jsou zaznamenávána data do textového pole nebo do souboru. Většinou používám 300 sekund.</dd>
+                <dd>Kratší vyčítací interval má za následek přesnější záznam. Na druhou stranu kratší interval znamená větší spotřebu energie. Nastavení závisí na tom, jak rychle se chcete pohybovat. Pro dosažení stejné přesnosti je potřeba nastavit kratší interval při jízdě autem než při chůzi.</dd>
+                <dt>Volby záznamu - Do textboxu</dt>
+                <dd>Nejlepší volba jak mít kontrolu nad tím, jestli GPSTracka funguje je ponechat toto zaškrtnuté, takže se v textboxu zobrazují logované hodnoty. Pokud není zaškrtnuto nemáte kontrolu nad tím, jestli logování funguje nebo ne.</dd>
+                <dt>Volby záznamu - Do souboru</dt>
+                <dd>Pro záznam do souboru zaškrtněte toto políčko a vyberte složku kliknutím na tlačítko&nbsp; "...".  Najlépe uděláte, když si v dokumentech nebo na paměťové kartě vytvoříte sožku "GPSLogy" a pak zde určíte cestu k ní.</dd>
+                <dd>Pokud není zaškrtnuto, nemáte žádný log pro budoucí použití! GPS logy jsou ukládány v soubore pojmenovaných podle data a času, kdy logování začalo.</dd>
+                <dt>Formát GPX/KML</dt>
+                <dd>Někdo preferuje GPX (GPS XML formát), někdo KML (Google Earth XML formát). Pro jednodušší soubor zvolte GPX pro použití s Gogle Earth zvolte KML (Google Earth může načíst i GPX).</dd>
+                <dd>CSV formát je prostý textový formát, kde datum, zeměpisná délka a šířka a  nadmořská výška jsou zapsány oddlené čárkami. Detailně jej lze nakonfigurovat v pokročilé konfiguraci.</dd>
+                <dt>Nadm. výška</dt>
+                <dd>Zaškrtněte, pokud chcete zaznamenávat informace o nadmořské výšce. Pokud není zaškrtnuto trasa / body jsou zaznamenávány na zemi.</dd>
+                <dd>
+                    Poznámka: Nadmořská výška GPS se liší od klasické nadmořské výšky jakou můžete najít v mapách nabo na Google Earth. To může způsobit, že se cesta zobrazí ve vzduchu nebo pod zemí. V Google Earth je jednoduše možné donutit cestu aby ignorovala výškové hodnoty (u bodů to tak jednoduché není, museli byste změnit každý zvlášť).
+                    Rozdíl mezi GPS nadmořskou výškou a skutešnou nadmořskou výškou je dán způsobm jakým je nadmořská výška měřena tradičně a v GPS. GPS používá jakýsi unifikovaný elipsoid (WGS84), zatímco tradiční měření se vztahuje k hladině nějakého lokálního moře, jehož výška se může lišit, podle toho, které moře bylo použito. Tato výška je obvykle konstantní v rámci jedné mapy a oblasti a dobrá mapa obsahuje informaci o tomto rozdílu - pak je možno v pokročilých nastaveních zavést korekci.
+                    Také mějte na paměti, že určení nadmořské výšky pomocí GPS je asi 1,5× méně přesné než určení zeměpisné šířky a délky. Pokud to váš přijímač podporuje, je možno v pokročilých nastaveních při použití Windowsího ovladače nastavit, získávání skutečné nadmořské výšky místo GPSkové.</dd>
+                <dt>Jen body cesta</dt>
+                <dd>Jen body zaznamená do KML/GPX log souboru jen oddělené body zatímco cesta zaznamená i spojnice mezi nimi. Ignorováno pro CSV.</dd>
+                <dd>Poznámka: DO KML se vždy zapisují i body, protže k KML k bodům cesty neumožňuje popisky. V Google Earth je možno jednoduše zapnout/vypnout zobrazení všech bodů, protže jsou v jedné složce.</dd>
+                <dt>Uložit</dt>
+                <dd>Uloží nastavení do konfiguračního souboru.</dd>
+                <dt>Více</dt>
+                <dd>Zobrazí dialog <a href="#AdvancedConfig">Pokročilá nastavení</a>, kde je možno precizně poladit nebo úplně dojebat ;-) aplikaci.</dd>
+                <dt>Zpět</dt>
+                <dd>Resetuje nastavení do jejich předchozího stavu a vrátí se do hlavního okna.</dd>
+            </dl>
+            <p>Poznámka: Prokud z nějakého důvodu potřebujete úplně resetovat veškerá nastavení aplikace, jděte do složky aplikace a vymažte soubor GPSTRacka.exe.config.</p>
+        </div>
+        <div id="AdvancedConfig">
+            <h2>Pokročilá nastavení</h2>
+            <p class="hrefs"><a href="#MainScreen">Hlavní obrazovka</a> | <a href="#Config">Nastavení</a> | <a href="#AdvancedConfig">Pokročilé nastavení</a>
+            <br />
+            <a href="#AdvancedGeneral">Obecné</a> | <a href="#AdvancedDisplay">Zobrazení</a> | <a href="#AdvancedKML">KML</a> | <a href="#Formatting">Formátování</a> | <a href="#WinGPS">Win GPS</a> | <a href="#Diagnostic">Diagnostika</a> | <a href="#CSV">CSV</a></p>
+            <div id="AdvancedGeneral">
+                <h3>Obecné</h3>
+                <p class="hrefs"><a href="#AdvancedGeneral">Obecné</a> | <a href="#AdvancedDisplay">Zobrazení</a> | <a href="#AdvancedKML">KML</a> | <a href="#Formatting">Formátování</a> | <a href="#WinGPS">Win GPS</a> | <a href="#Diagnostic">Diagnostika</a> | <a href="#CSV">CSV</a></p>
+                <dl>
+                <dt>Čas Systém / GPS</dt>
+                <dd>Možné jsou dva zdroje časových údajů - GPS čas poskytovaný satelity a čas poskytovaný vaším zařízením (nastavený v ovládacích panelech). GPS čas je vždy přesný. GPS poskytuje čas v UTC (časové pásmo 0), ale aplikace jej převádí do okálního čas podle časové zóny nastavené v ovládacích panelech.</dd>
+                <dt>Korekce výšky</dt>
+                <dd>Nadmořská výška GPS se většinou ličí od nadmořské výšky, uváděné v mapách nebo na Google Earth. To je způsobeno tím, že GPS používá jiný způsob měření - WGS84 elipsoid. Rozdíl je většinou konstantní v jedné mapě pro určitou oblat a v dobré mapě je tento rozdíl uveden, takže je možno jej sem zadat a zavést korekci. Špatná nebo žádná korekce může způsobit cesty vykreslené ve vzduchu nebo pod zemí. V nastaveních je také možno logování nadmořské výšky vypnout úplně - pro jachting asi není moc důležitá :-).</dd>
+                <dt>Spustit okamžitě</dt>
+                <dd>Defaultně GPSTRacka nejprve čeké po dobu zadanou jako rychlost záznamu před zaznamenáním prvního bodu. Zaškrtnutím donutíte aplikaci zaznamenat první bod hned jak stisknete Start.</dd>
+                <dt>Min. vzdálenost</dt>
+                <dd>Když se pohybujete, GPS&nbsp;záznam může být velice přesný, ale když se zastavíte zjistíte, že se v logu objevilo množství bodů náhodně poházených okolo vaší aktuální pozice. Můžete GPSTracce zakázat logovat body, které jsou příliš blízko k poslední zaznamenané pozici. Tím zabráníte více záznamům na jednom místě při dočasném zastavení. Zde se nastavuje minimální vzdálenost dvou sousedních bodů, které půjdou do logu. S nastavením je potřeba trochu experimentovat. Správná hodnota záleží na chování GPS přijímače, rychlosti vašeho pohybu a přeswnosti záznamu, jako žádáte.The right number depends on behavior of your GPS receiver, how fast you are moving and which recisin of track log you want. 5 až 10 metrů může být dobrá volba.</dd>
+                <dt>Pauza po X nepl. pozicích</dt>
+                <dd>Určuje počet nepletných informací o pozici obdržených od GPS přijímače po kolika je GPS zařízení zavřeno a je čekáno po dobu rychlosti loování před dalším pokusem o získání GPS dat.</dd>
+                <dd>Ignorováno po startu logování dokud není zalogována první pozice</dd>
+                <dd style="direction: ltr">
+                    Protože udržování otevřeného GPS zařízení žere baterku, je užitečné jej zastavit, pokud neposkytuje použitelná data (třeba když jste v tunelu).
+                    Na druhou stranu, nastavení této hodnoty příliš nízko může způsobit, že GPS zařízení nikdy už nenačte další data po opuštění tunelu, protože aplikace jej prostě zavře, než najde satelity.
+                </dd>
+                <dd>0 - nezapauzovat nikdy.</dd>
+                <dt>Zapnutá zařízení</dt>
+                <dd>Čárkou oddělený seznam názvů zařízení, která budou udržována vchodu při logování.</dd>
+                <dd>Zapisujte zařízení jako GPS0 nebo GPS0:. Dvojtečkou ukončené názvy znamenají, že zařízení bude udržováno vzhůru jen během GPS cyklu, jinak bude udržováno po celou dobu logování.</dd>
+                <dd>Neznámá zařízení jsou přeskočena.</dd>
+                <dd>Pokud nepoužíváte Windowsí GPS ovladač, příslušný COM je udržován pod dobu logování zapnutý automaticky.</dd>
+            </dl>
+            </div>
+            <div id="AdvancedDisplay">
+                <h3>Zobrazení</h3>
+                <p class="hrefs"><a href="#AdvancedGeneral">Obecné</a> | <a href="#AdvancedDisplay">Zobrazení</a> | <a href="#AdvancedKML">KML</a> | <a href="#Formatting">Formátování</a> | <a href="#WinGPS">Win GPS</a> | <a href="#Diagnostic">Diagnostika</a> | <a href="#CSV">CSV</a></p>
+                <dl>
+                <dt>Statusbar</dt>
+                <dd>Zaškrtněte pro zobrazení status baru v hlavním okně. Ten zobrazuje aktuální stav GPS operací, odpočet k dalšímu logu a těžce by-voko rychlost.</dd>
+                <dt>Vyčistit log každých X&nbsp;řádek</dt>
+                <dd>Při logování do textboxu (doporučeno), logovacím intervalu 1 sekunda, při cestě trvající 20 hodin dostanete 72 000 řádek. To seřere nějakou paměť a orientaci v textbou to také neusnadní. Nastavení této hodnoty na nenulové číslo přinutí textové pole, aby se vyčistilo, kdykoliv počet řádek v něm dosáhne zadaného čísla nebo více. 0 znamená nečistit nikdy. Toto nastavení nemá vliv na GPX/KML soubor.</dd>
+                <dt>Formát logu</dt>
+                <dd>Formát infromace zapisované do textového pole na hlavní obrazovce.</dd>
+                <dd><a href="#Formatting">Pro detaily viz níže</a>.</dd>
+                <dd>Aktuálně zapsaný formát můžete otestovat tlačítkem ?.</dd>
+                <dt>Infopanel</dt>
+                <dd>Zaškrtněte pro zobrazení informačního panelu s různými statistickými informacemi v hlavním okně.</dd>
+                    <dt>Jedn. rychlosti</dt>
+                    <dd>Jednotka používaná pro zobrazení údajů o rychlosti.</dd>
+                    <dt>Jedn. délky</dt>
+                    <dd>Jendotka používaná pro zobrazení údajů o vzdálenosti.</dd>
+                    <dt>Jedn. výšky</dt>
+                    <dd>Jendotka používaná pro zobrazení údajů o nadmořské výšce.</dd>
+                    <dd>Taktéž ovlivňuje hodnoty pro formátování (logu, KML). Neovlivňuje hodnoty zapisované do log souborů.</dd>
+                </dl>
+            </div>
+            <div id="AdvancedKML">
+                <h3>KML</h3>
+                <p class="hrefs"><a href="#AdvancedGeneral">Obecné</a> | <a href="#AdvancedDisplay">Zobrazení</a> | <a href="#AdvancedKML">KML</a> | <a href="#Formatting">Formátování</a> | <a href="#WinGPS">Win GPS</a> | <a href="#Diagnostic">Diagnostika</a> | <a href="#CSV">CSV</a></p>
+                <p>Zde se nastavuje generování souborů typu KML (Google Earh).</p>
+                <dl>
+                <dt>Formát jména</dt>
+                <dd>Formát názvu každého bodu v KML.</dd>
+                <dd><a href="#Formatting">Pro detaily viz níže</a>.</dd>
+                <dd>Aktuálně zadaný formát, lze otestovat tlačítkrm ?.</dd>
+                <dt>Formát popisu</dt>
+                <dd>Formát popisu každého bodu v KML.</dd>
+                <dd><a href="#Formatting">Pro detaily viz níže</a>.</dd>
+                <dd>Aktuálně zadaný formát, lze otestovat tlačítkrm ?.</dd>
+                <dt>Barva čáry</dt>
+                <dd>Barva čáry v KML souboru. Barva může být nastavena zadáním R (červená), G (zelená) a B (modrá) hodnot nebo kliknutím na jednu z předdefinovaných barev na levé straně. Aktuálně vybraná barva je zobrazena na pravé straně.</dd>
+            </dl>
+            </div>
+            <div id="Formatting">
+                <h3>Formátování</h3>
+                <p class="hrefs"><a href="#AdvancedGeneral">Obecné</a> | <a href="#AdvancedDisplay">Zobrazení</a> | <a href="#AdvancedKML">KML</a> | <a href="#Formatting">Formátování</a> | <a href="#WinGPS">Win GPS</a> | <a href="#Diagnostic">Diagnostika</a> | <a href="#CSV">CSV</a></p>
+                <p>
+                    Formátování je poněkud zapeklitý proces používaný .NET programátory ke zobrazení datumů, časů, čísel a dalších hodnot v různých formátech. Speciálně formátování řetězců nahradí každý výskyt {x} řetězcovou reprezentací odpovídajícího objektu, kde x je desítkové číslo - 0-based index objektu. Navíc {x} může být také ve formátu {x,len}, {x:format} nebo {x,len:format}.
+                </p>
+                <dl>
+                    <dt>x</dt>
+                    <dd class="style1">0-based index objektu pžedaného aplikací k formátování. Konkréní hodnota záleží na aplikaci.</dd>
+                    <dt>len</dt>
+                    <dd>
+                        Číslo - minimální délka řetězcové reprezentace objektu.
+                        Pokud je aktuální řetězcová reprezentace objektu kratší než zadané číslo je doplněna mezerami na danou velikost. Pokud je číslo kladné, je doplněna zleva, pokud záporné zprava.
+                    </dd>
+                    <dt>format</dt>
+                    <dd>Nejdůležitější a nejzapeklitější parametr. Definuje jak je hodnota formátována. Při vynechání se použije výchozí formátování (záleží na typu objektu, hodnotě a nastavení v ovládacích panelech).</dd>
+                    <dd>Platné hodnoty formátů záleží na objektu, který je předáván do formátování.</dd>
+                    <dd>Základně rozlišujeme dva typy formátování - předdefinované (jednoznakové) a uživatelské. Pro kompletí přehlet vizte <a href="http://dzonny.cz/Portals/0/DOCs/Formatting.pdf">.NET formatting guide</a>.</dd>
+                </dl>
+                <table>
+                <caption>Příklady formátovacích řetězců:</caption>
+                    <thead>
+                        <tr>
+                            <th>Datový typ</th><th>Formátovací řetězec</th><th>Popis</th><th>Příklad hodnoty</th><th>Příklad výsledku<br /><span style="font-weight:normal">(v kultuře en-US)</span></th>
+                            <th>Příklad výsledku<br /><span style="font-weight:normal">(v kultuře cs-CZ)</span></th>
+                            <th>Příklad výsledku<br /><span style="font-weight:normal">(v kultuře ka-GE)</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="10">Číslo</td><td rowspan="2">0.00</td><td rowspan="2">Číslo s dvěma desetinnými místy</td><td>14,3</td><td>14.30</td>
+                            <td>14,30</td>
+                            <td>14,30</td>
+                        </tr>
+                        <tr>
+                            <td>19,989</td><td>18.99</td>
+                            <td>18,99</td>
+                            <td>18,99</td>
+                        </tr>
+                        <tr>
+                            <td>0</td><td>Číslo bez desetinných míst</td><td>15,6</td><td>16</td>
+                            <td>16</td>
+                            <td>16</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">000.0</td><td rowspan="2">Číslo se třemi místy vlevo a jedním desetinným místem</td><td>1</td><td>001.0</td>
+                            <td>001,0</td>
+                            <td>001,0</td>
+                        </tr>
+                        <tr>
+                            <td>14987</td><td>14987.0</td>
+                            <td>14987,0</td>
+                            <td>14987,0</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3">###,###,#00.0</td><td rowspan="3">Číslo se třemi oddělenými skupinami číslisc a nejméně dvěmy číslicemi vlevo a jedním desetinným místem</td><td>0,5</td><td>00.5</td>
+                            <td>00,5</td>
+                            <td>00,5</td>
+                        </tr>
+                        <tr>
+                            <td>14509</td><td>14,509.0</td>
+                            <td>14 509,0</td>
+                            <td>14&nbsp;509,0</td>
+                        </tr>
+                        <tr>
+                            <td>2147559008.21</td><td>2,147,559,008.2</td>
+                            <td>2 147 559 008,2</td>
+                            <td>2&nbsp;147&nbsp;559&nbsp;008,2</td>
+                        </tr>
+                        <tr>
+                            <td>0.00%</td><td>Procenta se dvěma desetinými místy</td><td>1,22877</td><td>122.88%</td>
+                            <td>122,88%</td>
+                            <td>122,88%</td>
+                        </tr>
+                        <tr>
+                            <td>e</td><td>Vědecká notace</td><td>201477000</td><td>2.014770e+008</td>
+                            <td>2,014770e+008</td>
+                            <td>2,014770e+008</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="12">Datum a čas</td><td>d</td><td>Krátné datum</td><td>3.11 2009 16:01:52</td>
+                            <td>
+                                11/3/2009</td>
+                            <td>
+                                3.11.2009</td>
+                            <td>
+                                03.11.2009</td>
+                        </tr>
+                        <tr>
+                            <td>D</td><td>Dlouhé datum</td><td>3.11 2009 16:01:52</td>
+                            <td>
+                                Tuesday, November 03, 2009</td>
+                            <td>
+                                3. listopadu 2009</td>
+                            <td>
+                                2009 წლის 03 11, სამშაბათი</td>
+                        </tr>
+                        <tr>
+                            <td>t</td><td>Krátký čas</td><td>3.11 2009 16:01:52</td>
+                            <td>
+                                4:01 PM</td>
+                            <td>
+                                16:01</td>
+                            <td>
+                                16:01</td>
+                        </tr>
+                        <tr>
+                            <td>T</td><td>Dlouhý čas</td><td>3.11 2009 16:01:52</td>
+                            <td>
+                                4:01:52 PM</td>
+                            <td>
+                                16:01:52</td>
+                            <td>
+                                16:01:52</td>
+                        </tr>
+                        <tr>
+                            <td>f</td><td>Plné s krátkým časem</td><td>3.11 2009 16:01:52</td>
+                            <td>
+                                Tuesday, November 03, 2009 4:01 PM</td>
+                            <td>
+                                3. listopadu 2009 16:01</td>
+                            <td>
+                                2009 წლის 03 11, სამშაბათი 16:01</td>
+                        </tr>
+                        <tr>
+                            <td>F</td><td>Plné s dlouhým časem</td><td>3.11 2009 16:01:52</td>
+                            <td>
+                                Tuesday, November 03, 2009 4:01:52 PM</td>
+                            <td>
+                                3. listopadu 2009 16:01:52</td>
+                            <td>
+                                2009 წლის 03 11, სამშაბათი 16:01:52</td>
+                        </tr>
+                        <tr>
+                            <td>g</td><td>Obecné (krátký čas)</td><td>3.11 2009 16:01:52</td>
+                            <td>
+                                11/3/2009 4:01 PM</td>
+                            <td>
+                                3.11.2009 16:01</td>
+                            <td>
+                                03.11.2009 16:01</td>
+                        </tr>
+                        <tr>
+                            <td>G</td><td>Obecné (dlouhý čas)</td><td>3.11 2009 16:01:52</td>
+                            <td>
+                                11/3/2009 4:01:52 PM</td>
+                            <td>
+                                3.11.2009 16:01:52</td>
+                            <td>
+                                03.11.2009 16:01:52</td>
+                        </tr>
+                        <tr>
+                            <td>M</td><td>Den v měsíci</td><td>3.11 2009 16:01:52</td>
+                            <td>
+                                November 03</td>
+                            <td>
+                                03 listopadu</td>
+                            <td>
+                                03 11</td>
+                        </tr>
+                        <tr>
+                            <td>s</td><td>Invariantní podle ISO 8601</td><td>3.11 2009 16:01:52</td>
+                            <td>
+                                2009-11-03T16:01:52</td>
+                            <td>
+                                2009-11-03T16:01:52</td>
+                            <td>
+                                2009-11-03T16:01:52</td>
+                        </tr>
+                        <tr>
+                            <td>d.M.yyyy H:mm:ss</td><td>Den. měsíc. rok hodiny(24):minuty:sekundy</td><td>3.11 2009 16:01:52</td>
+                            <td>
+                                3.11.2009 16:01:52</td>
+                            <td>
+                                3.11.2009 16:01:52</td>
+                            <td>
+                                3.11.2009 16:01:52</td>
+                        </tr>
+                        <tr>
+                            <td>ddd d MMM \&#39;yy h:mm:ss tt zzz</td><td>&nbsp;Den v týdnu, den v měsíci, název měsíce, krátký rok, hodiny:minuty:sekundy dopoledne/odpoledne časová zóna</td><td>3.11 2009 16:01:52</td>
+                            <td>
+                                Tue 3 Nov &#39;09 4:01:52 PM +01:00</td>
+                            <td>
+                                út 3 XI &#39;09 4:01:52 odp. +01:00</td>
+                            <td>
+                                სამშაბათი 3 ნოემ &#39;09 4:01:52 +01:00</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Pro názvy a popisy KML bodů a pro formátování logu GPSTRacka poskytuje následující hodnoty:</p>
+                <dl>
+                    <dt>{0}</dt>
+                    <dd>Datum a čas UTC</dd>
+                    <dt>{1}</dt>
+                    <dd>Zeměpisná délka (kladná provýchodní, zápodná pro západní)</dd>
+                    <dt>{2}</dt>
+                    <dd>Zeměpisná šířka (kladná pro severní, záporná pro jižní)</dd>
+                    <dt>{3}</dt>
+                    <dd>Nadmořská výška (pokud měřena, jinak 0) v metrech (viz poznámky k nadmořské výšce výše)</dd>
+                    <dt>{4}</dt>
+                    <dd class="style1">Lokální datum a čas (podle časové zóny nastavené v ovládacích panelech).</dd>
+                    <dt>{5}</dt>
+                    <dd>
+                        Zkratka jednot zvolené pro nadmořskou výšku. Jen text, neaplikujte žádné formátování za dvojtečkou.</dd>
+                </dl>
+                <p>Poznámka: Pokud časová zón anení v ovládacích panelech nastavena správně tak:</p>
+                <ul>
+                    <li>Při použití GPS času je lokální čas určen nesprávně.</li>
+                    <li>Při použití systémového času z Windows je UTC čas spočten nesprávně.</li>
+                </ul>
+                <p>Při plánování výletu přes časové zóny raději používejte GPS čas a logujte jej jako UTC. - Pokud nemáte tak cyhtré zařízení, že přepne časovou zónu samo, když překročíte její hranici :-).</p>
+            </div>
+            <div id="WinGPS">
+                <h3>Win GPS</h3>
+                <p class="hrefs"><a href="#AdvancedGeneral">Obecné</a> | <a href="#AdvancedDisplay">Zobrazení</a> | <a href="#AdvancedKML">KML</a> | <a href="#Formatting">Formátování</a> | <a href="#WinGPS">Win GPS</a> | <a href="#Diagnostic">Diagnostika</a> | <a href="#CSV">CSV</a></p>
+                <p>Poskytuje nastavení spojená jen s skytuje nastavení spojená jen s <a href="http://msdn.microsoft.com/en-us/library/bb202086.aspx">Microsft Windows Intermediate GPS Driverem</a>.</p>
+                <dl>
+                    <dt>Použít výšku od hladiny moře</dt>
+                    <dd>Používat nadnořskou výšku měřenou od hladiny moře (normální) namísto GPSkové měřené od elipsoidu.</dd>
+                    <dd style="direction: ltr">
+                        GPS systém normálně poskytuje elevaci měřenou od elipsoidu WGS84 namísto od skutečné hladiny moře, jak je používána v mapách. Windowsí driver může také poskytovat informaci o skutečné nadmořsné výšce. Pokud po zaškrtnutí tohoto políčka nedostáváte informaci o nadmořské výšce, zas jej odškrtněte.
+                    </dd>
+                </dl>
+            </div>
+            <div id="Diagnostic">
+                <h3>Diagnostika</h3>
+                <p class="hrefs"><a href="#AdvancedGeneral">Obecné</a> | <a href="#AdvancedDisplay">Zobrazení</a> | <a href="#AdvancedKML">KML</a> | <a href="#Formatting">Formátování</a> | <a href="#WinGPS">Win GPS</a> | <a href="#Diagnostic">Diagnostika</a> | <a href="#CSV">CSV</a></p>
+                <dl>
+                    <dt>NMEA log</dt>
+                    <dd>Zaškrtněte pokud chcete ve složce s logy vytvoři navíc i soubor obsahující neparzovaná GPS NMEA data. Může se hodit pro diagnostiku. Obsahuje téměř stejná data, jaká jsou do textového pole v podrobném režimu. (Pokud je záznam příliš rychlý, textové pole některá data vynechá, soubor obsahuje všechna).</dd>
+                    <dd>Poznámka: Soubor může snadno nabýt velkých rozměrů.</dd>
+                    <dd>Poznámka: NMEA soubor je vždy pojmenován za použití systémového času, protože GPS čas nemusí být k dispozici v době jeho vytváření.</dd>
+                    <dd>Poznámka: Soubor nelze zaznamenat, když je používán Windows Intermediate GPS driver.</dd>
+                    <dt>Píp každých X s</dt>
+                    <dd>Zajistí, aby zařízení pípnulo každých X sekund. 0 = nepípat.</dd>
+                    <dd>Pípání nefunguje, když je zařízení v úsporném režimu.</dd>
+                    <dd>Kromě pípání se do status baru vypisuje počet pípnutí, který se zvyšuje i v úsporném režimu.</dd>
+                </dl>
+            </div>
+            <div id="CSV">
+                <h3>CSV</h3>
+                <p class="hrefs">
+                    <a href="#AdvancedGeneral">Obecné</a> | <a href="#AdvancedDisplay">Zobrazení</a> | <a href="#AdvancedKML">KML</a> | <a href="#Formatting">Formátování</a> | <a href="#WinGPS">Win GPS</a> | <a href="#Diagnostic">Diagnostika</a> | <a href="#CSV">CSV</a></p>
+                <p>Tato záložka kontroluje nastavení generování souborů ve formátu CSV.</p>
+                <dl>
+                    <dt>Oddělovač</dt>
+                    <dd>Znak poiužitý jako oddělovač CSV polí. Výchozí je čárka (,); často se používá středník (;) nebo pipa (|).</dd>
+                    <dt>TAB</dt>
+                    <dd>Nastaví ddělovač na znak tabulátoru.</dd>
+                    <dt>Text. kvalif.</dt>
+                    <dd>Textový kvalifikátor - text použitý k obklopení CSV hodnot. Používá se dvojitá (") nebo jdnoduchá (') uvozovka.</dd>
+                    <dd>Ze seznamu vyberte, kdy má být kvalifikátor použit. Vždy, nikdy nebo, když je pořeba.</dd>
+                    <dd>Když je potřeba znamená, že se použije jen když hodnota pole obsahuje oddělovač.</dd>
+                    <dd>V případě, že pole obsahuje znak použitý jako kvalifikátor a kvalifikátor se používá, je escapován zdvojením.</dd>
+                    <dd>Příklady (oddělovač ,, kvalifikátor " použit jen, když je potřeba):
+                        <ul>
+                            <li>Z 142 se stane 142</li>
+                            <li>Z 14"2 se stane 14"2</li>
+                            <li>Z dc,x se stane "dc,x"</li>
+                            <li>Z d"c,x se stane "d""c,x"</li>
+                        </ul>
+                    </dd>
+                    <dt>Konec řádku</dt>
+                    <dd>Znak(y) použité k oddělení řádků. Můžete si vybrat z obvyklých variant pro Windows, Unix a Apple.</dd>
+                    <dt>Záhlaví</dt>
+                    <dd>Text použitý jako záhlaví CSV řádků. Pokud prázdný, není zapsán.</dd>
+                    <dd>Za správnost záhlaví odpovídá uživatel. Mělo by reflektovat pořadí CSV polí a dodržovat stejná pravidla pro oddělování a kvalifikování dat v CSV.</dd>
+                    <dd>Tlačítko TAB vloží znak tabulátoru na pozci kurzoru.</dd>
+                    <dt>Dostupná pole</dt>
+                    <dd>Zobrazuje dostupná CSV pole, která nejsou zrovna používána.</dd>
+                    <dd>Tlačítkrm >> je přidáte mezi používané.</dd>
+                    <dt>Použitá pole</dt>
+                    <dd>Zobrazuje položky použité v CSV souboru. Nejméně jedna taková položka musí být určena.</dd>
+                    <dd>Použijte tlačítko &lt;&lt; k odebrání sloupce.</dd>
+                    <dd>Tlačátky ^ a v  přesuňte pole nahoru (vlevo) a dolů (vpravo).</dd>
+                    <dt>Formát data</dt>
+                    <dd>Použito pro formátování datumů v CSV souborech.</dd>
+                    <dd>Formát data a času je popsán ve <a href="#Formatting">Formátování</a>, ale zde se používá bez závorek {} a čísel - jen jeho číst za dvojtečkou (:).</dd>
+                    <dd>Zadaný formát je možno otestovat tlačítkem ?.</dd>
+                    <dd>Narozdíl od formátů pro jména tento je vyhodnocen pro invariantní kulturu namísto aktuální.</dd>
+                    <dt>Čas v UTC</dt>
+                    <dd>Zaškrtnuto pokdu se do CSV souboru dostane UTC čas, jinak lokální (podle zařízení).</dd>
+                    <dd>Poznámka: Je možno donutit formát data, aby do souboru vygeneroval i informaci o časové zóně.</dd>
+                </dl>               
+        </div>
+        <p><a href="http://gpstracka.codeplex.com/">Navštivte domovskou stránku GPSTracka</a></p>
+        <p>
+            <a href="http://validator.w3.org/check?uri=referer">
+                <img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" />
+            </a>
+        </p>
+	</body>
+</html>

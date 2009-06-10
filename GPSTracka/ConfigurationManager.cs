@@ -7,6 +7,7 @@ using System.Xml;
 
 namespace GPSTracka
 {
+    /// <summary>Stores application configuration</summary>
     public static class ConfigurationManager
     {
         #region Private Members

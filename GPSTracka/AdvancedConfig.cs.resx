@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="tmiCancel.Text" xml:space="preserve">
+    <value>&amp;Storno</value>
+  </data>
+  <data name="lblTime.Text" xml:space="preserve">
+    <value>Čas</value>
+  </data>
+  <data name="optTimeSystem.Text" xml:space="preserve">
+    <value>&amp;Systém</value>
+  </data>
+  <data name="lblAltitudeCorrection.Text" xml:space="preserve">
+    <value>Korekce výšky</value>
+  </data>
+  <data name="chkStartImmediatelly.Text" xml:space="preserve">
+    <value>Spustit &amp;okamžitě</value>
+  </data>
+  <data name="lblKMLDescFormat.Text" xml:space="preserve">
+    <value>Formát popisu</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="lblKMLFormattingHelp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>369, 89</value>
+  </data>
+  <data name="lblKMLFormattingHelp.Text" xml:space="preserve">
+    <value>{0} - datum a čas UTC;
+{1} - zeměpisná délka;
+{2} - zeměpisná šířka;
+{3} - nadmořská výška;
+{4} - datum a čas lokální
+{5} - jednotka výšky</value>
+  </data>
+  <data name="llbStringFormat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 146</value>
+  </data>
+  <data name="llbStringFormat.Text" xml:space="preserve">
+    <value>viz String.Format</value>
+  </data>
+  <data name="lblKMLNameFormat.Text" xml:space="preserve">
+    <value>Formát jména</value>
+  </data>
+  <data name="lblPointPlacemark.Text" xml:space="preserve">
+    <value>Značka pozice:</value>
+  </data>
+  <data name="tapGeneral.Text" xml:space="preserve">
+    <value>Obecné</value>
+  </data>
+  <data name="lblInvalidMaxPositions.Text" xml:space="preserve">
+    <value>nepl. pozicích</value>
+  </data>
+  <data name="lblAwakeDevices.Text" xml:space="preserve">
+    <value>Udržovat zapn. zaříz.</value>
+  </data>
+  <data name="lblInvalidMaxAfter.Text" xml:space="preserve">
+    <value>Pauza po</value>
+  </data>
+  <data name="lblMinimalDistance.Text" xml:space="preserve">
+    <value>Min. vzdálenost</value>
+  </data>
+  <data name="tapDisplay.Text" xml:space="preserve">
+    <value>Zobrazení</value>
+  </data>
+  <data name="lblSpeedUnit.Text" xml:space="preserve">
+    <value>Jedn. rychlosti</value>
+  </data>
+  <data name="lblElevationUnit.Text" xml:space="preserve">
+    <value>Jedn. výšky</value>
+  </data>
+  <data name="lblDistanceUnit.Text" xml:space="preserve">
+    <value>Jedn. délky</value>
+  </data>
+  <data name="chkInfoPane.Text" xml:space="preserve">
+    <value>&amp;Infopanel</value>
+  </data>
+  <data name="lblLogFormat.Text" xml:space="preserve">
+    <value>Fromát logu</value>
+  </data>
+  <data name="lblLogFormatHelp.Text" xml:space="preserve">
+    <value>Pro detaily viz záložka KML</value>
+  </data>
+  <data name="cmdLogFormatTest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>357, 60</value>
+  </data>
+  <data name="lblClearLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 20</value>
+  </data>
+  <data name="lblClearLog.Text" xml:space="preserve">
+    <value>Vyčistit &amp;log každých</value>
+  </data>
+  <data name="lblLines.Location" type="System.Drawing.Point, System.Drawing">
+    <value>174, 39</value>
+  </data>
+  <data name="lblLines.Text" xml:space="preserve">
+    <value>řádek</value>
+  </data>
+  <data name="lblClearInfo.Text" xml:space="preserve">
+    <value>0 = nikdy; platí jen pro texbox</value>
+  </data>
+  <data name="nudMaxLogLen.Location" type="System.Drawing.Point, System.Drawing">
+    <value>111, 38</value>
+  </data>
+  <data name="chkStatusBar.Text" xml:space="preserve">
+    <value>Status&amp;bar</value>
+  </data>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>Jazyk</value>
+  </data>
+  <data name="copKMLColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 165</value>
+  </data>
+  <data name="copKMLColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>369, 114</value>
+  </data>
+  <data name="chkSeaLevelAltitude.Text" xml:space="preserve">
+    <value>Použít výšku od &amp;hladiny moře</value>
+  </data>
+  <data name="tapDiagnostic.Text" xml:space="preserve">
+    <value>Diagnotika</value>
+  </data>
+  <data name="lblBeepEvery.Text" xml:space="preserve">
+    <value>Píp každých</value>
+  </data>
+  <data name="lstCSVFields.Location" type="System.Drawing.Point, System.Drawing">
+    <value>142, 15</value>
+  </data>
+  <data name="lstCSVFields.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 128</value>
+  </data>
+  <data name="cmdCSVAdd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>108, 1</value>
+  </data>
+  <data name="cmdCSVRemove.Location" type="System.Drawing.Point, System.Drawing">
+    <value>109, 29</value>
+  </data>
+  <data name="lstCSVAvailableFields.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 128</value>
+  </data>
+  <data name="cmdCSVDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>109, 87</value>
+  </data>
+  <data name="lblCSVAvailableFields.Size" type="System.Drawing.Size, System.Drawing">
+    <value>97, 15</value>
+  </data>
+  <data name="lblCSVAvailableFields.Text" xml:space="preserve">
+    <value>Dostupná pole</value>
+  </data>
+  <data name="cmdCSVUp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>108, 59</value>
+  </data>
+  <data name="lblCSVFields.Location" type="System.Drawing.Point, System.Drawing">
+    <value>142, 1</value>
+  </data>
+  <data name="lblCSVFields.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 15</value>
+  </data>
+  <data name="lblCSVFields.Text" xml:space="preserve">
+    <value>Použitá pole</value>
+  </data>
+  <data name="chkCSVUTC.Text" xml:space="preserve">
+    <value>Čas v UTC</value>
+  </data>
+  <data name="lblCSVDateFormat.Text" xml:space="preserve">
+    <value>Formát data</value>
+  </data>
+  <data name="lblCSVSeparator.Text" xml:space="preserve">
+    <value>Oddělovač</value>
+  </data>
+  <data name="lblCSVQualifier.Text" xml:space="preserve">
+    <value>Text. kvalif.</value>
+  </data>
+  <data name="lblCSVNewLine.Text" xml:space="preserve">
+    <value>Konec řádku</value>
+  </data>
+  <data name="lblCSVHeader.Text" xml:space="preserve">
+    <value>Záhlaví</value>
+  </data>
+  <data name="cmbCSVQualifierUsage.Items" xml:space="preserve">
+    <value>Podle potř.</value>
+  </data>
+  <data name="cmbCSVQualifierUsage.Items1" xml:space="preserve">
+    <value>Nikdy</value>
+  </data>
+  <data name="cmbCSVQualifierUsage.Items2" xml:space="preserve">
+    <value>Vždy</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Pokročilá nastavení</value>
+  </data>
+</root>

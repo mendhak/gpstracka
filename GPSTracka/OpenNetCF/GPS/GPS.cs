@@ -2609,7 +2609,7 @@ namespace OpenNETCF.IO.Serial.GPS
 			try
 			{
 				// 0 309.62 degrees Course over ground - Measured heading
-				if (strdata[0].Length>0)
+				if (strdata[0].Length>0 && strdata[0]!="nan")//Altered by Ğonny, added "nan" test
 				{
 					mov.Track=Misc.ToDecimal(strdata[0]);
 				}

@@ -1,5 +1,5 @@
 ﻿namespace GPSTracka {
-    partial class GPSTracka {
+    partial class TrackerForm {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -23,57 +23,91 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GPSTracka));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrackerForm));
             this.timer1 = new System.Windows.Forms.Timer();
             this.mainPanel = new System.Windows.Forms.Panel();
-            this.TextBoxRawLog = new System.Windows.Forms.TextBox();
+            this.TextBoxRawLog = new GPSTracka.MyTextBox();
+            this.panInfoPane = new System.Windows.Forms.Panel();
+            this.lblSpeedI = new System.Windows.Forms.Label();
+            this.lblSpeed = new System.Windows.Forms.Label();
+            this.lblAverageI = new System.Windows.Forms.Label();
+            this.lblAverage = new System.Windows.Forms.Label();
+            this.lblDistanceI = new System.Windows.Forms.Label();
+            this.lblDistance = new System.Windows.Forms.Label();
+            this.lblAerialI = new System.Windows.Forms.Label();
+            this.lblAerial = new System.Windows.Forms.Label();
+            this.lblElevationI = new System.Windows.Forms.Label();
+            this.lblElevation = new System.Windows.Forms.Label();
+            this.lblElevationMinusI = new System.Windows.Forms.Label();
+            this.lblElevationMinus = new System.Windows.Forms.Label();
+            this.lblTimeI = new System.Windows.Forms.Label();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.lblStopTimeI = new System.Windows.Forms.Label();
+            this.lblStopTime = new System.Windows.Forms.Label();
+            this.lblPointsI = new System.Windows.Forms.Label();
+            this.lblPoints = new System.Windows.Forms.Label();
+            this.lblSattelitesI = new System.Windows.Forms.Label();
+            this.lblSattelites = new System.Windows.Forms.Label();
+            this.stsStatus = new GPSTracka.ItemsStatusBar();
             this.mainPanelMenu = new System.Windows.Forms.MainMenu();
             this.startMenuItem = new System.Windows.Forms.MenuItem();
             this.menuItem2 = new System.Windows.Forms.MenuItem();
             this.clearMenuItem = new System.Windows.Forms.MenuItem();
             this.verboseMenuItem = new System.Windows.Forms.MenuItem();
             this.settingsMenuItem = new System.Windows.Forms.MenuItem();
-            this.menuItem5 = new System.Windows.Forms.MenuItem();
+            this.mniSattelites = new System.Windows.Forms.MenuItem();
+            this.mniSep1 = new System.Windows.Forms.MenuItem();
             this.aboutMenuItem = new System.Windows.Forms.MenuItem();
+            this.mniHelp = new System.Windows.Forms.MenuItem();
+            this.mniSep2 = new System.Windows.Forms.MenuItem();
             this.menuExit = new System.Windows.Forms.MenuItem();
             this.aboutPanel = new System.Windows.Forms.Panel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.aboutLabel = new System.Windows.Forms.Label();
             this.settingsPanel = new System.Windows.Forms.Panel();
+            this.fraFormat = new OpenNETCF.Windows.Forms.GroupBox();
             this.panTRackLogType = new System.Windows.Forms.Panel();
             this.optTrack = new System.Windows.Forms.RadioButton();
             this.optDistinct = new System.Windows.Forms.RadioButton();
             this.panFileFormat = new System.Windows.Forms.Panel();
+            this.optCSV = new System.Windows.Forms.RadioButton();
             this.radioButtonKML = new System.Windows.Forms.RadioButton();
             this.radioButtonGPX = new System.Windows.Forms.RadioButton();
             this.chkAltitude = new System.Windows.Forms.CheckBox();
-            this.groupBox5 = new global::GPSTracka.GroupBox();
-            this.saveDialogButton = new System.Windows.Forms.Button();
-            this.logLocationTextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.NumericUpDownInterval = new System.Windows.Forms.NumericUpDown();
-            this.ComboBoxCOMPorts = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.groupBox2 = new global::GPSTracka.GroupBox();
-            this.CheckBoxToFile = new System.Windows.Forms.CheckBox();
+            this.fraOptions = new OpenNETCF.Windows.Forms.GroupBox();
             this.CheckBoxToTextBox = new System.Windows.Forms.CheckBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.CheckBoxToFile = new System.Windows.Forms.CheckBox();
+            this.logLocationTextBox = new GPSTracka.MyTextBox();
+            this.saveDialogButton = new System.Windows.Forms.Button();
+            this.fraSpeed = new OpenNETCF.Windows.Forms.GroupBox();
+            this.NumericUpDownInterval = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.fraCOMPort = new OpenNETCF.Windows.Forms.GroupBox();
+            this.chkUseWindowsDriver = new System.Windows.Forms.CheckBox();
+            this.lblRecommendedPort = new System.Windows.Forms.Label();
+            this.ComboBoxCOMPorts = new System.Windows.Forms.ComboBox();
             this.ComboBaudRate = new System.Windows.Forms.ComboBox();
-            this.groupBox1 = new global::GPSTracka.GroupBox();
-            this.groupBox3 = new global::GPSTracka.GroupBox();
-            this.groupBox4 = new global::GPSTracka.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.aboutPanelMenu = new System.Windows.Forms.MainMenu();
             this.cancelMenuItem = new System.Windows.Forms.MenuItem();
             this.settingsPanelMenu = new System.Windows.Forms.MainMenu();
             this.saveMenuItem = new System.Windows.Forms.MenuItem();
+            this.mniAdvanced = new System.Windows.Forms.MenuItem();
             this.backMenuItem = new System.Windows.Forms.MenuItem();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.tmrCountDown = new System.Windows.Forms.Timer();
+            this.tmrBeep = new System.Windows.Forms.Timer();
             this.mainPanel.SuspendLayout();
+            this.panInfoPane.SuspendLayout();
             this.aboutPanel.SuspendLayout();
             this.settingsPanel.SuspendLayout();
+            this.fraFormat.SuspendLayout();
             this.panTRackLogType.SuspendLayout();
             this.panFileFormat.SuspendLayout();
+            this.fraOptions.SuspendLayout();
+            this.fraSpeed.SuspendLayout();
+            this.fraCOMPort.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -83,20 +117,151 @@
             // mainPanel
             // 
             this.mainPanel.Controls.Add(this.TextBoxRawLog);
-            this.mainPanel.Location = new System.Drawing.Point(3, 3);
+            this.mainPanel.Controls.Add(this.panInfoPane);
+            this.mainPanel.Controls.Add(this.stsStatus);
+            resources.ApplyResources(this.mainPanel, "mainPanel");
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(240, 294);
             // 
             // TextBoxRawLog
             // 
-            this.TextBoxRawLog.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TextBoxRawLog.Location = new System.Drawing.Point(0, 0);
-            this.TextBoxRawLog.Multiline = true;
+            resources.ApplyResources(this.TextBoxRawLog, "TextBoxRawLog");
             this.TextBoxRawLog.Name = "TextBoxRawLog";
-            this.TextBoxRawLog.Size = new System.Drawing.Size(240, 294);
-            this.TextBoxRawLog.TabIndex = 17;
-            this.TextBoxRawLog.Text = "Don\'t forget to verify your settings in the settings screen. Use verbose to deter" +
-                "mine if you have the right port. Use clear to clean up the textbox.";
+            this.TextBoxRawLog.ReadOnly = true;
+            // 
+            // panInfoPane
+            // 
+            this.panInfoPane.BackColor = System.Drawing.SystemColors.Control;
+            this.panInfoPane.Controls.Add(this.lblSpeedI);
+            this.panInfoPane.Controls.Add(this.lblSpeed);
+            this.panInfoPane.Controls.Add(this.lblAverageI);
+            this.panInfoPane.Controls.Add(this.lblAverage);
+            this.panInfoPane.Controls.Add(this.lblDistanceI);
+            this.panInfoPane.Controls.Add(this.lblDistance);
+            this.panInfoPane.Controls.Add(this.lblAerialI);
+            this.panInfoPane.Controls.Add(this.lblAerial);
+            this.panInfoPane.Controls.Add(this.lblElevationI);
+            this.panInfoPane.Controls.Add(this.lblElevation);
+            this.panInfoPane.Controls.Add(this.lblElevationMinusI);
+            this.panInfoPane.Controls.Add(this.lblElevationMinus);
+            this.panInfoPane.Controls.Add(this.lblTimeI);
+            this.panInfoPane.Controls.Add(this.lblTime);
+            this.panInfoPane.Controls.Add(this.lblStopTimeI);
+            this.panInfoPane.Controls.Add(this.lblStopTime);
+            this.panInfoPane.Controls.Add(this.lblPointsI);
+            this.panInfoPane.Controls.Add(this.lblPoints);
+            this.panInfoPane.Controls.Add(this.lblSattelitesI);
+            this.panInfoPane.Controls.Add(this.lblSattelites);
+            resources.ApplyResources(this.panInfoPane, "panInfoPane");
+            this.panInfoPane.Name = "panInfoPane";
+            this.panInfoPane.Resize += new System.EventHandler(this.panInfoPane_Resize);
+            // 
+            // lblSpeedI
+            // 
+            resources.ApplyResources(this.lblSpeedI, "lblSpeedI");
+            this.lblSpeedI.Name = "lblSpeedI";
+            // 
+            // lblSpeed
+            // 
+            resources.ApplyResources(this.lblSpeed, "lblSpeed");
+            this.lblSpeed.Name = "lblSpeed";
+            // 
+            // lblAverageI
+            // 
+            resources.ApplyResources(this.lblAverageI, "lblAverageI");
+            this.lblAverageI.Name = "lblAverageI";
+            // 
+            // lblAverage
+            // 
+            resources.ApplyResources(this.lblAverage, "lblAverage");
+            this.lblAverage.Name = "lblAverage";
+            // 
+            // lblDistanceI
+            // 
+            resources.ApplyResources(this.lblDistanceI, "lblDistanceI");
+            this.lblDistanceI.Name = "lblDistanceI";
+            // 
+            // lblDistance
+            // 
+            resources.ApplyResources(this.lblDistance, "lblDistance");
+            this.lblDistance.Name = "lblDistance";
+            // 
+            // lblAerialI
+            // 
+            resources.ApplyResources(this.lblAerialI, "lblAerialI");
+            this.lblAerialI.Name = "lblAerialI";
+            // 
+            // lblAerial
+            // 
+            resources.ApplyResources(this.lblAerial, "lblAerial");
+            this.lblAerial.Name = "lblAerial";
+            // 
+            // lblElevationI
+            // 
+            resources.ApplyResources(this.lblElevationI, "lblElevationI");
+            this.lblElevationI.Name = "lblElevationI";
+            // 
+            // lblElevation
+            // 
+            resources.ApplyResources(this.lblElevation, "lblElevation");
+            this.lblElevation.Name = "lblElevation";
+            // 
+            // lblElevationMinusI
+            // 
+            resources.ApplyResources(this.lblElevationMinusI, "lblElevationMinusI");
+            this.lblElevationMinusI.Name = "lblElevationMinusI";
+            // 
+            // lblElevationMinus
+            // 
+            resources.ApplyResources(this.lblElevationMinus, "lblElevationMinus");
+            this.lblElevationMinus.Name = "lblElevationMinus";
+            // 
+            // lblTimeI
+            // 
+            resources.ApplyResources(this.lblTimeI, "lblTimeI");
+            this.lblTimeI.Name = "lblTimeI";
+            // 
+            // lblTime
+            // 
+            resources.ApplyResources(this.lblTime, "lblTime");
+            this.lblTime.Name = "lblTime";
+            // 
+            // lblStopTimeI
+            // 
+            resources.ApplyResources(this.lblStopTimeI, "lblStopTimeI");
+            this.lblStopTimeI.Name = "lblStopTimeI";
+            // 
+            // lblStopTime
+            // 
+            resources.ApplyResources(this.lblStopTime, "lblStopTime");
+            this.lblStopTime.Name = "lblStopTime";
+            // 
+            // lblPointsI
+            // 
+            resources.ApplyResources(this.lblPointsI, "lblPointsI");
+            this.lblPointsI.Name = "lblPointsI";
+            // 
+            // lblPoints
+            // 
+            resources.ApplyResources(this.lblPoints, "lblPoints");
+            this.lblPoints.Name = "lblPoints";
+            // 
+            // lblSattelitesI
+            // 
+            resources.ApplyResources(this.lblSattelitesI, "lblSattelitesI");
+            this.lblSattelitesI.Name = "lblSattelitesI";
+            // 
+            // lblSattelites
+            // 
+            resources.ApplyResources(this.lblSattelites, "lblSattelites");
+            this.lblSattelites.Name = "lblSattelites";
+            // 
+            // stsStatus
+            // 
+            this.stsStatus.Items = new string[] {
+        "Press Start",
+        ""};
+            resources.ApplyResources(this.stsStatus, "stsStatus");
+            this.stsStatus.Name = "stsStatus";
             // 
             // mainPanelMenu
             // 
@@ -105,7 +270,7 @@
             // 
             // startMenuItem
             // 
-            this.startMenuItem.Text = "Start";
+            resources.ApplyResources(this.startMenuItem, "startMenuItem");
             this.startMenuItem.Click += new System.EventHandler(this.startMenuItem_Click);
             // 
             // menuItem2
@@ -113,38 +278,55 @@
             this.menuItem2.MenuItems.Add(this.clearMenuItem);
             this.menuItem2.MenuItems.Add(this.verboseMenuItem);
             this.menuItem2.MenuItems.Add(this.settingsMenuItem);
-            this.menuItem2.MenuItems.Add(this.menuItem5);
+            this.menuItem2.MenuItems.Add(this.mniSattelites);
+            this.menuItem2.MenuItems.Add(this.mniSep1);
             this.menuItem2.MenuItems.Add(this.aboutMenuItem);
+            this.menuItem2.MenuItems.Add(this.mniHelp);
+            this.menuItem2.MenuItems.Add(this.mniSep2);
             this.menuItem2.MenuItems.Add(this.menuExit);
-            this.menuItem2.Text = "Options";
+            resources.ApplyResources(this.menuItem2, "menuItem2");
             // 
             // clearMenuItem
             // 
-            this.clearMenuItem.Text = "Clear";
+            resources.ApplyResources(this.clearMenuItem, "clearMenuItem");
             this.clearMenuItem.Click += new System.EventHandler(this.clearMenuItem_Click);
             // 
             // verboseMenuItem
             // 
-            this.verboseMenuItem.Text = "Verbose";
+            resources.ApplyResources(this.verboseMenuItem, "verboseMenuItem");
             this.verboseMenuItem.Click += new System.EventHandler(this.verboseMenuItem_Click);
             // 
             // settingsMenuItem
             // 
-            this.settingsMenuItem.Text = "Settings";
+            resources.ApplyResources(this.settingsMenuItem, "settingsMenuItem");
             this.settingsMenuItem.Click += new System.EventHandler(this.settingsMenuItem_Click);
             // 
-            // menuItem5
+            // mniSattelites
             // 
-            this.menuItem5.Text = "-";
+            resources.ApplyResources(this.mniSattelites, "mniSattelites");
+            this.mniSattelites.Click += new System.EventHandler(this.mniSattelites_Click);
+            // 
+            // mniSep1
+            // 
+            resources.ApplyResources(this.mniSep1, "mniSep1");
             // 
             // aboutMenuItem
             // 
-            this.aboutMenuItem.Text = "About";
+            resources.ApplyResources(this.aboutMenuItem, "aboutMenuItem");
             this.aboutMenuItem.Click += new System.EventHandler(this.aboutMenuItem_Click);
+            // 
+            // mniHelp
+            // 
+            resources.ApplyResources(this.mniHelp, "mniHelp");
+            this.mniHelp.Click += new System.EventHandler(this.mniHelp_Click);
+            // 
+            // mniSep2
+            // 
+            resources.ApplyResources(this.mniSep2, "mniSep2");
             // 
             // menuExit
             // 
-            this.menuExit.Text = "Exit";
+            resources.ApplyResources(this.menuExit, "menuExit");
             this.menuExit.Click += new System.EventHandler(this.menuExit_Click);
             // 
             // aboutPanel
@@ -152,155 +334,129 @@
             this.aboutPanel.Controls.Add(this.linkLabel1);
             this.aboutPanel.Controls.Add(this.pictureBox1);
             this.aboutPanel.Controls.Add(this.aboutLabel);
-            this.aboutPanel.Location = new System.Drawing.Point(249, 3);
+            resources.ApplyResources(this.aboutPanel, "aboutPanel");
             this.aboutPanel.Name = "aboutPanel";
-            this.aboutPanel.Size = new System.Drawing.Size(240, 294);
             // 
             // linkLabel1
             // 
-            this.linkLabel1.Location = new System.Drawing.Point(3, 236);
+            resources.ApplyResources(this.linkLabel1, "linkLabel1");
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(234, 20);
-            this.linkLabel1.TabIndex = 2;
-            this.linkLabel1.Text = "http://www.codeplex.com/gpstracka";
-            this.linkLabel1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.linkLabel1.Click += new System.EventHandler(this.linkLabel1_Click);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(234, 200);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             // 
             // aboutLabel
             // 
-            this.aboutLabel.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.aboutLabel.Location = new System.Drawing.Point(3, 209);
+            resources.ApplyResources(this.aboutLabel, "aboutLabel");
             this.aboutLabel.Name = "aboutLabel";
-            this.aboutLabel.Size = new System.Drawing.Size(234, 26);
-            this.aboutLabel.Text = "GPSTracka Version 1.00";
-            this.aboutLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // settingsPanel
             // 
-            this.settingsPanel.AutoScroll = true;
-            this.settingsPanel.Controls.Add(this.panTRackLogType);
-            this.settingsPanel.Controls.Add(this.panFileFormat);
-            this.settingsPanel.Controls.Add(this.chkAltitude);
-            this.settingsPanel.Controls.Add(this.groupBox5);
-            this.settingsPanel.Controls.Add(this.saveDialogButton);
-            this.settingsPanel.Controls.Add(this.logLocationTextBox);
-            this.settingsPanel.Controls.Add(this.label1);
-            this.settingsPanel.Controls.Add(this.NumericUpDownInterval);
-            this.settingsPanel.Controls.Add(this.ComboBoxCOMPorts);
-            this.settingsPanel.Controls.Add(this.label4);
-            this.settingsPanel.Controls.Add(this.groupBox2);
-            this.settingsPanel.Controls.Add(this.CheckBoxToFile);
-            this.settingsPanel.Controls.Add(this.CheckBoxToTextBox);
-            this.settingsPanel.Controls.Add(this.label5);
-            this.settingsPanel.Controls.Add(this.ComboBaudRate);
-            this.settingsPanel.Controls.Add(this.groupBox1);
-            this.settingsPanel.Controls.Add(this.groupBox3);
-            this.settingsPanel.Controls.Add(this.groupBox4);
-            this.settingsPanel.Location = new System.Drawing.Point(495, 3);
+            resources.ApplyResources(this.settingsPanel, "settingsPanel");
+            this.settingsPanel.Controls.Add(this.fraFormat);
+            this.settingsPanel.Controls.Add(this.fraOptions);
+            this.settingsPanel.Controls.Add(this.fraSpeed);
+            this.settingsPanel.Controls.Add(this.fraCOMPort);
             this.settingsPanel.Name = "settingsPanel";
-            this.settingsPanel.Size = new System.Drawing.Size(240, 349);
+            // 
+            // fraFormat
+            // 
+            this.fraFormat.Controls.Add(this.panTRackLogType);
+            this.fraFormat.Controls.Add(this.panFileFormat);
+            this.fraFormat.Controls.Add(this.chkAltitude);
+            resources.ApplyResources(this.fraFormat, "fraFormat");
+            this.fraFormat.Name = "fraFormat";
             // 
             // panTRackLogType
             // 
+            resources.ApplyResources(this.panTRackLogType, "panTRackLogType");
             this.panTRackLogType.Controls.Add(this.optTrack);
             this.panTRackLogType.Controls.Add(this.optDistinct);
-            this.panTRackLogType.Location = new System.Drawing.Point(8, 298);
             this.panTRackLogType.Name = "panTRackLogType";
-            this.panTRackLogType.Size = new System.Drawing.Size(215, 27);
             // 
             // optTrack
             // 
-            this.optTrack.Location = new System.Drawing.Point(120, 4);
+            resources.ApplyResources(this.optTrack, "optTrack");
             this.optTrack.Name = "optTrack";
-            this.optTrack.Size = new System.Drawing.Size(100, 20);
-            this.optTrack.TabIndex = 1;
-            this.optTrack.Text = "&Track";
             // 
             // optDistinct
             // 
-            this.optDistinct.Location = new System.Drawing.Point(5, 3);
+            resources.ApplyResources(this.optDistinct, "optDistinct");
             this.optDistinct.Name = "optDistinct";
-            this.optDistinct.Size = new System.Drawing.Size(109, 20);
-            this.optDistinct.TabIndex = 0;
-            this.optDistinct.Text = "&Distinct points";
             // 
             // panFileFormat
             // 
+            resources.ApplyResources(this.panFileFormat, "panFileFormat");
+            this.panFileFormat.Controls.Add(this.optCSV);
             this.panFileFormat.Controls.Add(this.radioButtonKML);
             this.panFileFormat.Controls.Add(this.radioButtonGPX);
-            this.panFileFormat.Location = new System.Drawing.Point(7, 271);
             this.panFileFormat.Name = "panFileFormat";
-            this.panFileFormat.Size = new System.Drawing.Size(117, 26);
+            // 
+            // optCSV
+            // 
+            resources.ApplyResources(this.optCSV, "optCSV");
+            this.optCSV.Name = "optCSV";
             // 
             // radioButtonKML
             // 
-            this.radioButtonKML.Location = new System.Drawing.Point(61, 3);
+            resources.ApplyResources(this.radioButtonKML, "radioButtonKML");
             this.radioButtonKML.Name = "radioButtonKML";
-            this.radioButtonKML.Size = new System.Drawing.Size(56, 20);
-            this.radioButtonKML.TabIndex = 63;
-            this.radioButtonKML.Text = "KML";
             // 
             // radioButtonGPX
             // 
-            this.radioButtonGPX.Location = new System.Drawing.Point(5, 3);
+            resources.ApplyResources(this.radioButtonGPX, "radioButtonGPX");
             this.radioButtonGPX.Name = "radioButtonGPX";
-            this.radioButtonGPX.Size = new System.Drawing.Size(56, 20);
-            this.radioButtonGPX.TabIndex = 62;
-            this.radioButtonGPX.Text = "GPX";
             // 
             // chkAltitude
             // 
-            this.chkAltitude.Location = new System.Drawing.Point(128, 274);
+            resources.ApplyResources(this.chkAltitude, "chkAltitude");
             this.chkAltitude.Name = "chkAltitude";
-            this.chkAltitude.Size = new System.Drawing.Size(95, 20);
-            this.chkAltitude.TabIndex = 3;
-            this.chkAltitude.Text = "Log &altitude";
             // 
-            // groupBox5
+            // fraOptions
             // 
-            this.groupBox5.Location = new System.Drawing.Point(3, 256);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(233, 80);
-            this.groupBox5.TabIndex = 61;
-            this.groupBox5.Title = "Format";
+            this.fraOptions.Controls.Add(this.CheckBoxToTextBox);
+            this.fraOptions.Controls.Add(this.CheckBoxToFile);
+            this.fraOptions.Controls.Add(this.logLocationTextBox);
+            this.fraOptions.Controls.Add(this.saveDialogButton);
+            resources.ApplyResources(this.fraOptions, "fraOptions");
+            this.fraOptions.Name = "fraOptions";
             // 
-            // saveDialogButton
+            // CheckBoxToTextBox
             // 
-            this.saveDialogButton.Location = new System.Drawing.Point(165, 213);
-            this.saveDialogButton.Name = "saveDialogButton";
-            this.saveDialogButton.Size = new System.Drawing.Size(31, 20);
-            this.saveDialogButton.TabIndex = 57;
-            this.saveDialogButton.Text = "...";
-            this.saveDialogButton.Click += new System.EventHandler(this.saveDialogButton_Click);
+            this.CheckBoxToTextBox.Checked = true;
+            this.CheckBoxToTextBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            resources.ApplyResources(this.CheckBoxToTextBox, "CheckBoxToTextBox");
+            this.CheckBoxToTextBox.Name = "CheckBoxToTextBox";
+            // 
+            // CheckBoxToFile
+            // 
+            resources.ApplyResources(this.CheckBoxToFile, "CheckBoxToFile");
+            this.CheckBoxToFile.Name = "CheckBoxToFile";
             // 
             // logLocationTextBox
             // 
-            this.logLocationTextBox.Location = new System.Drawing.Point(12, 213);
+            resources.ApplyResources(this.logLocationTextBox, "logLocationTextBox");
             this.logLocationTextBox.Name = "logLocationTextBox";
-            this.logLocationTextBox.Size = new System.Drawing.Size(150, 21);
-            this.logLocationTextBox.TabIndex = 3;
             // 
-            // label1
+            // saveDialogButton
             // 
-            this.label1.Location = new System.Drawing.Point(104, 135);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 20);
-            this.label1.Text = "seconds";
+            resources.ApplyResources(this.saveDialogButton, "saveDialogButton");
+            this.saveDialogButton.Name = "saveDialogButton";
+            this.saveDialogButton.Click += new System.EventHandler(this.saveDialogButton_Click);
+            // 
+            // fraSpeed
+            // 
+            this.fraSpeed.Controls.Add(this.NumericUpDownInterval);
+            this.fraSpeed.Controls.Add(this.label1);
+            resources.ApplyResources(this.fraSpeed, "fraSpeed");
+            this.fraSpeed.Name = "fraSpeed";
             // 
             // NumericUpDownInterval
             // 
-            this.NumericUpDownInterval.Location = new System.Drawing.Point(27, 133);
+            resources.ApplyResources(this.NumericUpDownInterval, "NumericUpDownInterval");
             this.NumericUpDownInterval.Maximum = new decimal(new int[] {
             50000,
             0,
@@ -312,108 +468,65 @@
             0,
             0});
             this.NumericUpDownInterval.Name = "NumericUpDownInterval";
-            this.NumericUpDownInterval.Size = new System.Drawing.Size(71, 22);
-            this.NumericUpDownInterval.TabIndex = 54;
             this.NumericUpDownInterval.Value = new decimal(new int[] {
             60,
             0,
             0,
             0});
             // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
+            // fraCOMPort
+            // 
+            this.fraCOMPort.Controls.Add(this.chkUseWindowsDriver);
+            this.fraCOMPort.Controls.Add(this.lblRecommendedPort);
+            this.fraCOMPort.Controls.Add(this.ComboBoxCOMPorts);
+            this.fraCOMPort.Controls.Add(this.ComboBaudRate);
+            this.fraCOMPort.Controls.Add(this.label4);
+            this.fraCOMPort.Controls.Add(this.label5);
+            resources.ApplyResources(this.fraCOMPort, "fraCOMPort");
+            this.fraCOMPort.Name = "fraCOMPort";
+            // 
+            // chkUseWindowsDriver
+            // 
+            resources.ApplyResources(this.chkUseWindowsDriver, "chkUseWindowsDriver");
+            this.chkUseWindowsDriver.Name = "chkUseWindowsDriver";
+            this.chkUseWindowsDriver.CheckStateChanged += new System.EventHandler(this.chkUseWindowsDriver_CheckStateChanged);
+            // 
+            // lblRecommendedPort
+            // 
+            resources.ApplyResources(this.lblRecommendedPort, "lblRecommendedPort");
+            this.lblRecommendedPort.Name = "lblRecommendedPort";
+            // 
             // ComboBoxCOMPorts
             // 
             this.ComboBoxCOMPorts.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.ComboBoxCOMPorts.Location = new System.Drawing.Point(69, 76);
+            resources.ApplyResources(this.ComboBoxCOMPorts, "ComboBoxCOMPorts");
             this.ComboBoxCOMPorts.Name = "ComboBoxCOMPorts";
-            this.ComboBoxCOMPorts.Size = new System.Drawing.Size(55, 22);
-            this.ComboBoxCOMPorts.TabIndex = 50;
-            // 
-            // label4
-            // 
-            this.label4.Location = new System.Drawing.Point(27, 78);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 20);
-            this.label4.Text = "Read";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Location = new System.Drawing.Point(3, 60);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(234, 51);
-            this.groupBox2.TabIndex = 48;
-            this.groupBox2.Title = "Comm Port";
-            // 
-            // CheckBoxToFile
-            // 
-            this.CheckBoxToFile.Location = new System.Drawing.Point(114, 193);
-            this.CheckBoxToFile.Name = "CheckBoxToFile";
-            this.CheckBoxToFile.Size = new System.Drawing.Size(71, 20);
-            this.CheckBoxToFile.TabIndex = 32;
-            this.CheckBoxToFile.Text = "To File";
-            // 
-            // CheckBoxToTextBox
-            // 
-            this.CheckBoxToTextBox.Checked = true;
-            this.CheckBoxToTextBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CheckBoxToTextBox.Location = new System.Drawing.Point(12, 193);
-            this.CheckBoxToTextBox.Name = "CheckBoxToTextBox";
-            this.CheckBoxToTextBox.Size = new System.Drawing.Size(99, 20);
-            this.CheckBoxToTextBox.TabIndex = 31;
-            this.CheckBoxToTextBox.Text = "To Textbox";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.Location = new System.Drawing.Point(108, 21);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(33, 20);
-            this.label5.Text = "baud";
             // 
             // ComboBaudRate
             // 
-            this.ComboBaudRate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBaudRate.Items.Add("4800");
-            this.ComboBaudRate.Items.Add("9600");
-            this.ComboBaudRate.Items.Add("19200");
-            this.ComboBaudRate.Items.Add("38400");
-            this.ComboBaudRate.Items.Add("57600");
-            this.ComboBaudRate.Items.Add("115200");
-            this.ComboBaudRate.Location = new System.Drawing.Point(27, 19);
+            resources.ApplyResources(this.ComboBaudRate, "ComboBaudRate");
+            this.ComboBaudRate.Items.Add(resources.GetString("ComboBaudRate.Items"));
+            this.ComboBaudRate.Items.Add(resources.GetString("ComboBaudRate.Items1"));
+            this.ComboBaudRate.Items.Add(resources.GetString("ComboBaudRate.Items2"));
+            this.ComboBaudRate.Items.Add(resources.GetString("ComboBaudRate.Items3"));
+            this.ComboBaudRate.Items.Add(resources.GetString("ComboBaudRate.Items4"));
+            this.ComboBaudRate.Items.Add(resources.GetString("ComboBaudRate.Items5"));
             this.ComboBaudRate.Name = "ComboBaudRate";
-            this.ComboBaudRate.Size = new System.Drawing.Size(74, 22);
-            this.ComboBaudRate.TabIndex = 21;
             // 
-            // groupBox1
+            // label4
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(234, 51);
-            this.groupBox1.TabIndex = 39;
-            this.groupBox1.Title = "Baud Rate";
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.Name = "label4";
             // 
-            // groupBox3
+            // label5
             // 
-            this.groupBox3.Location = new System.Drawing.Point(2, 117);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(234, 51);
-            this.groupBox3.TabIndex = 52;
-            this.groupBox3.Title = "Polling Rate";
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox4.Location = new System.Drawing.Point(3, 177);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(234, 70);
-            this.groupBox4.TabIndex = 56;
-            this.groupBox4.Title = "Logging Options";
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.Name = "label5";
             // 
             // aboutPanelMenu
             // 
@@ -421,43 +534,64 @@
             // 
             // cancelMenuItem
             // 
-            this.cancelMenuItem.Text = "Cancel";
+            resources.ApplyResources(this.cancelMenuItem, "cancelMenuItem");
             this.cancelMenuItem.Click += new System.EventHandler(this.cancelMenuItem_Click);
             // 
             // settingsPanelMenu
             // 
             this.settingsPanelMenu.MenuItems.Add(this.saveMenuItem);
+            this.settingsPanelMenu.MenuItems.Add(this.mniAdvanced);
             this.settingsPanelMenu.MenuItems.Add(this.backMenuItem);
             // 
             // saveMenuItem
             // 
-            this.saveMenuItem.Text = "Save";
+            resources.ApplyResources(this.saveMenuItem, "saveMenuItem");
             this.saveMenuItem.Click += new System.EventHandler(this.saveMenuItem_Click);
+            // 
+            // mniAdvanced
+            // 
+            resources.ApplyResources(this.mniAdvanced, "mniAdvanced");
+            this.mniAdvanced.Click += new System.EventHandler(this.mniAdvanced_Click);
             // 
             // backMenuItem
             // 
-            this.backMenuItem.Text = "Back";
+            resources.ApplyResources(this.backMenuItem, "backMenuItem");
             this.backMenuItem.Click += new System.EventHandler(this.backMenuItem_Click);
             // 
-            // GPSTracka
+            // tmrCountDown
+            // 
+            this.tmrCountDown.Interval = 1000;
+            this.tmrCountDown.Tick += new System.EventHandler(this.tmrCountDown_Tick);
+            // 
+            // tmrBeep
+            // 
+            this.tmrBeep.Tick += new System.EventHandler(this.tmrBeep_Tick);
+            // 
+            // TrackerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(800, 400);
+            resources.ApplyResources(this, "$this");
             this.Controls.Add(this.settingsPanel);
             this.Controls.Add(this.aboutPanel);
             this.Controls.Add(this.mainPanel);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Menu = this.mainPanelMenu;
-            this.Name = "GPSTracka";
-            this.Text = "GPSTracka";
+            this.Name = "TrackerForm";
+            this.Deactivate += new System.EventHandler(this.TrackerForm_Deactivate);
             this.Load += new System.EventHandler(this.GPSTracka_Load);
+            this.Activated += new System.EventHandler(this.TrackerForm_Activated);
             this.Closing += new System.ComponentModel.CancelEventHandler(this.GPSTracka_Closing);
+            this.Resize += new System.EventHandler(this.TrackerForm_Resize);
             this.mainPanel.ResumeLayout(false);
+            this.panInfoPane.ResumeLayout(false);
             this.aboutPanel.ResumeLayout(false);
             this.settingsPanel.ResumeLayout(false);
+            this.fraFormat.ResumeLayout(false);
             this.panTRackLogType.ResumeLayout(false);
             this.panFileFormat.ResumeLayout(false);
+            this.fraOptions.ResumeLayout(false);
+            this.fraSpeed.ResumeLayout(false);
+            this.fraCOMPort.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -466,14 +600,14 @@
 
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel mainPanel;
-        private System.Windows.Forms.TextBox TextBoxRawLog;
+        private MyTextBox TextBoxRawLog;
         private System.Windows.Forms.MainMenu mainPanelMenu;
         private System.Windows.Forms.MenuItem startMenuItem;
         private System.Windows.Forms.MenuItem menuItem2;
         private System.Windows.Forms.MenuItem clearMenuItem;
         private System.Windows.Forms.MenuItem verboseMenuItem;
         private System.Windows.Forms.MenuItem settingsMenuItem;
-        private System.Windows.Forms.MenuItem menuItem5;
+        private System.Windows.Forms.MenuItem mniSep1;
         private System.Windows.Forms.MenuItem aboutMenuItem;
         private System.Windows.Forms.Panel aboutPanel;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -487,28 +621,57 @@
         private System.Windows.Forms.MainMenu settingsPanelMenu;
         private System.Windows.Forms.MenuItem cancelMenuItem;
         private System.Windows.Forms.MenuItem saveMenuItem;
-        private GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown NumericUpDownInterval;
         private System.Windows.Forms.ComboBox ComboBoxCOMPorts;
         private System.Windows.Forms.Label label4;
-        private GroupBox groupBox2;
-        private GroupBox groupBox3;
-        private GroupBox groupBox4;
+        private OpenNETCF.Windows.Forms.GroupBox  fraCOMPort;
+        private OpenNETCF.Windows.Forms.GroupBox fraSpeed;
+        private OpenNETCF.Windows.Forms.GroupBox fraOptions;
         private System.Windows.Forms.Button saveDialogButton;
-        private System.Windows.Forms.TextBox logLocationTextBox;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private MyTextBox logLocationTextBox;
         private System.Windows.Forms.MenuItem backMenuItem;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.MenuItem menuExit;
         private System.Windows.Forms.RadioButton radioButtonKML;
         private System.Windows.Forms.RadioButton radioButtonGPX;
-        private GroupBox groupBox5;
+        private OpenNETCF.Windows.Forms.GroupBox fraFormat;
         private System.Windows.Forms.CheckBox chkAltitude;
         private System.Windows.Forms.Panel panFileFormat;
         private System.Windows.Forms.Panel panTRackLogType;
         private System.Windows.Forms.RadioButton optTrack;
         private System.Windows.Forms.RadioButton optDistinct;
+        private System.Windows.Forms.MenuItem mniAdvanced;
+        private ItemsStatusBar stsStatus;
+        private System.Windows.Forms.Timer tmrCountDown;
+        private System.Windows.Forms.MenuItem mniHelp;
+        private System.Windows.Forms.Label lblRecommendedPort;
+        private System.Windows.Forms.MenuItem mniSattelites;
+        private System.Windows.Forms.MenuItem mniSep2;
+        private System.Windows.Forms.CheckBox chkUseWindowsDriver;
+        private System.Windows.Forms.Panel panInfoPane;
+        private System.Windows.Forms.Label lblDistance;
+        private System.Windows.Forms.Label lblDistanceI;
+        private System.Windows.Forms.Label lblSpeed;
+        private System.Windows.Forms.Label lblSpeedI;
+        private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.Label lblTimeI;
+        private System.Windows.Forms.Label lblStopTime;
+        private System.Windows.Forms.Label lblStopTimeI;
+        private System.Windows.Forms.Label lblElevationI;
+        private System.Windows.Forms.Label lblAverageI;
+        private System.Windows.Forms.Label lblSattelitesI;
+        private System.Windows.Forms.Label lblPointsI;
+        private System.Windows.Forms.Label lblElevationMinusI;
+        private System.Windows.Forms.Label lblSattelites;
+        private System.Windows.Forms.Label lblPoints;
+        private System.Windows.Forms.Label lblElevationMinus;
+        private System.Windows.Forms.Label lblElevation;
+        private System.Windows.Forms.Label lblAerial;
+        private System.Windows.Forms.Label lblAverage;
+        private System.Windows.Forms.Label lblAerialI;
+        private System.Windows.Forms.Timer tmrBeep;
+        private System.Windows.Forms.RadioButton optCSV;
     }
 }
 

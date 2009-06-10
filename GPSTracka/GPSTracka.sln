@@ -7,9 +7,23 @@ Project("{B900F1C2-3D47-4FEC-85B3-04AAF18C3634}") = "GPSTrackaDeploy", "..\gpstr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenNETCF.IO.Serial", "OpenNetCF\OpenNETCF.IO.Serial.csproj", "{BF17CDE7-E5B1-4876-9B44-457F3BFDB3D9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.WindowsMobile.Samples.Location", "Microsoft.Location\Microsoft.WindowsMobile.Samples.Location.csproj", "{DB77C1EE-A383-4CD5-A107-1C7C26A9E6B8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DLL", "DLL", "{2035F7DF-2A7B-4247-89F7-BAEE2F2E7A4F}"
+	ProjectSection(SolutionItems) = preProject
+		..\DLL\OpenNETCF.Configuration.dll = ..\DLL\OpenNETCF.Configuration.dll
+		..\DLL\OpenNETCF.Configuration.xml = ..\DLL\OpenNETCF.Configuration.xml
+		..\DLL\OpenNETCF.dll = ..\DLL\OpenNETCF.dll
+		..\DLL\OpenNETCF.Drawing.dll = ..\DLL\OpenNETCF.Drawing.dll
+		..\DLL\OpenNETCF.Drawing.xml = ..\DLL\OpenNETCF.Drawing.xml
+		..\DLL\OpenNETCF.Windows.Forms.dll = ..\DLL\OpenNETCF.Windows.Forms.dll
+		..\DLL\OpenNETCF.Windows.Forms.xml = ..\DLL\OpenNETCF.Windows.Forms.xml
+		..\DLL\OpenNETCF.xml = ..\DLL\OpenNETCF.xml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 4
+		SccNumberOfProjects = 5
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs09.codeplex.com/
 		SccLocalPath0 = .
@@ -21,6 +35,9 @@ Global
 		SccProjectUniqueName3 = OpenNetCF\\OpenNETCF.IO.Serial.csproj
 		SccProjectName3 = OpenNetCF
 		SccLocalPath3 = OpenNetCF
+		SccProjectUniqueName4 = Microsoft.Location\\Microsoft.WindowsMobile.Samples.Location.csproj
+		SccProjectName4 = Microsoft.Location
+		SccLocalPath4 = Microsoft.Location
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +58,10 @@ Global
 		{BF17CDE7-E5B1-4876-9B44-457F3BFDB3D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF17CDE7-E5B1-4876-9B44-457F3BFDB3D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF17CDE7-E5B1-4876-9B44-457F3BFDB3D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB77C1EE-A383-4CD5-A107-1C7C26A9E6B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB77C1EE-A383-4CD5-A107-1C7C26A9E6B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB77C1EE-A383-4CD5-A107-1C7C26A9E6B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB77C1EE-A383-4CD5-A107-1C7C26A9E6B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -14,7 +14,7 @@
     <PlatformID>b2c48bd2-963d-4549-9169-1fa021dce484</PlatformID>
     <OSVersion>5.2</OSVersion>
     <DeployDirSuffix>GPSTracka</DeployDirSuffix>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <NativePlatformName>Windows Mobile 6 Professional SDK</NativePlatformName>
     <FormFactorID>
     </FormFactorID>
@@ -36,6 +36,7 @@
     <FileAlignment>512</FileAlignment>
     <WarningLevel>4</WarningLevel>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <DocumentationFile>bin\Debug\GPSTracka.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -50,20 +51,51 @@
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.WindowsCE.Forms" />
     <Reference Include="mscorlib" />
+    <Reference Include="OpenNETCF.Windows.Forms, Version=2.3.0.39, Culture=neutral, PublicKeyToken=e60dbea84bb431b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\OpenNETCF.Windows.Forms.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConfigurationManager.cs" />
-    <Compile Include="GroupBox.cs">
+    <Compile Include="AdvancedConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdvancedConfig.Designer.cs">
+      <DependentUpon>AdvancedConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GPSWrapper.cs" />
+    <Compile Include="MyTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SattelitesView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SattelitesView.Designer.cs">
+      <DependentUpon>SattelitesView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StatusBarWithItems.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ColorPicker.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GroupBox.Designer.cs">
-      <DependentUpon>GroupBox.cs</DependentUpon>
+    <Compile Include="ColorPicker.Designer.cs">
+      <DependentUpon>ColorPicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigurationManager.cs" />
+    <Compile Include="FolderBrowseDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FolderBrowseDialog.Designer.cs">
+      <DependentUpon>FolderBrowseDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="TrackerForm.cs">
       <SubType>Form</SubType>
@@ -73,11 +105,43 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="GroupBox.resx">
-      <DependentUpon>GroupBox.cs</DependentUpon>
+    <EmbeddedResource Include="AdvancedConfig.cs.resx">
+      <DependentUpon>AdvancedConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdvancedConfig.resx">
+      <DependentUpon>AdvancedConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorPicker.cs.resx">
+      <DependentUpon>ColorPicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorPicker.resx">
+      <DependentUpon>ColorPicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FolderBrowseDialog.cs.resx">
+      <DependentUpon>FolderBrowseDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FolderBrowseDialog.resx">
+      <DependentUpon>FolderBrowseDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyTextBox.cs.resx">
+      <DependentUpon>MyTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyTextBox.resx">
+      <DependentUpon>MyTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.cs.resx" />
+    <EmbeddedResource Include="SattelitesView.cs.resx">
+      <DependentUpon>SattelitesView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SattelitesView.resx">
+      <DependentUpon>SattelitesView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrackerForm.cs.resx">
+      <DependentUpon>TrackerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TrackerForm.resx">
       <DependentUpon>TrackerForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -87,15 +151,28 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="UIHelper.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="GPSTracka.exe.config" />
-    <Content Include="logo.jpg" />
-    <Content Include="SCIENCE1.ICO" />
+    <None Include="GPSTracka.exe.config" />
+    <Content Include="Help\GPSTracka.cs.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Help\GPSTracka.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="logo.jpg" />
+    <None Include="Resources\eventlogInfo.ico" />
+    <None Include="Resources\eventlogError.ico" />
+    <None Include="SCIENCE1.ICO" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Microsoft.Location\Microsoft.WindowsMobile.Samples.Location.csproj">
+      <Project>{DB77C1EE-A383-4CD5-A107-1C7C26A9E6B8}</Project>
+      <Name>Microsoft.WindowsMobile.Samples.Location</Name>
+    </ProjectReference>
     <ProjectReference Include="OpenNetCF\OpenNETCF.IO.Serial.csproj">
       <Project>{BF17CDE7-E5B1-4876-9B44-457F3BFDB3D9}</Project>
       <Name>OpenNETCF.IO.Serial</Name>
