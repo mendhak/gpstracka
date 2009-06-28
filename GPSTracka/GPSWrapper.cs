@@ -5,6 +5,7 @@ using MSGps = Microsoft.WindowsMobile.Samples.Location;
 using System.Collections.Generic;
 using System.Text;
 using GPSTracka;
+using OpenNETCF.IO.Serial.GPS;
 
 namespace GPSTracka.Gps {
     #region "General GPS"
@@ -149,6 +150,9 @@ namespace GPSTracka.Gps {
           get { return gpsTime; }
           set { gpsTime = value; }
         }
+
+       
+
         /// <summary>CTor</summary>
         /// <param name="altitude">Altitude information in meters. Null if not available.</param>
         /// <param name="longitude">Longitude (west or east) information in degrees. Null if not available.</param>
@@ -159,6 +163,7 @@ namespace GPSTracka.Gps {
             this.longitude=longitude;
             this.latitude=latitude;
             this.gpsTime=gpsTime;
+
         }
         /// <summary>Calculates distance of two positions in given unit</summary>
         /// <param name="pos1">A position</param>
@@ -320,11 +325,15 @@ namespace GPSTracka.Gps {
             OnGpsSentence(new GpsSentenceEventArgs(e.Counter,e.Sentence));
         }
         private void gps_Position(object sender, OpenNetGps.Position pos) {
-            OnPosition(new GpsPositionEventArgs(new GpsPosition(
+
+            int latMultipler = (pos.DirectionLatitude == CardinalDirection.South) ? -1 : 1;
+            int longMultiplier = (pos.DirectionLongitude == CardinalDirection.West) ? -1 : 1;
+
+            OnPosition(new GpsPositionEventArgs(new GpsPosition( 
                 pos.Altitude==0 ? null : new Decimal?(pos.Altitude),
-                pos.Longitude_Decimal==0 ? null : new Decimal?(pos.Longitude_Decimal),
-                pos.Latitude_Decimal==0 ? null : new Decimal?(pos.Latitude_Decimal),
-                pos.SatTime)));
+                pos.Longitude_Decimal==0 ? null : new Decimal?(pos.Longitude_Decimal*longMultiplier),
+                pos.Latitude_Decimal==0 ? null : new Decimal?(pos.Latitude_Decimal*latMultipler),
+                pos.SatTime )));
         }
         private void gps_Satellite(object sender, OpenNetGps.Satellite[] satellites) {
             List<GpsSattelite> sats = new List<GpsSattelite>(satellites.Length);

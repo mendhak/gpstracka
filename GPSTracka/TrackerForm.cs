@@ -13,6 +13,7 @@ using System.IO.Ports;
 //using OpenNETCF.IO.Serial.GPS;
 using OpenNETCF.IO.Serial;
 using Gps = GPSTracka.Gps;
+using OpenNETCF.IO.Serial.GPS;
 
 namespace GPSTracka {
 
@@ -276,19 +277,19 @@ namespace GPSTracka {
                 int latMultiplier = 1;
                 int longMultiplier = 1;
                 decimal? Altitude = pos.Altitude.HasValue ? pos.Altitude + (decimal)AdvancedConfig.AltitudeCorrection : null;
+                
+                //if (pos.DirectionLatitude == CardinalDirection.South) {
+                //    latMultiplier = -1;
+                //}
 
-                /*if (pos.DirectionLatitude == CardinalDirection.South) {
-                    latMultiplier = -1;
-                }
-
-                if (pos.DirectionLongitude == CardinalDirection.West) {
-                    longMultiplier = -1;
-                }*/
+                //if (pos.DirectionLongitude == CardinalDirection.West) {
+                //    longMultiplier = -1;
+                //}
                 string gpsData = string.Format(
                     AdvancedConfig.TextLogFormat,
                     time.ToUniversalTime(),
-                    Math.Round(pos.Longitude.Value /* * longMultiplier*/, 7),
-                    Math.Round(pos.Latitude.Value /* * latMultiplier*/, 7),
+                    Math.Round(pos.Longitude.Value  /** longMultiplier*/, 7),
+                    Math.Round(pos.Latitude.Value  /** latMultiplier*/, 7),
                     Altitude.HasValue ? Math.Round(Altitude.Value, 7) : 0,
                     time,
                     AdvancedConfig.ElevationUnitName
