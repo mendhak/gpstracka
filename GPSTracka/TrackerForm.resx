@@ -423,28 +423,28 @@
   <data name="&gt;&gt;lblPoints.ZOrder" xml:space="preserve">
     <value>17</value>
   </data>
-  <data name="&gt;&gt;lblSattelitesI.Name" xml:space="preserve">
-    <value>lblSattelitesI</value>
+  <data name="&gt;&gt;lblSatellitesI.Name" xml:space="preserve">
+    <value>lblSatellitesI</value>
   </data>
-  <data name="&gt;&gt;lblSattelitesI.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblSatellitesI.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblSattelitesI.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblSatellitesI.Parent" xml:space="preserve">
     <value>panInfoPane</value>
   </data>
-  <data name="&gt;&gt;lblSattelitesI.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblSatellitesI.ZOrder" xml:space="preserve">
     <value>18</value>
   </data>
-  <data name="&gt;&gt;lblSattelites.Name" xml:space="preserve">
-    <value>lblSattelites</value>
+  <data name="&gt;&gt;lblSatellites.Name" xml:space="preserve">
+    <value>lblSatellites</value>
   </data>
-  <data name="&gt;&gt;lblSattelites.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblSatellites.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblSattelites.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblSatellites.Parent" xml:space="preserve">
     <value>panInfoPane</value>
   </data>
-  <data name="&gt;&gt;lblSattelites.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblSatellites.ZOrder" xml:space="preserve">
     <value>19</value>
   </data>
   <data name="panInfoPane.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -846,46 +846,46 @@
   <data name="&gt;&gt;lblPoints.ZOrder" xml:space="preserve">
     <value>17</value>
   </data>
-  <data name="lblSattelitesI.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lblSatellitesI.Location" type="System.Drawing.Point, System.Drawing">
     <value>116, 64</value>
   </data>
-  <data name="lblSattelitesI.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lblSatellitesI.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 16</value>
   </data>
-  <data name="lblSattelitesI.Text" xml:space="preserve">
-    <value>Sattelites</value>
+  <data name="lblSatellitesI.Text" xml:space="preserve">
+    <value>Satellites</value>
   </data>
-  <data name="&gt;&gt;lblSattelitesI.Name" xml:space="preserve">
-    <value>lblSattelitesI</value>
+  <data name="&gt;&gt;lblSatellitesI.Name" xml:space="preserve">
+    <value>lblSatellitesI</value>
   </data>
-  <data name="&gt;&gt;lblSattelitesI.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblSatellitesI.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblSattelitesI.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblSatellitesI.Parent" xml:space="preserve">
     <value>panInfoPane</value>
   </data>
-  <data name="&gt;&gt;lblSattelitesI.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblSatellitesI.ZOrder" xml:space="preserve">
     <value>18</value>
   </data>
-  <data name="lblSattelites.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lblSatellites.Location" type="System.Drawing.Point, System.Drawing">
     <value>172, 64</value>
   </data>
-  <data name="lblSattelites.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lblSatellites.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 16</value>
   </data>
-  <data name="lblSattelites.Text" xml:space="preserve">
+  <data name="lblSatellites.Text" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;lblSattelites.Name" xml:space="preserve">
-    <value>lblSattelites</value>
+  <data name="&gt;&gt;lblSatellites.Name" xml:space="preserve">
+    <value>lblSatellites</value>
   </data>
-  <data name="&gt;&gt;lblSattelites.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblSatellites.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblSattelites.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblSatellites.Parent" xml:space="preserve">
     <value>panInfoPane</value>
   </data>
-  <data name="&gt;&gt;lblSattelites.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblSatellites.ZOrder" xml:space="preserve">
     <value>19</value>
   </data>
   <data name="stsStatus.Location" type="System.Drawing.Point, System.Drawing">
@@ -924,7 +924,7 @@
   <data name="settingsMenuItem.Text" xml:space="preserve">
     <value>&amp;Settings</value>
   </data>
-  <data name="mniSattelites.Text" xml:space="preserve">
+  <data name="mniSatellites.Text" xml:space="preserve">
     <value>Sa&amp;ttellites</value>
   </data>
   <data name="mniSep1.Text" xml:space="preserve">
@@ -2022,10 +2022,10 @@
   <data name="&gt;&gt;settingsMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;mniSattelites.Name" xml:space="preserve">
-    <value>mniSattelites</value>
+  <data name="&gt;&gt;mniSatellites.Name" xml:space="preserve">
+    <value>mniSatellites</value>
   </data>
-  <data name="&gt;&gt;mniSattelites.Type" xml:space="preserve">
+  <data name="&gt;&gt;mniSatellites.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;mniSep1.Name" xml:space="preserve">

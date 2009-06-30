@@ -146,11 +146,11 @@ namespace Microsoft.WindowsMobile.Samples.Location
                 /*bool entered;
                 int i = 0;
                 do {*/
-                    EventModify(stopHandle, eventSet);
-                    /*entered = System.Threading.Monitor.TryEnter(this);
-                    if (entered) System.Threading.Monitor.Exit(this); else System.Threading.Thread.Sleep(100);
-                    if (++i > 10) forceStop = true;
-                } while (!entered);*/
+                EventModify(stopHandle, eventSet);
+                /*entered = System.Threading.Monitor.TryEnter(this);
+                if (entered) System.Threading.Monitor.Exit(this); else System.Threading.Thread.Sleep(100);
+                if (++i > 10) forceStop = true;
+            } while (!entered);*/
             }
             //forceStop = false;
 
@@ -234,7 +234,7 @@ namespace Microsoft.WindowsMobile.Samples.Location
                 Utils.LocalFree(ptr);
             }
 
-            return gpsPosition;            
+            return gpsPosition;
         }
 
         /// <summary>
@@ -247,7 +247,7 @@ namespace Microsoft.WindowsMobile.Samples.Location
 
             // allocate a buffer on the native side.  Since the
             IntPtr pGpsDevice = Utils.LocalAlloc(GpsDeviceState.GpsDeviceStructureSize);
-            
+
             // GPS_DEVICE structure has arrays of characters, it's easier to just
             // write directly into memory rather than create a managed structure with
             // the same layout.
@@ -343,13 +343,13 @@ namespace Microsoft.WindowsMobile.Samples.Location
         static extern IntPtr GPSOpenDevice(IntPtr hNewLocationData, IntPtr hDeviceStateChange, string szDeviceName, int dwFlags);
 
         [DllImport("gpsapi.dll")]
-        static extern int  GPSCloseDevice(IntPtr hGPSDevice);
+        static extern int GPSCloseDevice(IntPtr hGPSDevice);
 
         [DllImport("gpsapi.dll")]
-        static extern int  GPSGetPosition(IntPtr hGPSDevice, IntPtr pGPSPosition, int dwMaximumAge, int dwFlags);
+        static extern int GPSGetPosition(IntPtr hGPSDevice, IntPtr pGPSPosition, int dwMaximumAge, int dwFlags);
 
         [DllImport("gpsapi.dll")]
-        static extern int  GPSGetDeviceState(IntPtr pGPSDevice);
+        static extern int GPSGetDeviceState(IntPtr pGPSDevice);
         #endregion
 
         #region PInvokes to coredll.dll
@@ -366,8 +366,8 @@ namespace Microsoft.WindowsMobile.Samples.Location
         const int eventSet = 3;
         [DllImport("coredll.dll")]
         static extern int EventModify(IntPtr hHandle, int dwFunc);
-        
-#endregion
+
+        #endregion
 
     }
 }

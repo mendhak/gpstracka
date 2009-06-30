@@ -1,39 +1,43 @@
 ﻿//Added by Đonny (whole file)
 using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
+using System.Collections;
+using GPSTracka.Properties;
 
-namespace GPSTracka {
+namespace GPSTracka
+{
     /// <summary>Form to edit advanced settings</summary>
-    internal partial class AdvancedConfigForm : Form {
+    internal partial class AdvancedConfigForm : Form
+    {
         /// <summary>CTor</summary>
-        public AdvancedConfigForm() {
+        public AdvancedConfigForm()
+        {
             InitializeComponent();
             {
-                lstCSVAvailableFields.Items.Add(new CSVItem(0, Properties.Resources.Latitude));
-                lstCSVAvailableFields.Items.Add(new CSVItem(1, Properties.Resources.Longitude));
-                lstCSVAvailableFields.Items.Add(new CSVItem(2, Properties.Resources.Altitude));
-                lstCSVAvailableFields.Items.Add(new CSVItem(3, Properties.Resources.Date));
+                lstCSVAvailableFields.Items.Add(new CSVItem(0, Resources.Latitude));
+                lstCSVAvailableFields.Items.Add(new CSVItem(1, Resources.Longitude));
+                lstCSVAvailableFields.Items.Add(new CSVItem(2, Resources.Altitude));
+                lstCSVAvailableFields.Items.Add(new CSVItem(3, Resources.Date));
                 lstCSVAvailableFields.DisplayMember = "Desc";
                 lstCSVFields.DisplayMember = "Desc";
                 cmbLanguage.DisplayMember = "NativeName";
                 //Cultures
-                cmbLanguage.Items.Add(Properties.Resources.Default);
+                cmbLanguage.Items.Add(Resources.Default);
                 object[] attrs = typeof(TrackerForm).Assembly.GetCustomAttributes(typeof(System.Resources.NeutralResourcesLanguageAttribute), false);
                 if (string.IsNullOrEmpty(AdvancedConfig.Language)) cmbLanguage.SelectedIndex = 0;
                 if (attrs.Length > 0)
-                    try {
+                    try
+                    {
                         cmbLanguage.Items.Add(System.Globalization.CultureInfo.GetCultureInfo(((System.Resources.NeutralResourcesLanguageAttribute)attrs[0]).CultureName));
-                    } catch { }
-                foreach(string dir in System.IO.Directory.GetDirectories(System.IO.Path.GetDirectoryName(typeof(TrackerForm).Assembly.GetModules()[0].FullyQualifiedName)))
-                    try {
+                    }
+                    catch { }
+                foreach (string dir in System.IO.Directory.GetDirectories(System.IO.Path.GetDirectoryName(typeof(TrackerForm).Assembly.GetModules()[0].FullyQualifiedName)))
+                    try
+                    {
                         cmbLanguage.Items.Add(System.Globalization.CultureInfo.GetCultureInfo(System.IO.Path.GetFileName(dir)));
-                    } catch { }
+                    }
+                    catch { }
             }
             copKMLColor.Text = Properties.Resources.LineColor;
             chkStatusBar.Checked = AdvancedConfig.StatusBar;
@@ -56,85 +60,99 @@ namespace GPSTracka {
             cmbSpeedUnit.SelectedIndex = (int)AdvancedConfig.SpeedUnit;
             cmbDistanceUnit.SelectedIndex = (int)AdvancedConfig.DistanceUnit;
             cmbElevationUnit.SelectedIndex = (int)AdvancedConfig.ElevationUnit;
-#region CSV
             txtCSVSeparator.Text = AdvancedConfig.CSVSeparator.ToString();
             txtCSVQualifier.Text = AdvancedConfig.CSVTextQualifier.ToString();
             cmbCSVQualifierUsage.SelectedIndex = (int)AdvancedConfig.CSVQualifierUsage;
             cmbCSVNewLine.SelectedIndex = AdvancedConfig.CSVNewLine == "\r\n" ? 0 : AdvancedConfig.CSVNewLine == "\n" ? 1 : 2;
             txtCSVHeader.Text = AdvancedConfig.CSVHeader;
-            if(AdvancedConfig.CSVFields!=null)
-                foreach(char chr in AdvancedConfig.CSVFields)
-                    foreach(CSVItem itm in lstCSVAvailableFields.Items)
-                        if ((int)char.GetNumericValue(chr) == itm.Code) {
+            if (AdvancedConfig.CSVFields != null)
+                foreach (char chr in AdvancedConfig.CSVFields)
+                    foreach (CSVItem itm in lstCSVAvailableFields.Items)
+                        if ((int)char.GetNumericValue(chr) == itm.Code)
+                        {
                             lstCSVFields.Items.Add(itm);
                             lstCSVAvailableFields.Items.Remove(itm);
                             break;
                         }
             txtCSVDateFormat.Text = AdvancedConfig.CSVDateFormat;
             chkCSVUTC.Checked = AdvancedConfig.CSVUTC;
-#endregion
-            if(!string.IsNullOrEmpty(AdvancedConfig.Language))
-                foreach(System.Globalization.CultureInfo ci in cmbLanguage.Items)
-                    if (ci is System.Globalization.CultureInfo && ci.Name == AdvancedConfig.Language) {
+            if (!string.IsNullOrEmpty(AdvancedConfig.Language))
+                foreach (System.Globalization.CultureInfo ci in cmbLanguage.Items)
+                    if (ci != null && ci.Name == AdvancedConfig.Language)
+                    {
                         cmbLanguage.SelectedItem = ci;
                         break;
                     }
         }
 
-        private void tmiOK_Click(object sender, EventArgs e) {
-#region Test
-            try {
-                string.Format(txtKMLNameFormat.Text, DateTime.UtcNow, decimal.Zero, decimal.Zero, decimal.Zero,DateTime.Now);
-            } catch (Exception ex) {
+        private void tmiOK_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string.Format(txtKMLNameFormat.Text, DateTime.UtcNow, decimal.Zero, decimal.Zero, decimal.Zero, DateTime.Now);
+            }
+            catch (Exception ex)
+            {
                 tabMain.SelectedIndex = tabMain.TabPages.IndexOf(tapKML);
                 txtKMLNameFormat.Focus();
-                MessageBox.Show(Properties.Resources.err_InvalidKmlPointNameFormat+"\r\n" + ex.Message);
+                MessageBox.Show(Resources.err_InvalidKmlPointNameFormat + "\r\n" + ex.Message);
                 return;
             }
-            try {
-                string.Format(txtKMLDescFormat.Text, DateTime.UtcNow, decimal.Zero, decimal.Zero, decimal.Zero,DateTime.Now);
-            } catch (Exception ex) {
+            try
+            {
+                string.Format(txtKMLDescFormat.Text, DateTime.UtcNow, decimal.Zero, decimal.Zero, decimal.Zero, DateTime.Now);
+            }
+            catch (Exception ex)
+            {
                 tabMain.SelectedIndex = tabMain.TabPages.IndexOf(tapKML);
                 txtKMLDescFormat.Focus();
-                MessageBox.Show(Properties.Resources.err_InvalidKmlPointDescFormat+"\r\n" + ex.Message);
+                MessageBox.Show(Resources.err_InvalidKmlPointDescFormat + "\r\n" + ex.Message);
                 return;
             }
-            try {
+            try
+            {
                 string.Format(txtLogFormat.Text, DateTime.UtcNow, decimal.Zero, decimal.Zero, decimal.Zero, DateTime.Now);
-            } catch (Exception ex) {
+            }
+            catch (Exception ex)
+            {
                 tabMain.SelectedIndex = tabMain.TabPages.IndexOf(tapDisplay);
                 txtLogFormat.Focus();
-                MessageBox.Show(Properties.Resources.err_InvalidLogFormat+"\r\n" + ex.Message);
+                MessageBox.Show(Resources.err_InvalidLogFormat + "\r\n" + ex.Message);
                 return;
             }
-            if(string.IsNullOrEmpty(txtCSVSeparator.Text)){
-                tabMain.SelectedIndex=tabMain.TabPages.IndexOf(tapCSV);
+            if (string.IsNullOrEmpty(txtCSVSeparator.Text))
+            {
+                tabMain.SelectedIndex = tabMain.TabPages.IndexOf(tapCSV);
                 txtCSVSeparator.Focus();
-                MessageBox.Show(Properties.Resources.err_CSVSeparatorEmpty);
+                MessageBox.Show(Resources.err_CSVSeparatorEmpty);
                 return;
             }
-            if(string.IsNullOrEmpty(txtCSVQualifier.Text)){
-                tabMain.SelectedIndex=tabMain.TabPages.IndexOf(tapCSV);
+            if (string.IsNullOrEmpty(txtCSVQualifier.Text))
+            {
+                tabMain.SelectedIndex = tabMain.TabPages.IndexOf(tapCSV);
                 txtCSVQualifier.Focus();
-                MessageBox.Show(Properties.Resources.err_CSVQualifierEmpty);
+                MessageBox.Show(Resources.err_CSVQualifierEmpty);
                 return;
             }
-            if (lstCSVFields.Items.Count == 0) {
+            if (lstCSVFields.Items.Count == 0)
+            {
                 tabMain.SelectedIndex = tabMain.TabPages.IndexOf(tapCSV);
                 lstCSVAvailableFields.Focus();
-                MessageBox.Show(Properties.Resources.err_NoCSVFields);
+                MessageBox.Show(Resources.err_NoCSVFields);
                 return;
             }
-            try {
+            try
+            {
                 DateTime.Now.ToString(txtCSVDateFormat.Text, System.Globalization.CultureInfo.InvariantCulture);
-            } catch (Exception ex) {
+            }
+            catch (Exception ex)
+            {
                 tabMain.SelectedIndex = tabMain.TabPages.IndexOf(tapCSV);
                 txtCSVDateFormat.Focus();
-                MessageBox.Show(Properties.Resources.err_InvalidCSVDateFormat + " " + ex.Message);
+                MessageBox.Show(Resources.err_InvalidCSVDateFormat + " " + ex.Message);
                 return;
             }
-#endregion
-#region "Write"
+
             AdvancedConfig.StatusBar = chkStatusBar.Checked;
             AdvancedConfig.UseGpsTime = optTimeGPS.Checked;
             AdvancedConfig.MaxLogLength = (int)nudMaxLogLen.Value;
@@ -154,63 +172,83 @@ namespace GPSTracka {
             AdvancedConfig.SpeedUnit = (SpeedUnit)cmbSpeedUnit.SelectedIndex;
             AdvancedConfig.DistanceUnit = (DistanceUnit)cmbDistanceUnit.SelectedIndex;
             AdvancedConfig.ElevationUnit = (ElevationUnit)cmbElevationUnit.SelectedIndex;
-#region CSV
             AdvancedConfig.CSVSeparator = txtCSVSeparator.Text[0];
             AdvancedConfig.CSVTextQualifier = txtCSVQualifier.Text[0];
             AdvancedConfig.CSVQualifierUsage = (CSVQualifierUsage)cmbCSVQualifierUsage.SelectedIndex;
             AdvancedConfig.CSVNewLine = cmbCSVNewLine.SelectedIndex == 0 ? "\r\n" : cmbCSVQualifierUsage.SelectedIndex == 1 ? "\n" : "\r";
             AdvancedConfig.CSVHeader = txtCSVHeader.Text;
-            AdvancedConfig.CSVFields = String.Join("", (from CSVItem fld in lstCSVFields.Items select fld.Code.ToString(System.Globalization.CultureInfo.InvariantCulture)).ToArray());
+
+            ArrayList alFields = new ArrayList();
+            foreach (CSVItem fld in lstCSVFields.Items)
+            {
+                alFields.Add(fld.Code.ToString(System.Globalization.CultureInfo.InvariantCulture));
+            }
+            AdvancedConfig.CSVFields = String.Join("", (string[])alFields.ToArray(typeof(string)));
+            //AdvancedConfig.CSVFields = String.Join("", (from CSVItem fld in lstCSVFields.Items select fld.Code.ToString(System.Globalization.CultureInfo.InvariantCulture)).ToArray());
             AdvancedConfig.CSVDateFormat = txtCSVDateFormat.Text;
             AdvancedConfig.CSVUTC = chkCSVUTC.Checked;
-#endregion
             string newlang;
+            
             if (cmbLanguage.SelectedItem is string)
+            {
                 newlang = AdvancedConfig.Language == "" ? "" : null;
-            else newlang = ((System.Globalization.CultureInfo)cmbLanguage.SelectedItem).Name;
+            }
+            else
+            {
+                newlang = ((System.Globalization.CultureInfo) cmbLanguage.SelectedItem).Name;
+            }
+
             if (AdvancedConfig.Language != newlang)
-                MessageBox.Show(Properties.Resources.msg_LngChange);
+                MessageBox.Show(Resources.msg_LngChange);
             AdvancedConfig.Language = newlang;
-#endregion
             this.Close();
             this.DialogResult = DialogResult.OK;
         }
-#region Interactivity
-        private void tmiCancel_Click(object sender, EventArgs e) {
+        #region Interactivity
+        private void tmiCancel_Click(object sender, EventArgs e)
+        {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
 
-        private void llbStringFormat_Click(object sender, EventArgs e) {
-            try {
+        private void llbStringFormat_Click(object sender, EventArgs e)
+        {
+            try
+            {
                 System.Diagnostics.Process.Start("http://msdn.microsoft.com/en-us/library/fht0f5be.aspx", null);
-            } catch { }
+            }
+            catch { }
         }
 
-        private void cmdTestFormat_Click(object sender, EventArgs e) {
+        private void cmdTestFormat_Click(object sender, EventArgs e)
+        {
             //Test string format
             string text;
             if (sender == cmdTestDesc) text = txtKMLDescFormat.Text;
             else if (sender == cmdTestName) text = txtKMLNameFormat.Text;
             else if (sender == cmdLogFormatTest) text = txtLogFormat.Text;
             else return;
-            object[] objarr = new object[]{DateTime.UtcNow,(decimal)14.451075,(decimal)50.1256567,(decimal)299.9,DateTime.Now,AdvancedConfig.ElevationUnitName};
-            try {
+            object[] objarr = new object[] { DateTime.UtcNow, (decimal)14.451075, (decimal)50.1256567, (decimal)299.9, DateTime.Now, AdvancedConfig.ElevationUnitName };
+            try
+            {
                 MessageBox.Show(
-                    string.Format(Properties.Resources.FormatTestInfo, objarr) +
+                    string.Format(Resources.FormatTestInfo, objarr) +
                     string.Format(text, objarr),
-                    Properties.Resources.ExapleOfFormatting, MessageBoxButtons.OK, MessageBoxIcon.None, MessageBoxDefaultButton.Button1);
-            } catch (Exception ex) {
+                    Resources.ExapleOfFormatting, MessageBoxButtons.OK, MessageBoxIcon.None, MessageBoxDefaultButton.Button1);
+            }
+            catch (Exception ex)
+            {
                 MessageBox.Show(
-                    Properties.Resources.err_InvalidFormatString + ex.Message,
-                    Properties.Resources.err_ErrorTitleMsg, MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                    Resources.err_InvalidFormatString + ex.Message,
+                    Resources.err_ErrorTitleMsg, MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
             }
         }
-#endregion
+        #endregion
 
-#region "CSV"
+        #region "CSV"
         /// <summary>Represents CSV field displayedn in <see cref="ListBox"/></summary>
-        private class CSVItem {
+        private class CSVItem
+        {
             /// <summary>Contains value of the <see cref="Code"/> property</summary>
             private readonly int code;
             /// <summary>Contains value of the <see cref="Desc"/> property</summary>
@@ -218,50 +256,59 @@ namespace GPSTracka {
             /// <summary>CTor</summary>
             /// <param name="Code">Field code</param>
             /// <param name="Desc">Field description</param>
-            public CSVItem(int Code, string Desc) {
+            public CSVItem(int Code, string Desc)
+            {
                 this.code = Code;
-                this.desc = Desc ;
+                this.desc = Desc;
             }
             /// <summary>Gets field code as used in <see cref="String.Format(string,object)"/></summary>
             public int Code { get { return code; } }
             /// <summary>Gets field description displayed to the user</summary>
             public string Desc { get { return desc; } }
-            public override string ToString() {
+            public override string ToString()
+            {
                 return desc;
             }
         }
-        private void cmdCSVTab_Click(object sender, EventArgs e) {
+        private void cmdCSVTab_Click(object sender, EventArgs e)
+        {
             txtCSVSeparator.Text = "\t";
         }
-        private void lstCSVAvailableFields_SelectedIndexChanged(object sender, EventArgs e) {
+        private void lstCSVAvailableFields_SelectedIndexChanged(object sender, EventArgs e)
+        {
             cmdCSVAdd.Enabled = lstCSVAvailableFields.SelectedIndex >= 0;
         }
-        private void lstCSVFields_SelectedIndexChanged(object sender, EventArgs e) {
+        private void lstCSVFields_SelectedIndexChanged(object sender, EventArgs e)
+        {
             cmdCSVRemove.Enabled = lstCSVFields.SelectedIndex >= 0;
             cmdCSVDown.Enabled = lstCSVFields.SelectedIndex >= 0 && lstCSVFields.SelectedIndex < lstCSVFields.Items.Count - 1;
             cmdCSVUp.Enabled = lstCSVFields.SelectedIndex >= 1;
         }
-        private void cmdCSVAdd_Click(object sender, EventArgs e) {
+        private void cmdCSVAdd_Click(object sender, EventArgs e)
+        {
             object item = lstCSVAvailableFields.SelectedItem;
             lstCSVAvailableFields.Items.RemoveAt(lstCSVAvailableFields.SelectedIndex);
             lstCSVFields.Items.Add(item);
         }
 
-        private void cmdCSVRemove_Click(object sender, EventArgs e) {
+        private void cmdCSVRemove_Click(object sender, EventArgs e)
+        {
             object item = lstCSVFields.SelectedItem;
             lstCSVFields.Items.RemoveAt(lstCSVFields.SelectedIndex);
             lstCSVAvailableFields.Items.Add(item);
         }
 
-        private void cmdCSVUp_Click(object sender, EventArgs e) {
+        private void cmdCSVUp_Click(object sender, EventArgs e)
+        {
             object item = lstCSVFields.SelectedItem;
             int index = lstCSVFields.SelectedIndex;
             lstCSVFields.Items.RemoveAt(index);
-            lstCSVFields.Items.Insert(index - 1,item);
+            lstCSVFields.Items.Insert(index - 1, item);
             lstCSVFields.SelectedIndex = index - 1;
         }
 
-        private void cmdCSVDown_Click(object sender, EventArgs e) {
+        private void cmdCSVDown_Click(object sender, EventArgs e)
+        {
             object item = lstCSVFields.SelectedItem;
             int index = lstCSVFields.SelectedIndex;
             lstCSVFields.Items.RemoveAt(index);
@@ -269,15 +316,17 @@ namespace GPSTracka {
             lstCSVFields.SelectedIndex = index + 1;
         }
 
-        private void cmdCSVHeaderTab_Click(object sender, EventArgs e) {
+        private void cmdCSVHeaderTab_Click(object sender, EventArgs e)
+        {
             txtCSVHeader.SelectedText = "\t";
         }
-        private void panCSVFields_Resize(object sender, EventArgs e) {
+        private void panCSVFields_Resize(object sender, EventArgs e)
+        {
             cmdCSVAdd.Left = cmdCSVRemove.Left = cmdCSVUp.Left = cmdCSVDown.Left =
-                panCSV.Width / 2 - cmdCSVAdd.Width / 2;  
-            lblCSVAvailableFields.Left =lstCSVAvailableFields.Left  = 0;
+                panCSV.Width / 2 - cmdCSVAdd.Width / 2;
+            lblCSVAvailableFields.Left = lstCSVAvailableFields.Left = 0;
             lblCSVAvailableFields.Top = 0;
-            lstCSVAvailableFields.Top =lstCSVFields.Top = lblCSVAvailableFields.Bottom;
+            lstCSVAvailableFields.Top = lstCSVFields.Top = lblCSVAvailableFields.Bottom;
             lblCSVAvailableFields.Width = lstCSVAvailableFields.Width = lblCSVFields.Width = lstCSVFields.Width =
                 panCSVFields.Width / 2 - cmdCSVAdd.Width / 2;
             lblCSVFields.Top = 0;
@@ -289,140 +338,284 @@ namespace GPSTracka {
             lstCSVFields.Height = lstCSVAvailableFields.Height =
                 panCSVFields.Height - lstCSVAvailableFields.Top;
         }
-        private void cmbDateFormat_Click(object sender, EventArgs e) {
-            try {
-                MessageBox.Show(string.Format(Properties.Resources.DateTestMessage, DateTime.Now, DateTime.Now.ToString(txtCSVDateFormat.Text, System.Globalization.CultureInfo.InvariantCulture)), Properties.Resources.DateFormatTest);
-            } catch (Exception ex) {
-                MessageBox.Show(Properties.Resources.err_InvalidFormat + "\r\n" + ex.Message);
+        private void cmbDateFormat_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MessageBox.Show(string.Format(Resources.DateTestMessage, DateTime.Now, DateTime.Now.ToString(txtCSVDateFormat.Text, System.Globalization.CultureInfo.InvariantCulture)), Resources.DateFormatTest);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(Resources.err_InvalidFormat + "\r\n" + ex.Message);
             }
         }
- #endregion
- 
+        #endregion
+
 
     }
 
     /// <summary>Stores, loads and saves advanced settings</summary>
-    internal static class AdvancedConfig {
-        static AdvancedConfig() {
-            KMLNameFormat = KMLDescFormat = GPSTracka.Properties.Resources.format_KmlDescDefault;
-            TextLogFormat = GPSTracka.Properties.Resources.format_TextLogDefault;
+    internal static class AdvancedConfig
+    {
+        static AdvancedConfig()
+        {
+            //Set defaults.
+
+            KMLNameFormat = KMLDescFormat = Resources.format_KmlDescDefault;
+            TextLogFormat = Resources.format_TextLogDefault;
             COMPort = "COM1";
             BaudRate = OpenNETCF.IO.Serial.BaudRates.CBR_4800;
             TrackType = TrackType.Points;
             LogFormat = LogFormat.GPX;
-            LogToLogFile = true;
+            LogToLogFile = false;
             LogToTextBox = true;
             PollingInterval = 60;
-            UseWindowsDriver = true;
+            UseWindowsDriver = false;
+            InfoPane = true;
+            StatusBar = true;
+            StartImmediatelly = true;
+            KMLLineColor = Color.FromArgb(0, 0, 0xff);
+            InvalidPositionsMax = 500;
+            NmeaLog = false;
+            KeepAwakeList = new string[] { "GPD0", "GPS0" };
+            SpeedUnit = SpeedUnit.kmh;
+            DistanceUnit = DistanceUnit.km;
+            ElevationUnit = ElevationUnit.m;
+            CSVQualifierUsage = CSVQualifierUsage.AsNeeded;
         }
         /// <summary>Loads advanced settings from <see cref="ConfigurationManager"/></summary>
-        public static void Load() {
-            #region "Basic"
+        public static void Load()
+        {
+            //Read from config file
+
             COMPort = ConfigurationManager.AppSettings["COMPort"];
-            if (string.IsNullOrEmpty(COMPort)) COMPort = "COM1";
-            try { BaudRate = (OpenNETCF.IO.Serial.BaudRates)Enum.Parse(typeof(OpenNETCF.IO.Serial.BaudRates),ConfigurationManager.AppSettings["BaudRate"],true); }
-                catch{BaudRate= OpenNETCF.IO.Serial.BaudRates.CBR_4800;}
-            UseWindowsDriver = ConfigurationManager.AppSettings["UseWindowsDriver"] != "false";
-            try { PollingInterval = int.Parse(ConfigurationManager.AppSettings["PollingInterval"], System.Globalization.CultureInfo.InvariantCulture); }
-                catch { PollingInterval = 60; }
-            LogToTextBox = ConfigurationManager.AppSettings["LogToTextBox"] != "false";
-            LogToLogFile = ConfigurationManager.AppSettings["LogToFile"] != "false";
-            LogFileLocation = ConfigurationManager.AppSettings["LogFileLocation"];
-            LogAltitude = ConfigurationManager.AppSettings["LogAltitude"] == "true";
-            switch (ConfigurationManager.AppSettings["LogFormat"]) {
-                case "KML": LogFormat = LogFormat.KML; break;
-                case "CSV": LogFormat = LogFormat.CSV; break;
-                default: LogFormat = LogFormat.GPX; break;
+
+            if (String.IsNullOrEmpty(COMPort))
+            {
+                COMPort = "COM1";
             }
-            switch (ConfigurationManager.AppSettings["TrackType"]) {
-                case "Track": TrackType = TrackType.Track; break;
-                default: TrackType = TrackType.Points; break;
+
+            try
+            {
+                BaudRate = (OpenNETCF.IO.Serial.BaudRates)Enum.Parse(typeof(OpenNETCF.IO.Serial.BaudRates), ConfigurationManager.AppSettings["BaudRate"], true);
             }
-            #endregion
-            #region "Advanced"
-            UseGpsTime = ConfigurationManager.AppSettings["UseGPSTime"] == "true";
-            StatusBar = ConfigurationManager.AppSettings["StatusBar"] == "true";
-            try {
-                MaxLogLength = int.Parse(ConfigurationManager.AppSettings["MaxLogLength"], System.Globalization.CultureInfo.InvariantCulture);
-            }catch{}
-            try {
-                AltitudeCorrection = int.Parse(ConfigurationManager.AppSettings["AltitudeCorrection"], System.Globalization.CultureInfo.InvariantCulture);
-            } catch { }
-            StartImmediatelly = ConfigurationManager.AppSettings["StartImmediatelly"] == "true";
-            if (ConfigurationManager.AppSettings["KMLNameFormat"] != null)
+            catch
+            {
+                BaudRate = OpenNETCF.IO.Serial.BaudRates.CBR_4800;
+            }
+
+            if(!String.IsNullOrEmpty(ConfigurationManager.AppSettings["UseWindowsDriver"]))
+            {
+                UseWindowsDriver = Convert.ToBoolean(ConfigurationManager.AppSettings["UseWindowsDriver"]);
+            }
+
+            if (!String.IsNullOrEmpty(ConfigurationManager.AppSettings["PollingInterval"]))
+            {
+                PollingInterval = Int32.Parse(ConfigurationManager.AppSettings["PollingInterval"], System.Globalization.CultureInfo.InvariantCulture);
+            }
+
+            if(!String.IsNullOrEmpty(ConfigurationManager.AppSettings["LogToTextBox"]))
+            {
+                LogToTextBox = Convert.ToBoolean(ConfigurationManager.AppSettings["LogToTextBox"]);
+            }
+
+            if(!String.IsNullOrEmpty(ConfigurationManager.AppSettings["LogToFile"]))
+            {
+                LogToLogFile = Convert.ToBoolean(ConfigurationManager.AppSettings["LogToFile"]);
+            }
+            
+            if(!String.IsNullOrEmpty(ConfigurationManager.AppSettings["LogFileLocation"]))
+            {
+                LogFileLocation = ConfigurationManager.AppSettings["LogFileLocation"];
+            }
+
+            if(!String.IsNullOrEmpty(ConfigurationManager.AppSettings["LogAltitude"]))
+            {
+                LogAltitude = Convert.ToBoolean(ConfigurationManager.AppSettings["LogAltitude"]);
+            }
+            
+
+            
+            switch (ConfigurationManager.AppSettings["LogFormat"])
+            {
+                case "KML": 
+                    LogFormat = LogFormat.KML; 
+                    break;
+                case "CSV": 
+                    LogFormat = LogFormat.CSV; 
+                    break;
+                default: 
+                    LogFormat = LogFormat.GPX; 
+                    break;
+            }
+
+            switch (ConfigurationManager.AppSettings["TrackType"])
+            {
+                case "Track": 
+                    TrackType = TrackType.Track; 
+                    break;
+                default: 
+                    TrackType = TrackType.Points; 
+                    break;
+            }
+
+            if(!String.IsNullOrEmpty(ConfigurationManager.AppSettings["UseGPSTime"]))
+            {
+                UseGpsTime = Convert.ToBoolean(ConfigurationManager.AppSettings["UseGPSTime"]);
+            }
+            
+            if(!String.IsNullOrEmpty(ConfigurationManager.AppSettings["StatusBar"]))
+            {
+                StatusBar = Convert.ToBoolean(ConfigurationManager.AppSettings["StatusBar"]);
+            }
+
+            if(!String.IsNullOrEmpty(ConfigurationManager.AppSettings["MaxLogLength"]))
+            {
+                MaxLogLength = Int32.Parse(ConfigurationManager.AppSettings["MaxLogLength"], System.Globalization.CultureInfo.InvariantCulture);
+            }
+
+
+            if(!String.IsNullOrEmpty(ConfigurationManager.AppSettings["AltitudeCorrection"]))
+            {
+                AltitudeCorrection = Int32.Parse(ConfigurationManager.AppSettings["AltitudeCorrection"], System.Globalization.CultureInfo.InvariantCulture);
+            }
+
+            if(!String.IsNullOrEmpty(ConfigurationManager.AppSettings["StartImmediatelly"]))
+            {
+                StartImmediatelly = Convert.ToBoolean(ConfigurationManager.AppSettings["StartImmediatelly"]);
+            }
+            
+            if (!String.IsNullOrEmpty(ConfigurationManager.AppSettings["KMLNameFormat"]))
+            {
                 KMLNameFormat = ConfigurationManager.AppSettings["KMLNameFormat"];
-            if (ConfigurationManager.AppSettings["KMLDescFormat"] != null)
+            }
+
+            if (!String.IsNullOrEmpty(ConfigurationManager.AppSettings["KMLDescFormat"]))
+            {
                 KMLDescFormat = ConfigurationManager.AppSettings["KMLDescFormat"];
-            try {
-                KMLLineColor = Color.FromArgb(int.Parse(ConfigurationManager.AppSettings["KMLLineColor"], System.Globalization.CultureInfo.InvariantCulture));
-            } catch {
-                KMLLineColor = Color.FromArgb(0,0,0xff);
             }
-            try {
-                MinimalDistance = int.Parse(ConfigurationManager.AppSettings["MinimalDistance"], System.Globalization.CultureInfo.InvariantCulture);
-            } catch { }
-            if (ConfigurationManager.AppSettings["TextLogFormat"] != null)
+
+            if(!String.IsNullOrEmpty(ConfigurationManager.AppSettings["KMLLineColor"]))
+            {
+                KMLLineColor = Color.FromArgb(Int32.Parse(ConfigurationManager.AppSettings["KMLLineColor"], System.Globalization.CultureInfo.InvariantCulture));
+            }
+
+            if(!String.IsNullOrEmpty(ConfigurationManager.AppSettings["MinimalDistance"]))
+            {
+
+                MinimalDistance = Int32.Parse(ConfigurationManager.AppSettings["MinimalDistance"], System.Globalization.CultureInfo.InvariantCulture);
+            }
+
+
+            if (!String.IsNullOrEmpty(ConfigurationManager.AppSettings["TextLogFormat"]))
+            {
                 TextLogFormat = ConfigurationManager.AppSettings["TextLogFormat"];
-            try {
-                InvalidPositionsMax = int.Parse(ConfigurationManager.AppSettings["InvalidPositionsMax"], System.Globalization.CultureInfo.InvariantCulture);
-            } catch {
-                InvalidPositionsMax = 500;
             }
-            NmeaLog = ConfigurationManager.AppSettings["NMEALog"] == "true";
-            SeaLevelAltitude = ConfigurationManager.AppSettings["SeaLevelAltitude"] == "true";
-            InfoPane = ConfigurationManager.AppSettings["InfoPane"] == "true";
-            try { BeepTimer = int.Parse(ConfigurationManager.AppSettings["BeepTimer"], System.Globalization.CultureInfo.InvariantCulture); } catch { }
-            if (ConfigurationManager.AppSettings["KeepAwake"] == null) {
-                KeepAwakeList = new string[] { "GPD0", "GPS0"};
-            } else {
+
+            if(!String.IsNullOrEmpty(ConfigurationManager.AppSettings["InvalidPositionsMax"]))
+            {
+                InvalidPositionsMax = Int32.Parse(ConfigurationManager.AppSettings["InvalidPositionsMax"], System.Globalization.CultureInfo.InvariantCulture);
+            }
+
+            if(!String.IsNullOrEmpty(ConfigurationManager.AppSettings["NMEALog"]))
+            {
+                NmeaLog = Convert.ToBoolean(ConfigurationManager.AppSettings["NMEALog"]);
+            }
+            
+            if(!String.IsNullOrEmpty(ConfigurationManager.AppSettings["SeaLevelAltitude"]))
+            {
+                SeaLevelAltitude = Convert.ToBoolean(ConfigurationManager.AppSettings["SeaLevelAltitude"]);
+            }
+
+            if (!String.IsNullOrEmpty(ConfigurationManager.AppSettings["InfoPane"]))
+            {
+                InfoPane = Convert.ToBoolean(ConfigurationManager.AppSettings["InfoPane"]);
+            }
+
+            if(!String.IsNullOrEmpty(ConfigurationManager.AppSettings["BeepTimer"]))
+            {
+                BeepTimer = Int32.Parse(ConfigurationManager.AppSettings["BeepTimer"], System.Globalization.CultureInfo.InvariantCulture); 
+            }
+            
+            if (!String.IsNullOrEmpty(ConfigurationManager.AppSettings["KeepAwake"]))
+            {
                 KeepAwakeList = ConfigurationManager.AppSettings["KeepAwake"].Split(' ');
             }
-            try {
+
+            if(!String.IsNullOrEmpty(ConfigurationManager.AppSettings["SpeedUnit"]))
+            {
                 SpeedUnit = (SpeedUnit)Enum.Parse(typeof(SpeedUnit), ConfigurationManager.AppSettings["SpeedUnit"], true);
-            } catch { SpeedUnit = SpeedUnit.kmh; }
-            try {
+            }
+
+            if(!String.IsNullOrEmpty(ConfigurationManager.AppSettings["DistanceUnit"]))
+            {
                 DistanceUnit = (DistanceUnit)Enum.Parse(typeof(DistanceUnit), ConfigurationManager.AppSettings["DistanceUnit"], true);
-            } catch { DistanceUnit = DistanceUnit.km; }
-            try {
+            }
+            
+            if(!String.IsNullOrEmpty(ConfigurationManager.AppSettings["ElevationUnit"]))
+            {
                 ElevationUnit = (ElevationUnit)Enum.Parse(typeof(ElevationUnit), ConfigurationManager.AppSettings["ElevationUnit"], true);
-            } catch { ElevationUnit = ElevationUnit.m; }
-            #region "CSV"
+            }
+            
+
+
             CSVSeparator = String.IsNullOrEmpty(ConfigurationManager.AppSettings["CSVSeparator"]) ? ',' : ConfigurationManager.AppSettings["CSVSeparator"][0];
             CSVTextQualifier = String.IsNullOrEmpty(ConfigurationManager.AppSettings["CSVTextQualifier"]) ? '"' : ConfigurationManager.AppSettings["CSVTextQualifier"][0];
-            try {
-                CSVQualifierUsage = (CSVQualifierUsage)int.Parse(ConfigurationManager.AppSettings["CSVQualifierUsage"],System.Globalization.CultureInfo.InvariantCulture);
-            } catch { CSVQualifierUsage = CSVQualifierUsage.AsNeeded; }
-            CSVHeader = ConfigurationManager.AppSettings["CSVHeader"];
+
+            if(!String.IsNullOrEmpty(ConfigurationManager.AppSettings["CSVQualifierUsage"]))
+            {
+                CSVQualifierUsage = (CSVQualifierUsage)int.Parse(ConfigurationManager.AppSettings["CSVQualifierUsage"], System.Globalization.CultureInfo.InvariantCulture);
+            }
+
+            if (!String.IsNullOrEmpty(ConfigurationManager.AppSettings["CSVHeader"]))
+            {
+                CSVHeader = ConfigurationManager.AppSettings["CSVHeader"];
+            }
+
             CSVFields = String.IsNullOrEmpty(ConfigurationManager.AppSettings["CSVFields"]) ? "3012" : ConfigurationManager.AppSettings["CSVFields"];
-            CSVNewLine = String.IsNullOrEmpty(ConfigurationManager.AppSettings["CSVNewLine"])? "\r\n" : ConfigurationManager.AppSettings["CSVNewLine"];
-            CSVDateFormat = string.IsNullOrEmpty(ConfigurationManager.AppSettings["CSVDateFormat"]) ? "yyyy-MM-dd HH:mm:ss" : ConfigurationManager.AppSettings["CSVDateFormat"];
-            CSVUTC = ConfigurationManager.AppSettings["CSVUTC"] != "false";
-            #endregion
-            Language = ConfigurationManager.AppSettings["Language"];
-            #endregion
+            CSVNewLine = String.IsNullOrEmpty(ConfigurationManager.AppSettings["CSVNewLine"]) ? "\r\n" : ConfigurationManager.AppSettings["CSVNewLine"];
+            CSVDateFormat = String.IsNullOrEmpty(ConfigurationManager.AppSettings["CSVDateFormat"]) ? "yyyy-MM-dd HH:mm:ss" : ConfigurationManager.AppSettings["CSVDateFormat"];
+
+            if (!String.IsNullOrEmpty(ConfigurationManager.AppSettings["CSVUTC"]))
+            {
+                CSVUTC = Convert.ToBoolean(ConfigurationManager.AppSettings["CSVUTC"]);
+            }
+            
+            if(!String.IsNullOrEmpty(ConfigurationManager.AppSettings["Language"]))
+            {
+                Language = ConfigurationManager.AppSettings["Language"];
+            }
         }
         /// <summary>Stores advanced settings to <see cref="ConfigurationManager"/></summary>
-        public static void Store() {
-            #region "Basic"
+        public static void Store()
+        {
             ConfigurationManager.AppSettings["COMPort"] = COMPort;
             ConfigurationManager.AppSettings["BaudRate"] = BaudRate.ToString();
             ConfigurationManager.AppSettings["UseWindowsDriver"] = UseWindowsDriver ? "true" : "false";
             ConfigurationManager.AppSettings["PollingInterval"] = PollingInterval.ToString(System.Globalization.CultureInfo.InvariantCulture);
             ConfigurationManager.AppSettings["LogToTextBox"] = LogToTextBox ? "true" : "false";
             ConfigurationManager.AppSettings["LogToFile"] = LogToLogFile ? "true" : "false";
-            switch (LogFormat) {
-                case LogFormat.KML: ConfigurationManager.AppSettings["LogFormat"] = "KML"; break;
-                case LogFormat.CSV: ConfigurationManager.AppSettings["LogFormat"] = "CSV"; break;
-                default: ConfigurationManager.AppSettings["LogFormat"] = "GPX"; break;
+            switch (LogFormat)
+            {
+                case LogFormat.KML: 
+                    ConfigurationManager.AppSettings["LogFormat"] = "KML"; 
+                    break;
+                case LogFormat.CSV: 
+                    ConfigurationManager.AppSettings["LogFormat"] = "CSV"; 
+                    break;
+                default: 
+                    ConfigurationManager.AppSettings["LogFormat"] = "GPX"; 
+                    break;
             }
-            switch (TrackType) {
+
+            switch (TrackType)
+            {
                 case TrackType.Track: ConfigurationManager.AppSettings["TrackType"] = "Track"; break;
                 default: ConfigurationManager.AppSettings["TrackType"] = "Points"; break;
             }
             ConfigurationManager.AppSettings["LogAltitude"] = LogAltitude ? "true" : "false";
             ConfigurationManager.AppSettings["LogFileLocation"] = LogFileLocation;
-            #endregion
-            #region "Advanced"
+
             ConfigurationManager.AppSettings["UseGPSTime"] = UseGpsTime ? "true" : "false";
             ConfigurationManager.AppSettings["StatusBar"] = StatusBar ? "true" : "false";
             ConfigurationManager.AppSettings["MaxLogLength"] = MaxLogLength.ToString(System.Globalization.CultureInfo.InvariantCulture);
@@ -433,7 +626,7 @@ namespace GPSTracka {
             ConfigurationManager.AppSettings["KMLLineColor"] = KMLLineColor.ToArgb().ToString(System.Globalization.CultureInfo.InvariantCulture);
             ConfigurationManager.AppSettings["MinimalDistance"] = MinimalDistance.ToString(System.Globalization.CultureInfo.InvariantCulture);
             ConfigurationManager.AppSettings["TextLogFormat"] = TextLogFormat;
-            ConfigurationManager.AppSettings["InvalidPositionsMax"] = InvalidPositionsMax.ToString(System.Globalization.CultureInfo.InvariantCulture) ;
+            ConfigurationManager.AppSettings["InvalidPositionsMax"] = InvalidPositionsMax.ToString(System.Globalization.CultureInfo.InvariantCulture);
             ConfigurationManager.AppSettings["NMEALog"] = NmeaLog ? "true" : "false";
             ConfigurationManager.AppSettings["SeaLevelAltitude"] = SeaLevelAltitude ? "true" : "false";
             ConfigurationManager.AppSettings["InfoPane"] = InfoPane ? "true" : "false";
@@ -442,7 +635,6 @@ namespace GPSTracka {
             ConfigurationManager.AppSettings["SpeedUnit"] = SpeedUnit.ToString();
             ConfigurationManager.AppSettings["DistanceUnit"] = DistanceUnit.ToString();
             ConfigurationManager.AppSettings["ElevationUnit"] = ElevationUnit.ToString();
-            #region CSV
             ConfigurationManager.AppSettings["CSVSeparator"] = CSVSeparator.ToString();
             ConfigurationManager.AppSettings["CSVTextQualifier"] = CSVTextQualifier.ToString();
             ConfigurationManager.AppSettings["CSVNewLine"] = CSVNewLine;
@@ -451,11 +643,9 @@ namespace GPSTracka {
             ConfigurationManager.AppSettings["CSVFields"] = CSVFields;
             ConfigurationManager.AppSettings["CSVDateFormat"] = CSVDateFormat;
             ConfigurationManager.AppSettings["CSVUTC"] = CSVUTC ? "true" : "false";
-            #endregion
             ConfigurationManager.AppSettings["Language"] = Language;
-            #endregion
         }
-#region "Basic"
+
         /// <summary>Gets or sets COM port name to get GPS data from</summary>
         /// <remarks>Ignored when <see cref="UseWindowsDriver"/> is true</remarks>
         public static string COMPort { get; set; }
@@ -478,8 +668,7 @@ namespace GPSTracka {
         public static LogFormat LogFormat { get; set; }
         /// <summary>Gets or sets format of logged track</summary>
         public static TrackType TrackType { get; set; }
-#endregion
-#region "Advanced"
+
         /// <summary>Gets or sets value indicationg if GPS time shoudl be used instead of system</summary>
         public static bool UseGpsTime { get; set; }
         /// <summary>Gets or sets value indicationg if status bar is shown</summary>
@@ -488,8 +677,9 @@ namespace GPSTracka {
         public static int MaxLogLength { get; set; }
         /// <summary>Gets or sets altitude correction</summary>
         public static int AltitudeCorrection { get; set; }
-        /// <summary>Gets or sets value indicationg if gps processing starts immediatelly or after a polling interval</summary>
+        /// <summary>Gets or sets value indicationg if gps processing starts immediately or after a polling interval</summary>
         public static bool StartImmediatelly { get; set; }
+        
         /// <summary>Gets or sets format used for KML point name</summary>
         /// <value>String used by <see cref="String.Format(string,object)"/>. Parameters are:
         /// <list type="table"><listheader><term>Number</term><description>Value</description></listheader>
@@ -501,6 +691,7 @@ namespace GPSTracka {
         /// <item><term>5</term><description>Altitude unit</description></item>
         /// </list></value>
         public static string KMLNameFormat { get; set; }
+        
         /// <summary>Gets or sets format used for KML point description</summary>
         /// <value>String used by <see cref="String.Format(string,object)"/>. Parameters are:
         /// <list type="table"><listheader><term>Number</term><description>Value</description></listheader>
@@ -512,8 +703,10 @@ namespace GPSTracka {
         /// <item><term>5</term><description>Altitude unit</description></item>
         /// </list></value>
         public static string KMLDescFormat { get; set; }
+        
         /// <summary>Gets or sets color used for KML line</summary>
         public static Color KMLLineColor { get; set; }
+        
         /// <summary>Gets minimal distance of two logged points (in meters)</summary>
         /// <remarks>When point A is logged, its location is remembered.
         /// If point B is about to be logged and it's neared than given distance form A, its ignored, but remembered as well.
@@ -522,38 +715,53 @@ namespace GPSTracka {
         /// a) It's farer than distance from both A and C: C and D are logged. D is remembered.
         /// b) It's nearer than distance from C (but farer than distance from A): Only D is logged. D is remembered.</remarks>
         public static int MinimalDistance { get; set; }
+        
         /// <summary>Gets or sets format of log</summary>
         public static string TextLogFormat { get; set; }
+        
         /// <summary>Gets or sets maximal number of invalid positions in a row.</summary>
         /// <remarks>After this number of invalid positions received, GPS is closed and waits for polling interval.</remarks>
         public static int InvalidPositionsMax { get; set; }
+        
         /// <summary>Write an extra raw NMEA log file</summary>
         public static bool NmeaLog { get; set; }
+        
         /// <summary>Gets or sets value indicating if Windows GPS Intermediate driver wrapper returns GPS elipsoid altitude (false) or sea level altitude (true)</summary>
         public static bool SeaLevelAltitude { get; set; }
+        
         /// <summary>Gets or sets value indicating if main window shows information panel</summary>
         public static bool InfoPane { get; set; }
+        
         /// <summary>Gets or sets number of seconds to beep in; zero - never</summary>
         public static int BeepTimer { get; set; }
+        
         /// <summary>Names of devices to keep awake when GPS is running</summary>
         public static string[] KeepAwakeList { get; set; }
+        
         /// <summary>Gets or sets unit used to measure speed</summary>
         public static SpeedUnit SpeedUnit { get; set; }
+        
         /// <summary>Gets or sets unit used to measure distance</summary>
         public static DistanceUnit DistanceUnit { get; set; }
+        
         /// <summary>Gets or sets unit used to measure elevation</summary>
         public static ElevationUnit ElevationUnit { get; set; }
-#region CSV
+
         /// <summary>CSV field separator</summary>
         public static char CSVSeparator { get; set; }
+        
         /// <summary>CSV text qualifier</summary>
         public static char CSVTextQualifier { get; set; }
+        
         /// <summary>When to use CSV text qualifier</summary>
-        public static CSVQualifierUsage CSVQualifierUsage{get;set;}
+        public static CSVQualifierUsage CSVQualifierUsage { get; set; }
+        
         /// <summary>CSV new linestring</summary>
-        public static string CSVNewLine{get;set;}
+        public static string CSVNewLine { get; set; }
+        
         /// <summary>CSV file header</summary>
-        public static string CSVHeader{get;set;}
+        public static string CSVHeader { get; set; }
+        
         /// <summary>Order of SCV fileds - single-digits from 0 to 3.</summary>
         /// <remarks>
         /// <list type="table"><listheader><term>Number</term><description>Value</description></listheader>
@@ -562,20 +770,24 @@ namespace GPSTracka {
         /// <item><term>2</term><description>Altitude</description></item>
         /// <item><term>3</term><description>Date</description></item>
         /// </list></remarks>
-        public static string CSVFields{get;set;}
+        public static string CSVFields { get; set; }
+        
         /// <summary>Format of date in CSV file</summary>
         public static string CSVDateFormat { get; set; }
+        
         /// <summary>Use UTC time in CSV file</summary>
         public static bool CSVUTC { get; set; }
-#endregion
+
         /// <summary>Langauge (culture name)</summary>
         public static string Language { get; set; }
-#endregion
-        #region Helpers
+
         /// <summary>Gets multiplier for <see cref="SpeedUnit"/>. Multiply speed in km/h by returned value to get speed in actual unit.</summary>
-        public static decimal SpeedMultiplier {
-            get {
-                switch (SpeedUnit) {
+        public static decimal SpeedMultiplier
+        {
+            get
+            {
+                switch (SpeedUnit)
+                {
                     case SpeedUnit.kmh: return 1m;
                     case SpeedUnit.kn: return 1m / 1.852m;
                     case SpeedUnit.mih: return 1m / 1.609344m;
@@ -584,10 +796,14 @@ namespace GPSTracka {
                 }
             }
         }
+
         /// <summary>Gets multiplier for <see cref="DistanceUnit"/>. Multiply distance in km by returned value to get distance in actual unit.</summary>
-        public static decimal DistanceMultiplier {
-            get {
-                switch (DistanceUnit) {
+        public static decimal DistanceMultiplier
+        {
+            get
+            {
+                switch (DistanceUnit)
+                {
                     case DistanceUnit.km: return 1m;
                     case DistanceUnit.m: return 1000m;
                     case DistanceUnit.mi: return 1m / 1.609344m;
@@ -597,10 +813,14 @@ namespace GPSTracka {
                 }
             }
         }
+
         /// <summary>Gets multiplier for <see cref="ElevationUnit"/>. Multiply elevation in m by returned value to get elevation in actual unit.</summary>
-        public static decimal ElevationMultiplier {
-            get {
-                switch (ElevationUnit) {
+        public static decimal ElevationMultiplier
+        {
+            get
+            {
+                switch (ElevationUnit)
+                {
                     case ElevationUnit.ft: return 1m / 0.3048m;
                     case ElevationUnit.km: return 1m / 1000m;
                     case ElevationUnit.m: return 1m;
@@ -609,10 +829,14 @@ namespace GPSTracka {
                 }
             }
         }
+
         /// <summary>Gets short display name of actual <see cref="SpeedUnit"/>.</summary>
-        public static string SpeedUnitName {
-            get {
-                switch (SpeedUnit) {
+        public static string SpeedUnitName
+        {
+            get
+            {
+                switch (SpeedUnit)
+                {
                     case SpeedUnit.kmh: return "km/h";
                     case SpeedUnit.kn: return "kn";
                     case SpeedUnit.mih: return "mi/h";
@@ -621,10 +845,14 @@ namespace GPSTracka {
                 }
             }
         }
+
         /// <summary>Gets short display name of actual <see cref="DistanceUnit"/>.</summary>
-        public static string DistanceUnitName {
-            get {
-                switch (DistanceUnit) {
+        public static string DistanceUnitName
+        {
+            get
+            {
+                switch (DistanceUnit)
+                {
                     case DistanceUnit.km: return "km";
                     case DistanceUnit.m: return "m";
                     case DistanceUnit.mi: return "mi";
@@ -634,10 +862,14 @@ namespace GPSTracka {
                 }
             }
         }
+
         /// <summary>Gets short display name of actual <see cref="ElevationUnit"/>.</summary>
-        public static string ElevationUnitName {
-            get {
-                switch (ElevationUnit) {
+        public static string ElevationUnitName
+        {
+            get
+            {
+                switch (ElevationUnit)
+                {
                     case ElevationUnit.ft: return "ft";
                     case ElevationUnit.km: return "km";
                     case ElevationUnit.m: return "m";
@@ -646,10 +878,11 @@ namespace GPSTracka {
                 }
             }
         }
-#endregion
     }
+
     /// <summary>Supported file formats</summary>
-    public enum LogFormat {
+    public enum LogFormat
+    {
         /// <summary>GPS XML format</summary>
         GPX,
         /// <summary>Google Earth KML (XML) format</summary>
@@ -657,15 +890,19 @@ namespace GPSTracka {
         /// <summary>Somethins-separated values</summary>
         CSV
     }
+    
     /// <summary>Supported track types</summary>
-    public enum TrackType {
+    public enum TrackType
+    {
         /// <summary>Distinct points</summary>
         Points,
         /// <summary>Connected paths</summary>
         Track
     }
+
     /// <summary>Speed units</summary>
-    public enum SpeedUnit {
+    public enum SpeedUnit
+    {
         /// <summary>Kilometers per hour</summary>
         kmh,
         /// <summary>Meters per second (3.6 km/h)</summary>
@@ -675,8 +912,10 @@ namespace GPSTracka {
         /// <summary>Knots (1.85200 km/h)</summary>
         kn
     }
+
     /// <summary>Distance units</summary>
-    public enum DistanceUnit {
+    public enum DistanceUnit
+    {
         /// <summary>Kilometers</summary>
         km,
         /// <summary>Meters (1e-3 km)</summary>
@@ -688,8 +927,10 @@ namespace GPSTracka {
         /// <summary>Yards (0.0009144 km)</summary>
         yd
     }
+
     /// <summary>Elevation units</summary>
-    public enum ElevationUnit {
+    public enum ElevationUnit
+    {
         /// <summary>Meters</summary>
         m,
         /// <summary>Kimlometers (1000 m)</summary>
@@ -699,8 +940,11 @@ namespace GPSTracka {
         /// <summary>Yards (0.9144 m)</summary>
         yd
     }
+
+
     /// <summary>When is CSV text qualifier used</summary>
-    public enum CSVQualifierUsage {
+    public enum CSVQualifierUsage
+    {
         /// <summary>Used when text contains separator</summary>
         AsNeeded = 0,
         /// <summary>Never used</summary>

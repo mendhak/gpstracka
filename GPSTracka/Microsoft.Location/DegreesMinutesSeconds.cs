@@ -69,11 +69,11 @@ namespace Microsoft.WindowsMobile.Samples.Location
         public DegreesMinutesSeconds(double decimalDegrees)
         {
             isPositive = (decimalDegrees > 0);
-            
-            degrees = (uint) Math.Abs(decimalDegrees);
-            
+
+            degrees = (uint)Math.Abs(decimalDegrees);
+
             double doubleMinutes = (Math.Abs(decimalDegrees) - Math.Abs((double)degrees)) * 60.0;
-            minutes = (uint) doubleMinutes;
+            minutes = (uint)doubleMinutes;
 
             seconds = (doubleMinutes - (double)minutes) * 60.0;
         }

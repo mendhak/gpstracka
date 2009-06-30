@@ -7,39 +7,49 @@ using System.Data;
 using System.Text;
 using System.Windows.Forms;
 
-namespace GPSTracka {
+namespace GPSTracka
+{
     /// <summary>Control to select color</summary>
-    public partial class ColorPicker : UserControl {
+    public partial class ColorPicker : UserControl
+    {
         /// <summary>CTor</summary>
-        public ColorPicker() {
+        public ColorPicker()
+        {
             InitializeComponent();
             lblPrompt.Text = this.Text;
-            Color = Color.White;    
+            Color = Color.White;
         }
         /// <summary>Raises the <see cref="System.Windows.Forms.Control.TextChanged"/> event.</summary>
         /// <param name="e">An <see cref="System.EventArgs"/> that contains the event data.</param>
-        protected override void OnTextChanged(EventArgs e) {
-            if(lblPrompt!=null)
+        protected override void OnTextChanged(EventArgs e)
+        {
+            if (lblPrompt != null)
                 lblPrompt.Text = this.Text;
             base.OnTextChanged(e);
         }
 
 
-        private void nud_ValueChanged(object sender, EventArgs e) {
+        private void nud_ValueChanged(object sender, EventArgs e)
+        {
             panColor.BackColor = Color.FromArgb((int)nudR.Value, (int)nudG.Value, (int)nudB.Value);
             if (suspendColorChanged) return;
             OnColorChanged(e);
         }
 
-        private void panColor_Click(object sender, EventArgs e) {
+        private void panColor_Click(object sender, EventArgs e)
+        {
             Panel panel = (Panel)sender;
-            if (panel.BackColor != Color) {
+            if (panel.BackColor != Color)
+            {
                 suspendColorChanged = true;
-                try {
+                try
+                {
                     nudR.Value = panel.BackColor.R;
                     nudG.Value = panel.BackColor.G;
                     nudB.Value = panel.BackColor.B;
-                } finally {
+                }
+                finally
+                {
                     suspendColorChanged = false;
                 }
                 OnColorChanged(EventArgs.Empty);
@@ -49,23 +59,30 @@ namespace GPSTracka {
         private bool suspendColorChanged = false;
         /// <summary>Raises the <see cref="ColorChanged"/> event</summary>
         /// <param name="e">Event arguments</param>
-        protected virtual void OnColorChanged(EventArgs e){
-            if(ColorChanged!=null) ColorChanged(this,e);
+        protected virtual void OnColorChanged(EventArgs e)
+        {
+            if (ColorChanged != null) ColorChanged(this, e);
         }
         /// <summary>Raised when value of the <see cref="Color"/> property changes</summary>
         public event EventHandler ColorChanged;
         /// <summary>Gets or sets color selected in control</summary>
-        public Color Color {
+        public Color Color
+        {
             get { return panColor.BackColor; }
-            set { 
-                if(value != Color){
-                    suspendColorChanged=true;
-                    try{
+            set
+            {
+                if (value != Color)
+                {
+                    suspendColorChanged = true;
+                    try
+                    {
                         nudR.Value = value.R;
                         nudG.Value = value.G;
                         nudB.Value = value.B;
-                    }finally{
-                        suspendColorChanged=false;
+                    }
+                    finally
+                    {
+                        suspendColorChanged = false;
                     }
                     OnColorChanged(EventArgs.Empty);
                 }

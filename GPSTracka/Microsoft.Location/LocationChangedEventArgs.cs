@@ -21,7 +21,7 @@ namespace Microsoft.WindowsMobile.Samples.Location
     /// <summary>
     /// Event args used for LocationChanged events.
     /// </summary>
-    public class LocationChangedEventArgs: EventArgs
+    public class LocationChangedEventArgs : EventArgs
     {
         public LocationChangedEventArgs(GpsPosition position)
         {
@@ -33,7 +33,7 @@ namespace Microsoft.WindowsMobile.Samples.Location
         /// </summary>
         public GpsPosition Position
         {
-            get 
+            get
             {
                 return position;
             }

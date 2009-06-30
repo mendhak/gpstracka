@@ -121,7 +121,7 @@
     <value>ID</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="tapSattelites.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="tapSatellites.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
   <data name="&gt;&gt;lblI.Name" xml:space="preserve">
@@ -130,7 +130,7 @@
   <data name="cohElevation.Text" xml:space="preserve">
     <value>Elevation</value>
   </data>
-  <data name="tabSattelites.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="tabSatellites.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 34</value>
   </data>
   <data name="tapStrength.Text" xml:space="preserve">
@@ -139,13 +139,13 @@
   <data name="cohAzimuth.Text" xml:space="preserve">
     <value>Azimuth</value>
   </data>
-  <data name="&gt;&gt;tapSattelites.Parent" xml:space="preserve">
-    <value>tabSattelites</value>
+  <data name="&gt;&gt;tapSatellites.Parent" xml:space="preserve">
+    <value>tabSatellites</value>
   </data>
-  <data name="&gt;&gt;bsSattelites.Name" xml:space="preserve">
-    <value>bsSattelites</value>
+  <data name="&gt;&gt;bsSatellites.Name" xml:space="preserve">
+    <value>bsSatellites</value>
   </data>
-  <data name="&gt;&gt;lvwSattelites.Type" xml:space="preserve">
+  <data name="&gt;&gt;lvwSatellites.Type" xml:space="preserve">
     <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
@@ -153,7 +153,7 @@
     <value>55</value>
   </data>
   <data name="&gt;&gt;tapStrength.Parent" xml:space="preserve">
-    <value>tabSattelites</value>
+    <value>tabSatellites</value>
   </data>
   <data name="&gt;&gt;tapDetails.Name" xml:space="preserve">
     <value>tapDetails</value>
@@ -165,37 +165,37 @@
     <value>dataGridTextBoxColumn3</value>
   </data>
   <data name="lblI.Text" xml:space="preserve">
-    <value>Sattelites are reported only when GPS is running in main window</value>
+    <value>Satellites are reported only when GPS is running in main window</value>
   </data>
-  <data name="&gt;&gt;lvwSattelites.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lvwSatellites.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;tapSattelites.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;tapSatellites.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="lvwSattelites.TabIndex" type="System.Int32, mscorlib">
+  <data name="lvwSatellites.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="mniClose.Text" xml:space="preserve">
     <value>&amp;Close</value>
   </data>
-  <data name="&gt;&gt;tabSattelites.Type" xml:space="preserve">
+  <data name="&gt;&gt;tabSatellites.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tapDetails.Parent" xml:space="preserve">
-    <value>tabSattelites</value>
+    <value>tabSatellites</value>
   </data>
-  <data name="panSattelites.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="panSatellites.Size" type="System.Drawing.Size, System.Drawing">
     <value>240, 211</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>240, 268</value>
   </data>
-  <data name="tapSattelites.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tapSatellites.Size" type="System.Drawing.Size, System.Drawing">
     <value>232, 208</value>
   </data>
-  <data name="&gt;&gt;lvwSattelites.Name" xml:space="preserve">
-    <value>lvwSattelites</value>
+  <data name="&gt;&gt;lvwSatellites.Name" xml:space="preserve">
+    <value>lvwSatellites</value>
   </data>
   <data name="tapDetails.Text" xml:space="preserve">
     <value>Details</value>
@@ -207,7 +207,7 @@
     <value>Switch &amp;view</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Sattelites</value>
+    <value>Satellites</value>
   </data>
   <data name="panPosition.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -218,10 +218,10 @@
   <data name="&gt;&gt;mniView.Name" xml:space="preserve">
     <value>mniView</value>
   </data>
-  <data name="&gt;&gt;tabSattelites.Parent" xml:space="preserve">
+  <data name="&gt;&gt;tabSatellites.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="tabSattelites.TabIndex" type="System.Int32, mscorlib">
+  <data name="tabSatellites.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="&gt;&gt;cohSNR.Type" xml:space="preserve">
@@ -252,13 +252,13 @@
   <data name="dataGridTextBoxColumn2.MappingName" xml:space="preserve">
     <value>ID</value>
   </data>
-  <data name="tabSattelites.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tabSatellites.Size" type="System.Drawing.Size, System.Drawing">
     <value>240, 234</value>
   </data>
-  <data name="&gt;&gt;tapSattelites.Type" xml:space="preserve">
+  <data name="&gt;&gt;tapSatellites.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panSattelites.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panSatellites.Parent" xml:space="preserve">
     <value>tapStrength</value>
   </data>
   <data name="&gt;&gt;mniClose.Name" xml:space="preserve">
@@ -267,22 +267,22 @@
   <data name="&gt;&gt;dataGridTableStyle1.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridTableStyle, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panSattelites.Type" xml:space="preserve">
+  <data name="&gt;&gt;panSatellites.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tabSattelites.Name" xml:space="preserve">
-    <value>tabSattelites</value>
+  <data name="&gt;&gt;tabSatellites.Name" xml:space="preserve">
+    <value>tabSatellites</value>
   </data>
   <data name="&gt;&gt;tapDetails.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>SattelitesView</value>
+    <value>SatellitesView</value>
   </data>
   <data name="&gt;&gt;panPosition.Name" xml:space="preserve">
     <value>panPosition</value>
   </data>
-  <data name="lvwSattelites.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lvwSatellites.Size" type="System.Drawing.Size, System.Drawing">
     <value>232, 208</value>
   </data>
   <data name="&gt;&gt;mmnMain.Type" xml:space="preserve">
@@ -306,8 +306,8 @@
   <data name="&gt;&gt;mniView.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panSattelites.Name" xml:space="preserve">
-    <value>panSattelites</value>
+  <data name="&gt;&gt;panSatellites.Name" xml:space="preserve">
+    <value>panSatellites</value>
   </data>
   <data name="dataGridTextBoxColumn3.HeaderText" xml:space="preserve">
     <value>SNR</value>
@@ -321,7 +321,7 @@
   <data name="tapDetails.Size" type="System.Drawing.Size, System.Drawing">
     <value>232, 208</value>
   </data>
-  <data name="&gt;&gt;panSattelites.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;panSatellites.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="&gt;&gt;cohActive.Name" xml:space="preserve">
@@ -330,7 +330,7 @@
   <data name="dataGridTextBoxColumn3.MappingName" xml:space="preserve">
     <value>SNR</value>
   </data>
-  <data name="tabSattelites.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="tabSatellites.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <data name="&gt;&gt;dataGridTextBoxColumn2.Type" xml:space="preserve">
@@ -342,7 +342,7 @@
   <data name="lblI.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="lvwSattelites.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lvwSatellites.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
   <data name="&gt;&gt;dataGridTextBoxColumn2.Name" xml:space="preserve">
@@ -381,7 +381,7 @@
   <data name="cohAzimuth.Width" type="System.Int32, mscorlib">
     <value>50</value>
   </data>
-  <data name="lvwSattelites.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="lvwSatellites.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <data name="dataGridTextBoxColumn2.NullText" xml:space="preserve">
@@ -391,18 +391,18 @@
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;panPosition.Parent" xml:space="preserve">
-    <value>tapSattelites</value>
+    <value>tapSatellites</value>
   </data>
-  <data name="&gt;&gt;bsSattelites.Type" xml:space="preserve">
+  <data name="&gt;&gt;bsSatellites.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tapSattelites.Name" xml:space="preserve">
-    <value>tapSattelites</value>
+  <data name="&gt;&gt;tapSatellites.Name" xml:space="preserve">
+    <value>tapSatellites</value>
   </data>
-  <data name="panSattelites.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="panSatellites.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="panSattelites.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="panSatellites.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <data name="&gt;&gt;tapStrength.Name" xml:space="preserve">
@@ -420,7 +420,7 @@
   <data name="&gt;&gt;panPosition.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;lvwSattelites.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lvwSatellites.Parent" xml:space="preserve">
     <value>tapDetails</value>
   </data>
   <data name="&gt;&gt;tapStrength.Type" xml:space="preserve">
@@ -429,11 +429,11 @@
   <data name="&gt;&gt;panPosition.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tabSattelites.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;tabSatellites.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="tapSattelites.Text" xml:space="preserve">
-    <value>Sattelites</value>
+  <data name="tapSatellites.Text" xml:space="preserve">
+    <value>Satellites</value>
   </data>
   <metadata name="$this.FormFactorShadowProperty" xml:space="preserve">
     <value>Pocket_PC</value>
@@ -447,7 +447,7 @@
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="bsSattelites.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="bsSatellites.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>124, 17</value>
   </metadata>
   <metadata name="mmnMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

@@ -1,13 +1,14 @@
 ﻿using System;
-using System.Linq;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
 using OpenNETCF.Windows.Forms;
 
-namespace GPSTracka {
+namespace GPSTracka
+{
     /// <summary>Text box with context menu</summary>
-    class MyTextBox : TextBox2 {
+    class MyTextBox : TextBox2
+    {
         private MenuItem mniUndo;
         private MenuItem mniSep1;
         private MenuItem mniCut;
@@ -18,12 +19,15 @@ namespace GPSTracka {
         private MenuItem mniSelectAll;
         private ContextMenu cmnContext;
 
-        public MyTextBox() :base(){
+        public MyTextBox()
+            : base()
+        {
             this.InitializeComponent();
             this.ContextMenu = cmnContext;
         }
 
-        private void InitializeComponent() {
+        private void InitializeComponent()
+        {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MyTextBox));
             this.cmnContext = new System.Windows.Forms.ContextMenu();
             this.mniUndo = new System.Windows.Forms.MenuItem();
@@ -93,39 +97,46 @@ namespace GPSTracka {
 
         }
 
-        private void mniUndo_Click(object sender, EventArgs e) {
+        private void mniUndo_Click(object sender, EventArgs e)
+        {
             this.Undo();
         }
 
 
-        private void mniCut_Click(object sender, EventArgs e) {
+        private void mniCut_Click(object sender, EventArgs e)
+        {
             this.Cut();
         }
 
-        private void mniCopy_Click(object sender, EventArgs e) {
+        private void mniCopy_Click(object sender, EventArgs e)
+        {
             this.Copy();
         }
 
-        private void mniPaste_Click(object sender, EventArgs e) {
+        private void mniPaste_Click(object sender, EventArgs e)
+        {
             this.Paste();
         }
 
 
-        private void mniClear_Click(object sender, EventArgs e) {
+        private void mniClear_Click(object sender, EventArgs e)
+        {
             this.Text = "";
         }
 
-        private void mniSelectAll_Click(object sender, EventArgs e) {
+        private void mniSelectAll_Click(object sender, EventArgs e)
+        {
             this.SelectAll();
         }
 
-        private void cmnContext_Popup(object sender, EventArgs e) {
+        private void cmnContext_Popup(object sender, EventArgs e)
+        {
             mniClear.Enabled = !this.ReadOnly;
             mniUndo.Enabled = !this.ReadOnly;
             mniCut.Enabled = !this.ReadOnly && !String.IsNullOrEmpty(this.SelectedText);
             mniCopy.Enabled = !String.IsNullOrEmpty(this.SelectedText);
             mniSelectAll.Enabled = !string.IsNullOrEmpty(this.Text) && this.Text != this.SelectedText;
-            mniPaste.Enabled = !this.ReadOnly && Clipboard2.ContainsText() ;
+            mniPaste.Enabled = !this.ReadOnly && Clipboard2.ContainsText();
         }
     }
 }

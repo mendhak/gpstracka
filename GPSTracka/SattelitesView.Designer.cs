@@ -1,5 +1,5 @@
 ﻿namespace GPSTracka {
-    partial class SattelitesView {
+    partial class SatellitesView {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -25,32 +25,32 @@
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SattelitesView));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SatellitesView));
             this.mmnMain = new System.Windows.Forms.MainMenu();
             this.mniClose = new System.Windows.Forms.MenuItem();
             this.mniView = new System.Windows.Forms.MenuItem();
             this.lblI = new System.Windows.Forms.Label();
-            this.panSattelites = new System.Windows.Forms.Panel();
-            this.bsSattelites = new System.Windows.Forms.BindingSource(this.components);
+            this.panSatellites = new System.Windows.Forms.Panel();
+            this.bsSatellites = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridTableStyle1 = new System.Windows.Forms.DataGridTableStyle();
             this.dataGridTextBoxColumn2 = new System.Windows.Forms.DataGridTextBoxColumn();
             this.dataGridTextBoxColumn3 = new System.Windows.Forms.DataGridTextBoxColumn();
-            this.tabSattelites = new System.Windows.Forms.TabControl();
+            this.tabSatellites = new System.Windows.Forms.TabControl();
             this.tapStrength = new System.Windows.Forms.TabPage();
             this.tapDetails = new System.Windows.Forms.TabPage();
-            this.lvwSattelites = new System.Windows.Forms.ListView();
+            this.lvwSatellites = new System.Windows.Forms.ListView();
             this.cohID = new System.Windows.Forms.ColumnHeader();
             this.cohSNR = new System.Windows.Forms.ColumnHeader();
             this.cohActive = new System.Windows.Forms.ColumnHeader();
             this.cohAzimuth = new System.Windows.Forms.ColumnHeader();
             this.cohElevation = new System.Windows.Forms.ColumnHeader();
-            this.tapSattelites = new System.Windows.Forms.TabPage();
+            this.tapSatellites = new System.Windows.Forms.TabPage();
             this.panPosition = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.bsSattelites)).BeginInit();
-            this.tabSattelites.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsSatellites)).BeginInit();
+            this.tabSatellites.SuspendLayout();
             this.tapStrength.SuspendLayout();
             this.tapDetails.SuspendLayout();
-            this.tapSattelites.SuspendLayout();
+            this.tapSatellites.SuspendLayout();
             this.SuspendLayout();
             // 
             // mmnMain
@@ -73,22 +73,22 @@
             resources.ApplyResources(this.lblI, "lblI");
             this.lblI.Name = "lblI";
             // 
-            // panSattelites
+            // panSatellites
             // 
-            resources.ApplyResources(this.panSattelites, "panSattelites");
-            this.panSattelites.Name = "panSattelites";
-            this.panSattelites.Resize += new System.EventHandler(this.panSattelites_Resize);
+            resources.ApplyResources(this.panSatellites, "panSatellites");
+            this.panSatellites.Name = "panSatellites";
+            this.panSatellites.Resize += new System.EventHandler(this.panSatellites_Resize);
             // 
-            // bsSattelites
+            // bsSatellites
             // 
-            this.bsSattelites.AllowNew = false;
-            this.bsSattelites.Filter = "ID <> 0";
+            this.bsSatellites.AllowNew = false;
+            this.bsSatellites.Filter = "ID <> 0";
             // 
             // dataGridTableStyle1
             // 
             this.dataGridTableStyle1.GridColumnStyles.Add(this.dataGridTextBoxColumn2);
             this.dataGridTableStyle1.GridColumnStyles.Add(this.dataGridTextBoxColumn3);
-            this.dataGridTableStyle1.MappingName = "bsSattelites";
+            this.dataGridTableStyle1.MappingName = "bsSatellites";
             // 
             // dataGridTextBoxColumn2
             // 
@@ -102,38 +102,38 @@
             this.dataGridTextBoxColumn3.FormatInfo = null;
             resources.ApplyResources(this.dataGridTextBoxColumn3, "dataGridTextBoxColumn3");
             // 
-            // tabSattelites
+            // tabSatellites
             // 
-            resources.ApplyResources(this.tabSattelites, "tabSattelites");
-            this.tabSattelites.Controls.Add(this.tapStrength);
-            this.tabSattelites.Controls.Add(this.tapDetails);
-            this.tabSattelites.Controls.Add(this.tapSattelites);
-            this.tabSattelites.Name = "tabSattelites";
-            this.tabSattelites.SelectedIndex = 0;
+            resources.ApplyResources(this.tabSatellites, "tabSatellites");
+            this.tabSatellites.Controls.Add(this.tapStrength);
+            this.tabSatellites.Controls.Add(this.tapDetails);
+            this.tabSatellites.Controls.Add(this.tapSatellites);
+            this.tabSatellites.Name = "tabSatellites";
+            this.tabSatellites.SelectedIndex = 0;
             // 
             // tapStrength
             // 
             resources.ApplyResources(this.tapStrength, "tapStrength");
-            this.tapStrength.Controls.Add(this.panSattelites);
+            this.tapStrength.Controls.Add(this.panSatellites);
             this.tapStrength.Name = "tapStrength";
             // 
             // tapDetails
             // 
             resources.ApplyResources(this.tapDetails, "tapDetails");
-            this.tapDetails.Controls.Add(this.lvwSattelites);
+            this.tapDetails.Controls.Add(this.lvwSatellites);
             this.tapDetails.Name = "tapDetails";
             // 
-            // lvwSattelites
+            // lvwSatellites
             // 
-            resources.ApplyResources(this.lvwSattelites, "lvwSattelites");
-            this.lvwSattelites.Columns.Add(this.cohID);
-            this.lvwSattelites.Columns.Add(this.cohSNR);
-            this.lvwSattelites.Columns.Add(this.cohActive);
-            this.lvwSattelites.Columns.Add(this.cohAzimuth);
-            this.lvwSattelites.Columns.Add(this.cohElevation);
-            this.lvwSattelites.FullRowSelect = true;
-            this.lvwSattelites.Name = "lvwSattelites";
-            this.lvwSattelites.View = System.Windows.Forms.View.Details;
+            resources.ApplyResources(this.lvwSatellites, "lvwSatellites");
+            this.lvwSatellites.Columns.Add(this.cohID);
+            this.lvwSatellites.Columns.Add(this.cohSNR);
+            this.lvwSatellites.Columns.Add(this.cohActive);
+            this.lvwSatellites.Columns.Add(this.cohAzimuth);
+            this.lvwSatellites.Columns.Add(this.cohElevation);
+            this.lvwSatellites.FullRowSelect = true;
+            this.lvwSatellites.Name = "lvwSatellites";
+            this.lvwSatellites.View = System.Windows.Forms.View.Details;
             // 
             // cohID
             // 
@@ -155,11 +155,11 @@
             // 
             resources.ApplyResources(this.cohElevation, "cohElevation");
             // 
-            // tapSattelites
+            // tapSatellites
             // 
-            resources.ApplyResources(this.tapSattelites, "tapSattelites");
-            this.tapSattelites.Controls.Add(this.panPosition);
-            this.tapSattelites.Name = "tapSattelites";
+            resources.ApplyResources(this.tapSatellites, "tapSatellites");
+            this.tapSatellites.Controls.Add(this.panPosition);
+            this.tapSatellites.Name = "tapSatellites";
             // 
             // panPosition
             // 
@@ -167,21 +167,21 @@
             this.panPosition.Name = "panPosition";
             this.panPosition.Paint += new System.Windows.Forms.PaintEventHandler(this.panPosition_Paint);
             // 
-            // SattelitesView
+            // SatellitesView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             resources.ApplyResources(this, "$this");
-            this.Controls.Add(this.tabSattelites);
+            this.Controls.Add(this.tabSatellites);
             this.Controls.Add(this.lblI);
             this.Menu = this.mmnMain;
-            this.Name = "SattelitesView";
-            this.Closed += new System.EventHandler(this.SattelitesView_Closed);
-            ((System.ComponentModel.ISupportInitialize)(this.bsSattelites)).EndInit();
-            this.tabSattelites.ResumeLayout(false);
+            this.Name = "SatellitesView";
+            this.Closed += new System.EventHandler(this.SatellitesView_Closed);
+            ((System.ComponentModel.ISupportInitialize)(this.bsSatellites)).EndInit();
+            this.tabSatellites.ResumeLayout(false);
             this.tapStrength.ResumeLayout(false);
             this.tapDetails.ResumeLayout(false);
-            this.tapSattelites.ResumeLayout(false);
+            this.tapSatellites.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -189,19 +189,19 @@
         #endregion
 
         private System.Windows.Forms.Label lblI;
-        private System.Windows.Forms.Panel panSattelites;
+        private System.Windows.Forms.Panel panSatellites;
         private System.Windows.Forms.MenuItem mniClose;
-        private System.Windows.Forms.BindingSource bsSattelites;
+        private System.Windows.Forms.BindingSource bsSatellites;
         private System.Windows.Forms.DataGridTableStyle dataGridTableStyle1;
         private System.Windows.Forms.DataGridTextBoxColumn dataGridTextBoxColumn2;
         private System.Windows.Forms.DataGridTextBoxColumn dataGridTextBoxColumn3;
         private System.Windows.Forms.MenuItem mniView;
-        private System.Windows.Forms.TabControl tabSattelites;
+        private System.Windows.Forms.TabControl tabSatellites;
         private System.Windows.Forms.TabPage tapStrength;
         private System.Windows.Forms.TabPage tapDetails;
-        private System.Windows.Forms.TabPage tapSattelites;
+        private System.Windows.Forms.TabPage tapSatellites;
         private System.Windows.Forms.Panel panPosition;
-        private System.Windows.Forms.ListView lvwSattelites;
+        private System.Windows.Forms.ListView lvwSatellites;
         private System.Windows.Forms.ColumnHeader cohID;
         private System.Windows.Forms.ColumnHeader cohSNR;
         private System.Windows.Forms.ColumnHeader cohActive;

@@ -46,8 +46,8 @@
             this.lblStopTime = new System.Windows.Forms.Label();
             this.lblPointsI = new System.Windows.Forms.Label();
             this.lblPoints = new System.Windows.Forms.Label();
-            this.lblSattelitesI = new System.Windows.Forms.Label();
-            this.lblSattelites = new System.Windows.Forms.Label();
+            this.lblSatellitesI = new System.Windows.Forms.Label();
+            this.lblSatellites = new System.Windows.Forms.Label();
             this.stsStatus = new GPSTracka.ItemsStatusBar();
             this.mainPanelMenu = new System.Windows.Forms.MainMenu();
             this.startMenuItem = new System.Windows.Forms.MenuItem();
@@ -55,7 +55,7 @@
             this.clearMenuItem = new System.Windows.Forms.MenuItem();
             this.verboseMenuItem = new System.Windows.Forms.MenuItem();
             this.settingsMenuItem = new System.Windows.Forms.MenuItem();
-            this.mniSattelites = new System.Windows.Forms.MenuItem();
+            this.mniSatellites = new System.Windows.Forms.MenuItem();
             this.mniSep1 = new System.Windows.Forms.MenuItem();
             this.aboutMenuItem = new System.Windows.Forms.MenuItem();
             this.mniHelp = new System.Windows.Forms.MenuItem();
@@ -149,8 +149,8 @@
             this.panInfoPane.Controls.Add(this.lblStopTime);
             this.panInfoPane.Controls.Add(this.lblPointsI);
             this.panInfoPane.Controls.Add(this.lblPoints);
-            this.panInfoPane.Controls.Add(this.lblSattelitesI);
-            this.panInfoPane.Controls.Add(this.lblSattelites);
+            this.panInfoPane.Controls.Add(this.lblSatellitesI);
+            this.panInfoPane.Controls.Add(this.lblSatellites);
             resources.ApplyResources(this.panInfoPane, "panInfoPane");
             this.panInfoPane.Name = "panInfoPane";
             this.panInfoPane.Resize += new System.EventHandler(this.panInfoPane_Resize);
@@ -245,15 +245,15 @@
             resources.ApplyResources(this.lblPoints, "lblPoints");
             this.lblPoints.Name = "lblPoints";
             // 
-            // lblSattelitesI
+            // lblSatellitesI
             // 
-            resources.ApplyResources(this.lblSattelitesI, "lblSattelitesI");
-            this.lblSattelitesI.Name = "lblSattelitesI";
+            resources.ApplyResources(this.lblSatellitesI, "lblSatellitesI");
+            this.lblSatellitesI.Name = "lblSatellitesI";
             // 
-            // lblSattelites
+            // lblSatellites
             // 
-            resources.ApplyResources(this.lblSattelites, "lblSattelites");
-            this.lblSattelites.Name = "lblSattelites";
+            resources.ApplyResources(this.lblSatellites, "lblSatellites");
+            this.lblSatellites.Name = "lblSatellites";
             // 
             // stsStatus
             // 
@@ -278,7 +278,7 @@
             this.menuItem2.MenuItems.Add(this.clearMenuItem);
             this.menuItem2.MenuItems.Add(this.verboseMenuItem);
             this.menuItem2.MenuItems.Add(this.settingsMenuItem);
-            this.menuItem2.MenuItems.Add(this.mniSattelites);
+            this.menuItem2.MenuItems.Add(this.mniSatellites);
             this.menuItem2.MenuItems.Add(this.mniSep1);
             this.menuItem2.MenuItems.Add(this.aboutMenuItem);
             this.menuItem2.MenuItems.Add(this.mniHelp);
@@ -301,10 +301,10 @@
             resources.ApplyResources(this.settingsMenuItem, "settingsMenuItem");
             this.settingsMenuItem.Click += new System.EventHandler(this.settingsMenuItem_Click);
             // 
-            // mniSattelites
+            // mniSatellites
             // 
-            resources.ApplyResources(this.mniSattelites, "mniSattelites");
-            this.mniSattelites.Click += new System.EventHandler(this.mniSattelites_Click);
+            resources.ApplyResources(this.mniSatellites, "mniSatellites");
+            this.mniSatellites.Click += new System.EventHandler(this.mniSatellites_Click);
             // 
             // mniSep1
             // 
@@ -581,7 +581,7 @@
             this.Load += new System.EventHandler(this.GPSTracka_Load);
             this.Activated += new System.EventHandler(this.TrackerForm_Activated);
             this.Closing += new System.ComponentModel.CancelEventHandler(this.GPSTracka_Closing);
-            this.Resize += new System.EventHandler(this.TrackerForm_Resize);
+            //this.Resize += new System.EventHandler(this.TrackerForm_Resize);
             this.mainPanel.ResumeLayout(false);
             this.panInfoPane.ResumeLayout(false);
             this.aboutPanel.ResumeLayout(false);
@@ -646,7 +646,7 @@
         private System.Windows.Forms.Timer tmrCountDown;
         private System.Windows.Forms.MenuItem mniHelp;
         private System.Windows.Forms.Label lblRecommendedPort;
-        private System.Windows.Forms.MenuItem mniSattelites;
+        private System.Windows.Forms.MenuItem mniSatellites;
         private System.Windows.Forms.MenuItem mniSep2;
         private System.Windows.Forms.CheckBox chkUseWindowsDriver;
         private System.Windows.Forms.Panel panInfoPane;
@@ -660,10 +660,10 @@
         private System.Windows.Forms.Label lblStopTimeI;
         private System.Windows.Forms.Label lblElevationI;
         private System.Windows.Forms.Label lblAverageI;
-        private System.Windows.Forms.Label lblSattelitesI;
+        private System.Windows.Forms.Label lblSatellitesI;
         private System.Windows.Forms.Label lblPointsI;
         private System.Windows.Forms.Label lblElevationMinusI;
-        private System.Windows.Forms.Label lblSattelites;
+        private System.Windows.Forms.Label lblSatellites;
         private System.Windows.Forms.Label lblPoints;
         private System.Windows.Forms.Label lblElevationMinus;
         private System.Windows.Forms.Label lblElevation;

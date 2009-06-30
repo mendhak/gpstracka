@@ -21,7 +21,7 @@ namespace Microsoft.WindowsMobile.Samples.Location
     /// <summary>
     /// Event args used for DeviceStateChanged event.
     /// </summary>
-    public class DeviceStateChangedEventArgs: EventArgs
+    public class DeviceStateChangedEventArgs : EventArgs
     {
         public DeviceStateChangedEventArgs(GpsDeviceState deviceState)
         {
@@ -33,7 +33,7 @@ namespace Microsoft.WindowsMobile.Samples.Location
         /// </summary>
         public GpsDeviceState DeviceState
         {
-            get 
+            get
             {
                 return deviceState;
             }

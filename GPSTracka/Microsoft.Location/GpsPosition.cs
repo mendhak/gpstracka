@@ -65,7 +65,7 @@ namespace Microsoft.WindowsMobile.Samples.Location
         }
     }
     #endregion
-    
+
     enum FixQuality : int
     {
         Unknown = 0,
@@ -216,33 +216,33 @@ namespace Microsoft.WindowsMobile.Samples.Location
 
         //** Quality of this fix
         // Where did we get fix from?
-        internal FixQuality fixQuality = FixQuality.Unknown;        
+        internal FixQuality fixQuality = FixQuality.Unknown;
         // Is this 2d or 3d fix?
-        internal FixType fixType = FixType.Unknown;      
+        internal FixType fixType = FixType.Unknown;
         // Auto or manual selection between 2d or 3d mode
-        internal FixSelection selectionType = FixSelection.Unknown;     
+        internal FixSelection selectionType = FixSelection.Unknown;
         // Position Dilution Of Precision
         internal float flPositionDilutionOfPrecision = 0.0f;
         // Horizontal Dilution Of Precision
-        internal float flHorizontalDilutionOfPrecision = 0.0f; 
+        internal float flHorizontalDilutionOfPrecision = 0.0f;
         // Vertical Dilution Of Precision
-        internal float flVerticalDilutionOfPrecision = 0.0f;   
+        internal float flVerticalDilutionOfPrecision = 0.0f;
 
         //** Satellite information
         // Number of satellites used in solution
-        internal int dwSatelliteCount = 0;               
+        internal int dwSatelliteCount = 0;
         // PRN numbers of satellites used in the solution
         internal SatelliteArray rgdwSatellitesUsedPRNs = new SatelliteArray();
         // Number of satellites in view.  From 0-GPS_MAX_SATELLITES
-        internal int dwSatellitesInView = 0;                      	                   
+        internal int dwSatellitesInView = 0;
         // PRN numbers of satellites in view
-        internal SatelliteArray rgdwSatellitesInViewPRNs = new SatelliteArray();                
+        internal SatelliteArray rgdwSatellitesInViewPRNs = new SatelliteArray();
         // Elevation of each satellite in view
-        internal SatelliteArray rgdwSatellitesInViewElevation = new SatelliteArray();           
+        internal SatelliteArray rgdwSatellitesInViewElevation = new SatelliteArray();
         // Azimuth of each satellite in view
-        internal SatelliteArray rgdwSatellitesInViewAzimuth = new SatelliteArray();             
+        internal SatelliteArray rgdwSatellitesInViewAzimuth = new SatelliteArray();
         // Signal to noise ratio of each satellite in view
-        internal SatelliteArray rgdwSatellitesInViewSignalToNoiseRatio = new SatelliteArray();  
+        internal SatelliteArray rgdwSatellitesInViewSignalToNoiseRatio = new SatelliteArray();
 
         /// <summary>
         /// UTC according to GPS clock.
@@ -276,15 +276,15 @@ namespace Microsoft.WindowsMobile.Samples.Location
             for (int index = 0; index < dwSatelliteCount; index++)
             {
                 Satellite found = null;
-                if(inViewSatellites!=null)//Added by Ðonny
-                for (int viewIndex = 0; viewIndex < inViewSatellites.Length && found == null; viewIndex++)
-                {
-                    if (rgdwSatellitesUsedPRNs[index] == inViewSatellites[viewIndex].Id)
+                if (inViewSatellites != null)//Added by Ðonny
+                    for (int viewIndex = 0; viewIndex < inViewSatellites.Length && found == null; viewIndex++)
                     {
-                        found = inViewSatellites[viewIndex];
-                        list.Add(found);
+                        if (rgdwSatellitesUsedPRNs[index] == inViewSatellites[viewIndex].Id)
+                        {
+                            found = inViewSatellites[viewIndex];
+                            list.Add(found);
+                        }
                     }
-                }
             }
 
             return (Satellite[])list.ToArray(typeof(Satellite));

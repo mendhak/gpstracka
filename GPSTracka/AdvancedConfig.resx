@@ -250,7 +250,7 @@
     <value>100, 17</value>
   </data>
   <data name="lblAltitudeCorrection.Text" xml:space="preserve">
-    <value>Altitude corection</value>
+    <value>Altitude correction</value>
   </data>
   <data name="&gt;&gt;lblAltitudeCorrection.Name" xml:space="preserve">
     <value>lblAltitudeCorrection</value>
@@ -295,7 +295,7 @@
     <value>5</value>
   </data>
   <data name="chkStartImmediatelly.Text" xml:space="preserve">
-    <value>Start &amp;immediatelly</value>
+    <value>Start &amp;immediately</value>
   </data>
   <data name="lblKMLDescFormat.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Left</value>

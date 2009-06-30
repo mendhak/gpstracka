@@ -24,13 +24,14 @@
                 <dt>Settings</dt>
                 <dd>This takes you to the <a href="#Config">settings screen</a> where you can specify the COM port, baud rate, and where to log the GPS data.</dd>
                 <dt>Exit</dt>
-                <dd>Quits the application. If you click this while GPS is active, you will be asked to quit. When logging to file, your data are never lost by terminating the aplication - correctly, or because of device shutdown or application crash.</dd>
-                <dt>Sattelites</dt>
+                <dd>Quits the application. If you click this while GPS is active, you will be asked to quit. When logging to file, your data 
+                    is never lost by terminating the aplication.</dd>
+                <dt>Satellites</dt>
                 <dd>
-                    Shows GPS sattelites information - signal strength, satellite visibility and location on sky. Sattelite infromation are actualized only when GPS&nbsp;device is actually running.</dd>
+                    Shows GPS satellites information - signal strength, satellite visibility and location on sky. Satellite infromation are actualized only when GPS&nbsp;device is actually running.</dd>
                 <dt>Start</dt>
                 <dd>Obviously, this starts the logging. If you selected Verbose in the options menu, it&#39;ll give you all data being received in the textbox. Else, it will log the data at the specified interval to the textbox or file.</dd>
-                <dd>If you have logged some data recently and you stopped logging and then you press start, you are asked to continue logging to the same file. This does not occure when you restart the application or visit the settings screen (a new file is created).</dd>
+                <dd>If you have logged some data recently and you stopped logging and then you press start, you are asked to continue logging to the same file. This does not occur when you restart the application or visit the settings screen (a new file is created).</dd>
                 <dt>Stop</dt>
                 <dd>The Start button changes to Stop when you press Start. Then you can use it to stop GPS logging.</dd>
             </dl>
@@ -49,92 +50,126 @@
                         <dd>Using COM port allows you to use GPS device not configured with Windows driver or use multiple GPS receivers at once.</dd>
                         <dd>You can also configure COM port in such way that it reads raw data from Windows driver.</dd>
                         <dd>Using Windows driver or reading data from Windows-driver-provided COM port allows you to run multiple GPS softwares at once, which is impossible when reading data directly from COM port GPS devices is attached to.</dd>
-                        <dd>When using GPS&nbsp;driver NMEA data are not accessible. You cannot save NMEA log file and you cannot view verbose data.</dd>
-                        <dd>Microsft GPS driver is configured in Start |&nbsp;Settings | System |&nbsp;External GPS.</dd>
+                        <dd>When using Windows GPS&nbsp;driver, NMEA data is not accessible. You cannot save NMEA log files and you cannot view verbose data.</dd>
+                        <dd>Microsoft GPS driver is configured in Start |&nbsp;Settings | System |&nbsp;External GPS.</dd>
                         <dt>Read</dt>
                         <dd>This drop down is the COM port that gives you your GPS data. This may be different on different phones. For me, it was COM1. You&#39;ll need to determine this for yourself by setting it and using Verbose mode.</dd>
-                        <dd>If you are using another port, not listed in the drop down, then you can type it in anyways. Note: SOmetimes port may be named GPC instead of COM.</dd>
-                        <dd>In case you have device with <a href="http://msdn.microsoft.com/en-us/library/bb202086.aspx">Microsft GPS Intermediate Driver</a> (probably yes; its supported in Windows Embedded CE 6.0 and later and Windows Mobile 5.0 and later), the driver output port (as set up in registry) is displayed right of combo box as recomended. You should use it as it allows multiple GPS applications to wor in the same time. You can for example when riding a car, you can use a GPS navigation software (like iGO) for navigation and GPSTracka for logging.</dd>
+                        <dd>If you are using another port, not listed in the drop down, then you can type it in anyways. Note: Sometimes 
+                            the port may be named GPC instead of COM.</dd>
+                        <dd>In case you have device with <a href="http://msdn.microsoft.com/en-us/library/bb202086.aspx">Microsft GPS Intermediate Driver</a> (you 
+                            likely do - it is supported in Windows Embedded CE 6.0 and later and Windows Mobile 5.0 and later), the driver output port (as set up in registry) is displayed right of combo box as recomended. You should use it as it allows multiple GPS applications to work in the same time 
+                            and as an example, you should be able to use Google Maps/iGo/TomTom and 
+                            GPSTracka at the same time.</dd>
                         <dt>Baud Rate</dt>
                         <dd>The data transfer speed. Different GPS receivers use different speeds, so you will need to experiment. I use 4800.</dd>
                     </dl>
                 </dd>
                 <dt>Polling Rate</dt>
                 <dd>How often the GPS data should be logged to textbox or file. I usually set this at 300 seconds.</dd>
-                <dd>Shorter polling interval causes more precise log. On the other hand shorter polling interval means bigger power consumption. Seting depends on speed you are going to move. For same precision you must set shorter interval when driving a car than while walking.</dd>
+                <dd>Shorter polling interval causes more precise log. On the other hand, a shorter polling interval means 
+                    higher power consumption. This setting also depends on speed you are going to 
+                    move. For the same precision you must set a shorter interval when driving than 
+                    while walking.</dd>
                 <dt>Logging Options - To Text Box</dt>
-                <dd>The best way to know that it&#39;s working is to keep this box checked, so that you can see the values printed to the textbox. When not checked you have no control if GPS is working or not.</dd>
+                <dd>The best way to know that it&#39;s working is to keep this box checked, so that you can see the values printed to the textbox. When not checked you have no 
+                    knowledge if GPS is immediately working or not.</dd>
                 <dt>Logging Options - To File</dt>
                 <dd>To log to file, tick this checkbox and then select a folder by clicking the &quot;...&quot; button. It&#39;s best if you create a &quot;GPSLogs&quot; folder in &quot;My Documents&quot; or on your Storage Card and then specify that path.</dd>
                 <dd>If not checked, you wil not have GPS log for future use! GPS logs are stored in files named by date and time when logging started.</dd>
                 <dt>Format GPX/KML/CSV</dt>
-                <dd>Some people prefer GPX (GPS XML format), some prefer KML (Google Earth XML format). If you want a lightweight file, then go for GPX; if you want to use your file with Google Earth, use KML (Google Earth can load GPX as well).</dd>
-                <dd>CSV format is simple text format where date, latitude, longitude and altitude are loged comma separated. It can be in detail configured in Advanced configuration.</dd>
+                <dd>Some people prefer GPX (GPS XML format), some prefer KML (Google Earth XML format). If you want a lightweight file, then go for GPX; if you want to use your file with Google Earth 
+                    and don&#39;t mind bloat, use KML (Google Earth can load GPX as well).</dd>
+                <dd>CSV format is simple text format where date, latitude, longitude and altitude are logged 
+                    in a comma separated string. It can be configured in Advanced configuration.</dd>
                 <dt>Log altitude</dt>
                 <dd>Check this to log altitude informations as well. When not checked track / points are rendered on the ground.</dd>
                 <dd>
-                    Note: GPS altitude is somewhat different from altitude you can see in maps or Google Earth. This may cause the track to be rendered in mid-air or underground. You can easily instruct Google Earth to ignore track elevation (in case of points it&#39;s not as easy because you must change the setting for each point separatelly). The difference between GPS altitude and true altitude is caused by the way how it is measured by GPS and traditionally. GPS uses some unified ellipsoid (WGS84) model, while traditional measurement uses some local sea level whih can vary by the sea actually used. This difference is usually constant in one map and certain area and good map usually contains the informatin how its altitude differs from GPS altitude - you can then set altitude correction in advanced settings. Also keep in mind that GPS altitude is approximatelly 1.5 time accurate than longitude/latitude. In case your receiver supports it and you are using Windows GPS driver, you can instruct it in advanced 
-                    settings to obtain true sea-level evelation instead of ellipsoid elevation.</dd>
+                    Note:&nbsp; GPS altitudes are somewhat different from the altitudes you 
+                    generally see on other maps.&nbsp; This can cause you track to be rendered in 
+                    midair or underground.&nbsp; You can instruct Google Earth to ignore track 
+                    elevation.&nbsp; The difference between GPS altitudes and regular altitudes 
+                    arises as a result of how GPS measures it and how it is measured traditionally.&nbsp; 
+                    GPS uses the WGS84 unified ellipsoid standard to account for the Earth&#39;s 
+                    non-spherical shape, but others use sea level as the origin which is flawed 
+                    because sea levels are different around the world. The result? On some parts of 
+                    a map, your track will be good, on other parts, it will appear strange.&nbsp; If 
+                    you know the difference in altitude for the map you&#39;ll be using, you can set it 
+                    in the advanced configuration section.&nbsp; Also, keep in mind that GPS 
+                    altitudes are about 1.5 times more accurate than lat-long.&nbsp; If your 
+                    receiver supports it and you&#39;re using the Windows GPS driver, you can instruct 
+                    it to obtain the true sea-level elevation instad of an ellipsoid elevation (in 
+                    advanced settings).</dd>
+                <dd>
+                    </dd>
                 <dt>Distinct points / track</dt>
-                <dd>The distinc points option logs just separate points to KML/GPX file, while Track logs connection line between them as well. Ignored for CSV.</dd>
-                <dd>Note: Points are always logged to KML, because KML does not allow description for track points. You can easily turn points on and off in Google Earth or even delete them as they are in single folder.</dd>
-                <dt>Save</dt>
-                <dd>Saves the settings to config file.</dd>
-                <dt>More</dt>
-                <dd>Shows the <a href="#AdvancedConfig">Advanced setting dialog</a> when you can fine tune or completelly destroy ;-) the application.</dd>
-                <dt>Back</dt>
-                <dd>Resets settings to its previous state and goes to main screen.</dd>
-            </dl>
-            <p>Note: To reset settings completely navigate to application folder and delete the GPSTracka.exe.config file.</p>
+                <dd>The &#39;distinct&#39; points option logs separate points to KML/GPX file, while &#39;track&#39; logs 
+                    a connecting line between them as well. Ignored for CSV.</dd>
+                <dd>Note: Points are always logged to KML, because KML does not allow description for track points. You can easily turn points on and off in Google Earth or even delete them as they are in single folder.          non-spherical shape, but others use sea level as the origin which is flawed 
+                    because sea levels are different around the world. The result? On some parts of 
+                    a m when you can fine tune or completely destroy the application. 
+                    ;-)</dd>
+                <dt>Back  you know the difference in altitude for the map you&#39;ll be using, you can set it 
+                    in the advanced configNote: To reset settings completely navigate to application folder and delete the GPSTracka.exe.config file.&nbsp; 
+                This is also a good idea if the app is behaving weird.</p>
         </div>
         <div id="AdvancedConfig">
-            <h2>Advanced configuration</h2>
-            <p class="hrefs"><a href="#MainScreen">Main Screen</a> | <a href="#Config">Configuration</a> | <a href="#AdvancedConfig">Advanced configuration</a>
-            <br />
-            <a href="#AdvancedGeneral">General</a> | <a href="#AdvancedDisplay">Display</a> | <a href="#AdvancedKML">KML</a> | <a href="#Formatting">Formatting</a> | <a href="#WinGPS">Win GPS</a> | <a href="#Diagnostic">Diagnostic</a> | <a href="#CSV">CSV</a></p>
-            <div id="AdvancedGeneral">
-                <h3>General</h3>
-                <p class="hrefs"><a href="#AdvancedGeneral">General</a> | <a href="#AdvancedDisplay">Display</a> | <a href="#AdvancedKML">KML</a> | <a href="#Formatting">Formatting</a> | <a href="#WinGPS">Win GPS</a> | <a href="#Diagnostic">Diagnostic</a> | <a href="#CSV">CSV</a></p>
-                <dl>
-                    <dt>Time System / GPS</dt>
-                    <dd>There are two possible sources of time informations, the GPS time provided by satellites and time provided by your device (set in control panel). GPS time is always acurate. GPS reports universal time (UTC), but the application can convert it for you to local time according to time zone set in Windows control panel.</dd>
-                    <dt>Altitude correction</dt>
-                    <dd>GPS altitude usually differes from altitude you can see in maps or Google Earth. This is caused by different style of measurement - GPS&nbsp;uses WGS84 ellipsoid. The difference is usualy constant for one map in certain area and good map gives you he information about the difference, so you can set-up correction here. Bad or no correction may cause your tracks and points to be rendered in mid-air or underground. You can turn altitude logging off as well (in settings screen). For yachting it is really not important.</dd>
-                    <dt>Start immediatelly</dt>
-                    <dd>By default GPSTRacka first waits for poling interval time before it records first point. Checking this forces the application to log first point immediatelly when you click Start.</dd>
-                    <dt>Minimal distance</dt>
-                    <dd>You may observe quite accurate GPS log while you are moving. But once you stop, you may see many points placed randomly around your actual location. You may prevent GPSTracka from logging points that are near from last logged location. This prevents multiple logs at/near same place, when you stop for a while. This sets up minimal distance between two points being logged. You should experiment a little with this. The right number depends on behavior of your GPS receiver, how fast you are moving and which precision of track log you want. 5 to 10 meters can be good option.</dd>
-                    <dt>Pause after X invalid positions</dt>
-                    <dd>Indicates number of invalid positions received from GPS in a row after which GPS device is closed and waits another polling interval period before trying to ead GPS data again.</dd>
-                    <dd>Ignored after start until first valid position is got.</dd>
-                    <dd>
-                        Because keeping GPS device running consumes some batery power, it&#39;s usefull to stop it when it does not provide any meaningful data (like when you are in a tunnel). On the other hand setting this to low number may cause that GPS device will never start reading data after leaving a tunnel, because the application will simply close it before it can find sattelites.
+            <h2>Advanced configuratione using the Windows GPS driver, you can instruct 
+                    it to obtain the true sea-level elevation instad of an ellipsoid elevation (in 
+                    advanced settings).</dd>
+                <dd>
                     </dd>
-                    <dd>0 - never pause.</dd>
+                <dd>
+                    GPS altitude is somewhat different from altitude you can see in maps or Google Earth. This may cause the track to be rendered in mid-air or underground. You can easily instruct Google Earth to ignore track elevation (in case of points it&#39;s not as easy because you must change the setting for each point separatelly). The difference between GPS altitude and true altitude is caused by the way how it is measured by GPS and traditionally. GPS uses some unified ellipsoid (WGS84) model, while traditional measurement uses some local sea level whih can vary by the sea actually used. This difference is usually constanThere are two possible sources of time information: the GPS time provided by satellites, and time provided by your device (set in control panel). GPS time is always accurate. GPS reports universal time (UTC), but the application can convert it for you to local time according to time zone set in Windows control panel.</dd>
+                    <dt>Altitude correction in advanced 
+                GPS altitude usually differs from altitude you can see in maps or Google Earth. This is caused by different style of measurement - GPS&nbsp;uses WGS84 ellipsoid. The difference is usualy constant for one map in certain area and good map gives you he information about the difference, so you can set-up correction here. Bad or no correction may cause your tracks and points to be rendered in mid-air or underground. You can turn altitude logging off as well (in settings screen). For yachting it is really not important.</dd>
+                    <dt>Start immediately</dt>
+                    <dd>&nbsp;Checking this forces the application to log first point immediately when 
+                        you click Start, disable it if you&#39;d rather take it easy.</dd>
+                    <dt>Minimal distance</dt>
+                    <dd>When you move, you&#39;ll observe that the GPS tracks are quite accurate.&nbsp; If 
+                        you stand still, you&#39;ll see points scattered all around you. This option can let 
+                        you prevent GPSTracka from logging points near your last logged location by 
+                        setting up a minimum required distance between two points being logged. 
+                        Experiment with it.&nbsp; The right number will depend on your GPS receiver, how 
+                        fast you are moving and the precision you want.&nbsp; When walking, try 5 to 10 
+                        meters.</dd>
+                    <dt>Pause after X invalid positions</dt>
+                    <dd>This indicates the number of invalid positions received before the application 
+                        should stop attempting to read GPS data and wait for another polling interval.&nbsp; 
+                        This is ignored after start until the first valid position is received.&nbsp; 
+                        This is useful because GPS drains battery power and you don&#39;t want it running if 
+                        it&#39;s not getting valid data.&nbsp; Keep in mind, though, that a small number 
+                        here can prevent the app from ever finding a lock on a satellite.</dd>
+                    <dd>
+                        &nbsp;</dd>
+                    <dd>0 - never pause.dd>
                     <dt>Keep awake devices</dt>
                     <dd>Comma-separated list of names of devices to keep awake when GPS is running.</dd>
                     <dd>Enlist device names such as GPS0 or GPS0:. Colon-terminated devices will be kept awake only during GPS cycle; other devices will be kept for whole time when GPSTracka is logging.</dd>
-                    <dd>Unknown devices are skiped.</dd>
-                    <dd>When not using Windows GPS diver, the COM&nbsp;port is kept awake automatically for whole time when GPSTracka is logging.</dd>
+                    <dd>UnUnknown devices are skipped.</dd>
+                    <dd>When not using Windows GPS diver, the COM&nbsp;port is kept awake automatically for whole time when GPSTracka is logging.dd>
                 </dl>
             </div>
             <div id="AdvancedDisplay">
                 <h3>Display</h3>
                 <p class="hrefs"><a href="#AdvancedGeneral">General</a> | <a href="#AdvancedDisplay">Display</a> | <a href="#AdvancedKML">KML</a> | <a href="#Formatting">Formatting</a> | <a href="#WinGPS">Win GPS</a> | <a href="#Diagnostic">Diagnostic</a> | <a href="#CSV">CSV</a></p>
                 <dl>
-                    <dt>Status bar</dt>
-                    <dd>Tick to show status bar at mine screen. It shows current status of GPS operation, count-down timer for polling interval and very approximate speed.</dd>
+                    <dt>StStatus bar</dt>
+                    <dd>Check this to show status bar at mine screen. It shows current status of GPS operation, count-down timer for polling interval and very approximate speed.</dd>
                     <dt>Clear log every X lines</dt>
-                    <dd>When you are logging to text box (recomended) and you have polling interval set to 1 second, and you are trawelling for 20 hours you get 72.000 lines in text box. This consumes some memory and makes orientation in text box hard. Seting this value to non-zero makes the text box to clear itself everywhen it contains given number of lines or more. 0 means never clear. This seting has not impatct on GPX/KML file.</dd>
-                    <dt>Log format</dt>
+                    <dd>Having text in the textbox consumes your phone&#39;s memory. If you&#39;re logging 
+                        frequently, then the memory consumption will shoot up.&nbsp; Setting this to a 
+                        non-zero value will make the textbox clear itself when it receives that many 
+                        lines of text.&nbsp; This will not affect the log file.</dd>
+                    <dt>Log formatdt>
                     <dd>The format of information writtent to log text box at main screen.</dd>
                     <dd><a href="#Formatting">See below for details</a>.</dd>
                     <dd>Actual format can be tested using the ? button.</dd>
                     <dt>Info pane</dt>
                     <dd>Check to show info pane with various statistic information in main screen.</dd>
                     <dt>Speed unit</dt>
-                    <dd>Unit used fro displaying speed values.</dd>
-                    <dt>Distance unit</dt>
+                    <dd>UnUnit used for displaying speed values.</dd>
+                    <dt>Distance unitdt>
                     <dd>Unit used for displaying distance values.</dd>
                     <dt>Elevation unit</dt>
                     <dd>Unit used for displaying elevation values.</dd>
@@ -162,18 +197,21 @@
                 <h3>Formatting</h3>
                 <p class="hrefs"><a href="#AdvancedGeneral">General</a> | <a href="#AdvancedDisplay">Display</a> | <a href="#AdvancedKML">KML</a> | <a href="#Formatting">Formatting</a> | <a href="#WinGPS">Win GPS</a> | <a href="#Diagnostic">Diagnostic</a> | <a href="#CSV">CSV</a></p>
                 <p>
-                    Formatting is a little tricky process used by programmers in .NET to display date, time, numeric and other values in different formats. Specificly string formatting replaces each occurence of {x} with string representation corresponding object. x is decimal number - 0-based index of object. More, {x} can be in format {x,len}, {x:format} or {x,len:format}.
+                    FoFormatting is a tricky and slightly convoluted process used by programmers in .NET to display date, time, numeric and other values in different formats. 
+                    In this specific case, string formatting replaces each occurence of {x} with a string representation 
+                    of the corresponding object. x is decimal number - 0-based index of object. More, {x} can be in format {x,len}, {x:format} or {x,len:format}.
                 </p>
                 <dl>
-                    <dt>x</dt>
+                    <dt>xdt>
                     <dd>0-based index of object passed py application to formatting. Actual value depends on application.</dd>
                     <dt>len</dt>
                     <dd>
-                        Number - minimal lenght of string representation of the object. If actual string representation of the object is shorter than len it is paded with spaces to given length. If positive, the parameter is right-aligned; if negative, it is left-aligned.
+                        NuNumber - minimal length of string representation of the object. If actual string representation of the object is shorter than length, it is padded with spaces to 
+                        the given length. If positive, the parameter is right-aligned; if negative, it is left-aligned.
                     </dd>
-                    <dt>format</dt>
-                    <dd>This is the most important and most tricky parameter. It defines how the value is formatted. If omited default formatting (depends on object type and value and control panel settings) is used.</dd>
-                    <dd>Actual valid value of format depends on type of object being passed to formatting.</dd>
+                    <dt>formatdt>
+                    <dd>ThThis is the most important and most tricky parameter. It defines how the value is formatted. If omitted, default formatting (depends on object type and value and control panel settings) is used.</dd>
+                    <dd>Actual valid value of format depends on type of object being passed to formatting.dd>
                     <dd>Basically there are two types of formatting - predefined (single letter) and custom. For complete guide see <a href="http://dzonny.cz/Portals/0/DOCs/Formatting.pdf">.NET formatting guide</a>.</dd>
                 </dl>
                 <table>
@@ -367,37 +405,40 @@
                     <li>When using time form GPS system, local time is computed incorrectly.</li>
                     <li>When using time from Windows, UTC time is computed incorrectly.</li>
                 </ul>
-                <p>When you are planning trip across time zones, you&#39;d better get time from GPS and log it as UTC time. - Unless you have as smart device as it switches time zons automatically as you cross the border :-).</p>
+                <p>WhWhen you are planning trip across time zones, it&#39;s best if you get time from GPS and log it as UTC time. 
+                    (Unless you have a &quot;smart&quot; phone that can switch time zones automatically)</p>
             </div>
             <div id="WinGps">
-                <h3>Win GPS</h3>
+                <h3>Win GPSh3>
                 <p class="hrefs"><a href="#AdvancedGeneral">General</a> | <a href="#AdvancedDisplay">Display</a> | <a href="#AdvancedKML">KML</a> | <a href="#Formatting">Formatting</a> | <a href="#WinGPS">Win GPS</a> | <a href="#Diagnostic">Diagnostic</a> | <a href="#CSV">CSV</a></p>
                 <p>Provides settings related exlusively to <a href="http://msdn.microsoft.com/en-us/library/bb202086.aspx">Microsft Windows Intermediate GPS Driver</a>.</p>
                 <dl>
                     <dt>Use sea level altitude</dt>
-                    <dd>Use seal level (the normal one) altitude instead of elipsoid one.</dd>
+                    <dd>UsUse sea level (the normal one) altitude instead of ellipsoid one.</dd>
                     <dd>
-                        GPS&nbsp;system normally provides altidues measured to some kind of ellipsoid (WGS84 ellipsoid) instead of actual sea level as used in maps. Windows driver may provide sea-level altitude as well. If you are receiving no altitude after checking this, uncheck it.
+                        GPS&nbsp;system normally provides altitudes measured to the WGS84 ellipsoid 
+                        standard instead of actual sea level as used in maps. Windows driver may provide sea-level altitude as well. If you are receiving no altitude after checking this, uncheck it.
                     </dd>
                 </dl>
             </div>
             <div id="Diagnostic">
-                <h3>Diagnostic</h3>
+                <h3>Diagnostich3>
                 <p class="hrefs"><a href="#AdvancedGeneral">General</a> | <a href="#AdvancedDisplay">Display</a> | <a href="#AdvancedKML">KML</a> | <a href="#Formatting">Formatting</a> | <a href="#WinGPS">Win GPS</a> | <a href="#Diagnostic">Diagnostic</a> | <a href="#CSV">CSV</a></p>
                 <dl>
                     <dt>NMEA log</dt>
-                    <dd>Check to create extra file in Save folder containing RAW GPS NMEA data. May be used for diagnostics. Contains almost the same data as written in verbose mode to text box. (In case the GPS device provide data too quickly the textbox skips some lines while file always contains all the data.)</dd>
-                    <dd>Note: The file may grow easily.</dd>
-                    <dd>Note: NMEA file is always named using system local time, because GPS time may not be available when it&#39;s being created.</dd>
-                    <dd>Note: The file is not logged when using Windows Intermediate GPS driver.</dd>
+                    <dd>ChCheck to create extra file in Save folder containing RAW GPS NMEA data. May be used for diagnostics. Contains almost the same data as written in verbose mode to text box. (In case the GPS device provides data too quickly, the textbox skips some lines while 
+                        the file always contains all of the data.)</dd>
+                    <dd>Note: The file may grow fast.</dd>
+                    <dd>Note: NMEA files are always named using system local time, because GPS time may not be available when it&#39;s being created.</dd>
+                    <dd>Note: The file is not logged when using Windows Intermediate GPS driver.dd>
                     <dt>Beep every X s</dt>
-                    <dd>Makes device to beep every X seconds when GPS&nbsp;is running. 0 means do not beep.</dd>
-                    <dd>Device dows not beep when suspended.</dd>
-                    <dd>In addition beep count is show instatus bar which increments even when device is suspended.</dd>
+                    <dd>MaMakes device beep every X seconds when GPS&nbsp;is running. 0 means do not beep.</dd>
+                    <dd>Device does not beep when suspended.</dd>
+                    <dd>In addition beep count is shown in status bar which increments even when device is suspended.</dd>
                 </dl>
             </div>
             <div id="CSV">
-                <h3>CSV</h3>
+                <h3>CSVh3>
                 <p class="hrefs"><a href="#AdvancedGeneral">General</a> | <a href="#AdvancedDisplay">Display</a> | <a href="#AdvancedKML">KML</a> | <a href="#Formatting">Formatting</a> | <a href="#WinGPS">Win GPS</a> | <a href="#Diagnostic">Diagnostic</a> | <a href="#CSV">CSV</a></p>
                 <p>This page controls settings related to CSV file format.</p>
                 <dl>

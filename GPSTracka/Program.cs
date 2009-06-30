@@ -33,31 +33,40 @@ namespace GPSTracka
 
         }
 
- 
+
 
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [MTAThread]
-        static void Main(){
+        static void Main()
+        {
             AdvancedConfig.Load();
-            if(!string.IsNullOrEmpty(AdvancedConfig.Language))
-                try {
+            if (!string.IsNullOrEmpty(AdvancedConfig.Language))
+                try
+                {
                     CurrentUICulture = System.Globalization.CultureInfo.GetCultureInfo(AdvancedConfig.Language);
-                } catch { }
+                }
+                catch { }
             PowerPolicyNotify(PPNMessage.PPN_UNATTENDEDMODE, 1);
-            try {
+            try
+            {
                 Application.Run(new TrackerForm());
-            } finally {
+            }
+            finally
+            {
                 PowerPolicyNotify(PPNMessage.PPN_UNATTENDEDMODE, -1);
             }
         }
 
-        public static CultureInfo CurrentUICulture {
-            get {
+        public static CultureInfo CurrentUICulture
+        {
+            get
+            {
                 return CultureInfo.CurrentUICulture;
             }
-            set{
+            set
+            {
                 typeof(CultureInfo).GetField("m_userDefaultUICulture", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static)
                         .SetValue(null, value);
             }

@@ -165,7 +165,7 @@
   <data name="status_Running" xml:space="preserve">
     <value>běží...</value>
   </data>
-  <data name="status_Openning" xml:space="preserve">
+  <data name="status_Opening" xml:space="preserve">
     <value>otevírání...</value>
   </data>
   <data name="Stopped" xml:space="preserve">

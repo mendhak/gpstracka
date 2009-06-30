@@ -139,7 +139,7 @@
     <value>Elevace</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="lvwSattelites.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lvwSatellites.Size" type="System.Drawing.Size, System.Drawing">
     <value>240, 211</value>
   </data>
   <data name="tapDetails.Size" type="System.Drawing.Size, System.Drawing">
@@ -151,10 +151,10 @@
   <data name="panPosition.Size" type="System.Drawing.Size, System.Drawing">
     <value>240, 211</value>
   </data>
-  <data name="tapSattelites.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tapSatellites.Size" type="System.Drawing.Size, System.Drawing">
     <value>240, 211</value>
   </data>
-  <data name="tapSattelites.Text" xml:space="preserve">
+  <data name="tapSatellites.Text" xml:space="preserve">
     <value>Satelity</value>
   </data>
   <data name="$this.Text" xml:space="preserve">

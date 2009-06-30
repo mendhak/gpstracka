@@ -147,7 +147,7 @@
   <data name="lblPointsI.Text" xml:space="preserve">
     <value>Bodů</value>
   </data>
-  <data name="lblSattelitesI.Text" xml:space="preserve">
+  <data name="lblSatellitesI.Text" xml:space="preserve">
     <value>Satelitů</value>
   </data>
   <data name="clearMenuItem.Text" xml:space="preserve">
@@ -159,7 +159,7 @@
   <data name="settingsMenuItem.Text" xml:space="preserve">
     <value>&amp;Nastavení</value>
   </data>
-  <data name="mniSattelites.Text" xml:space="preserve">
+  <data name="mniSatellites.Text" xml:space="preserve">
     <value>&amp;Satelity</value>
   </data>
   <data name="aboutMenuItem.Text" xml:space="preserve">

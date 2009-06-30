@@ -21,7 +21,7 @@ public enum GpsServiceState : int
 {
     Off = 0,
     On = 1,
-    StartingUp = 2, 
+    StartingUp = 2,
     ShuttingDown = 3,
     Unloading = 4,
     Uninitialized = 5,
@@ -54,7 +54,7 @@ namespace Microsoft.WindowsMobile.Samples.Location
         /// </summary>
         public GpsServiceState ServiceState
         {
-            get {return (GpsServiceState)serviceState;}
+            get { return (GpsServiceState)serviceState; }
         }
 
         int deviceState = 0;
@@ -63,7 +63,7 @@ namespace Microsoft.WindowsMobile.Samples.Location
         /// </summary>
         public GpsServiceState DeviceState
         {
-            get {return (GpsServiceState)deviceState;}
+            get { return (GpsServiceState)deviceState; }
         }
 
         string friendlyName = "";
@@ -72,7 +72,7 @@ namespace Microsoft.WindowsMobile.Samples.Location
         /// </summary>
         public string FriendlyName
         {
-            get {return friendlyName;}
+            get { return friendlyName; }
         }
 
         /// <summary>
