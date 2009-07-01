@@ -1,4 +1,4 @@
-﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -14,7 +14,7 @@
     <PlatformID>b2c48bd2-963d-4549-9169-1fa021dce484</PlatformID>
     <OSVersion>5.2</OSVersion>
     <DeployDirSuffix>GPSTracka</DeployDirSuffix>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <NativePlatformName>Windows Mobile 6 Professional SDK</NativePlatformName>
     <FormFactorID>
     </FormFactorID>
@@ -59,7 +59,7 @@
     </Reference>
     <Reference Include="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=969db8053d3322ac, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Microsoft.NET\SDK\CompactFramework\v2.0\WindowsCE\mscorlib.dll</HintPath>
+      <HintPath>%ProgramFiles%\Microsoft.NET\SDK\CompactFramework\v2.0\WindowsCE\mscorlib.dll</HintPath>
     </Reference>
     <Reference Include="OpenNETCF.Windows.Forms, Version=2.3.0.39, Culture=neutral, PublicKeyToken=e60dbea84bb431b7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -67,27 +67,27 @@
     </Reference>
     <Reference Include="System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=969db8053d3322ac, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Microsoft.NET\SDK\CompactFramework\v2.0\WindowsCE\System.dll</HintPath>
+      <HintPath>%ProgramFiles%\Microsoft.NET\SDK\CompactFramework\v2.0\WindowsCE\System.dll</HintPath>
     </Reference>
     <Reference Include="System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=969db8053d3322ac, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Microsoft.NET\SDK\CompactFramework\v2.0\WindowsCE\System.Data.dll</HintPath>
+      <HintPath>%ProgramFiles%\Microsoft.NET\SDK\CompactFramework\v2.0\WindowsCE\System.Data.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=969db8053d3322ac, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Microsoft.NET\SDK\CompactFramework\v2.0\WindowsCE\System.Drawing.dll</HintPath>
+      <HintPath>%ProgramFiles%\Microsoft.NET\SDK\CompactFramework\v2.0\WindowsCE\System.Drawing.dll</HintPath>
     </Reference>
     <Reference Include="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=969db8053d3322ac, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Microsoft.NET\SDK\CompactFramework\v2.0\WindowsCE\System.Windows.Forms.dll</HintPath>
+      <HintPath>%ProgramFiles%\Microsoft.NET\SDK\CompactFramework\v2.0\WindowsCE\System.Windows.Forms.dll</HintPath>
     </Reference>
     <Reference Include="System.Windows.Forms.DataGrid, Version=2.0.0.0, Culture=neutral, PublicKeyToken=969db8053d3322ac, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Microsoft.NET\SDK\CompactFramework\v2.0\WindowsCE\System.Windows.Forms.DataGrid.dll</HintPath>
+      <HintPath>%ProgramFiles%\Microsoft.NET\SDK\CompactFramework\v2.0\WindowsCE\System.Windows.Forms.DataGrid.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=969db8053d3322ac, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Microsoft.NET\SDK\CompactFramework\v2.0\WindowsCE\System.Xml.dll</HintPath>
+      <HintPath>%ProgramFiles%\Microsoft.NET\SDK\CompactFramework\v2.0\WindowsCE\System.Xml.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
