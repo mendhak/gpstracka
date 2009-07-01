@@ -1,19 +1,16 @@
 ﻿using System;
-
-using System.Collections.Generic;
-using System.Windows.Forms;
-using System.Runtime.InteropServices;
 using System.Globalization;
+using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 namespace GPSTracka
 {
     static class Program
     {
-
-
         [DllImport("CoreDLL")]
         public static extern int PowerPolicyNotify(PPNMessage dwMessage, int option);
 
+// ReSharper disable InconsistentNaming
         public enum PPNMessage
         {
 
@@ -32,8 +29,7 @@ namespace GPSTracka
             PPN_APPBUTTONPRESSED = 6,
 
         }
-
-
+// ReSharper restore InconsistentNaming
 
         /// <summary>
         /// The main entry point for the application.
@@ -43,12 +39,18 @@ namespace GPSTracka
         {
             AdvancedConfig.Load();
             if (!string.IsNullOrEmpty(AdvancedConfig.Language))
+            {
                 try
                 {
-                    CurrentUICulture = System.Globalization.CultureInfo.GetCultureInfo(AdvancedConfig.Language);
+                    CurrentUICulture = CultureInfo.GetCultureInfo(AdvancedConfig.Language);
                 }
-                catch { }
+                catch
+                {
+                }
+            }
+
             PowerPolicyNotify(PPNMessage.PPN_UNATTENDEDMODE, 1);
+
             try
             {
                 Application.Run(new TrackerForm());
