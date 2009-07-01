@@ -10,7 +10,7 @@ namespace GPSTracka
     {
  
         [DllImport("Coredll.dll")]
-        private static extern void MessageBeep(int Flags);
+        private static extern void MessageBeep(int flags);
  
         /// <summary>
         /// Types of beep alerts

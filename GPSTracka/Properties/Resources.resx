@@ -295,7 +295,7 @@ The result is:
     <value>CSV text qualifier cannot be empty.</value>
   </data>
   <data name="err_NoCSVFields" xml:space="preserve">
-    <value>Select at leas one CSV field.</value>
+    <value>Select at least one CSV field.</value>
   </data>
   <data name="err_InvalidCSVDateFormat" xml:space="preserve">
     <value>Format of date in CSV file is invalid:</value>

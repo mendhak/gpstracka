@@ -577,9 +577,9 @@
             this.Controls.Add(this.mainPanel);
             this.Menu = this.mainPanelMenu;
             this.Name = "TrackerForm";
-            this.Deactivate += new System.EventHandler(this.TrackerForm_Deactivate);
+            //this.Deactivate += new System.EventHandler(this.TrackerForm_Deactivate);
             this.Load += new System.EventHandler(this.GPSTracka_Load);
-            this.Activated += new System.EventHandler(this.TrackerForm_Activated);
+            //this.Activated += new System.EventHandler(this.TrackerForm_Activated);
             this.Closing += new System.ComponentModel.CancelEventHandler(this.GPSTracka_Closing);
             //this.Resize += new System.EventHandler(this.TrackerForm_Resize);
             this.mainPanel.ResumeLayout(false);

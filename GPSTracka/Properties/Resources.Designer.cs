@@ -287,7 +287,7 @@ namespace GPSTracka.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select at leas one CSV field..
+        ///   Looks up a localized string similar to Select at least one CSV field..
         /// </summary>
         internal static string err_NoCSVFields {
             get {

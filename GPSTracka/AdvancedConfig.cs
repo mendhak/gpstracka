@@ -15,10 +15,10 @@ namespace GPSTracka
         {
             InitializeComponent();
             {
-                lstCSVAvailableFields.Items.Add(new CSVItem(0, Resources.Latitude));
-                lstCSVAvailableFields.Items.Add(new CSVItem(1, Resources.Longitude));
-                lstCSVAvailableFields.Items.Add(new CSVItem(2, Resources.Altitude));
-                lstCSVAvailableFields.Items.Add(new CSVItem(3, Resources.Date));
+                lstCSVAvailableFields.Items.Add(new CsvItem(0, Resources.Latitude));
+                lstCSVAvailableFields.Items.Add(new CsvItem(1, Resources.Longitude));
+                lstCSVAvailableFields.Items.Add(new CsvItem(2, Resources.Altitude));
+                lstCSVAvailableFields.Items.Add(new CsvItem(3, Resources.Date));
                 lstCSVAvailableFields.DisplayMember = "Desc";
                 lstCSVFields.DisplayMember = "Desc";
                 cmbLanguage.DisplayMember = "NativeName";
@@ -46,9 +46,9 @@ namespace GPSTracka
             nudMaxLogLen.Value = AdvancedConfig.MaxLogLength;
             nudAltitudeCorrection.Value = AdvancedConfig.AltitudeCorrection;
             chkStartImmediatelly.Checked = AdvancedConfig.StartImmediatelly;
-            txtKMLDescFormat.Text = AdvancedConfig.KMLDescFormat;
-            txtKMLNameFormat.Text = AdvancedConfig.KMLNameFormat;
-            copKMLColor.Color = AdvancedConfig.KMLLineColor;
+            txtKMLDescFormat.Text = AdvancedConfig.KmlDescFormat;
+            txtKMLNameFormat.Text = AdvancedConfig.KmlNameFormat;
+            copKMLColor.Color = AdvancedConfig.KmlLineColor;
             nudMinimalDistance.Value = AdvancedConfig.MinimalDistance;
             txtLogFormat.Text = AdvancedConfig.TextLogFormat;
             nudInvalidMax.Value = AdvancedConfig.InvalidPositionsMax;
@@ -60,22 +60,22 @@ namespace GPSTracka
             cmbSpeedUnit.SelectedIndex = (int)AdvancedConfig.SpeedUnit;
             cmbDistanceUnit.SelectedIndex = (int)AdvancedConfig.DistanceUnit;
             cmbElevationUnit.SelectedIndex = (int)AdvancedConfig.ElevationUnit;
-            txtCSVSeparator.Text = AdvancedConfig.CSVSeparator.ToString();
-            txtCSVQualifier.Text = AdvancedConfig.CSVTextQualifier.ToString();
-            cmbCSVQualifierUsage.SelectedIndex = (int)AdvancedConfig.CSVQualifierUsage;
-            cmbCSVNewLine.SelectedIndex = AdvancedConfig.CSVNewLine == "\r\n" ? 0 : AdvancedConfig.CSVNewLine == "\n" ? 1 : 2;
-            txtCSVHeader.Text = AdvancedConfig.CSVHeader;
-            if (AdvancedConfig.CSVFields != null)
-                foreach (char chr in AdvancedConfig.CSVFields)
-                    foreach (CSVItem itm in lstCSVAvailableFields.Items)
+            txtCSVSeparator.Text = AdvancedConfig.CsvSeparator.ToString();
+            txtCSVQualifier.Text = AdvancedConfig.CsvTextQualifier.ToString();
+            cmbCSVQualifierUsage.SelectedIndex = (int)AdvancedConfig.CsvQualifierUsage;
+            cmbCSVNewLine.SelectedIndex = AdvancedConfig.CsvNewLine == "\r\n" ? 0 : AdvancedConfig.CsvNewLine == "\n" ? 1 : 2;
+            txtCSVHeader.Text = AdvancedConfig.CsvHeader;
+            if (AdvancedConfig.CsvFields != null)
+                foreach (char chr in AdvancedConfig.CsvFields)
+                    foreach (CsvItem itm in lstCSVAvailableFields.Items)
                         if ((int)char.GetNumericValue(chr) == itm.Code)
                         {
                             lstCSVFields.Items.Add(itm);
                             lstCSVAvailableFields.Items.Remove(itm);
                             break;
                         }
-            txtCSVDateFormat.Text = AdvancedConfig.CSVDateFormat;
-            chkCSVUTC.Checked = AdvancedConfig.CSVUTC;
+            txtCSVDateFormat.Text = AdvancedConfig.CsvDateFormat;
+            chkCSVUTC.Checked = AdvancedConfig.CsvUtc;
             if (!string.IsNullOrEmpty(AdvancedConfig.Language))
                 foreach (System.Globalization.CultureInfo ci in cmbLanguage.Items)
                     if (ci != null && ci.Name == AdvancedConfig.Language)
@@ -158,9 +158,9 @@ namespace GPSTracka
             AdvancedConfig.MaxLogLength = (int)nudMaxLogLen.Value;
             AdvancedConfig.AltitudeCorrection = (int)nudAltitudeCorrection.Value;
             AdvancedConfig.StartImmediatelly = chkStartImmediatelly.Checked;
-            AdvancedConfig.KMLDescFormat = txtKMLDescFormat.Text;
-            AdvancedConfig.KMLNameFormat = txtKMLNameFormat.Text;
-            AdvancedConfig.KMLLineColor = copKMLColor.Color;
+            AdvancedConfig.KmlDescFormat = txtKMLDescFormat.Text;
+            AdvancedConfig.KmlNameFormat = txtKMLNameFormat.Text;
+            AdvancedConfig.KmlLineColor = copKMLColor.Color;
             AdvancedConfig.MinimalDistance = (int)nudMinimalDistance.Value;
             AdvancedConfig.TextLogFormat = txtLogFormat.Text;
             AdvancedConfig.InvalidPositionsMax = (int)nudInvalidMax.Value;
@@ -172,21 +172,21 @@ namespace GPSTracka
             AdvancedConfig.SpeedUnit = (SpeedUnit)cmbSpeedUnit.SelectedIndex;
             AdvancedConfig.DistanceUnit = (DistanceUnit)cmbDistanceUnit.SelectedIndex;
             AdvancedConfig.ElevationUnit = (ElevationUnit)cmbElevationUnit.SelectedIndex;
-            AdvancedConfig.CSVSeparator = txtCSVSeparator.Text[0];
-            AdvancedConfig.CSVTextQualifier = txtCSVQualifier.Text[0];
-            AdvancedConfig.CSVQualifierUsage = (CSVQualifierUsage)cmbCSVQualifierUsage.SelectedIndex;
-            AdvancedConfig.CSVNewLine = cmbCSVNewLine.SelectedIndex == 0 ? "\r\n" : cmbCSVQualifierUsage.SelectedIndex == 1 ? "\n" : "\r";
-            AdvancedConfig.CSVHeader = txtCSVHeader.Text;
+            AdvancedConfig.CsvSeparator = txtCSVSeparator.Text[0];
+            AdvancedConfig.CsvTextQualifier = txtCSVQualifier.Text[0];
+            AdvancedConfig.CsvQualifierUsage = (CSVQualifierUsage)cmbCSVQualifierUsage.SelectedIndex;
+            AdvancedConfig.CsvNewLine = cmbCSVNewLine.SelectedIndex == 0 ? "\r\n" : cmbCSVQualifierUsage.SelectedIndex == 1 ? "\n" : "\r";
+            AdvancedConfig.CsvHeader = txtCSVHeader.Text;
 
             ArrayList alFields = new ArrayList();
-            foreach (CSVItem fld in lstCSVFields.Items)
+            foreach (CsvItem fld in lstCSVFields.Items)
             {
                 alFields.Add(fld.Code.ToString(System.Globalization.CultureInfo.InvariantCulture));
             }
-            AdvancedConfig.CSVFields = String.Join("", (string[])alFields.ToArray(typeof(string)));
+            AdvancedConfig.CsvFields = String.Join("", (string[])alFields.ToArray(typeof(string)));
             //AdvancedConfig.CSVFields = String.Join("", (from CSVItem fld in lstCSVFields.Items select fld.Code.ToString(System.Globalization.CultureInfo.InvariantCulture)).ToArray());
-            AdvancedConfig.CSVDateFormat = txtCSVDateFormat.Text;
-            AdvancedConfig.CSVUTC = chkCSVUTC.Checked;
+            AdvancedConfig.CsvDateFormat = txtCSVDateFormat.Text;
+            AdvancedConfig.CsvUtc = chkCSVUTC.Checked;
             string newlang;
             
             if (cmbLanguage.SelectedItem is string)
@@ -201,14 +201,14 @@ namespace GPSTracka
             if (AdvancedConfig.Language != newlang)
                 MessageBox.Show(Resources.msg_LngChange);
             AdvancedConfig.Language = newlang;
-            this.Close();
-            this.DialogResult = DialogResult.OK;
+            Close();
+            DialogResult = DialogResult.OK;
         }
-        #region Interactivity
+
         private void tmiCancel_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Cancel;
-            this.Close();
+            DialogResult = DialogResult.Cancel;
+            Close();
         }
 
         private void llbStringFormat_Click(object sender, EventArgs e)
@@ -243,23 +243,21 @@ namespace GPSTracka
                     Resources.err_ErrorTitleMsg, MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
             }
         }
-        #endregion
 
-        #region "CSV"
         /// <summary>Represents CSV field displayedn in <see cref="ListBox"/></summary>
-        private class CSVItem
+        private class CsvItem
         {
             /// <summary>Contains value of the <see cref="Code"/> property</summary>
             private readonly int code;
             /// <summary>Contains value of the <see cref="Desc"/> property</summary>
             private readonly string desc;
             /// <summary>CTor</summary>
-            /// <param name="Code">Field code</param>
-            /// <param name="Desc">Field description</param>
-            public CSVItem(int Code, string Desc)
+            /// <param name="code">Field code</param>
+            /// <param name="desc">Field description</param>
+            public CsvItem(int code, string desc)
             {
-                this.code = Code;
-                this.desc = Desc;
+                this.code = code;
+                this.desc = desc;
             }
             /// <summary>Gets field code as used in <see cref="String.Format(string,object)"/></summary>
             public int Code { get { return code; } }
@@ -349,9 +347,6 @@ namespace GPSTracka
                 MessageBox.Show(Resources.err_InvalidFormat + "\r\n" + ex.Message);
             }
         }
-        #endregion
-
-
     }
 
     /// <summary>Stores, loads and saves advanced settings</summary>
@@ -361,9 +356,9 @@ namespace GPSTracka
         {
             //Set defaults.
 
-            KMLNameFormat = KMLDescFormat = Resources.format_KmlDescDefault;
+            KmlNameFormat = KmlDescFormat = Resources.format_KmlDescDefault;
             TextLogFormat = Resources.format_TextLogDefault;
-            COMPort = "COM1";
+            ComPort = "COM1";
             BaudRate = OpenNETCF.IO.Serial.BaudRates.CBR_4800;
             TrackType = TrackType.Points;
             LogFormat = LogFormat.GPX;
@@ -374,25 +369,25 @@ namespace GPSTracka
             InfoPane = true;
             StatusBar = true;
             StartImmediatelly = true;
-            KMLLineColor = Color.FromArgb(0, 0, 0xff);
+            KmlLineColor = Color.FromArgb(0, 0, 0xff);
             InvalidPositionsMax = 500;
             NmeaLog = false;
             KeepAwakeList = new string[] { "GPD0", "GPS0" };
             SpeedUnit = SpeedUnit.kmh;
             DistanceUnit = DistanceUnit.km;
             ElevationUnit = ElevationUnit.m;
-            CSVQualifierUsage = CSVQualifierUsage.AsNeeded;
+            CsvQualifierUsage = CSVQualifierUsage.AsNeeded;
         }
         /// <summary>Loads advanced settings from <see cref="ConfigurationManager"/></summary>
         public static void Load()
         {
             //Read from config file
 
-            COMPort = ConfigurationManager.AppSettings["COMPort"];
+            ComPort = ConfigurationManager.AppSettings["COMPort"];
 
-            if (String.IsNullOrEmpty(COMPort))
+            if (String.IsNullOrEmpty(ComPort))
             {
-                COMPort = "COM1";
+                ComPort = "COM1";
             }
 
             try
@@ -487,17 +482,17 @@ namespace GPSTracka
             
             if (!String.IsNullOrEmpty(ConfigurationManager.AppSettings["KMLNameFormat"]))
             {
-                KMLNameFormat = ConfigurationManager.AppSettings["KMLNameFormat"];
+                KmlNameFormat = ConfigurationManager.AppSettings["KMLNameFormat"];
             }
 
             if (!String.IsNullOrEmpty(ConfigurationManager.AppSettings["KMLDescFormat"]))
             {
-                KMLDescFormat = ConfigurationManager.AppSettings["KMLDescFormat"];
+                KmlDescFormat = ConfigurationManager.AppSettings["KMLDescFormat"];
             }
 
             if(!String.IsNullOrEmpty(ConfigurationManager.AppSettings["KMLLineColor"]))
             {
-                KMLLineColor = Color.FromArgb(Int32.Parse(ConfigurationManager.AppSettings["KMLLineColor"], System.Globalization.CultureInfo.InvariantCulture));
+                KmlLineColor = Color.FromArgb(Int32.Parse(ConfigurationManager.AppSettings["KMLLineColor"], System.Globalization.CultureInfo.InvariantCulture));
             }
 
             if(!String.IsNullOrEmpty(ConfigurationManager.AppSettings["MinimalDistance"]))
@@ -559,26 +554,26 @@ namespace GPSTracka
             
 
 
-            CSVSeparator = String.IsNullOrEmpty(ConfigurationManager.AppSettings["CSVSeparator"]) ? ',' : ConfigurationManager.AppSettings["CSVSeparator"][0];
-            CSVTextQualifier = String.IsNullOrEmpty(ConfigurationManager.AppSettings["CSVTextQualifier"]) ? '"' : ConfigurationManager.AppSettings["CSVTextQualifier"][0];
+            CsvSeparator = String.IsNullOrEmpty(ConfigurationManager.AppSettings["CSVSeparator"]) ? ',' : ConfigurationManager.AppSettings["CSVSeparator"][0];
+            CsvTextQualifier = String.IsNullOrEmpty(ConfigurationManager.AppSettings["CSVTextQualifier"]) ? '"' : ConfigurationManager.AppSettings["CSVTextQualifier"][0];
 
             if(!String.IsNullOrEmpty(ConfigurationManager.AppSettings["CSVQualifierUsage"]))
             {
-                CSVQualifierUsage = (CSVQualifierUsage)int.Parse(ConfigurationManager.AppSettings["CSVQualifierUsage"], System.Globalization.CultureInfo.InvariantCulture);
+                CsvQualifierUsage = (CSVQualifierUsage)int.Parse(ConfigurationManager.AppSettings["CSVQualifierUsage"], System.Globalization.CultureInfo.InvariantCulture);
             }
 
             if (!String.IsNullOrEmpty(ConfigurationManager.AppSettings["CSVHeader"]))
             {
-                CSVHeader = ConfigurationManager.AppSettings["CSVHeader"];
+                CsvHeader = ConfigurationManager.AppSettings["CSVHeader"];
             }
 
-            CSVFields = String.IsNullOrEmpty(ConfigurationManager.AppSettings["CSVFields"]) ? "3012" : ConfigurationManager.AppSettings["CSVFields"];
-            CSVNewLine = String.IsNullOrEmpty(ConfigurationManager.AppSettings["CSVNewLine"]) ? "\r\n" : ConfigurationManager.AppSettings["CSVNewLine"];
-            CSVDateFormat = String.IsNullOrEmpty(ConfigurationManager.AppSettings["CSVDateFormat"]) ? "yyyy-MM-dd HH:mm:ss" : ConfigurationManager.AppSettings["CSVDateFormat"];
+            CsvFields = String.IsNullOrEmpty(ConfigurationManager.AppSettings["CSVFields"]) ? "3012" : ConfigurationManager.AppSettings["CSVFields"];
+            CsvNewLine = String.IsNullOrEmpty(ConfigurationManager.AppSettings["CSVNewLine"]) ? "\r\n" : ConfigurationManager.AppSettings["CSVNewLine"];
+            CsvDateFormat = String.IsNullOrEmpty(ConfigurationManager.AppSettings["CSVDateFormat"]) ? "yyyy-MM-dd HH:mm:ss" : ConfigurationManager.AppSettings["CSVDateFormat"];
 
             if (!String.IsNullOrEmpty(ConfigurationManager.AppSettings["CSVUTC"]))
             {
-                CSVUTC = Convert.ToBoolean(ConfigurationManager.AppSettings["CSVUTC"]);
+                CsvUtc = Convert.ToBoolean(ConfigurationManager.AppSettings["CSVUTC"]);
             }
             
             if(!String.IsNullOrEmpty(ConfigurationManager.AppSettings["Language"]))
@@ -589,7 +584,7 @@ namespace GPSTracka
         /// <summary>Stores advanced settings to <see cref="ConfigurationManager"/></summary>
         public static void Store()
         {
-            ConfigurationManager.AppSettings["COMPort"] = COMPort;
+            ConfigurationManager.AppSettings["COMPort"] = ComPort;
             ConfigurationManager.AppSettings["BaudRate"] = BaudRate.ToString();
             ConfigurationManager.AppSettings["UseWindowsDriver"] = UseWindowsDriver ? "true" : "false";
             ConfigurationManager.AppSettings["PollingInterval"] = PollingInterval.ToString(System.Globalization.CultureInfo.InvariantCulture);
@@ -621,9 +616,9 @@ namespace GPSTracka
             ConfigurationManager.AppSettings["MaxLogLength"] = MaxLogLength.ToString(System.Globalization.CultureInfo.InvariantCulture);
             ConfigurationManager.AppSettings["AltitudeCorrection"] = AltitudeCorrection.ToString(System.Globalization.CultureInfo.InvariantCulture);
             ConfigurationManager.AppSettings["StartImmediatelly"] = StartImmediatelly ? "true" : "false";
-            ConfigurationManager.AppSettings["KMLNameFormat"] = KMLNameFormat;
-            ConfigurationManager.AppSettings["KMLDescFormat"] = KMLDescFormat;
-            ConfigurationManager.AppSettings["KMLLineColor"] = KMLLineColor.ToArgb().ToString(System.Globalization.CultureInfo.InvariantCulture);
+            ConfigurationManager.AppSettings["KMLNameFormat"] = KmlNameFormat;
+            ConfigurationManager.AppSettings["KMLDescFormat"] = KmlDescFormat;
+            ConfigurationManager.AppSettings["KMLLineColor"] = KmlLineColor.ToArgb().ToString(System.Globalization.CultureInfo.InvariantCulture);
             ConfigurationManager.AppSettings["MinimalDistance"] = MinimalDistance.ToString(System.Globalization.CultureInfo.InvariantCulture);
             ConfigurationManager.AppSettings["TextLogFormat"] = TextLogFormat;
             ConfigurationManager.AppSettings["InvalidPositionsMax"] = InvalidPositionsMax.ToString(System.Globalization.CultureInfo.InvariantCulture);
@@ -635,20 +630,20 @@ namespace GPSTracka
             ConfigurationManager.AppSettings["SpeedUnit"] = SpeedUnit.ToString();
             ConfigurationManager.AppSettings["DistanceUnit"] = DistanceUnit.ToString();
             ConfigurationManager.AppSettings["ElevationUnit"] = ElevationUnit.ToString();
-            ConfigurationManager.AppSettings["CSVSeparator"] = CSVSeparator.ToString();
-            ConfigurationManager.AppSettings["CSVTextQualifier"] = CSVTextQualifier.ToString();
-            ConfigurationManager.AppSettings["CSVNewLine"] = CSVNewLine;
-            ConfigurationManager.AppSettings["CSVQualifierUsage"] = ((int)CSVQualifierUsage).ToString(System.Globalization.CultureInfo.InvariantCulture);
-            ConfigurationManager.AppSettings["CSVHeader"] = CSVHeader;
-            ConfigurationManager.AppSettings["CSVFields"] = CSVFields;
-            ConfigurationManager.AppSettings["CSVDateFormat"] = CSVDateFormat;
-            ConfigurationManager.AppSettings["CSVUTC"] = CSVUTC ? "true" : "false";
+            ConfigurationManager.AppSettings["CSVSeparator"] = CsvSeparator.ToString();
+            ConfigurationManager.AppSettings["CSVTextQualifier"] = CsvTextQualifier.ToString();
+            ConfigurationManager.AppSettings["CSVNewLine"] = CsvNewLine;
+            ConfigurationManager.AppSettings["CSVQualifierUsage"] = ((int)CsvQualifierUsage).ToString(System.Globalization.CultureInfo.InvariantCulture);
+            ConfigurationManager.AppSettings["CSVHeader"] = CsvHeader;
+            ConfigurationManager.AppSettings["CSVFields"] = CsvFields;
+            ConfigurationManager.AppSettings["CSVDateFormat"] = CsvDateFormat;
+            ConfigurationManager.AppSettings["CSVUTC"] = CsvUtc ? "true" : "false";
             ConfigurationManager.AppSettings["Language"] = Language;
         }
 
         /// <summary>Gets or sets COM port name to get GPS data from</summary>
         /// <remarks>Ignored when <see cref="UseWindowsDriver"/> is true</remarks>
-        public static string COMPort { get; set; }
+        public static string ComPort { get; set; }
         /// <summary>Gets or sets baude rate of COM port</summary>
         /// <remarks>Ignored when <see cref="UseWindowsDriver"/> is true</remarks>
         public static OpenNETCF.IO.Serial.BaudRates BaudRate { get; set; }
@@ -690,7 +685,7 @@ namespace GPSTracka
         /// <item><term>4</term><description>Date and time local</description></item>
         /// <item><term>5</term><description>Altitude unit</description></item>
         /// </list></value>
-        public static string KMLNameFormat { get; set; }
+        public static string KmlNameFormat { get; set; }
         
         /// <summary>Gets or sets format used for KML point description</summary>
         /// <value>String used by <see cref="String.Format(string,object)"/>. Parameters are:
@@ -702,10 +697,10 @@ namespace GPSTracka
         /// <item><term>4</term><description>Date and time local</description></item>
         /// <item><term>5</term><description>Altitude unit</description></item>
         /// </list></value>
-        public static string KMLDescFormat { get; set; }
+        public static string KmlDescFormat { get; set; }
         
         /// <summary>Gets or sets color used for KML line</summary>
-        public static Color KMLLineColor { get; set; }
+        public static Color KmlLineColor { get; set; }
         
         /// <summary>Gets minimal distance of two logged points (in meters)</summary>
         /// <remarks>When point A is logged, its location is remembered.
@@ -748,19 +743,19 @@ namespace GPSTracka
         public static ElevationUnit ElevationUnit { get; set; }
 
         /// <summary>CSV field separator</summary>
-        public static char CSVSeparator { get; set; }
+        public static char CsvSeparator { get; set; }
         
         /// <summary>CSV text qualifier</summary>
-        public static char CSVTextQualifier { get; set; }
+        public static char CsvTextQualifier { get; set; }
         
         /// <summary>When to use CSV text qualifier</summary>
-        public static CSVQualifierUsage CSVQualifierUsage { get; set; }
+        public static CSVQualifierUsage CsvQualifierUsage { get; set; }
         
         /// <summary>CSV new linestring</summary>
-        public static string CSVNewLine { get; set; }
+        public static string CsvNewLine { get; set; }
         
         /// <summary>CSV file header</summary>
-        public static string CSVHeader { get; set; }
+        public static string CsvHeader { get; set; }
         
         /// <summary>Order of SCV fileds - single-digits from 0 to 3.</summary>
         /// <remarks>
@@ -770,13 +765,13 @@ namespace GPSTracka
         /// <item><term>2</term><description>Altitude</description></item>
         /// <item><term>3</term><description>Date</description></item>
         /// </list></remarks>
-        public static string CSVFields { get; set; }
+        public static string CsvFields { get; set; }
         
         /// <summary>Format of date in CSV file</summary>
-        public static string CSVDateFormat { get; set; }
+        public static string CsvDateFormat { get; set; }
         
         /// <summary>Use UTC time in CSV file</summary>
-        public static bool CSVUTC { get; set; }
+        public static bool CsvUtc { get; set; }
 
         /// <summary>Langauge (culture name)</summary>
         public static string Language { get; set; }
