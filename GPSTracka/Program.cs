@@ -31,7 +31,7 @@ namespace GPSTracka
         /// The main entry point for the application.
         /// </summary>
         [MTAThread]
-        static void Main()
+        static void Main(string[] args)
         {
             AdvancedConfig.Load();
             if (!string.IsNullOrEmpty(AdvancedConfig.Language))
@@ -47,9 +47,22 @@ namespace GPSTracka
 
             PowerPolicyNotify(PPNMessage.PPN_UNATTENDEDMODE, 1);
 
+            //Check for auto start
+            bool autoStart = false;
+            if ((args != null) && (args.Length > 0))
+            {
+                foreach (string arg in args)
+                {
+                    if (String.Compare(arg, "-start", StringComparison.OrdinalIgnoreCase) == 0)
+                    {
+                        autoStart = true;
+                    }
+                }
+            }
+
             try
             {
-                Application.Run(new TrackerForm());
+                Application.Run(new TrackerForm(autoStart));
             }
             finally
             {

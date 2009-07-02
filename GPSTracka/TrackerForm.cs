@@ -162,8 +162,13 @@ namespace GPSTracka
         /// <summary>User pressed stop and start and chosedto continue</summary>
         private bool continuing;
 
+        /// <summary>
+        /// Start tracking on application start
+        /// </summary>
+        private bool autoStart;
 
-        public TrackerForm()
+
+        public TrackerForm(bool autoStart)
         {
             InitializeComponent();
             initMeasure = lblAerial.Size;
@@ -188,6 +193,9 @@ namespace GPSTracka
             fraFormat.Text = Properties.Resources.Format;
             fraOptions.Text = Properties.Resources.LoggingOptions;
             fraSpeed.Text = Properties.Resources.PollingRate;
+
+            //Auto start property
+            this.autoStart = autoStart;
         }
 
         private void GPSTracka_Load(object sender, EventArgs e)
@@ -208,6 +216,11 @@ namespace GPSTracka
             //Call keepdeviceawake every 30 seconds in its own timer
             //Cannot use existing timer because it may have 5 minute intervals.
             preventSleepTimer = new System.Threading.Timer(new System.Threading.TimerCallback(KeepDeviceAwake), null, 0, 30000);
+
+            if (autoStart)
+            {
+                startMenuItem_Click(this, new EventArgs());
+            }
         }
 
         /// <summary>Shows basig settings to user using controls</summary>
