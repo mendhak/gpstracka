@@ -328,4 +328,10 @@ Value = {1}</value>
   <data name="Default" xml:space="preserve">
     <value>default</value>
   </data>
+  <data name="Satellite_Started" xml:space="preserve">
+    <value>Sat. open</value>
+  </data>
+  <data name="Satellite_Stopped" xml:space="preserve">
+    <value>Sat. closed</value>
+  </data>
 </root>

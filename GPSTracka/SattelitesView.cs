@@ -34,6 +34,7 @@ namespace GPSTracka
             }
 
             this.gps = gps;
+            this.gps.Start();
             InitializeComponent();
             gps.Satellite += GpsSatellite;
         }
@@ -45,8 +46,12 @@ namespace GPSTracka
 
         private void SatellitesView_Closed(object sender, EventArgs e)
         {
-            gps.Satellite -= GpsSatellite;
-            gps = null;
+            if(gps != null)
+            {
+                gps.Satellite -= GpsSatellite;
+                gps = null;
+            }
+  
         }
 
         private void GpsSatellite(GpsProvider sender, GpsSatelliteEventArgs e)

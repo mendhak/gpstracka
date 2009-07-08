@@ -13,6 +13,7 @@ using OpenNETCF.IO.Serial;
 using System.Globalization;
 using Microsoft.Win32;
 using GPSTracka.Gps;
+using GPSTracka.Properties;
 
 namespace GPSTracka
 {
@@ -166,6 +167,11 @@ namespace GPSTracka
         /// Start tracking on application start
         /// </summary>
         private bool autoStart;
+
+        /// <summary>
+        /// Whether the satellite window is open or not, because this is used to keep the GPS instance running
+        /// </summary>
+        private bool satelliteWindowOpen;
 
 
         public TrackerForm(bool autoStart)
@@ -669,19 +675,26 @@ namespace GPSTracka
         
         private void mniSatellites_Click(object sender, EventArgs e)
         {
-            if (satellitesWindow == null)
+
+            Status(Resources.Satellite_Started);
+
+            GpsState currentState = GpsInstance.State;
+            satelliteWindowOpen = true;
+            satellitesWindow = new SatellitesView(GpsInstance);
+            satellitesWindow.ShowDialog();
+            
+            satellitesWindow.Close();
+            satelliteWindowOpen = false;
+
+            if(currentState == GpsState.Closed)
             {
-                satellitesWindow = new SatellitesView(GpsInstance);
-                satellitesWindow.Closed += SatellitesWindowClosed;
+                GpsStopAndWait();
             }
-            satellitesWindow.Show();
+
+            Status(Resources.Satellite_Stopped);
+           
         }
 
-        private void SatellitesWindowClosed(object sender, EventArgs e)
-        {
-            satellitesWindow.Closed -= SatellitesWindowClosed;
-            satellitesWindow = null;
-        }
 
         private void WriteToFile(DateTime time, double latitude, double longitude, double altitude)
         {
@@ -1209,13 +1222,20 @@ namespace GPSTracka
         {
             if (this.InvokeRequired)
             {
-                StopGpsExtractedDelegate theDelegate = new StopGpsExtractedDelegate(StopGpsExtracted);
+                //StopGpsExtractedDelegate theDelegate = new StopGpsExtractedDelegate(StopGpsExtracted);
+                StopGpsExtractedDelegate theDelegate = StopGps;
                 BeginInvoke(theDelegate);
                 ////Note: With MS driver managed wrapper we shall NOT stop device from within GPS event handler - it causes unpredicable behavior (deadlocks, device no longer receiving events after start ...)
                 //this.BeginInvoke(new Action(StopGps_Extracted));
             }
             else
             {
+                //Don't stop it if the satellite window is open (it needs GPS for data)
+                if(satelliteWindowOpen)
+                {
+                    return;
+                }
+
                 try
                 {
                     GpsStopAndWait();
