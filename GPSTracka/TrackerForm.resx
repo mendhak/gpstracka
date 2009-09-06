@@ -120,65 +120,11 @@
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>147, 17</value>
   </metadata>
-  <data name="&gt;&gt;TextBoxRawLog.Name" xml:space="preserve">
-    <value>TextBoxRawLog</value>
-  </data>
-  <data name="&gt;&gt;TextBoxRawLog.Type" xml:space="preserve">
-    <value>Microsoft.CompactFramework.Design.UnsafeControl, Microsoft.CompactFramework.Design, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="&gt;&gt;TextBoxRawLog.Parent" xml:space="preserve">
-    <value>mainPanel</value>
-  </data>
-  <data name="&gt;&gt;TextBoxRawLog.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;panInfoPane.Name" xml:space="preserve">
-    <value>panInfoPane</value>
-  </data>
-  <data name="&gt;&gt;panInfoPane.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panInfoPane.Parent" xml:space="preserve">
-    <value>mainPanel</value>
-  </data>
-  <data name="&gt;&gt;panInfoPane.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;stsStatus.Name" xml:space="preserve">
-    <value>stsStatus</value>
-  </data>
-  <data name="&gt;&gt;stsStatus.Type" xml:space="preserve">
-    <value>Microsoft.CompactFramework.Design.UnsafeControl, Microsoft.CompactFramework.Design, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="&gt;&gt;stsStatus.Parent" xml:space="preserve">
-    <value>mainPanel</value>
-  </data>
-  <data name="&gt;&gt;stsStatus.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="mainPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="mainPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 294</value>
-  </data>
-  <data name="&gt;&gt;mainPanel.Name" xml:space="preserve">
-    <value>mainPanel</value>
-  </data>
-  <data name="&gt;&gt;mainPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;mainPanel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;mainPanel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="TextBoxRawLog.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="TextBoxRawLog.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -206,267 +152,6 @@
   </data>
   <data name="&gt;&gt;TextBoxRawLog.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="&gt;&gt;lblSpeedI.Name" xml:space="preserve">
-    <value>lblSpeedI</value>
-  </data>
-  <data name="&gt;&gt;lblSpeedI.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblSpeedI.Parent" xml:space="preserve">
-    <value>panInfoPane</value>
-  </data>
-  <data name="&gt;&gt;lblSpeedI.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lblSpeed.Name" xml:space="preserve">
-    <value>lblSpeed</value>
-  </data>
-  <data name="&gt;&gt;lblSpeed.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblSpeed.Parent" xml:space="preserve">
-    <value>panInfoPane</value>
-  </data>
-  <data name="&gt;&gt;lblSpeed.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;lblAverageI.Name" xml:space="preserve">
-    <value>lblAverageI</value>
-  </data>
-  <data name="&gt;&gt;lblAverageI.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblAverageI.Parent" xml:space="preserve">
-    <value>panInfoPane</value>
-  </data>
-  <data name="&gt;&gt;lblAverageI.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;lblAverage.Name" xml:space="preserve">
-    <value>lblAverage</value>
-  </data>
-  <data name="&gt;&gt;lblAverage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblAverage.Parent" xml:space="preserve">
-    <value>panInfoPane</value>
-  </data>
-  <data name="&gt;&gt;lblAverage.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;lblDistanceI.Name" xml:space="preserve">
-    <value>lblDistanceI</value>
-  </data>
-  <data name="&gt;&gt;lblDistanceI.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblDistanceI.Parent" xml:space="preserve">
-    <value>panInfoPane</value>
-  </data>
-  <data name="&gt;&gt;lblDistanceI.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;lblDistance.Name" xml:space="preserve">
-    <value>lblDistance</value>
-  </data>
-  <data name="&gt;&gt;lblDistance.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblDistance.Parent" xml:space="preserve">
-    <value>panInfoPane</value>
-  </data>
-  <data name="&gt;&gt;lblDistance.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;lblAerialI.Name" xml:space="preserve">
-    <value>lblAerialI</value>
-  </data>
-  <data name="&gt;&gt;lblAerialI.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblAerialI.Parent" xml:space="preserve">
-    <value>panInfoPane</value>
-  </data>
-  <data name="&gt;&gt;lblAerialI.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;lblAerial.Name" xml:space="preserve">
-    <value>lblAerial</value>
-  </data>
-  <data name="&gt;&gt;lblAerial.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblAerial.Parent" xml:space="preserve">
-    <value>panInfoPane</value>
-  </data>
-  <data name="&gt;&gt;lblAerial.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;lblElevationI.Name" xml:space="preserve">
-    <value>lblElevationI</value>
-  </data>
-  <data name="&gt;&gt;lblElevationI.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblElevationI.Parent" xml:space="preserve">
-    <value>panInfoPane</value>
-  </data>
-  <data name="&gt;&gt;lblElevationI.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;lblElevation.Name" xml:space="preserve">
-    <value>lblElevation</value>
-  </data>
-  <data name="&gt;&gt;lblElevation.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblElevation.Parent" xml:space="preserve">
-    <value>panInfoPane</value>
-  </data>
-  <data name="&gt;&gt;lblElevation.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;lblElevationMinusI.Name" xml:space="preserve">
-    <value>lblElevationMinusI</value>
-  </data>
-  <data name="&gt;&gt;lblElevationMinusI.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblElevationMinusI.Parent" xml:space="preserve">
-    <value>panInfoPane</value>
-  </data>
-  <data name="&gt;&gt;lblElevationMinusI.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;lblElevationMinus.Name" xml:space="preserve">
-    <value>lblElevationMinus</value>
-  </data>
-  <data name="&gt;&gt;lblElevationMinus.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblElevationMinus.Parent" xml:space="preserve">
-    <value>panInfoPane</value>
-  </data>
-  <data name="&gt;&gt;lblElevationMinus.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;lblTimeI.Name" xml:space="preserve">
-    <value>lblTimeI</value>
-  </data>
-  <data name="&gt;&gt;lblTimeI.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblTimeI.Parent" xml:space="preserve">
-    <value>panInfoPane</value>
-  </data>
-  <data name="&gt;&gt;lblTimeI.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;lblTime.Name" xml:space="preserve">
-    <value>lblTime</value>
-  </data>
-  <data name="&gt;&gt;lblTime.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblTime.Parent" xml:space="preserve">
-    <value>panInfoPane</value>
-  </data>
-  <data name="&gt;&gt;lblTime.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;lblStopTimeI.Name" xml:space="preserve">
-    <value>lblStopTimeI</value>
-  </data>
-  <data name="&gt;&gt;lblStopTimeI.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblStopTimeI.Parent" xml:space="preserve">
-    <value>panInfoPane</value>
-  </data>
-  <data name="&gt;&gt;lblStopTimeI.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;lblStopTime.Name" xml:space="preserve">
-    <value>lblStopTime</value>
-  </data>
-  <data name="&gt;&gt;lblStopTime.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblStopTime.Parent" xml:space="preserve">
-    <value>panInfoPane</value>
-  </data>
-  <data name="&gt;&gt;lblStopTime.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="&gt;&gt;lblPointsI.Name" xml:space="preserve">
-    <value>lblPointsI</value>
-  </data>
-  <data name="&gt;&gt;lblPointsI.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblPointsI.Parent" xml:space="preserve">
-    <value>panInfoPane</value>
-  </data>
-  <data name="&gt;&gt;lblPointsI.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
-  <data name="&gt;&gt;lblPoints.Name" xml:space="preserve">
-    <value>lblPoints</value>
-  </data>
-  <data name="&gt;&gt;lblPoints.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblPoints.Parent" xml:space="preserve">
-    <value>panInfoPane</value>
-  </data>
-  <data name="&gt;&gt;lblPoints.ZOrder" xml:space="preserve">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;lblSatellitesI.Name" xml:space="preserve">
-    <value>lblSatellitesI</value>
-  </data>
-  <data name="&gt;&gt;lblSatellitesI.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblSatellitesI.Parent" xml:space="preserve">
-    <value>panInfoPane</value>
-  </data>
-  <data name="&gt;&gt;lblSatellitesI.ZOrder" xml:space="preserve">
-    <value>18</value>
-  </data>
-  <data name="&gt;&gt;lblSatellites.Name" xml:space="preserve">
-    <value>lblSatellites</value>
-  </data>
-  <data name="&gt;&gt;lblSatellites.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblSatellites.Parent" xml:space="preserve">
-    <value>panInfoPane</value>
-  </data>
-  <data name="&gt;&gt;lblSatellites.ZOrder" xml:space="preserve">
-    <value>19</value>
-  </data>
-  <data name="panInfoPane.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="panInfoPane.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 214</value>
-  </data>
-  <data name="panInfoPane.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 80</value>
-  </data>
-  <data name="&gt;&gt;panInfoPane.Name" xml:space="preserve">
-    <value>panInfoPane</value>
-  </data>
-  <data name="&gt;&gt;panInfoPane.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panInfoPane.Parent" xml:space="preserve">
-    <value>mainPanel</value>
-  </data>
-  <data name="&gt;&gt;panInfoPane.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="lblSpeedI.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -888,6 +573,27 @@
   <data name="&gt;&gt;lblSatellites.ZOrder" xml:space="preserve">
     <value>19</value>
   </data>
+  <data name="panInfoPane.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="panInfoPane.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 214</value>
+  </data>
+  <data name="panInfoPane.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 80</value>
+  </data>
+  <data name="&gt;&gt;panInfoPane.Name" xml:space="preserve">
+    <value>panInfoPane</value>
+  </data>
+  <data name="&gt;&gt;panInfoPane.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panInfoPane.Parent" xml:space="preserve">
+    <value>mainPanel</value>
+  </data>
+  <data name="&gt;&gt;panInfoPane.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="stsStatus.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 272</value>
   </data>
@@ -906,14 +612,29 @@
   <data name="&gt;&gt;stsStatus.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="mainPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="mainPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 294</value>
+  </data>
+  <data name="&gt;&gt;mainPanel.Name" xml:space="preserve">
+    <value>mainPanel</value>
+  </data>
+  <data name="&gt;&gt;mainPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mainPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;mainPanel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <metadata name="mainPanelMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <data name="startMenuItem.Text" xml:space="preserve">
     <value>Start</value>
-  </data>
-  <data name="menuItem2.Text" xml:space="preserve">
-    <value>Options</value>
   </data>
   <data name="clearMenuItem.Text" xml:space="preserve">
     <value>&amp;Clear</value>
@@ -923,6 +644,9 @@
   </data>
   <data name="settingsMenuItem.Text" xml:space="preserve">
     <value>&amp;Settings</value>
+  </data>
+  <data name="mniSatellites.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="mniSatellites.Text" xml:space="preserve">
     <value>Sa&amp;ttellites</value>
@@ -942,59 +666,8 @@
   <data name="menuExit.Text" xml:space="preserve">
     <value>&amp;Exit</value>
   </data>
-  <data name="&gt;&gt;linkLabel1.Name" xml:space="preserve">
-    <value>linkLabel1</value>
-  </data>
-  <data name="&gt;&gt;linkLabel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;linkLabel1.Parent" xml:space="preserve">
-    <value>aboutPanel</value>
-  </data>
-  <data name="&gt;&gt;linkLabel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
-    <value>pictureBox1</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
-    <value>aboutPanel</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;aboutLabel.Name" xml:space="preserve">
-    <value>aboutLabel</value>
-  </data>
-  <data name="&gt;&gt;aboutLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;aboutLabel.Parent" xml:space="preserve">
-    <value>aboutPanel</value>
-  </data>
-  <data name="&gt;&gt;aboutLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="aboutPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>249, 3</value>
-  </data>
-  <data name="aboutPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 294</value>
-  </data>
-  <data name="&gt;&gt;aboutPanel.Name" xml:space="preserve">
-    <value>aboutPanel</value>
-  </data>
-  <data name="&gt;&gt;aboutPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;aboutPanel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;aboutPanel.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="menuItem2.Text" xml:space="preserve">
+    <value>Options</value>
   </data>
   <data name="linkLabel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 236</value>
@@ -1028,7 +701,7 @@
   </data>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsN
+        /9j/4AAQSkZJRgABAQEAAAAAAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsN
         DhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQU
         FBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCAA9AEUDASIAAhEBAxEB/8QA
         HwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIh
@@ -1141,164 +814,29 @@
   <data name="&gt;&gt;aboutLabel.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="aboutPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>249, 3</value>
+  </data>
+  <data name="aboutPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 294</value>
+  </data>
+  <data name="&gt;&gt;aboutPanel.Name" xml:space="preserve">
+    <value>aboutPanel</value>
+  </data>
+  <data name="&gt;&gt;aboutPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;aboutPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;aboutPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="settingsPanel.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;fraFormat.Name" xml:space="preserve">
-    <value>fraFormat</value>
-  </data>
-  <data name="&gt;&gt;fraFormat.Type" xml:space="preserve">
-    <value>Microsoft.CompactFramework.Design.UnsafeControl, Microsoft.CompactFramework.Design, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="&gt;&gt;fraFormat.Parent" xml:space="preserve">
-    <value>settingsPanel</value>
-  </data>
-  <data name="&gt;&gt;fraFormat.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;fraOptions.Name" xml:space="preserve">
-    <value>fraOptions</value>
-  </data>
-  <data name="&gt;&gt;fraOptions.Type" xml:space="preserve">
-    <value>Microsoft.CompactFramework.Design.UnsafeControl, Microsoft.CompactFramework.Design, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="&gt;&gt;fraOptions.Parent" xml:space="preserve">
-    <value>settingsPanel</value>
-  </data>
-  <data name="&gt;&gt;fraOptions.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;fraSpeed.Name" xml:space="preserve">
-    <value>fraSpeed</value>
-  </data>
-  <data name="&gt;&gt;fraSpeed.Type" xml:space="preserve">
-    <value>Microsoft.CompactFramework.Design.UnsafeControl, Microsoft.CompactFramework.Design, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="&gt;&gt;fraSpeed.Parent" xml:space="preserve">
-    <value>settingsPanel</value>
-  </data>
-  <data name="&gt;&gt;fraSpeed.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;fraCOMPort.Name" xml:space="preserve">
-    <value>fraCOMPort</value>
-  </data>
-  <data name="&gt;&gt;fraCOMPort.Type" xml:space="preserve">
-    <value>Microsoft.CompactFramework.Design.UnsafeControl, Microsoft.CompactFramework.Design, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="&gt;&gt;fraCOMPort.Parent" xml:space="preserve">
-    <value>settingsPanel</value>
-  </data>
-  <data name="&gt;&gt;fraCOMPort.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="settingsPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>495, 3</value>
-  </data>
-  <data name="settingsPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 349</value>
-  </data>
-  <data name="&gt;&gt;settingsPanel.Name" xml:space="preserve">
-    <value>settingsPanel</value>
-  </data>
-  <data name="&gt;&gt;settingsPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;settingsPanel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;settingsPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;panTRackLogType.Name" xml:space="preserve">
-    <value>panTRackLogType</value>
-  </data>
-  <data name="&gt;&gt;panTRackLogType.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panTRackLogType.Parent" xml:space="preserve">
-    <value>fraFormat</value>
-  </data>
-  <data name="&gt;&gt;panTRackLogType.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;panFileFormat.Name" xml:space="preserve">
-    <value>panFileFormat</value>
-  </data>
-  <data name="&gt;&gt;panFileFormat.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panFileFormat.Parent" xml:space="preserve">
-    <value>fraFormat</value>
-  </data>
-  <data name="&gt;&gt;panFileFormat.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="fraFormat.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="fraFormat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 206</value>
-  </data>
-  <data name="fraFormat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 106</value>
-  </data>
-  <data name="&gt;&gt;fraFormat.Name" xml:space="preserve">
-    <value>fraFormat</value>
-  </data>
-  <data name="&gt;&gt;fraFormat.Type" xml:space="preserve">
-    <value>Microsoft.CompactFramework.Design.UnsafeControl, Microsoft.CompactFramework.Design, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="&gt;&gt;fraFormat.Parent" xml:space="preserve">
-    <value>settingsPanel</value>
-  </data>
-  <data name="&gt;&gt;fraFormat.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="panTRackLogType.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
-  </data>
-  <data name="&gt;&gt;optTrack.Name" xml:space="preserve">
-    <value>optTrack</value>
-  </data>
-  <data name="&gt;&gt;optTrack.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;optTrack.Parent" xml:space="preserve">
-    <value>panTRackLogType</value>
-  </data>
-  <data name="&gt;&gt;optTrack.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;optDistinct.Name" xml:space="preserve">
-    <value>optDistinct</value>
-  </data>
-  <data name="&gt;&gt;optDistinct.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;optDistinct.Parent" xml:space="preserve">
-    <value>panTRackLogType</value>
-  </data>
-  <data name="&gt;&gt;optDistinct.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panTRackLogType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 66</value>
-  </data>
-  <data name="panTRackLogType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>231, 27</value>
-  </data>
-  <data name="&gt;&gt;panTRackLogType.Name" xml:space="preserve">
-    <value>panTRackLogType</value>
-  </data>
-  <data name="&gt;&gt;panTRackLogType.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panTRackLogType.Parent" xml:space="preserve">
-    <value>fraFormat</value>
-  </data>
-  <data name="&gt;&gt;panTRackLogType.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="optTrack.Location" type="System.Drawing.Point, System.Drawing">
     <value>120, 4</value>
@@ -1348,62 +886,26 @@
   <data name="&gt;&gt;optDistinct.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="panFileFormat.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+  <data name="panTRackLogType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 66</value>
   </data>
-  <data name="&gt;&gt;optCSV.Name" xml:space="preserve">
-    <value>optCSV</value>
+  <data name="panTRackLogType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>231, 27</value>
   </data>
-  <data name="&gt;&gt;optCSV.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;panTRackLogType.Name" xml:space="preserve">
+    <value>panTRackLogType</value>
   </data>
-  <data name="&gt;&gt;optCSV.Parent" xml:space="preserve">
-    <value>panFileFormat</value>
-  </data>
-  <data name="&gt;&gt;optCSV.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;radioButtonKML.Name" xml:space="preserve">
-    <value>radioButtonKML</value>
-  </data>
-  <data name="&gt;&gt;radioButtonKML.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonKML.Parent" xml:space="preserve">
-    <value>panFileFormat</value>
-  </data>
-  <data name="&gt;&gt;radioButtonKML.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;radioButtonGPX.Name" xml:space="preserve">
-    <value>radioButtonGPX</value>
-  </data>
-  <data name="&gt;&gt;radioButtonGPX.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonGPX.Parent" xml:space="preserve">
-    <value>panFileFormat</value>
-  </data>
-  <data name="&gt;&gt;radioButtonGPX.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="panFileFormat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 16</value>
-  </data>
-  <data name="panFileFormat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>231, 26</value>
-  </data>
-  <data name="&gt;&gt;panFileFormat.Name" xml:space="preserve">
-    <value>panFileFormat</value>
-  </data>
-  <data name="&gt;&gt;panFileFormat.Type" xml:space="preserve">
+  <data name="&gt;&gt;panTRackLogType.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panFileFormat.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panTRackLogType.Parent" xml:space="preserve">
     <value>fraFormat</value>
   </data>
-  <data name="&gt;&gt;panFileFormat.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;panTRackLogType.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panFileFormat.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
   <data name="optCSV.Location" type="System.Drawing.Point, System.Drawing">
     <value>96, 3</value>
@@ -1477,6 +979,24 @@
   <data name="&gt;&gt;radioButtonGPX.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="panFileFormat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 16</value>
+  </data>
+  <data name="panFileFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>231, 26</value>
+  </data>
+  <data name="&gt;&gt;panFileFormat.Name" xml:space="preserve">
+    <value>panFileFormat</value>
+  </data>
+  <data name="&gt;&gt;panFileFormat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panFileFormat.Parent" xml:space="preserve">
+    <value>fraFormat</value>
+  </data>
+  <data name="&gt;&gt;panFileFormat.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="chkAltitude.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 42</value>
   </data>
@@ -1489,50 +1009,26 @@
   <data name="chkAltitude.Text" xml:space="preserve">
     <value>Log &amp;altitude</value>
   </data>
-  <data name="&gt;&gt;logLocationTextBox.Name" xml:space="preserve">
-    <value>logLocationTextBox</value>
-  </data>
-  <data name="&gt;&gt;logLocationTextBox.Type" xml:space="preserve">
-    <value>Microsoft.CompactFramework.Design.UnsafeControl, Microsoft.CompactFramework.Design, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="&gt;&gt;logLocationTextBox.Parent" xml:space="preserve">
-    <value>fraOptions</value>
-  </data>
-  <data name="&gt;&gt;logLocationTextBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;saveDialogButton.Name" xml:space="preserve">
-    <value>saveDialogButton</value>
-  </data>
-  <data name="&gt;&gt;saveDialogButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;saveDialogButton.Parent" xml:space="preserve">
-    <value>fraOptions</value>
-  </data>
-  <data name="&gt;&gt;saveDialogButton.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="fraOptions.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="fraFormat.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="fraOptions.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 141</value>
+  <data name="fraFormat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 206</value>
   </data>
-  <data name="fraOptions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 65</value>
+  <data name="fraFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 106</value>
   </data>
-  <data name="&gt;&gt;fraOptions.Name" xml:space="preserve">
-    <value>fraOptions</value>
+  <data name="&gt;&gt;fraFormat.Name" xml:space="preserve">
+    <value>fraFormat</value>
   </data>
-  <data name="&gt;&gt;fraOptions.Type" xml:space="preserve">
+  <data name="&gt;&gt;fraFormat.Type" xml:space="preserve">
     <value>Microsoft.CompactFramework.Design.UnsafeControl, Microsoft.CompactFramework.Design, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="&gt;&gt;fraOptions.Parent" xml:space="preserve">
+  <data name="&gt;&gt;fraFormat.Parent" xml:space="preserve">
     <value>settingsPanel</value>
   </data>
-  <data name="&gt;&gt;fraOptions.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;fraFormat.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="CheckBoxToTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 15</value>
@@ -1609,50 +1105,26 @@
   <data name="&gt;&gt;saveDialogButton.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;NumericUpDownInterval.Name" xml:space="preserve">
-    <value>NumericUpDownInterval</value>
-  </data>
-  <data name="&gt;&gt;NumericUpDownInterval.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NumericUpDownInterval.Parent" xml:space="preserve">
-    <value>fraSpeed</value>
-  </data>
-  <data name="&gt;&gt;NumericUpDownInterval.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>fraSpeed</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="fraSpeed.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="fraOptions.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="fraSpeed.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 90</value>
+  <data name="fraOptions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 141</value>
   </data>
-  <data name="fraSpeed.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 51</value>
+  <data name="fraOptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 65</value>
   </data>
-  <data name="&gt;&gt;fraSpeed.Name" xml:space="preserve">
-    <value>fraSpeed</value>
+  <data name="&gt;&gt;fraOptions.Name" xml:space="preserve">
+    <value>fraOptions</value>
   </data>
-  <data name="&gt;&gt;fraSpeed.Type" xml:space="preserve">
+  <data name="&gt;&gt;fraOptions.Type" xml:space="preserve">
     <value>Microsoft.CompactFramework.Design.UnsafeControl, Microsoft.CompactFramework.Design, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="&gt;&gt;fraSpeed.Parent" xml:space="preserve">
+  <data name="&gt;&gt;fraOptions.Parent" xml:space="preserve">
     <value>settingsPanel</value>
   </data>
-  <data name="&gt;&gt;fraSpeed.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;fraOptions.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="NumericUpDownInterval.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 23</value>
@@ -1696,86 +1168,26 @@
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;lblRecommendedPort.Name" xml:space="preserve">
-    <value>lblRecommendedPort</value>
-  </data>
-  <data name="&gt;&gt;lblRecommendedPort.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblRecommendedPort.Parent" xml:space="preserve">
-    <value>fraCOMPort</value>
-  </data>
-  <data name="&gt;&gt;lblRecommendedPort.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;ComboBoxCOMPorts.Name" xml:space="preserve">
-    <value>ComboBoxCOMPorts</value>
-  </data>
-  <data name="&gt;&gt;ComboBoxCOMPorts.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ComboBoxCOMPorts.Parent" xml:space="preserve">
-    <value>fraCOMPort</value>
-  </data>
-  <data name="&gt;&gt;ComboBoxCOMPorts.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;ComboBaudRate.Name" xml:space="preserve">
-    <value>ComboBaudRate</value>
-  </data>
-  <data name="&gt;&gt;ComboBaudRate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ComboBaudRate.Parent" xml:space="preserve">
-    <value>fraCOMPort</value>
-  </data>
-  <data name="&gt;&gt;ComboBaudRate.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>fraCOMPort</value>
-  </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
-  </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>fraCOMPort</value>
-  </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="fraCOMPort.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="fraSpeed.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="fraCOMPort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <data name="fraSpeed.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 90</value>
   </data>
-  <data name="fraCOMPort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 90</value>
+  <data name="fraSpeed.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 51</value>
   </data>
-  <data name="&gt;&gt;fraCOMPort.Name" xml:space="preserve">
-    <value>fraCOMPort</value>
+  <data name="&gt;&gt;fraSpeed.Name" xml:space="preserve">
+    <value>fraSpeed</value>
   </data>
-  <data name="&gt;&gt;fraCOMPort.Type" xml:space="preserve">
+  <data name="&gt;&gt;fraSpeed.Type" xml:space="preserve">
     <value>Microsoft.CompactFramework.Design.UnsafeControl, Microsoft.CompactFramework.Design, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="&gt;&gt;fraCOMPort.Parent" xml:space="preserve">
+  <data name="&gt;&gt;fraSpeed.Parent" xml:space="preserve">
     <value>settingsPanel</value>
   </data>
-  <data name="&gt;&gt;fraCOMPort.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;fraSpeed.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="chkUseWindowsDriver.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -1920,6 +1332,45 @@
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
     <value>5</value>
+  </data>
+  <data name="fraCOMPort.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="fraCOMPort.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="fraCOMPort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 90</value>
+  </data>
+  <data name="&gt;&gt;fraCOMPort.Name" xml:space="preserve">
+    <value>fraCOMPort</value>
+  </data>
+  <data name="&gt;&gt;fraCOMPort.Type" xml:space="preserve">
+    <value>Microsoft.CompactFramework.Design.UnsafeControl, Microsoft.CompactFramework.Design, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;fraCOMPort.Parent" xml:space="preserve">
+    <value>settingsPanel</value>
+  </data>
+  <data name="&gt;&gt;fraCOMPort.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="settingsPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>495, 3</value>
+  </data>
+  <data name="settingsPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 349</value>
+  </data>
+  <data name="&gt;&gt;settingsPanel.Name" xml:space="preserve">
+    <value>settingsPanel</value>
+  </data>
+  <data name="&gt;&gt;settingsPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;settingsPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;settingsPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="aboutPanelMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>230, 17</value>

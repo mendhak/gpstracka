@@ -104,33 +104,33 @@
             // 
             // tabSatellites
             // 
-            resources.ApplyResources(this.tabSatellites, "tabSatellites");
             this.tabSatellites.Controls.Add(this.tapStrength);
             this.tabSatellites.Controls.Add(this.tapDetails);
             this.tabSatellites.Controls.Add(this.tapSatellites);
+            resources.ApplyResources(this.tabSatellites, "tabSatellites");
             this.tabSatellites.Name = "tabSatellites";
             this.tabSatellites.SelectedIndex = 0;
             // 
             // tapStrength
             // 
-            resources.ApplyResources(this.tapStrength, "tapStrength");
             this.tapStrength.Controls.Add(this.panSatellites);
+            resources.ApplyResources(this.tapStrength, "tapStrength");
             this.tapStrength.Name = "tapStrength";
             // 
             // tapDetails
             // 
-            resources.ApplyResources(this.tapDetails, "tapDetails");
             this.tapDetails.Controls.Add(this.lvwSatellites);
+            resources.ApplyResources(this.tapDetails, "tapDetails");
             this.tapDetails.Name = "tapDetails";
             // 
             // lvwSatellites
             // 
-            resources.ApplyResources(this.lvwSatellites, "lvwSatellites");
             this.lvwSatellites.Columns.Add(this.cohID);
             this.lvwSatellites.Columns.Add(this.cohSNR);
             this.lvwSatellites.Columns.Add(this.cohActive);
             this.lvwSatellites.Columns.Add(this.cohAzimuth);
             this.lvwSatellites.Columns.Add(this.cohElevation);
+            resources.ApplyResources(this.lvwSatellites, "lvwSatellites");
             this.lvwSatellites.FullRowSelect = true;
             this.lvwSatellites.Name = "lvwSatellites";
             this.lvwSatellites.View = System.Windows.Forms.View.Details;
@@ -157,8 +157,8 @@
             // 
             // tapSatellites
             // 
-            resources.ApplyResources(this.tapSatellites, "tapSatellites");
             this.tapSatellites.Controls.Add(this.panPosition);
+            resources.ApplyResources(this.tapSatellites, "tapSatellites");
             this.tapSatellites.Name = "tapSatellites";
             // 
             // panPosition

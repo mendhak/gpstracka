@@ -56,6 +56,9 @@ namespace GPSTracka
 
         private void GpsSatellite(GpsProvider sender, GpsSatelliteEventArgs e)
         {
+            //Don't want the form to lock up if nothing's happening.
+            System.Threading.Thread.Sleep(200); 
+
             if (InvokeRequired)
             {
                 if ((DateTime.Now - lastGpsSatellite).TotalMilliseconds < 200)

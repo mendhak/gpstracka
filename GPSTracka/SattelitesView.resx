@@ -117,242 +117,107 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="dataGridTextBoxColumn2.HeaderText" xml:space="preserve">
-    <value>ID</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="tapSatellites.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="&gt;&gt;lblI.Name" xml:space="preserve">
-    <value>lblI</value>
-  </data>
-  <data name="cohElevation.Text" xml:space="preserve">
-    <value>Elevation</value>
-  </data>
-  <data name="tabSatellites.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 34</value>
-  </data>
-  <data name="tapStrength.Text" xml:space="preserve">
-    <value>Signal strength</value>
-  </data>
-  <data name="cohAzimuth.Text" xml:space="preserve">
-    <value>Azimuth</value>
-  </data>
-  <data name="&gt;&gt;tapSatellites.Parent" xml:space="preserve">
-    <value>tabSatellites</value>
-  </data>
-  <data name="&gt;&gt;bsSatellites.Name" xml:space="preserve">
-    <value>bsSatellites</value>
-  </data>
-  <data name="&gt;&gt;lvwSatellites.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="cohElevation.Width" type="System.Int32, mscorlib">
-    <value>55</value>
-  </data>
-  <data name="&gt;&gt;tapStrength.Parent" xml:space="preserve">
-    <value>tabSatellites</value>
-  </data>
-  <data name="&gt;&gt;tapDetails.Name" xml:space="preserve">
-    <value>tapDetails</value>
-  </data>
-  <data name="&gt;&gt;dataGridTableStyle1.Name" xml:space="preserve">
-    <value>dataGridTableStyle1</value>
-  </data>
-  <data name="&gt;&gt;dataGridTextBoxColumn3.Name" xml:space="preserve">
-    <value>dataGridTextBoxColumn3</value>
-  </data>
-  <data name="lblI.Text" xml:space="preserve">
-    <value>Satellites are reported only when GPS is running in main window</value>
-  </data>
-  <data name="&gt;&gt;lvwSatellites.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tapSatellites.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="lvwSatellites.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
+  <metadata name="mmnMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <data name="mniClose.Text" xml:space="preserve">
     <value>&amp;Close</value>
-  </data>
-  <data name="&gt;&gt;tabSatellites.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tapDetails.Parent" xml:space="preserve">
-    <value>tabSatellites</value>
-  </data>
-  <data name="panSatellites.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 211</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>240, 268</value>
-  </data>
-  <data name="tapSatellites.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 208</value>
-  </data>
-  <data name="&gt;&gt;lvwSatellites.Name" xml:space="preserve">
-    <value>lvwSatellites</value>
-  </data>
-  <data name="tapDetails.Text" xml:space="preserve">
-    <value>Details</value>
-  </data>
-  <data name="&gt;&gt;tapStrength.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="mniView.Text" xml:space="preserve">
     <value>Switch &amp;view</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Satellites</value>
-  </data>
-  <data name="panPosition.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;mniView.Name" xml:space="preserve">
-    <value>mniView</value>
-  </data>
-  <data name="&gt;&gt;tabSatellites.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="tabSatellites.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;cohSNR.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="panPosition.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="cohActive.Text" xml:space="preserve">
-    <value>Active</value>
-  </data>
-  <data name="tapStrength.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 211</value>
-  </data>
   <data name="lblI.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="&gt;&gt;cohID.Name" xml:space="preserve">
-    <value>cohID</value>
-  </data>
-  <data name="&gt;&gt;lblI.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="panPosition.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 208</value>
-  </data>
-  <data name="dataGridTextBoxColumn2.MappingName" xml:space="preserve">
-    <value>ID</value>
-  </data>
-  <data name="tabSatellites.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 234</value>
-  </data>
-  <data name="&gt;&gt;tapSatellites.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panSatellites.Parent" xml:space="preserve">
-    <value>tapStrength</value>
-  </data>
-  <data name="&gt;&gt;mniClose.Name" xml:space="preserve">
-    <value>mniClose</value>
-  </data>
-  <data name="&gt;&gt;dataGridTableStyle1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridTableStyle, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panSatellites.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabSatellites.Name" xml:space="preserve">
-    <value>tabSatellites</value>
-  </data>
-  <data name="&gt;&gt;tapDetails.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>SatellitesView</value>
-  </data>
-  <data name="&gt;&gt;panPosition.Name" xml:space="preserve">
-    <value>panPosition</value>
-  </data>
-  <data name="lvwSatellites.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 208</value>
-  </data>
-  <data name="&gt;&gt;mmnMain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MainMenu, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;mniClose.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="cohActive.Width" type="System.Int32, mscorlib">
-    <value>40</value>
-  </data>
-  <data name="&gt;&gt;cohAzimuth.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="lblI.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
   <data name="lblI.Size" type="System.Drawing.Size, System.Drawing">
     <value>240, 34</value>
   </data>
-  <data name="&gt;&gt;dataGridTextBoxColumn3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="lblI.Text" xml:space="preserve">
+    <value>GPS logging is disabled until you close this window.</value>
   </data>
-  <data name="&gt;&gt;mniView.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panSatellites.Name" xml:space="preserve">
-    <value>panSatellites</value>
-  </data>
-  <data name="dataGridTextBoxColumn3.HeaderText" xml:space="preserve">
-    <value>SNR</value>
+  <data name="&gt;&gt;lblI.Name" xml:space="preserve">
+    <value>lblI</value>
   </data>
   <data name="&gt;&gt;lblI.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="tapDetails.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="tapDetails.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 208</value>
-  </data>
-  <data name="&gt;&gt;panSatellites.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;cohActive.Name" xml:space="preserve">
-    <value>cohActive</value>
-  </data>
-  <data name="dataGridTextBoxColumn3.MappingName" xml:space="preserve">
-    <value>SNR</value>
-  </data>
-  <data name="tabSatellites.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="&gt;&gt;dataGridTextBoxColumn2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cohSNR.Name" xml:space="preserve">
-    <value>cohSNR</value>
-  </data>
-  <data name="lblI.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="lvwSatellites.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="&gt;&gt;dataGridTextBoxColumn2.Name" xml:space="preserve">
-    <value>dataGridTextBoxColumn2</value>
+  <data name="&gt;&gt;lblI.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;lblI.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="$this.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="panSatellites.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panSatellites.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panSatellites.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 211</value>
+  </data>
+  <data name="&gt;&gt;panSatellites.Name" xml:space="preserve">
+    <value>panSatellites</value>
+  </data>
+  <data name="&gt;&gt;panSatellites.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panSatellites.Parent" xml:space="preserve">
+    <value>tapStrength</value>
+  </data>
+  <data name="&gt;&gt;panSatellites.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="bsSatellites.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>124, 17</value>
+  </metadata>
+  <data name="dataGridTextBoxColumn2.HeaderText" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="dataGridTextBoxColumn2.MappingName" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="dataGridTextBoxColumn2.NullText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dataGridTextBoxColumn3.HeaderText" xml:space="preserve">
+    <value>SNR</value>
+  </data>
+  <data name="dataGridTextBoxColumn3.MappingName" xml:space="preserve">
+    <value>SNR</value>
+  </data>
+  <data name="tapStrength.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="tapStrength.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 211</value>
+  </data>
+  <data name="tapStrength.Text" xml:space="preserve">
+    <value>Signal strength</value>
+  </data>
+  <data name="&gt;&gt;tapStrength.Name" xml:space="preserve">
+    <value>tapStrength</value>
+  </data>
+  <data name="&gt;&gt;tapStrength.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tapStrength.Parent" xml:space="preserve">
+    <value>tabSatellites</value>
+  </data>
+  <data name="&gt;&gt;tapStrength.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cohID.Text" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="cohID.Width" type="System.Int32, mscorlib">
+    <value>30</value>
   </data>
   <data name="cohSNR.Text" xml:space="preserve">
     <value>SNR</value>
@@ -360,97 +225,232 @@
   <data name="cohSNR.Width" type="System.Int32, mscorlib">
     <value>40</value>
   </data>
-  <data name="&gt;&gt;cohAzimuth.Name" xml:space="preserve">
-    <value>cohAzimuth</value>
+  <data name="cohActive.Text" xml:space="preserve">
+    <value>Active</value>
   </data>
-  <data name="&gt;&gt;cohElevation.Name" xml:space="preserve">
-    <value>cohElevation</value>
+  <data name="cohActive.Width" type="System.Int32, mscorlib">
+    <value>40</value>
   </data>
-  <data name="cohID.Width" type="System.Int32, mscorlib">
-    <value>30</value>
-  </data>
-  <data name="&gt;&gt;tapDetails.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;mmnMain.Name" xml:space="preserve">
-    <value>mmnMain</value>
-  </data>
-  <data name="cohID.Text" xml:space="preserve">
-    <value>ID</value>
+  <data name="cohAzimuth.Text" xml:space="preserve">
+    <value>Azimuth</value>
   </data>
   <data name="cohAzimuth.Width" type="System.Int32, mscorlib">
     <value>50</value>
   </data>
+  <data name="cohElevation.Text" xml:space="preserve">
+    <value>Elevation</value>
+  </data>
+  <data name="cohElevation.Width" type="System.Int32, mscorlib">
+    <value>55</value>
+  </data>
   <data name="lvwSatellites.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="dataGridTextBoxColumn2.NullText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;cohActive.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panPosition.Parent" xml:space="preserve">
-    <value>tapSatellites</value>
-  </data>
-  <data name="&gt;&gt;bsSatellites.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tapSatellites.Name" xml:space="preserve">
-    <value>tapSatellites</value>
-  </data>
-  <data name="panSatellites.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lvwSatellites.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="panSatellites.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="lvwSatellites.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 208</value>
   </data>
-  <data name="&gt;&gt;tapStrength.Name" xml:space="preserve">
-    <value>tapStrength</value>
-  </data>
-  <data name="tapStrength.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="&gt;&gt;cohElevation.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cohID.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panPosition.ZOrder" xml:space="preserve">
+  <data name="lvwSatellites.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="&gt;&gt;lvwSatellites.Name" xml:space="preserve">
+    <value>lvwSatellites</value>
+  </data>
+  <data name="&gt;&gt;lvwSatellites.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lvwSatellites.Parent" xml:space="preserve">
     <value>tapDetails</value>
   </data>
-  <data name="&gt;&gt;tapStrength.Type" xml:space="preserve">
+  <data name="&gt;&gt;lvwSatellites.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tapDetails.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="tapDetails.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 208</value>
+  </data>
+  <data name="tapDetails.Text" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="&gt;&gt;tapDetails.Name" xml:space="preserve">
+    <value>tapDetails</value>
+  </data>
+  <data name="&gt;&gt;tapDetails.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tapDetails.Parent" xml:space="preserve">
+    <value>tabSatellites</value>
+  </data>
+  <data name="&gt;&gt;tapDetails.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panPosition.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panPosition.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panPosition.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 211</value>
+  </data>
+  <data name="&gt;&gt;panPosition.Name" xml:space="preserve">
+    <value>panPosition</value>
   </data>
   <data name="&gt;&gt;panPosition.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tabSatellites.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;panPosition.Parent" xml:space="preserve">
+    <value>tapSatellites</value>
+  </data>
+  <data name="&gt;&gt;panPosition.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="tapSatellites.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="tapSatellites.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 211</value>
   </data>
   <data name="tapSatellites.Text" xml:space="preserve">
     <value>Satellites</value>
   </data>
+  <data name="&gt;&gt;tapSatellites.Name" xml:space="preserve">
+    <value>tapSatellites</value>
+  </data>
+  <data name="&gt;&gt;tapSatellites.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tapSatellites.Parent" xml:space="preserve">
+    <value>tabSatellites</value>
+  </data>
+  <data name="&gt;&gt;tapSatellites.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tabSatellites.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tabSatellites.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 34</value>
+  </data>
+  <data name="tabSatellites.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 234</value>
+  </data>
+  <data name="tabSatellites.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;tabSatellites.Name" xml:space="preserve">
+    <value>tabSatellites</value>
+  </data>
+  <data name="&gt;&gt;tabSatellites.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabSatellites.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tabSatellites.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="$this.FormFactorShadowProperty" xml:space="preserve">
     <value>Pocket_PC</value>
-  </metadata>
-  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="$this.Skin" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="bsSatellites.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>124, 17</value>
+  <metadata name="$this.Skin" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
   </metadata>
-  <metadata name="mmnMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
   </metadata>
+  <data name="$this.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>240, 268</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Satellites</value>
+  </data>
+  <data name="&gt;&gt;mmnMain.Name" xml:space="preserve">
+    <value>mmnMain</value>
+  </data>
+  <data name="&gt;&gt;mmnMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MainMenu, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mniClose.Name" xml:space="preserve">
+    <value>mniClose</value>
+  </data>
+  <data name="&gt;&gt;mniClose.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mniView.Name" xml:space="preserve">
+    <value>mniView</value>
+  </data>
+  <data name="&gt;&gt;mniView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;bsSatellites.Name" xml:space="preserve">
+    <value>bsSatellites</value>
+  </data>
+  <data name="&gt;&gt;bsSatellites.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridTableStyle1.Name" xml:space="preserve">
+    <value>dataGridTableStyle1</value>
+  </data>
+  <data name="&gt;&gt;dataGridTableStyle1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridTableStyle, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridTextBoxColumn2.Name" xml:space="preserve">
+    <value>dataGridTextBoxColumn2</value>
+  </data>
+  <data name="&gt;&gt;dataGridTextBoxColumn2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridTextBoxColumn3.Name" xml:space="preserve">
+    <value>dataGridTextBoxColumn3</value>
+  </data>
+  <data name="&gt;&gt;dataGridTextBoxColumn3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cohID.Name" xml:space="preserve">
+    <value>cohID</value>
+  </data>
+  <data name="&gt;&gt;cohID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cohSNR.Name" xml:space="preserve">
+    <value>cohSNR</value>
+  </data>
+  <data name="&gt;&gt;cohSNR.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cohActive.Name" xml:space="preserve">
+    <value>cohActive</value>
+  </data>
+  <data name="&gt;&gt;cohActive.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cohAzimuth.Name" xml:space="preserve">
+    <value>cohAzimuth</value>
+  </data>
+  <data name="&gt;&gt;cohAzimuth.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cohElevation.Name" xml:space="preserve">
+    <value>cohElevation</value>
+  </data>
+  <data name="&gt;&gt;cohElevation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>SatellitesView</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>
