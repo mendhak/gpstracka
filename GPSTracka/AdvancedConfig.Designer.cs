@@ -172,8 +172,8 @@
             // 
             // optTimeSystem
             // 
-            this.optTimeSystem.Checked = true;
             resources.ApplyResources(this.optTimeSystem, "optTimeSystem");
+            this.optTimeSystem.Checked = true;
             this.optTimeSystem.Name = "optTimeSystem";
             // 
             // optTimeGPS
@@ -213,15 +213,15 @@
             // 
             // lblKMLFormattingHelp
             // 
-            this.lblKMLFormattingHelp.BackColor = System.Drawing.SystemColors.Info;
             resources.ApplyResources(this.lblKMLFormattingHelp, "lblKMLFormattingHelp");
+            this.lblKMLFormattingHelp.BackColor = System.Drawing.SystemColors.Info;
             this.lblKMLFormattingHelp.ForeColor = System.Drawing.SystemColors.InfoText;
             this.lblKMLFormattingHelp.Name = "lblKMLFormattingHelp";
             // 
             // llbStringFormat
             // 
-            this.llbStringFormat.BackColor = System.Drawing.SystemColors.Info;
             resources.ApplyResources(this.llbStringFormat, "llbStringFormat");
+            this.llbStringFormat.BackColor = System.Drawing.SystemColors.Info;
             this.llbStringFormat.Name = "llbStringFormat";
             this.llbStringFormat.Click += new System.EventHandler(this.llbStringFormat_Click);
             // 
@@ -237,20 +237,20 @@
             // 
             // tabMain
             // 
+            resources.ApplyResources(this.tabMain, "tabMain");
             this.tabMain.Controls.Add(this.tapGeneral);
             this.tabMain.Controls.Add(this.tapDisplay);
             this.tabMain.Controls.Add(this.tapKML);
             this.tabMain.Controls.Add(this.tabWindowsDriver);
             this.tabMain.Controls.Add(this.tapDiagnostic);
             this.tabMain.Controls.Add(this.tapCSV);
-            resources.ApplyResources(this.tabMain, "tabMain");
             this.tabMain.Name = "tabMain";
             this.tabMain.SelectedIndex = 0;
             // 
             // tapGeneral
             // 
-            this.tapGeneral.Controls.Add(this.panGeneral);
             resources.ApplyResources(this.tapGeneral, "tapGeneral");
+            this.tapGeneral.Controls.Add(this.panGeneral);
             this.tapGeneral.Name = "tapGeneral";
             // 
             // panGeneral
@@ -328,8 +328,8 @@
             // 
             // tapDisplay
             // 
-            this.tapDisplay.Controls.Add(this.panDisplay);
             resources.ApplyResources(this.tapDisplay, "tapDisplay");
+            this.tapDisplay.Controls.Add(this.panDisplay);
             this.tapDisplay.Name = "tapDisplay";
             // 
             // panDisplay
@@ -345,13 +345,13 @@
             // 
             // panUnits
             // 
+            resources.ApplyResources(this.panUnits, "panUnits");
             this.panUnits.Controls.Add(this.lblSpeedUnit);
             this.panUnits.Controls.Add(this.cmbElevationUnit);
             this.panUnits.Controls.Add(this.lblElevationUnit);
             this.panUnits.Controls.Add(this.cmbDistanceUnit);
             this.panUnits.Controls.Add(this.lblDistanceUnit);
             this.panUnits.Controls.Add(this.cmbSpeedUnit);
-            resources.ApplyResources(this.panUnits, "panUnits");
             this.panUnits.Name = "panUnits";
             // 
             // lblSpeedUnit
@@ -361,11 +361,11 @@
             // 
             // cmbElevationUnit
             // 
+            resources.ApplyResources(this.cmbElevationUnit, "cmbElevationUnit");
             this.cmbElevationUnit.Items.Add(resources.GetString("cmbElevationUnit.Items"));
             this.cmbElevationUnit.Items.Add(resources.GetString("cmbElevationUnit.Items1"));
             this.cmbElevationUnit.Items.Add(resources.GetString("cmbElevationUnit.Items2"));
             this.cmbElevationUnit.Items.Add(resources.GetString("cmbElevationUnit.Items3"));
-            resources.ApplyResources(this.cmbElevationUnit, "cmbElevationUnit");
             this.cmbElevationUnit.Name = "cmbElevationUnit";
             // 
             // lblElevationUnit
@@ -375,12 +375,12 @@
             // 
             // cmbDistanceUnit
             // 
+            resources.ApplyResources(this.cmbDistanceUnit, "cmbDistanceUnit");
             this.cmbDistanceUnit.Items.Add(resources.GetString("cmbDistanceUnit.Items"));
             this.cmbDistanceUnit.Items.Add(resources.GetString("cmbDistanceUnit.Items1"));
             this.cmbDistanceUnit.Items.Add(resources.GetString("cmbDistanceUnit.Items2"));
             this.cmbDistanceUnit.Items.Add(resources.GetString("cmbDistanceUnit.Items3"));
             this.cmbDistanceUnit.Items.Add(resources.GetString("cmbDistanceUnit.Items4"));
-            resources.ApplyResources(this.cmbDistanceUnit, "cmbDistanceUnit");
             this.cmbDistanceUnit.Name = "cmbDistanceUnit";
             // 
             // lblDistanceUnit
@@ -390,11 +390,11 @@
             // 
             // cmbSpeedUnit
             // 
+            resources.ApplyResources(this.cmbSpeedUnit, "cmbSpeedUnit");
             this.cmbSpeedUnit.Items.Add(resources.GetString("cmbSpeedUnit.Items"));
             this.cmbSpeedUnit.Items.Add(resources.GetString("cmbSpeedUnit.Items1"));
             this.cmbSpeedUnit.Items.Add(resources.GetString("cmbSpeedUnit.Items2"));
             this.cmbSpeedUnit.Items.Add(resources.GetString("cmbSpeedUnit.Items3"));
-            resources.ApplyResources(this.cmbSpeedUnit, "cmbSpeedUnit");
             this.cmbSpeedUnit.Name = "cmbSpeedUnit";
             // 
             // chkInfoPane
@@ -404,11 +404,11 @@
             // 
             // panLogFormat
             // 
+            resources.ApplyResources(this.panLogFormat, "panLogFormat");
             this.panLogFormat.Controls.Add(this.lblLogFormat);
             this.panLogFormat.Controls.Add(this.txtLogFormat);
             this.panLogFormat.Controls.Add(this.lblLogFormatHelp);
             this.panLogFormat.Controls.Add(this.cmdLogFormatTest);
-            resources.ApplyResources(this.panLogFormat, "panLogFormat");
             this.panLogFormat.Name = "panLogFormat";
             // 
             // lblLogFormat
@@ -435,11 +435,11 @@
             // 
             // panClearEveryXLInes
             // 
+            resources.ApplyResources(this.panClearEveryXLInes, "panClearEveryXLInes");
             this.panClearEveryXLInes.Controls.Add(this.lblClearLog);
             this.panClearEveryXLInes.Controls.Add(this.lblLines);
             this.panClearEveryXLInes.Controls.Add(this.lblClearInfo);
             this.panClearEveryXLInes.Controls.Add(this.nudMaxLogLen);
-            resources.ApplyResources(this.panClearEveryXLInes, "panClearEveryXLInes");
             this.panClearEveryXLInes.Name = "panClearEveryXLInes";
             // 
             // lblClearLog
@@ -476,9 +476,9 @@
             // 
             // panLanguage
             // 
+            resources.ApplyResources(this.panLanguage, "panLanguage");
             this.panLanguage.Controls.Add(this.cmbLanguage);
             this.panLanguage.Controls.Add(this.lblLanguage);
-            resources.ApplyResources(this.panLanguage, "panLanguage");
             this.panLanguage.Name = "panLanguage";
             // 
             // cmbLanguage
@@ -493,8 +493,8 @@
             // 
             // tapKML
             // 
-            this.tapKML.Controls.Add(this.panKML);
             resources.ApplyResources(this.tapKML, "tapKML");
+            this.tapKML.Controls.Add(this.panKML);
             this.tapKML.Name = "tapKML";
             // 
             // panKML
@@ -515,10 +515,10 @@
             // 
             // panKMLDescFormat
             // 
+            resources.ApplyResources(this.panKMLDescFormat, "panKMLDescFormat");
             this.panKMLDescFormat.Controls.Add(this.txtKMLDescFormat);
             this.panKMLDescFormat.Controls.Add(this.lblKMLDescFormat);
             this.panKMLDescFormat.Controls.Add(this.cmdTestDesc);
-            resources.ApplyResources(this.panKMLDescFormat, "panKMLDescFormat");
             this.panKMLDescFormat.Name = "panKMLDescFormat";
             // 
             // txtKMLDescFormat
@@ -534,10 +534,10 @@
             // 
             // panKMLNameFormat
             // 
+            resources.ApplyResources(this.panKMLNameFormat, "panKMLNameFormat");
             this.panKMLNameFormat.Controls.Add(this.txtKMLNameFormat);
             this.panKMLNameFormat.Controls.Add(this.lblKMLNameFormat);
             this.panKMLNameFormat.Controls.Add(this.cmdTestName);
-            resources.ApplyResources(this.panKMLNameFormat, "panKMLNameFormat");
             this.panKMLNameFormat.Name = "panKMLNameFormat";
             // 
             // txtKMLNameFormat
@@ -604,10 +604,10 @@
             // 
             // tapCSV
             // 
+            resources.ApplyResources(this.tapCSV, "tapCSV");
             this.tapCSV.Controls.Add(this.panCSVFields);
             this.tapCSV.Controls.Add(this.panCSVBottom);
             this.tapCSV.Controls.Add(this.panCSV);
-            resources.ApplyResources(this.tapCSV, "tapCSV");
             this.tapCSV.Name = "tapCSV";
             // 
             // panCSVFields
@@ -672,11 +672,11 @@
             // 
             // panCSVBottom
             // 
+            resources.ApplyResources(this.panCSVBottom, "panCSVBottom");
             this.panCSVBottom.Controls.Add(this.chkCSVUTC);
             this.panCSVBottom.Controls.Add(this.cmbDateFormat);
             this.panCSVBottom.Controls.Add(this.txtCSVDateFormat);
             this.panCSVBottom.Controls.Add(this.lblCSVDateFormat);
-            resources.ApplyResources(this.panCSVBottom, "panCSVBottom");
             this.panCSVBottom.Name = "panCSVBottom";
             // 
             // chkCSVUTC
@@ -702,6 +702,7 @@
             // 
             // panCSV
             // 
+            resources.ApplyResources(this.panCSV, "panCSV");
             this.panCSV.Controls.Add(this.lblCSVSeparator);
             this.panCSV.Controls.Add(this.lblCSVQualifier);
             this.panCSV.Controls.Add(this.cmdCSVHeaderTab);
@@ -713,7 +714,6 @@
             this.panCSV.Controls.Add(this.cmbCSVNewLine);
             this.panCSV.Controls.Add(this.txtCSVQualifier);
             this.panCSV.Controls.Add(this.cmbCSVQualifierUsage);
-            resources.ApplyResources(this.panCSV, "panCSV");
             this.panCSV.Name = "panCSV";
             // 
             // lblCSVSeparator
@@ -760,10 +760,10 @@
             // 
             // cmbCSVNewLine
             // 
+            resources.ApplyResources(this.cmbCSVNewLine, "cmbCSVNewLine");
             this.cmbCSVNewLine.Items.Add(resources.GetString("cmbCSVNewLine.Items"));
             this.cmbCSVNewLine.Items.Add(resources.GetString("cmbCSVNewLine.Items1"));
             this.cmbCSVNewLine.Items.Add(resources.GetString("cmbCSVNewLine.Items2"));
-            resources.ApplyResources(this.cmbCSVNewLine, "cmbCSVNewLine");
             this.cmbCSVNewLine.Name = "cmbCSVNewLine";
             // 
             // txtCSVQualifier
@@ -773,10 +773,10 @@
             // 
             // cmbCSVQualifierUsage
             // 
+            resources.ApplyResources(this.cmbCSVQualifierUsage, "cmbCSVQualifierUsage");
             this.cmbCSVQualifierUsage.Items.Add(resources.GetString("cmbCSVQualifierUsage.Items"));
             this.cmbCSVQualifierUsage.Items.Add(resources.GetString("cmbCSVQualifierUsage.Items1"));
             this.cmbCSVQualifierUsage.Items.Add(resources.GetString("cmbCSVQualifierUsage.Items2"));
-            resources.ApplyResources(this.cmbCSVQualifierUsage, "cmbCSVQualifierUsage");
             this.cmbCSVQualifierUsage.Name = "cmbCSVQualifierUsage";
             // 
             // AdvancedConfigForm

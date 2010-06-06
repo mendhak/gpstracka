@@ -137,7 +137,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lblKMLFormattingHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>369, 89</value>
+    <value>240, 89</value>
   </data>
   <data name="lblKMLFormattingHelp.Text" xml:space="preserve">
     <value>{0} - datum a čas UTC;
@@ -150,11 +150,17 @@
   <data name="llbStringFormat.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 146</value>
   </data>
+  <data name="llbStringFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 19</value>
+  </data>
   <data name="llbStringFormat.Text" xml:space="preserve">
     <value>viz String.Format</value>
   </data>
   <data name="lblKMLNameFormat.Text" xml:space="preserve">
     <value>Formát jména</value>
+  </data>
+  <data name="lblPointPlacemark.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 18</value>
   </data>
   <data name="lblPointPlacemark.Text" xml:space="preserve">
     <value>Značka pozice:</value>
@@ -205,7 +211,7 @@
     <value>Vyčistit &amp;log každých</value>
   </data>
   <data name="lblLines.Location" type="System.Drawing.Point, System.Drawing">
-    <value>174, 39</value>
+    <value>174, 1</value>
   </data>
   <data name="lblLines.Text" xml:space="preserve">
     <value>řádek</value>
@@ -214,7 +220,7 @@
     <value>0 = nikdy; platí jen pro texbox</value>
   </data>
   <data name="nudMaxLogLen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>111, 38</value>
+    <value>111, 1</value>
   </data>
   <data name="chkStatusBar.Text" xml:space="preserve">
     <value>Status&amp;bar</value>
@@ -222,20 +228,62 @@
   <data name="lblLanguage.Text" xml:space="preserve">
     <value>Jazyk</value>
   </data>
+  <data name="tapKML.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 245</value>
+  </data>
+  <data name="panKML.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 245</value>
+  </data>
   <data name="copKMLColor.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 165</value>
   </data>
   <data name="copKMLColor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>369, 114</value>
+    <value>240, 80</value>
+  </data>
+  <data name="panKMLDescFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 20</value>
+  </data>
+  <data name="txtKMLDescFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 20</value>
+  </data>
+  <data name="cmdTestDesc.Location" type="System.Drawing.Point, System.Drawing">
+    <value>220, 0</value>
+  </data>
+  <data name="panKMLNameFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 19</value>
+  </data>
+  <data name="txtKMLNameFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 19</value>
+  </data>
+  <data name="cmdTestName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>220, 0</value>
+  </data>
+  <data name="tabWindowsDriver.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 245</value>
+  </data>
+  <data name="chkSeaLevelAltitude.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 20</value>
   </data>
   <data name="chkSeaLevelAltitude.Text" xml:space="preserve">
     <value>Použít výšku od &amp;hladiny moře</value>
+  </data>
+  <data name="lblWindowsDriverI.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 17</value>
+  </data>
+  <data name="tapDiagnostic.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 245</value>
   </data>
   <data name="tapDiagnostic.Text" xml:space="preserve">
     <value>Diagnotika</value>
   </data>
   <data name="lblBeepEvery.Text" xml:space="preserve">
     <value>Píp každých</value>
+  </data>
+  <data name="tapCSV.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 245</value>
+  </data>
+  <data name="panCSVFields.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 109</value>
   </data>
   <data name="lstCSVFields.Location" type="System.Drawing.Point, System.Drawing">
     <value>142, 15</value>
@@ -273,11 +321,26 @@
   <data name="lblCSVFields.Text" xml:space="preserve">
     <value>Použitá pole</value>
   </data>
+  <data name="panCSVBottom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 198</value>
+  </data>
+  <data name="panCSVBottom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 47</value>
+  </data>
   <data name="chkCSVUTC.Text" xml:space="preserve">
     <value>Čas v UTC</value>
   </data>
+  <data name="cmbDateFormat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>221, 5</value>
+  </data>
+  <data name="txtCSVDateFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 21</value>
+  </data>
   <data name="lblCSVDateFormat.Text" xml:space="preserve">
     <value>Formát data</value>
+  </data>
+  <data name="panCSV.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 89</value>
   </data>
   <data name="lblCSVSeparator.Text" xml:space="preserve">
     <value>Oddělovač</value>
@@ -285,11 +348,17 @@
   <data name="lblCSVQualifier.Text" xml:space="preserve">
     <value>Text. kvalif.</value>
   </data>
+  <data name="cmdCSVHeaderTab.Location" type="System.Drawing.Point, System.Drawing">
+    <value>202, 64</value>
+  </data>
   <data name="lblCSVNewLine.Text" xml:space="preserve">
     <value>Konec řádku</value>
   </data>
   <data name="lblCSVHeader.Text" xml:space="preserve">
     <value>Záhlaví</value>
+  </data>
+  <data name="txtCSVHeader.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 20</value>
   </data>
   <data name="cmbCSVQualifierUsage.Items" xml:space="preserve">
     <value>Podle potř.</value>
