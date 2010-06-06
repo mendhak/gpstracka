@@ -651,6 +651,12 @@
   <data name="mniSatellites.Text" xml:space="preserve">
     <value>Sa&amp;ttellites</value>
   </data>
+  <data name="mniSep3.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="mniSaveStatistic.Text" xml:space="preserve">
+    <value>Save s&amp;tatistic</value>
+  </data>
   <data name="mniSep1.Text" xml:space="preserve">
     <value>-</value>
   </data>
@@ -1477,6 +1483,18 @@
     <value>mniSatellites</value>
   </data>
   <data name="&gt;&gt;mniSatellites.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mniSep3.Name" xml:space="preserve">
+    <value>mniSep3</value>
+  </data>
+  <data name="&gt;&gt;mniSep3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mniSaveStatistic.Name" xml:space="preserve">
+    <value>mniSaveStatistic</value>
+  </data>
+  <data name="&gt;&gt;mniSaveStatistic.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;mniSep1.Name" xml:space="preserve">

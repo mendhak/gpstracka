@@ -56,6 +56,8 @@
             this.verboseMenuItem = new System.Windows.Forms.MenuItem();
             this.settingsMenuItem = new System.Windows.Forms.MenuItem();
             this.mniSatellites = new System.Windows.Forms.MenuItem();
+            this.mniSep3 = new System.Windows.Forms.MenuItem();
+            this.mniSaveStatistic = new System.Windows.Forms.MenuItem();
             this.mniSep1 = new System.Windows.Forms.MenuItem();
             this.aboutMenuItem = new System.Windows.Forms.MenuItem();
             this.mniHelp = new System.Windows.Forms.MenuItem();
@@ -279,6 +281,8 @@
             this.menuItem2.MenuItems.Add(this.verboseMenuItem);
             this.menuItem2.MenuItems.Add(this.settingsMenuItem);
             this.menuItem2.MenuItems.Add(this.mniSatellites);
+            this.menuItem2.MenuItems.Add(this.mniSep3);
+            this.menuItem2.MenuItems.Add(this.mniSaveStatistic);
             this.menuItem2.MenuItems.Add(this.mniSep1);
             this.menuItem2.MenuItems.Add(this.aboutMenuItem);
             this.menuItem2.MenuItems.Add(this.mniHelp);
@@ -305,6 +309,14 @@
             // 
             resources.ApplyResources(this.mniSatellites, "mniSatellites");
             this.mniSatellites.Click += new System.EventHandler(this.mniSatellites_Click);
+            // 
+            // mniSep3
+            // 
+            resources.ApplyResources(this.mniSep3, "mniSep3");
+            // 
+            // mniSaveStatistic
+            // 
+            resources.ApplyResources(this.mniSaveStatistic, "mniSaveStatistic");
             // 
             // mniSep1
             // 
@@ -669,6 +681,8 @@
         private System.Windows.Forms.Label lblAerialI;
         private System.Windows.Forms.Timer tmrBeep;
         private System.Windows.Forms.RadioButton optCSV;
+        private System.Windows.Forms.MenuItem mniSep3;
+        private System.Windows.Forms.MenuItem mniSaveStatistic;
     }
 }
 

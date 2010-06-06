@@ -334,4 +334,34 @@ Value = {1}</value>
   <data name="Satellite_Stopped" xml:space="preserve">
     <value>Sat. closed</value>
   </data>
+  <data name="stat_StartTime" xml:space="preserve">
+    <value>Start time: {0}</value>
+  </data>
+  <data name="stat_AverageSpeed" xml:space="preserve">
+    <value>Average speed: {0:0.0}{1}</value>
+  </data>
+  <data name="stat_Distance" xml:space="preserve">
+    <value>Distance: {0:0.000}{1}</value>
+  </data>
+  <data name="stat_AerialDistance" xml:space="preserve">
+    <value>Aerial distance: {0:0.000}{1}</value>
+  </data>
+  <data name="stat_PositiveElevation" xml:space="preserve">
+    <value>Positive elevation: {0:0}{1}</value>
+  </data>
+  <data name="stat_NegativeElevation" xml:space="preserve">
+    <value>Negative elevation: {0:0}{1}</value>
+  </data>
+  <data name="stat_MoveTime" xml:space="preserve">
+    <value>Move time: {0}</value>
+  </data>
+  <data name="stat_StopTime" xml:space="preserve">
+    <value>Stop time: {0}</value>
+  </data>
+  <data name="stat_Points" xml:space="preserve">
+    <value>Points: {0}</value>
+  </data>
+  <data name="stat_Saved" xml:space="preserve">
+    <value>Saved: {0}</value>
+  </data>
 </root>

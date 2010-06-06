@@ -326,4 +326,34 @@ Hodnota = {1}</value>
   <data name="Satellite_Stopped" xml:space="preserve">
     <value>Sat. closed</value>
   </data>
+  <data name="stat_StartTime" xml:space="preserve">
+    <value>Čas začátku: {0}</value>
+  </data>
+  <data name="stat_AverageSpeed" xml:space="preserve">
+    <value>Průměrná rychlost: {0:0.0}{1}</value>
+  </data>
+  <data name="stat_Distance" xml:space="preserve">
+    <value>Vzdálenost: {0:0.000}{1}</value>
+  </data>
+  <data name="stat_AerialDistance" xml:space="preserve">
+    <value>Vzdušná vzdálenost: {0:0.000}{1}</value>
+  </data>
+  <data name="stat_PositiveElevation" xml:space="preserve">
+    <value>Nastoupáno: {0:0}{1}</value>
+  </data>
+  <data name="stat_NegativeElevation" xml:space="preserve">
+    <value>Sklesáno: {0:0}{1}</value>
+  </data>
+  <data name="stat_MoveTime" xml:space="preserve">
+    <value>Čas v pohybu: {0}</value>
+  </data>
+  <data name="stat_StopTime" xml:space="preserve">
+    <value>Čas zastavení: {0}</value>
+  </data>
+  <data name="stat_Points" xml:space="preserve">
+    <value>Bodů: {0}</value>
+  </data>
+  <data name="stat_Saved" xml:space="preserve">
+    <value>Uloženo: {0}</value>
+  </data>
 </root>

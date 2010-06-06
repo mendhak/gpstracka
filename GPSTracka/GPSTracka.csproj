@@ -98,6 +98,10 @@
       <DependentUpon>AdvancedConfig.cs</DependentUpon>
     </Compile>
     <Compile Include="BeepWrapper.cs" />
+    <Compile Include="GpsPoint.cs" />
+    <Compile Include="GpsStatistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GPSWrapper.cs" />
     <Compile Include="MyTextBox.cs">
       <SubType>Component</SubType>

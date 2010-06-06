@@ -7,11 +7,11 @@ using System.Resources;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("GPSTracka")]
-[assembly: AssemblyDescription("GPS tracking utility for WIndows mobile")]
+[assembly: AssemblyDescription("GPS tracking utility for Windows mobile")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Mendhak")]
 [assembly: AssemblyProduct("GPSTracka")]
-[assembly: AssemblyCopyright("Copyright © 2008-2009")]
+[assembly: AssemblyCopyright("Copyright © 2008-2010")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -30,7 +30,7 @@ using System.Resources;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("1.1.0.*")]
+[assembly: AssemblyVersion("1.1.1.*")]
 
 // Below attribute is to suppress FxCop warning "CA2232 : Microsoft.Usage : Add STAThreadAttribute to assembly"
 // as Device app does not support STA thread.

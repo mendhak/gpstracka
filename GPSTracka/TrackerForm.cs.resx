@@ -150,6 +150,9 @@
   <data name="lblSatellitesI.Text" xml:space="preserve">
     <value>Satelitů</value>
   </data>
+  <data name="menuItem2.Text" xml:space="preserve">
+    <value>&amp;Možnosti</value>
+  </data>
   <data name="clearMenuItem.Text" xml:space="preserve">
     <value>V&amp;yčistit</value>
   </data>
@@ -162,6 +165,9 @@
   <data name="mniSatellites.Text" xml:space="preserve">
     <value>&amp;Satelity</value>
   </data>
+  <data name="mniSaveStatistic.Text" xml:space="preserve">
+    <value>Uložit s&amp;tatistiku</value>
+  </data>
   <data name="aboutMenuItem.Text" xml:space="preserve">
     <value>&amp;O aplikaci</value>
   </data>
@@ -171,13 +177,10 @@
   <data name="menuExit.Text" xml:space="preserve">
     <value>&amp;Konec</value>
   </data>
-  <data name="menuItem2.Text" xml:space="preserve">
-    <value>&amp;Možnosti</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsN
+        /9j/4AAQSkZJRgABAQEAAAAAAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsN
         DhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQU
         FBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCAA9AEUDASIAAhEBAxEB/8QA
         HwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIh
@@ -257,23 +260,14 @@
   <data name="chkAltitude.Text" xml:space="preserve">
     <value>&amp;Nadm. výška</value>
   </data>
-  <data name="fraFormat.Text" xml:space="preserve">
-    <value>Formát</value>
-  </data>
   <data name="CheckBoxToTextBox.Text" xml:space="preserve">
     <value>Do textboxu</value>
   </data>
   <data name="CheckBoxToFile.Text" xml:space="preserve">
     <value>Do souboru</value>
   </data>
-  <data name="fraOptions.Text" xml:space="preserve">
-    <value>Volby záznamu</value>
-  </data>
   <data name="label1.Text" xml:space="preserve">
     <value>sekund</value>
-  </data>
-  <data name="fraSpeed.Text" xml:space="preserve">
-    <value>Rychlost záznamu</value>
   </data>
   <data name="chkUseWindowsDriver.Text" xml:space="preserve">
     <value>Použít ovladač &amp;Windows</value>
@@ -286,9 +280,6 @@
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>baudů</value>
-  </data>
-  <data name="fraCOMPort.Text" xml:space="preserve">
-    <value>COM port</value>
   </data>
   <data name="cancelMenuItem.Text" xml:space="preserve">
     <value>&amp;Storno</value>
