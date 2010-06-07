@@ -321,10 +321,10 @@ Hodnota = {1}</value>
     <value>výchozí</value>
   </data>
   <data name="Satellite_Started" xml:space="preserve">
-    <value>Sat. open</value>
+    <value>Satelity otevřeny</value>
   </data>
   <data name="Satellite_Stopped" xml:space="preserve">
-    <value>Sat. closed</value>
+    <value>Satelity zavřeny</value>
   </data>
   <data name="stat_StartTime" xml:space="preserve">
     <value>Čas začátku: {0}</value>

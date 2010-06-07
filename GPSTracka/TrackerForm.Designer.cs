@@ -5,12 +5,15 @@
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
+
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing) {
-            if (disposing && (components != null)) {
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -100,6 +103,7 @@
             this.backMenuItem = new System.Windows.Forms.MenuItem();
             this.tmrCountDown = new System.Windows.Forms.Timer();
             this.tmrBeep = new System.Windows.Forms.Timer();
+            this.panHelper = new System.Windows.Forms.Panel();
             this.mainPanel.SuspendLayout();
             this.panInfoPane.SuspendLayout();
             this.aboutPanel.SuspendLayout();
@@ -121,6 +125,7 @@
             this.mainPanel.Controls.Add(this.TextBoxRawLog);
             this.mainPanel.Controls.Add(this.panInfoPane);
             this.mainPanel.Controls.Add(this.stsStatus);
+            this.mainPanel.Controls.Add(this.panHelper);
             resources.ApplyResources(this.mainPanel, "mainPanel");
             this.mainPanel.Name = "mainPanel";
             // 
@@ -259,10 +264,11 @@
             // 
             // stsStatus
             // 
+            this.stsStatus.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(this.stsStatus, "stsStatus");
             this.stsStatus.Items = new string[] {
         "Press Start",
         ""};
-            resources.ApplyResources(this.stsStatus, "stsStatus");
             this.stsStatus.Name = "stsStatus";
             // 
             // mainPanelMenu
@@ -317,6 +323,7 @@
             // mniSaveStatistic
             // 
             resources.ApplyResources(this.mniSaveStatistic, "mniSaveStatistic");
+            this.mniSaveStatistic.Click += new System.EventHandler(this.mniSaveStatistic_Click);
             // 
             // mniSep1
             // 
@@ -579,6 +586,11 @@
             // 
             this.tmrBeep.Tick += new System.EventHandler(this.tmrBeep_Tick);
             // 
+            // panHelper
+            // 
+            resources.ApplyResources(this.panHelper, "panHelper");
+            this.panHelper.Name = "panHelper";
+            // 
             // TrackerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -683,6 +695,7 @@
         private System.Windows.Forms.RadioButton optCSV;
         private System.Windows.Forms.MenuItem mniSep3;
         private System.Windows.Forms.MenuItem mniSaveStatistic;
+        private System.Windows.Forms.Panel panHelper;
     }
 }
 

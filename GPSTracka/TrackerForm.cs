@@ -21,7 +21,6 @@ namespace GPSTracka
     /// <summary>Main form</summary>
     public partial class TrackerForm : Form
     {
-        //renamed from GPSTracka to TrackerForm - old name puzzled the designer
         /// <summary>Power states</summary>
         public enum DevicePowerState
         {
@@ -174,14 +173,25 @@ namespace GPSTracka
         private bool satelliteWindowOpen;
 
 
+        /// <summary>XML writer settings used by KML and GPX writers</summary>
+        XmlWriterSettings xmlWriterSettings = new XmlWriterSettings()
+        {
+            Encoding = System.Text.Encoding.UTF8,
+            Indent = true,
+            IndentChars = new string(' ', 4),
+            ConformanceLevel = ConformanceLevel.Document
+        };
 
+
+        /// <summary>CTor - creates a new instance of the <see cref="TrackerForm"/> class</summary>
+        /// <param name="autoStart">true to start GPS logging immediatelly</param>
         public TrackerForm(bool autoStart)
         {
             InitializeComponent();
             initMeasure = lblAerial.Size;
             stsStatus[0] = Properties.Resources.PressStart;//Status 
             stsStatus[1] = "";//Countdown 
-            stsStatus[2] = "";//Speed 
+            stsStatus[2] = "";//Speed                     
 
             string[] portNames = SerialPort.GetPortNames();
             foreach (string port in portNames)
@@ -228,6 +238,7 @@ namespace GPSTracka
             {
                 startMenuItem_Click(this, new EventArgs());
             }
+            panHelper.Height = AdvancedConfig.MainFormBottomEmptySpace;
         }
 
         /// <summary>Shows basig settings to user using controls</summary>
@@ -267,6 +278,7 @@ namespace GPSTracka
             }
             stsStatus.Visible = AdvancedConfig.StatusBar;
             panInfoPane.Visible = AdvancedConfig.InfoPane;
+            panHelper.Height = AdvancedConfig.MainFormBottomEmptySpace;
         }
 
         /// <summary>Attaches or detaches GPS events</summary>
@@ -382,6 +394,9 @@ namespace GPSTracka
             }
         }
 
+        /// <summary>Called when a GPS sencence is received</summary>
+        /// <param name="sender">A GPS provider</param>
+        /// <param name="e">Event arguments containing a GPS sentence</param>
         void GpsSentenceEvent(GpsProvider sender, GpsSentenceEventArgs e)
         {
 
@@ -452,11 +467,13 @@ namespace GPSTracka
 
 
 
-
+        /// <summary>Called when GPS position is received</summary>
+        /// <param name="sender">A GPS provider</param>
+        /// <param name="e">Event arguments containing actual GPS position</param>
         void GpsPositionReceived(GpsProvider sender, GpsPositionEventArgs e)
         {
             GpsPosition pos = e.Position;
-            if (waitForStop)
+            if (waitForStop || !gpsRunning)
             {
                 return;
             }
@@ -482,8 +499,10 @@ namespace GPSTracka
                     Math.Round(pos.Latitude.Value, 7),
                     altitude.HasValue ? Math.Round(altitude.Value, 7) : 0,
                     time,
-                    AdvancedConfig.ElevationUnitName
-                    );
+                    AdvancedConfig.ElevationUnitName,
+                    statistic == null ? 0.0M : statistic.SumLength * AdvancedConfig.DistanceMultiplier,
+                    AdvancedConfig.DistanceUnitName
+                );
 
                 if (!positionLogged)
                 {
@@ -500,22 +519,19 @@ namespace GPSTracka
                         if (distance < AdvancedConfig.MinimalDistance)
                         {
                             //Point is to near
-                            lastPositionC = pos;//Remember it
-                            lastTimeC = time; //And remember the time
+                            lastPositionC = pos; //Remember it
+                            lastTimeC = time;    //And remember the time
                         }
                         else
                         {
                             //Points are far enough
                             logThisPoint = true;//Log this point
-                            /*//If distance of this point from latest not logged point is long enough log that point as well
-                            decimal distAC = Math.Abs(Gps.GpsPosition.CalculateDistance(LastPositionC.Value, pos, OpenNETCF.IO.Serial.GPS.Units.Kilometers) * 1000);*/
-                            if (lastPositionC != null && time != lastTimeA && lastTimeA != lastTimeC /*&& distAC >= AdvancedConfig.MinimalDistance*/)
+                            if (lastPositionC != null && time != lastTimeA && lastTimeA != lastTimeC)
                             {
-                                //Commented-out - always log last pause point
                                 WriteToFile(
                                     lastTimeC,
-                                    Convert.ToDouble(Math.Round(lastPositionC.Value.Latitude.Value /* * latMultiplier*/, 7)),
-                                    Convert.ToDouble(Math.Round(lastPositionC.Value.Longitude.Value /* * longMultiplier*/, 7)),
+                                    Convert.ToDouble(Math.Round(lastPositionC.Value.Latitude.Value, 7)),
+                                    Convert.ToDouble(Math.Round(lastPositionC.Value.Longitude.Value, 7)),
                                     Convert.ToDouble(Math.Round(lastPositionC.Value.Altitude.HasValue ? lastPositionC.Value.Altitude.Value + AdvancedConfig.AltitudeCorrection : 0, 7))
                                 );
                             }
@@ -533,8 +549,8 @@ namespace GPSTracka
                         }
 
                         Status(Properties.Resources.status_PositionReceived);
-                        lastPositionA = pos;//Remember position
-                        lastTimeA = time;//Remember time
+                        lastPositionA = pos; //Remember position
+                        lastTimeA = time;    //Remember time
                         lastPositionC = pos;
                         lastTimeC = time;
                         WriteToFile(
@@ -586,6 +602,9 @@ namespace GPSTracka
             }
         }
 
+        /// <summary>Called when GPS provider status changes</summary>
+        /// <param name="sender">A GPS provider</param>
+        /// <param name="state">Current status of <paramref name="sender"/></param>
         void GpsCommStateChanged(GpsProvider sender, GpsState state)
         {
             switch (state)
@@ -628,6 +647,10 @@ namespace GPSTracka
 
         }
 
+        /// <summary>Called when error occurs in GPS device</summary>
+        /// <param name="sender">A GPS provider</param>
+        /// <param name="message">Error message text</param>
+        /// <param name="exception">Exceptin which caused error to occur. May be null.</param>
         void GpsErrorRaised(GpsProvider sender, string message, Exception exception)
         {
             if (logEverything)
@@ -638,9 +661,12 @@ namespace GPSTracka
                     WriteExceptionToTextBox(exception);
                 }
             }
-            Status(Properties.Resources.err_ErrorTitle + " " + (exception == null ? "" : exception.Message));
+            Status(Properties.Resources.err_ErrorTitle + " " + (exception == null ? message : exception.Message));
         }
 
+        /// <summary>Called when GPS movement information is received</summary>
+        /// <param name="sender">A GPS provider</param>
+        /// <param name="e">Event arguments containing movement data</param>
         private void GpsMovementEvent(GpsProvider sender, GpsMovementEventArgs e)
         {
             if (statistic != null)
@@ -649,6 +675,9 @@ namespace GPSTracka
             }
         }
 
+        /// <summary>Called when GPS device receives information about satellites</summary>
+        /// <param name="sender">A GPS provider</param>
+        /// <param name="e">Event arguments containing information about sattellites</param>
         private void GpsSatelliteEvent(GpsProvider sender, GpsSatelliteEventArgs e)
         {
             if (statistic == null && InvokeRequired)
@@ -704,7 +733,11 @@ namespace GPSTracka
 
         }
 
-
+        /// <summary>Wites GPS data to a file of appropriate type</summary>
+        /// <param name="time">Current time for GPS log</param>
+        /// <param name="latitude">Latitude to be logged</param>
+        /// <param name="longitude">Longitude to be logged</param>
+        /// <param name="altitude">Altitude to be loggged</param>
         private void WriteToFile(DateTime time, double latitude, double longitude, double altitude)
         {
             try
@@ -726,18 +759,25 @@ namespace GPSTracka
             }
         }
 
-
-
+        /// <summary>Keeps current KML XML document</summary>
+        private XmlDocument kmlDocument;
+        /// <summary>Wites GPS data to KML file</summary>
+        /// <param name="time">Current time for GPS log</param>
+        /// <param name="latitude">Latitude to be logged</param>
+        /// <param name="longitude">Longitude to be logged</param>
+        /// <param name="altitude">Altitude to be loggged</param>
         private void WriteToKmlFile(DateTime time, double latitude, double longitude, double altitude)
         {
-            XmlDocument doc = new XmlDocument();
+            //Get file path
             if (currentFileName == null)
             {
                 currentFileName = Path.Combine(AdvancedConfig.LogFileLocation,
                                                time.ToLocalTime().ToString("yyyyMMdd_HHmmss",
                                                                            CultureInfo.InvariantCulture) + ".kml");
+                kmlDocument = null;
             }
 
+            //Ensure folder for file
             if (!File.Exists(currentFileName))
             {
 
@@ -753,12 +793,31 @@ namespace GPSTracka
                     }
 
                 }
+            }
+            //Load the file
+            else if (kmlDocument == null)
+            {
+                kmlDocument = new XmlDocument();
+                try
+                {
+                    kmlDocument.Load(currentFileName);
+                }
+                catch (Exception ex)
+                {
+                    WriteToTextbox(string.Format("Error loading XML file {0}: {1}", currentFileName, ex.Message));
+                    kmlDocument = null;
+                }
+            }
 
-                StreamWriter stream = File.CreateText(currentFileName);
-                stream.WriteLine(@"<?xml version=""1.0"" encoding=""UTF-8""?>
+            //Create XML document (when necessary)
+            if (kmlDocument == null)
+            {
+                kmlDocument = new XmlDocument();
+                StringBuilder b = new StringBuilder();
+                b.Append(@"<?xml version=""1.0""?>
                                 <kml xmlns=""" + KmlNs + @""">
                                 <Document>
-                                    <name>" + Path.GetFileNameWithoutExtension(currentFileName) + @"</name>
+                                    <name>" + Path.GetFileNameWithoutExtension(currentFileName).Replace("&", "&amp;").Replace("<", "&lt;") + @"</name>
                                     <Folder id='Points'>
                                         <name>Points</name>
                                     </Folder>
@@ -783,38 +842,40 @@ namespace GPSTracka
                                         </LineString>
                                       </Placemark>"
                                 : "") + @"</Document></kml>");
-
-                stream.Close();
+                kmlDocument.LoadXml(b.ToString());
             }
 
-            doc.Load(currentFileName);
-
-            XmlNamespaceManager nsmgr = new XmlNamespaceManager(doc.NameTable);
+            //Appedn data about current point
+            XmlNamespaceManager nsmgr = new XmlNamespaceManager(kmlDocument.NameTable);
             nsmgr.AddNamespace("def", KmlNs);
 
             //XmlNode kml = doc.ChildNodes[1].SelectSingleNode("Document");
-            XmlNode kml = doc.SelectSingleNode("/def:kml/def:Document/def:Folder[@id='Points']", nsmgr);
+            XmlNode kml = kmlDocument.SelectSingleNode("/def:kml/def:Document/def:Folder[@id='Points']", nsmgr);
 
-            XmlNode placemark = doc.CreateElement("Placemark", KmlNs);
+            XmlNode placemark = kmlDocument.CreateElement("Placemark", KmlNs);
 
-            XmlNode plName = doc.CreateElement("name", KmlNs);
-            plName.InnerText = string.Format(AdvancedConfig.KmlNameFormat,
-                time.ToUniversalTime(), longitude, latitude, altitude, time, AdvancedConfig.ElevationUnitName);
+            XmlNode plName = kmlDocument.CreateElement("name", KmlNs);
+            object[] formatingValues = new object[]
+            {
+                time.ToUniversalTime(), longitude, latitude, altitude, time, AdvancedConfig.ElevationUnitName, 
+                statistic==null?0.0M: statistic.SumLength * AdvancedConfig.DistanceMultiplier, 
+                AdvancedConfig.DistanceUnitName
+            };
+            plName.InnerText = string.Format(AdvancedConfig.KmlNameFormat, formatingValues);
             placemark.AppendChild(plName);
 
-            XmlNode plDescription = doc.CreateElement("description", KmlNs);
-            plDescription.InnerText = string.Format(AdvancedConfig.KmlDescFormat,
-                time.ToUniversalTime(), longitude, latitude, altitude, time, AdvancedConfig.ElevationUnitName);
+            XmlNode plDescription = kmlDocument.CreateElement("description", KmlNs);
+            plDescription.InnerText = string.Format(AdvancedConfig.KmlDescFormat, formatingValues);
             placemark.AppendChild(plDescription);
 
-            XmlNode plPoint = doc.CreateElement("Point", KmlNs);
-            XmlNode plPointCoord = doc.CreateElement("coordinates", KmlNs);
+            XmlNode plPoint = kmlDocument.CreateElement("Point", KmlNs);
+            XmlNode plPointCoord = kmlDocument.CreateElement("coordinates", KmlNs);
             plPointCoord.InnerText = longitude.ToString(CultureInfo.InvariantCulture) + "," +
                                      latitude.ToString(CultureInfo.InvariantCulture) + "," +
                                      (AdvancedConfig.LogAltitude ? altitude.ToString(CultureInfo.InvariantCulture) : "0");
             if (AdvancedConfig.LogAltitude)
             {
-                XmlNode coMode = doc.CreateElement("altitudeMode", KmlNs);
+                XmlNode coMode = kmlDocument.CreateElement("altitudeMode", KmlNs);
                 coMode.InnerText = "absolute";
                 plPoint.AppendChild(coMode);
             }
@@ -825,24 +886,44 @@ namespace GPSTracka
             kml.AppendChild(placemark);
             if (AdvancedConfig.TrackType == TrackType.Track)
             {
-                XmlNode coordinates = doc.SelectSingleNode("/def:kml/def:Document/def:Placemark[@id='track']/def:LineString/def:coordinates", nsmgr);
+                XmlNode coordinates = kmlDocument.SelectSingleNode("/def:kml/def:Document/def:Placemark[@id='track']/def:LineString/def:coordinates", nsmgr);
                 coordinates.InnerText = coordinates.InnerText + String.Format(CultureInfo.InvariantCulture,
                     "\r\n{0},{1},{2}", longitude, latitude, (AdvancedConfig.LogAltitude ? altitude.ToString(CultureInfo.InvariantCulture) : "0"));
             }
-            doc.Save(currentFileName);
+
+            //Save
+            try
+            {
+                using (var w = XmlWriter.Create(currentFileName, xmlWriterSettings))
+                {
+                    kmlDocument.Save(currentFileName);
+                }
+            }
+            catch (Exception ex)
+            {
+                WriteToTextbox(Resources.err_SavingFile + " " + ex.Message);
+            }
         }
 
-
+        /// <summary>Keeps current GPX XML document</summary>
+        private XmlDocument gpxDocument;
+        /// <summary>Wites GPS data to GPX file</summary>
+        /// <param name="time">Current time for GPS log</param>
+        /// <param name="latitude">Latitude to be logged</param>
+        /// <param name="longitude">Longitude to be logged</param>
+        /// <param name="altitude">Altitude to be loggged</param>
         private void WriteToGpxFile(DateTime time, double latitude, double longitude, double altitude)
         {
-            XmlDocument doc = new XmlDocument();
+            //Get file path
             if (currentFileName == null)
             {
                 currentFileName = Path.Combine(AdvancedConfig.LogFileLocation,
                                                time.ToLocalTime().ToString("yyyyMMdd_HHmmss",
                                                                            CultureInfo.InvariantCulture) + ".gpx");
+                gpxDocument = null;
             }
 
+            //Ensure folder for file
             if (!File.Exists(currentFileName))
             {
 
@@ -858,65 +939,111 @@ namespace GPSTracka
                     }
 
                 }
+            }
+            //Load the file
+            else if (gpxDocument == null)
+            {
+                gpxDocument = new XmlDocument();
+                try
+                {
+                    gpxDocument.Load(currentFileName);
+                }
+                catch (Exception ex)
+                {
+                    WriteToTextbox(string.Format("Error loading XML file {0}: {1}", currentFileName, ex.Message));
+                    gpxDocument = null;
+                }
+            }
 
-                StreamWriter stream = File.CreateText(currentFileName);
-                stream.WriteLine(@"<?xml version=""1.0""?>");
-                stream.WriteLine(@"<gpx
+            //Create XML document (when necessary)
+            if (gpxDocument == null)
+            {
+                gpxDocument = new XmlDocument();
+                StringBuilder b = new StringBuilder();
+                b.Append("<?xml version=\"1.0\"?>");
+                b.Append(@"<gpx
                              version=""1.0""
                              creator=""GPSTracka - http://www.mendhak.com/""
                              xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance""
                              xmlns=""" + GpxNs + @"""
                              xsi:schemaLocation=""http://www.topografix.com/GPX/1/0 http://www.topografix.com/GPX/1/0/gpx.xsd"">");
-                stream.WriteLine("<time>" + time.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ", CultureInfo.InvariantCulture) + "</time>");
+                b.AppendFormat(System.Globalization.CultureInfo.InvariantCulture,
+                               "<time>{0:yyyy-MM-ddTHH:mm:ssZ}</time>", time.ToUniversalTime());
                 if (AdvancedConfig.TrackType == TrackType.Track)
                 {
-                    stream.WriteLine("<trk>");
-                    stream.WriteLine("<trkseg/>");
-                    stream.WriteLine("</trk>");
+                    b.Append("<trk>");
+                    b.Append("<trkseg/>");
+                    b.Append("</trk>");
                 }
-                stream.WriteLine("</gpx>");
-                stream.Close();
+                b.Append("</gpx>");
+                gpxDocument.LoadXml(b.ToString());
             }
 
-            doc.Load(currentFileName);
-
+            //Append data about current point
             XmlNode parent;
-            XmlNamespaceManager nsmgr = new XmlNamespaceManager(doc.NameTable);
+            XmlNamespaceManager nsmgr = new XmlNamespaceManager(gpxDocument.NameTable);
             nsmgr.AddNamespace("def", GpxNs);
             if (AdvancedConfig.TrackType == TrackType.Track)
             {
-                parent = doc.SelectSingleNode("/def:gpx/def:trk/def:trkseg", nsmgr);
+                parent = gpxDocument.SelectSingleNode("/def:gpx/def:trk/def:trkseg", nsmgr);
             }
             else
             {
-                parent = doc.SelectSingleNode("/def:gpx", nsmgr);
+                parent = gpxDocument.SelectSingleNode("/def:gpx", nsmgr);
             }
 
-            XmlNode wpt = doc.CreateElement(AdvancedConfig.TrackType == TrackType.Track ? "trkpt" : "wpt", GpxNs);
+            XmlNode wpt = gpxDocument.CreateElement(AdvancedConfig.TrackType == TrackType.Track ? "trkpt" : "wpt", GpxNs);
 
-            XmlAttribute latAttrib = doc.CreateAttribute("lat");
+            XmlAttribute latAttrib = gpxDocument.CreateAttribute("lat");
             latAttrib.Value = latitude.ToString(CultureInfo.InvariantCulture);
             wpt.Attributes.Append(latAttrib);
 
-            XmlAttribute longAttrib = doc.CreateAttribute("lon");
+            XmlAttribute longAttrib = gpxDocument.CreateAttribute("lon");
             longAttrib.Value = longitude.ToString(CultureInfo.InvariantCulture);
             wpt.Attributes.Append(longAttrib);
 
             if (AdvancedConfig.LogAltitude)
             {
-                XmlNode altNode = doc.CreateElement("ele", GpxNs);
+                XmlNode altNode = gpxDocument.CreateElement("ele", GpxNs);
                 altNode.InnerText = altitude.ToString(CultureInfo.InvariantCulture);
                 wpt.AppendChild(altNode);
             }
 
-            XmlNode timeNode = doc.CreateElement("time", GpxNs);
+            XmlNode timeNode = gpxDocument.CreateElement("time", GpxNs);
             timeNode.InnerText = time.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ", CultureInfo.InvariantCulture);
-
             wpt.AppendChild(timeNode);
+
+            object[] formatingValues = new object[]
+            {
+                time.ToUniversalTime(), longitude, latitude, altitude, time, AdvancedConfig.ElevationUnitName, 
+                statistic==null?0.0M: statistic.SumLength * AdvancedConfig.DistanceMultiplier, 
+                AdvancedConfig.DistanceUnitName
+            };
+
+            XmlElement nameEl = gpxDocument.CreateElement("name", GpxNs);
+            nameEl.InnerText = string.Format(AdvancedConfig.KmlNameFormat, formatingValues);
+            wpt.AppendChild(nameEl);
+
+            XmlElement descEl = gpxDocument.CreateElement("desc", GpxNs);
+            descEl.InnerText = string.Format(AdvancedConfig.KmlDescFormat, formatingValues);
+            wpt.AppendChild(descEl);
+
+
 
             parent.AppendChild(wpt);
 
-            doc.Save(currentFileName);
+            //Save
+            try
+            {
+                using (var w = XmlWriter.Create(currentFileName, xmlWriterSettings))
+                {
+                    gpxDocument.Save(w);
+                }
+            }
+            catch (Exception ex)
+            {
+                WriteToTextbox(Resources.err_SavingFile + " " + ex.Message);
+            }
         }
 
         /// <summary>Writes data to CSV file</summary>
@@ -974,6 +1101,7 @@ namespace GPSTracka
                         case 1: fieldval = longitude.ToString(CultureInfo.InvariantCulture); break;
                         case 2: fieldval = altitude.ToString(CultureInfo.InvariantCulture); break;
                         case 3: fieldval = (AdvancedConfig.CsvUtc ? time.ToLocalTime() : time.ToUniversalTime()).ToString(AdvancedConfig.CsvDateFormat, CultureInfo.InvariantCulture); break;
+                        case 4: fieldval = statistic == null ? "" : statistic.SumLength.ToString(CultureInfo.InvariantCulture); break;
                         default: fieldval = ""; break;
                     }
                     if (AdvancedConfig.CsvQualifierUsage == CSVQualifierUsage.Always || (fieldval.IndexOf(AdvancedConfig.CsvSeparator.ToString()) > 0 && AdvancedConfig.CsvQualifierUsage == CSVQualifierUsage.AsNeeded))
@@ -992,7 +1120,10 @@ namespace GPSTracka
             }
         }
 
-
+        /// <summary>Writes information about exception to a text box for user</summary>
+        /// <param name="ex">The exception</param>
+        /// <exception cref="ArgumentNullException"><paramref name="ex"/> is null</exception>
+        /// <threadsafety>This method is thread-safe</threadsafety>
         private void WriteExceptionToTextBox(Exception ex)
         {
             if (ex == null)
@@ -1015,6 +1146,9 @@ namespace GPSTracka
             WriteToTextbox(errorMessage);
         }
 
+        /// <summary>Writes information to text box for user in thread-safe way</summary>
+        /// <param name="theText">Test to be written</param>
+        /// <threadsafety>This method is thread-safe</threadsafety>
         private void WriteToTextbox(string theText)
         {
             if (TextBoxRawLog.InvokeRequired)
@@ -1094,69 +1228,7 @@ namespace GPSTracka
             {
                 if (!gpsRunning)
                 {//Start
-                    if (currentFileName == null || MessageBox.Show(string.Format(Properties.Resources.ContinueInCurrentFile, currentFileName), "GPSTracka", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) != DialogResult.Yes)
-                    {
-                        currentFileName = null;
-                        nmeaFileName = null;
-                        statistic = null;
-                        tickCount = 0;
-                    }
-                    if (currentFileName != null)
-                    {
-                        continuing = true;
-                    }
-
-                    invalidPositionCount = 0;
-                    gpsRunning = true;
-                    timer1.Interval = Convert.ToInt16(AdvancedConfig.PollingInterval) * 1000;
-                    afterStart = true;
-                    //Power requirements
-                    if (!AdvancedConfig.UseWindowsDriver)
-                    {
-                        powerHandle = SetPowerRequirement(AdvancedConfig.ComPort + ":", (int)DevicePowerState.D0, 1,
-                                                          IntPtr.Zero, 0);
-                    }
-                    foreach (string device in AdvancedConfig.KeepAwakeList)
-                    {
-                        if (!device.EndsWith(":"))
-                        {
-                            IntPtr devicePowerHandle = SetPowerRequirement(device + ":", DevicePowerState.D0, 1, IntPtr.Zero, 0);
-                            if (PowerHandles.ContainsKey(device))
-                            {
-                                PowerHandles[device] = devicePowerHandle;
-                            }
-                            else
-                            {
-                                PowerHandles.Add(device, devicePowerHandle);
-                            }
-                        }
-                    }
-                    //if (!PowerPolicyNotify(PPN_UNATTENDEDMODE, 1)) {
-                    //    WriteToTextbox(Properties.Resources.err_PowerPolicyNotifiyFailed);
-                    //}
-                    if (!AdvancedConfig.StartImmediatelly)
-                    {
-                        WriteToTextbox(string.Format(Properties.Resources.WillBeginReading,
-                                                     AdvancedConfig.PollingInterval));
-                    }
-                    Status(Properties.Resources.Starting);
-                    startMenuItem.Text = Properties.Resources.Stop;
-                    if (!AdvancedConfig.StartImmediatelly)
-                    {
-                        timer1.Enabled = true;
-                        tmrCountDown.Enabled = AdvancedConfig.StatusBar;
-                        countDown = timer1.Interval / tmrCountDown.Interval;
-                    }
-                    tmrBeep.Enabled = AdvancedConfig.BeepTimer != 0;
-                    tmrBeep.Interval = AdvancedConfig.BeepTimer * 1000;
-                    if (statistic == null)
-                    {
-                        GpsStatistics.ClearAll(this);
-                    }
-                    else
-                    {
-                        statistic.ShowValues(GpsStatistics.ValueKind.All);
-                    }
+                    StartGpsLogging();
                 }
                 else
                 {//Stop
@@ -1165,48 +1237,11 @@ namespace GPSTracka
                     {
                         return;
                     }
-
-                    startMenuItem.Enabled = false;
-                    startMenuItem.Text = Properties.Resources.PleaseWait;
-                    try
-                    {
-                        GpsStopAndWait();
-                    }
-                    finally
-                    {
-                        gpsRunning = false;
-                        startMenuItem.Enabled = true;
-                        stsStatus[1] = "";
-                        stsStatus[2] = "";
-                        Status(Properties.Resources.Status_Stopped_simple);
-
-                        //Release power requirements
-                        if (powerHandle != IntPtr.Zero)
-                        {
-                            ReleasePowerRequirement(powerHandle);
-                        }
-
-                        powerHandle = IntPtr.Zero;
-                        //PowerPolicyNotify(PPN_UNATTENDEDMODE, 0);
-                        foreach (string device in AdvancedConfig.KeepAwakeList)
-                        {
-                            if (!device.EndsWith(":") && PowerHandles.ContainsKey(device) && PowerHandles[device] != IntPtr.Zero)
-                            {
-                                ReleasePowerRequirement(PowerHandles[device]);
-                                PowerHandles[device] = IntPtr.Zero;
-                            }
-                        }
-
-                        startMenuItem.Text = Properties.Resources.Start;
-                        timer1.Enabled = false;
-                        tmrCountDown.Enabled = false;
-                    }
+                    StopGpsLogging();
                 }
             }
             finally
             {
-                mniSatellites.Enabled = gpsRunning;
-                settingsMenuItem.Enabled = !gpsRunning;
                 if (!gpsRunning)
                 {
                     lastPositionA = null;
@@ -1214,10 +1249,139 @@ namespace GPSTracka
                     tmrBeep.Enabled = false;
                 }
             }
+        }
 
-            if (gpsRunning && AdvancedConfig.StartImmediatelly)
+        /// <summary>Performs all the actions necessary to start GPS logging</summary>
+        /// <remarks>This method is extracted form <see cref="startMenuItem_Click"/></remarks>
+        private void StartGpsLogging()
+        {
+            try
             {
-                timer1_Tick(timer1, e);
+                if (currentFileName == null || MessageBox.Show(string.Format(Properties.Resources.ContinueInCurrentFile, currentFileName), "GPSTracka", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) != DialogResult.Yes)
+                {
+                    currentFileName = null;
+                    nmeaFileName = null;
+                    statistic = null;
+                    gpxDocument = null;
+                    kmlDocument = null;
+                    tickCount = 0;
+                }
+                if (currentFileName != null)
+                {
+                    continuing = true;
+                }
+
+                invalidPositionCount = 0;
+                gpsRunning = true;
+                timer1.Interval = Convert.ToInt16(AdvancedConfig.PollingInterval) * 1000;
+                afterStart = true;
+                //Power requirements
+                if (!AdvancedConfig.UseWindowsDriver)
+                {
+                    powerHandle = SetPowerRequirement(AdvancedConfig.ComPort + ":", (int)DevicePowerState.D0, 1,
+                                                      IntPtr.Zero, 0);
+                }
+                foreach (string device in AdvancedConfig.KeepAwakeList)
+                {
+                    if (!device.EndsWith(":"))
+                    {
+                        IntPtr devicePowerHandle = SetPowerRequirement(device + ":", DevicePowerState.D0, 1, IntPtr.Zero, 0);
+                        if (PowerHandles.ContainsKey(device))
+                        {
+                            PowerHandles[device] = devicePowerHandle;
+                        }
+                        else
+                        {
+                            PowerHandles.Add(device, devicePowerHandle);
+                        }
+                    }
+                }
+                //if (!PowerPolicyNotify(PPN_UNATTENDEDMODE, 1)) {
+                //    WriteToTextbox(Properties.Resources.err_PowerPolicyNotifiyFailed);
+                //}
+                if (!AdvancedConfig.StartImmediatelly)
+                {
+                    WriteToTextbox(string.Format(Properties.Resources.WillBeginReading,
+                                                 AdvancedConfig.PollingInterval));
+                }
+                Status(Properties.Resources.Starting);
+                startMenuItem.Text = Properties.Resources.Stop;
+                if (!AdvancedConfig.StartImmediatelly)
+                {
+                    timer1.Enabled = true;
+                    tmrCountDown.Enabled = AdvancedConfig.StatusBar;
+                    countDown = timer1.Interval / tmrCountDown.Interval;
+                }
+                tmrBeep.Enabled = AdvancedConfig.BeepTimer != 0;
+                tmrBeep.Interval = AdvancedConfig.BeepTimer * 1000;
+                if (statistic == null)
+                {
+                    GpsStatistics.ClearAll(this);
+                }
+                else
+                {
+                    statistic.ShowValues(GpsStatistics.ValueKind.All);
+                }
+            }
+            finally
+            {
+                mniSatellites.Enabled = gpsRunning;
+                settingsMenuItem.Enabled = !gpsRunning;
+                if (gpsRunning && AdvancedConfig.StartImmediatelly)
+                {
+                    timer1_Tick(timer1, EventArgs.Empty);
+                }
+            }
+        }
+
+        /// <summary>Performs actions mecessary to stop GPS logging</summary>
+        /// <remarks>This method is extracted form <see cref="startMenuItem_Click"/></remarks>
+        private void StopGpsLogging()
+        {
+            try
+            {
+                startMenuItem.Enabled = false;
+                startMenuItem.Text = Properties.Resources.PleaseWait;
+                try
+                {
+                    GpsStopAndWait();
+                }
+                finally
+                {
+                    gpsRunning = false;
+                    startMenuItem.Enabled = true;
+                    stsStatus[1] = "";
+                    stsStatus[2] = "";
+                    Status(Properties.Resources.Status_Stopped_simple);
+
+                    //Release power requirements
+                    if (powerHandle != IntPtr.Zero)
+                    {
+                        ReleasePowerRequirement(powerHandle);
+                    }
+
+                    powerHandle = IntPtr.Zero;
+                    //PowerPolicyNotify(PPN_UNATTENDEDMODE, 0);
+                    foreach (string device in AdvancedConfig.KeepAwakeList)
+                    {
+                        if (!device.EndsWith(":") && PowerHandles.ContainsKey(device) && PowerHandles[device] != IntPtr.Zero)
+                        {
+                            ReleasePowerRequirement(PowerHandles[device]);
+                            PowerHandles[device] = IntPtr.Zero;
+                        }
+                    }
+
+                    startMenuItem.Text = Properties.Resources.Start;
+                    timer1.Enabled = false;
+                    tmrCountDown.Enabled = false;
+                    kmlDocument = null; //Reloaded when user choses to continue existing file
+                    gpxDocument = null; //Reloaded when user choses to continue existing file
+                }
+            }
+            finally
+            {
+                mniSatellites.Enabled = gpsRunning;
+                settingsMenuItem.Enabled = !gpsRunning;
             }
         }
 
@@ -1231,9 +1395,6 @@ namespace GPSTracka
             tmrCountDown.Enabled = false;
         }
 
-
-
-
         /// <summary>Stops GPS and sets timer to count down for next GPS run</summary>
         private void StopGps()
         {
@@ -1243,7 +1404,6 @@ namespace GPSTracka
                 StopGpsExtractedDelegate theDelegate = StopGps;
                 BeginInvoke(theDelegate);
                 ////Note: With MS driver managed wrapper we shall NOT stop device from within GPS event handler - it causes unpredicable behavior (deadlocks, device no longer receiving events after start ...)
-                //this.BeginInvoke(new Action(StopGps_Extracted));
             }
             else
             {
@@ -1252,7 +1412,6 @@ namespace GPSTracka
                 {
                     return;
                 }
-
                 try
                 {
                     GpsStopAndWait();
@@ -1278,14 +1437,9 @@ namespace GPSTracka
                     }
                 }
             }
-
-
-
             SetTimerEnabled(timer1, true);
             countDown = timer1.Interval / tmrCountDown.Interval;
             SetTimerEnabled(tmrCountDown, AdvancedConfig.StatusBar);
-
-
         }
 
         /// <summary>Sets value of the <see cref="Timer.Enabled"/> property of given timer in thread safe way</summary>
@@ -1307,8 +1461,6 @@ namespace GPSTracka
                 timer.Enabled = enabled;
             }
         }
-
-
 
         /// <summary>Stops GPS and waits for it to stop</summary>
         private void GpsStopAndWait()
@@ -1340,15 +1492,13 @@ namespace GPSTracka
         }
 
 
-
+        /// <summary>Start GPS receiving</summary>
         private void StartupGps()
         {
             if (InvokeRequired)
             {
                 StartupGpsDelegate theDelegate = new StartupGpsDelegate(StartupGps);
                 BeginInvoke(theDelegate);
-
-                //this.BeginInvoke(new Action(StartupGps));
                 return;
             }
             if (GpsInstance is OpenNetGpsWrapper)
@@ -1404,6 +1554,8 @@ namespace GPSTracka
             }
         }
 
+        /// <summary>Calls <see cref="SystemIdleTimerReset"/> to keep the mobile device active</summary>
+        /// <param name="o">Not used</param>
         private static void KeepDeviceAwake(object o)
         {
             try
@@ -1534,6 +1686,7 @@ namespace GPSTracka
             }
 
             HookGps(false);
+            gpsInstance.Dispose();
             gpsInstance = null;
 
             AdvancedConfig.ComPort = ComboBoxCOMPorts.Text;
@@ -1616,6 +1769,7 @@ namespace GPSTracka
             {
                 stsStatus.Visible = AdvancedConfig.StatusBar;
                 panInfoPane.Visible = AdvancedConfig.InfoPane;
+                panHelper.Height = AdvancedConfig.MainFormBottomEmptySpace;
             }
             frm.Close();
         }
@@ -1651,6 +1805,8 @@ namespace GPSTracka
             }
         }
 
+        /// <summary>Shows given <see cref="Panel"/> control and sets up menu accordingly</summary>
+        /// <param name="panel">A <see cref="Panel"/></param>
         private void ShowPanel(Panel panel)
         {
             SuspendLayout();
@@ -1659,40 +1815,33 @@ namespace GPSTracka
                 panel.Location = new Point(0, 0);
                 panel.Dock = DockStyle.Fill;
                 panel.Visible = true;
-                switch (panel.Name)
+                if (panel == settingsPanel)
                 {
-                    case "settingsPanel":
-                        {
-                            if (Menu != settingsPanelMenu)
-                            {
-                                Menu = settingsPanelMenu;
-                            }
-                            break;
-                        }
-                    case "aboutPanel":
-                        {
-                            if (Menu != aboutPanelMenu)
-                            {
-                                Menu = aboutPanelMenu;
-                            }
-                            break;
-                        }
-                    case "mainPanel":
-                        {
-                            if (Menu != mainPanelMenu)
-                            {
-                                Menu = mainPanelMenu;
-                            }
-                            break;
-                        }
-                    default:
-                        {
-                            if (Menu != mainPanelMenu)
-                            {
-                                Menu = mainPanelMenu;
-                            }
-                            break;
-                        }
+                    if (Menu != settingsPanelMenu)
+                    {
+                        Menu = settingsPanelMenu;
+                    }
+                }
+                else if (panel == aboutPanel)
+                {
+                    if (Menu != aboutPanelMenu)
+                    {
+                        Menu = aboutPanelMenu;
+                    }
+                }
+                else if (panel == mainPanel)
+                {
+                    if (Menu != mainPanelMenu)
+                    {
+                        Menu = mainPanelMenu;
+                    }
+                }
+                else
+                {
+                    if (Menu != mainPanelMenu)
+                    {
+                        Menu = mainPanelMenu;
+                    }
                 }
             }
             finally
@@ -1701,6 +1850,8 @@ namespace GPSTracka
             }
         }
 
+        /// <summary>Hides given <see cref="Panel"/> control</summary>
+        /// <param name="panel">A <see cref="Panel"/> to hide</param>
         private void HidePanel(Panel panel)
         {
             panel.Dock = DockStyle.None;
@@ -1712,7 +1863,7 @@ namespace GPSTracka
         {
             if (this.currentFileName == null)
             {
-                MessageBox.Show("No statistic to save.", "Save statistic", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                MessageBox.Show(Resources.msg_NoStatisticToSave, Resources.SaveStatistic, MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
                 return;
             }
             statistic.Save(System.IO.Path.Combine(System.IO.Path.GetDirectoryName(this.currentFileName), System.IO.Path.GetFileNameWithoutExtension(this.currentFileName) + "_stat.txt"));
@@ -1771,65 +1922,5 @@ namespace GPSTracka
                 lastKnownElevation = gpsPoint.Altitude;
             }
         }
-
-
-
-
-
-
-
-
-        //private void TrackerForm_Resize(object sender, EventArgs e)
-        //{
-        //    //This is to prevent StatusBars from being covered by main menu (not a 100% successfull)
-        //    if (this.mainPanel.Dock == DockStyle.Fill && active /*&& !this.IsDisposed*/)
-        //    {
-        //        this.SuspendLayout();
-        //        this.ResumeLayout(true);
-        //        var th = new System.Threading.Thread(new System.Threading.ThreadStart(() =>
-        //                                                                                  {
-        //                                                                                      System.Threading.Thread.
-        //                                                                                          Sleep(1000);
-
-        //                                                                                      if (
-        //                                                                                          //this.IsDisposed) return;
-        //                                                                                          this.Invoke(
-        //                                                                                              new Action<string>
-        //                                                                                                  ((s) =>
-        //                                                                                                       {
-        //                                                                                                           //if (this.IsDisposed) return;
-        //                                                                                                           this.
-        //                                                                                                               SuspendLayout
-        //                                                                                                               ();
-        //                                                                                                           this.
-        //                                                                                                               ResumeLayout
-        //                                                                                                               (true);
-        //                                                                                                       }
-        //                                                                                      ;))) 
-        //                                                                                  };))
-        //    }
-
-
-
-
-        //    //}));
-        //        th.Start();
-        //    }
-        //}
-
-
-
-
-        ///// <summary>Keeps rack if form is active or not</summary>
-        //private bool active;
-        //private void TrackerForm_Activated(object sender, EventArgs e)
-        //{
-        //    active = true;
-        //}
-
-        //private void TrackerForm_Deactivate(object sender, EventArgs e)
-        //{
-        //    active = false;
-        //}
     }
 }

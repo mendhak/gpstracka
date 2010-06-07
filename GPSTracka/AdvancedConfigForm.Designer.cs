@@ -36,8 +36,6 @@
             this.nudAltitudeCorrection = new System.Windows.Forms.NumericUpDown();
             this.chkStartImmediatelly = new System.Windows.Forms.CheckBox();
             this.lblKMLDescFormat = new System.Windows.Forms.Label();
-            this.lblKMLFormattingHelp = new System.Windows.Forms.Label();
-            this.llbStringFormat = new System.Windows.Forms.LinkLabel();
             this.lblKMLNameFormat = new System.Windows.Forms.Label();
             this.lblPointPlacemark = new System.Windows.Forms.Label();
             this.tabMain = new System.Windows.Forms.TabControl();
@@ -63,9 +61,9 @@
             this.cmbSpeedUnit = new System.Windows.Forms.ComboBox();
             this.chkInfoPane = new System.Windows.Forms.CheckBox();
             this.panLogFormat = new System.Windows.Forms.Panel();
+            this.cmdDisplayFormatInfo = new System.Windows.Forms.Button();
             this.lblLogFormat = new System.Windows.Forms.Label();
             this.txtLogFormat = new GPSTracka.MyTextBox();
-            this.lblLogFormatHelp = new System.Windows.Forms.Label();
             this.cmdLogFormatTest = new System.Windows.Forms.Button();
             this.panClearEveryXLInes = new System.Windows.Forms.Panel();
             this.lblClearLog = new System.Windows.Forms.Label();
@@ -79,6 +77,9 @@
             this.tapKML = new System.Windows.Forms.TabPage();
             this.panKML = new System.Windows.Forms.Panel();
             this.copKMLColor = new GPSTracka.ColorPicker();
+            this.panKmlFormatInfo = new System.Windows.Forms.Panel();
+            this.lblKmlAsterisk = new System.Windows.Forms.Label();
+            this.btnKmlFormatInfo = new System.Windows.Forms.Button();
             this.panKMLDescFormat = new System.Windows.Forms.Panel();
             this.txtKMLDescFormat = new GPSTracka.MyTextBox();
             this.cmdTestDesc = new System.Windows.Forms.Button();
@@ -89,10 +90,16 @@
             this.chkSeaLevelAltitude = new System.Windows.Forms.CheckBox();
             this.lblWindowsDriverI = new System.Windows.Forms.Label();
             this.tapDiagnostic = new System.Windows.Forms.TabPage();
-            this.chkNMEA = new System.Windows.Forms.CheckBox();
-            this.lblBeepEvery = new System.Windows.Forms.Label();
+            this.lblEmptyI = new System.Windows.Forms.Label();
+            this.panEmpty = new System.Windows.Forms.Panel();
+            this.nudEmpty = new System.Windows.Forms.NumericUpDown();
+            this.lblEmpty = new System.Windows.Forms.Label();
+            this.lblEmptyPx = new System.Windows.Forms.Label();
+            this.panBeepEvery = new System.Windows.Forms.Panel();
             this.nudBeepEvery = new System.Windows.Forms.NumericUpDown();
+            this.lblBeepEvery = new System.Windows.Forms.Label();
             this.lblBeepEveryS = new System.Windows.Forms.Label();
+            this.chkNMEA = new System.Windows.Forms.CheckBox();
             this.tapCSV = new System.Windows.Forms.TabPage();
             this.panCSVFields = new System.Windows.Forms.Panel();
             this.lstCSVFields = new System.Windows.Forms.ListBox();
@@ -120,6 +127,7 @@
             this.cmbCSVNewLine = new System.Windows.Forms.ComboBox();
             this.txtCSVQualifier = new GPSTracka.MyTextBox();
             this.cmbCSVQualifierUsage = new System.Windows.Forms.ComboBox();
+            this.notFormatInfo = new Microsoft.WindowsCE.Forms.Notification();
             this.panTime.SuspendLayout();
             this.tabMain.SuspendLayout();
             this.tapGeneral.SuspendLayout();
@@ -132,10 +140,13 @@
             this.panLanguage.SuspendLayout();
             this.tapKML.SuspendLayout();
             this.panKML.SuspendLayout();
+            this.panKmlFormatInfo.SuspendLayout();
             this.panKMLDescFormat.SuspendLayout();
             this.panKMLNameFormat.SuspendLayout();
             this.tabWindowsDriver.SuspendLayout();
             this.tapDiagnostic.SuspendLayout();
+            this.panEmpty.SuspendLayout();
+            this.panBeepEvery.SuspendLayout();
             this.tapCSV.SuspendLayout();
             this.panCSVFields.SuspendLayout();
             this.panCSVBottom.SuspendLayout();
@@ -172,8 +183,8 @@
             // 
             // optTimeSystem
             // 
-            resources.ApplyResources(this.optTimeSystem, "optTimeSystem");
             this.optTimeSystem.Checked = true;
+            resources.ApplyResources(this.optTimeSystem, "optTimeSystem");
             this.optTimeSystem.Name = "optTimeSystem";
             // 
             // optTimeGPS
@@ -211,20 +222,6 @@
             resources.ApplyResources(this.lblKMLDescFormat, "lblKMLDescFormat");
             this.lblKMLDescFormat.Name = "lblKMLDescFormat";
             // 
-            // lblKMLFormattingHelp
-            // 
-            resources.ApplyResources(this.lblKMLFormattingHelp, "lblKMLFormattingHelp");
-            this.lblKMLFormattingHelp.BackColor = System.Drawing.SystemColors.Info;
-            this.lblKMLFormattingHelp.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.lblKMLFormattingHelp.Name = "lblKMLFormattingHelp";
-            // 
-            // llbStringFormat
-            // 
-            resources.ApplyResources(this.llbStringFormat, "llbStringFormat");
-            this.llbStringFormat.BackColor = System.Drawing.SystemColors.Info;
-            this.llbStringFormat.Name = "llbStringFormat";
-            this.llbStringFormat.Click += new System.EventHandler(this.llbStringFormat_Click);
-            // 
             // lblKMLNameFormat
             // 
             resources.ApplyResources(this.lblKMLNameFormat, "lblKMLNameFormat");
@@ -237,20 +234,20 @@
             // 
             // tabMain
             // 
-            resources.ApplyResources(this.tabMain, "tabMain");
             this.tabMain.Controls.Add(this.tapGeneral);
             this.tabMain.Controls.Add(this.tapDisplay);
             this.tabMain.Controls.Add(this.tapKML);
             this.tabMain.Controls.Add(this.tabWindowsDriver);
             this.tabMain.Controls.Add(this.tapDiagnostic);
             this.tabMain.Controls.Add(this.tapCSV);
+            resources.ApplyResources(this.tabMain, "tabMain");
             this.tabMain.Name = "tabMain";
             this.tabMain.SelectedIndex = 0;
             // 
             // tapGeneral
             // 
-            resources.ApplyResources(this.tapGeneral, "tapGeneral");
             this.tapGeneral.Controls.Add(this.panGeneral);
+            resources.ApplyResources(this.tapGeneral, "tapGeneral");
             this.tapGeneral.Name = "tapGeneral";
             // 
             // panGeneral
@@ -328,8 +325,8 @@
             // 
             // tapDisplay
             // 
-            resources.ApplyResources(this.tapDisplay, "tapDisplay");
             this.tapDisplay.Controls.Add(this.panDisplay);
+            resources.ApplyResources(this.tapDisplay, "tapDisplay");
             this.tapDisplay.Name = "tapDisplay";
             // 
             // panDisplay
@@ -345,13 +342,13 @@
             // 
             // panUnits
             // 
-            resources.ApplyResources(this.panUnits, "panUnits");
             this.panUnits.Controls.Add(this.lblSpeedUnit);
             this.panUnits.Controls.Add(this.cmbElevationUnit);
             this.panUnits.Controls.Add(this.lblElevationUnit);
             this.panUnits.Controls.Add(this.cmbDistanceUnit);
             this.panUnits.Controls.Add(this.lblDistanceUnit);
             this.panUnits.Controls.Add(this.cmbSpeedUnit);
+            resources.ApplyResources(this.panUnits, "panUnits");
             this.panUnits.Name = "panUnits";
             // 
             // lblSpeedUnit
@@ -361,11 +358,11 @@
             // 
             // cmbElevationUnit
             // 
-            resources.ApplyResources(this.cmbElevationUnit, "cmbElevationUnit");
             this.cmbElevationUnit.Items.Add(resources.GetString("cmbElevationUnit.Items"));
             this.cmbElevationUnit.Items.Add(resources.GetString("cmbElevationUnit.Items1"));
             this.cmbElevationUnit.Items.Add(resources.GetString("cmbElevationUnit.Items2"));
             this.cmbElevationUnit.Items.Add(resources.GetString("cmbElevationUnit.Items3"));
+            resources.ApplyResources(this.cmbElevationUnit, "cmbElevationUnit");
             this.cmbElevationUnit.Name = "cmbElevationUnit";
             // 
             // lblElevationUnit
@@ -375,12 +372,12 @@
             // 
             // cmbDistanceUnit
             // 
-            resources.ApplyResources(this.cmbDistanceUnit, "cmbDistanceUnit");
             this.cmbDistanceUnit.Items.Add(resources.GetString("cmbDistanceUnit.Items"));
             this.cmbDistanceUnit.Items.Add(resources.GetString("cmbDistanceUnit.Items1"));
             this.cmbDistanceUnit.Items.Add(resources.GetString("cmbDistanceUnit.Items2"));
             this.cmbDistanceUnit.Items.Add(resources.GetString("cmbDistanceUnit.Items3"));
             this.cmbDistanceUnit.Items.Add(resources.GetString("cmbDistanceUnit.Items4"));
+            resources.ApplyResources(this.cmbDistanceUnit, "cmbDistanceUnit");
             this.cmbDistanceUnit.Name = "cmbDistanceUnit";
             // 
             // lblDistanceUnit
@@ -390,11 +387,11 @@
             // 
             // cmbSpeedUnit
             // 
-            resources.ApplyResources(this.cmbSpeedUnit, "cmbSpeedUnit");
             this.cmbSpeedUnit.Items.Add(resources.GetString("cmbSpeedUnit.Items"));
             this.cmbSpeedUnit.Items.Add(resources.GetString("cmbSpeedUnit.Items1"));
             this.cmbSpeedUnit.Items.Add(resources.GetString("cmbSpeedUnit.Items2"));
             this.cmbSpeedUnit.Items.Add(resources.GetString("cmbSpeedUnit.Items3"));
+            resources.ApplyResources(this.cmbSpeedUnit, "cmbSpeedUnit");
             this.cmbSpeedUnit.Name = "cmbSpeedUnit";
             // 
             // chkInfoPane
@@ -404,12 +401,18 @@
             // 
             // panLogFormat
             // 
-            resources.ApplyResources(this.panLogFormat, "panLogFormat");
+            this.panLogFormat.Controls.Add(this.cmdDisplayFormatInfo);
             this.panLogFormat.Controls.Add(this.lblLogFormat);
             this.panLogFormat.Controls.Add(this.txtLogFormat);
-            this.panLogFormat.Controls.Add(this.lblLogFormatHelp);
             this.panLogFormat.Controls.Add(this.cmdLogFormatTest);
+            resources.ApplyResources(this.panLogFormat, "panLogFormat");
             this.panLogFormat.Name = "panLogFormat";
+            // 
+            // cmdDisplayFormatInfo
+            // 
+            resources.ApplyResources(this.cmdDisplayFormatInfo, "cmdDisplayFormatInfo");
+            this.cmdDisplayFormatInfo.Name = "cmdDisplayFormatInfo";
+            this.cmdDisplayFormatInfo.Click += new System.EventHandler(this.btnFormatInfo_Click);
             // 
             // lblLogFormat
             // 
@@ -421,13 +424,6 @@
             resources.ApplyResources(this.txtLogFormat, "txtLogFormat");
             this.txtLogFormat.Name = "txtLogFormat";
             // 
-            // lblLogFormatHelp
-            // 
-            resources.ApplyResources(this.lblLogFormatHelp, "lblLogFormatHelp");
-            this.lblLogFormatHelp.BackColor = System.Drawing.SystemColors.Info;
-            this.lblLogFormatHelp.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.lblLogFormatHelp.Name = "lblLogFormatHelp";
-            // 
             // cmdLogFormatTest
             // 
             resources.ApplyResources(this.cmdLogFormatTest, "cmdLogFormatTest");
@@ -435,11 +431,11 @@
             // 
             // panClearEveryXLInes
             // 
-            resources.ApplyResources(this.panClearEveryXLInes, "panClearEveryXLInes");
             this.panClearEveryXLInes.Controls.Add(this.lblClearLog);
             this.panClearEveryXLInes.Controls.Add(this.lblLines);
             this.panClearEveryXLInes.Controls.Add(this.lblClearInfo);
             this.panClearEveryXLInes.Controls.Add(this.nudMaxLogLen);
+            resources.ApplyResources(this.panClearEveryXLInes, "panClearEveryXLInes");
             this.panClearEveryXLInes.Name = "panClearEveryXLInes";
             // 
             // lblClearLog
@@ -476,9 +472,9 @@
             // 
             // panLanguage
             // 
-            resources.ApplyResources(this.panLanguage, "panLanguage");
             this.panLanguage.Controls.Add(this.cmbLanguage);
             this.panLanguage.Controls.Add(this.lblLanguage);
+            resources.ApplyResources(this.panLanguage, "panLanguage");
             this.panLanguage.Name = "panLanguage";
             // 
             // cmbLanguage
@@ -493,16 +489,15 @@
             // 
             // tapKML
             // 
-            resources.ApplyResources(this.tapKML, "tapKML");
             this.tapKML.Controls.Add(this.panKML);
+            resources.ApplyResources(this.tapKML, "tapKML");
             this.tapKML.Name = "tapKML";
             // 
             // panKML
             // 
             resources.ApplyResources(this.panKML, "panKML");
             this.panKML.Controls.Add(this.copKMLColor);
-            this.panKML.Controls.Add(this.llbStringFormat);
-            this.panKML.Controls.Add(this.lblKMLFormattingHelp);
+            this.panKML.Controls.Add(this.panKmlFormatInfo);
             this.panKML.Controls.Add(this.panKMLDescFormat);
             this.panKML.Controls.Add(this.panKMLNameFormat);
             this.panKML.Controls.Add(this.lblPointPlacemark);
@@ -513,12 +508,31 @@
             resources.ApplyResources(this.copKMLColor, "copKMLColor");
             this.copKMLColor.Name = "copKMLColor";
             // 
+            // panKmlFormatInfo
+            // 
+            this.panKmlFormatInfo.Controls.Add(this.lblKmlAsterisk);
+            this.panKmlFormatInfo.Controls.Add(this.btnKmlFormatInfo);
+            resources.ApplyResources(this.panKmlFormatInfo, "panKmlFormatInfo");
+            this.panKmlFormatInfo.Name = "panKmlFormatInfo";
+            // 
+            // lblKmlAsterisk
+            // 
+            this.lblKmlAsterisk.BackColor = System.Drawing.SystemColors.Info;
+            resources.ApplyResources(this.lblKmlAsterisk, "lblKmlAsterisk");
+            this.lblKmlAsterisk.Name = "lblKmlAsterisk";
+            // 
+            // btnKmlFormatInfo
+            // 
+            resources.ApplyResources(this.btnKmlFormatInfo, "btnKmlFormatInfo");
+            this.btnKmlFormatInfo.Name = "btnKmlFormatInfo";
+            this.btnKmlFormatInfo.Click += new System.EventHandler(this.btnFormatInfo_Click);
+            // 
             // panKMLDescFormat
             // 
-            resources.ApplyResources(this.panKMLDescFormat, "panKMLDescFormat");
             this.panKMLDescFormat.Controls.Add(this.txtKMLDescFormat);
             this.panKMLDescFormat.Controls.Add(this.lblKMLDescFormat);
             this.panKMLDescFormat.Controls.Add(this.cmdTestDesc);
+            resources.ApplyResources(this.panKMLDescFormat, "panKMLDescFormat");
             this.panKMLDescFormat.Name = "panKMLDescFormat";
             // 
             // txtKMLDescFormat
@@ -534,10 +548,10 @@
             // 
             // panKMLNameFormat
             // 
-            resources.ApplyResources(this.panKMLNameFormat, "panKMLNameFormat");
             this.panKMLNameFormat.Controls.Add(this.txtKMLNameFormat);
             this.panKMLNameFormat.Controls.Add(this.lblKMLNameFormat);
             this.panKMLNameFormat.Controls.Add(this.cmdTestName);
+            resources.ApplyResources(this.panKMLNameFormat, "panKMLNameFormat");
             this.panKMLNameFormat.Name = "panKMLNameFormat";
             // 
             // txtKMLNameFormat
@@ -571,21 +585,53 @@
             // tapDiagnostic
             // 
             resources.ApplyResources(this.tapDiagnostic, "tapDiagnostic");
+            this.tapDiagnostic.Controls.Add(this.lblEmptyI);
+            this.tapDiagnostic.Controls.Add(this.panEmpty);
+            this.tapDiagnostic.Controls.Add(this.panBeepEvery);
             this.tapDiagnostic.Controls.Add(this.chkNMEA);
-            this.tapDiagnostic.Controls.Add(this.lblBeepEvery);
-            this.tapDiagnostic.Controls.Add(this.nudBeepEvery);
-            this.tapDiagnostic.Controls.Add(this.lblBeepEveryS);
             this.tapDiagnostic.Name = "tapDiagnostic";
             // 
-            // chkNMEA
+            // lblEmptyI
             // 
-            resources.ApplyResources(this.chkNMEA, "chkNMEA");
-            this.chkNMEA.Name = "chkNMEA";
+            this.lblEmptyI.BackColor = System.Drawing.SystemColors.Info;
+            resources.ApplyResources(this.lblEmptyI, "lblEmptyI");
+            this.lblEmptyI.Name = "lblEmptyI";
             // 
-            // lblBeepEvery
+            // panEmpty
             // 
-            resources.ApplyResources(this.lblBeepEvery, "lblBeepEvery");
-            this.lblBeepEvery.Name = "lblBeepEvery";
+            this.panEmpty.Controls.Add(this.nudEmpty);
+            this.panEmpty.Controls.Add(this.lblEmpty);
+            this.panEmpty.Controls.Add(this.lblEmptyPx);
+            resources.ApplyResources(this.panEmpty, "panEmpty");
+            this.panEmpty.Name = "panEmpty";
+            // 
+            // nudEmpty
+            // 
+            resources.ApplyResources(this.nudEmpty, "nudEmpty");
+            this.nudEmpty.Maximum = new decimal(new int[] {
+            600,
+            0,
+            0,
+            0});
+            this.nudEmpty.Name = "nudEmpty";
+            // 
+            // lblEmpty
+            // 
+            resources.ApplyResources(this.lblEmpty, "lblEmpty");
+            this.lblEmpty.Name = "lblEmpty";
+            // 
+            // lblEmptyPx
+            // 
+            resources.ApplyResources(this.lblEmptyPx, "lblEmptyPx");
+            this.lblEmptyPx.Name = "lblEmptyPx";
+            // 
+            // panBeepEvery
+            // 
+            this.panBeepEvery.Controls.Add(this.nudBeepEvery);
+            this.panBeepEvery.Controls.Add(this.lblBeepEvery);
+            this.panBeepEvery.Controls.Add(this.lblBeepEveryS);
+            resources.ApplyResources(this.panBeepEvery, "panBeepEvery");
+            this.panBeepEvery.Name = "panBeepEvery";
             // 
             // nudBeepEvery
             // 
@@ -597,17 +643,27 @@
             0});
             this.nudBeepEvery.Name = "nudBeepEvery";
             // 
+            // lblBeepEvery
+            // 
+            resources.ApplyResources(this.lblBeepEvery, "lblBeepEvery");
+            this.lblBeepEvery.Name = "lblBeepEvery";
+            // 
             // lblBeepEveryS
             // 
             resources.ApplyResources(this.lblBeepEveryS, "lblBeepEveryS");
             this.lblBeepEveryS.Name = "lblBeepEveryS";
             // 
+            // chkNMEA
+            // 
+            resources.ApplyResources(this.chkNMEA, "chkNMEA");
+            this.chkNMEA.Name = "chkNMEA";
+            // 
             // tapCSV
             // 
-            resources.ApplyResources(this.tapCSV, "tapCSV");
             this.tapCSV.Controls.Add(this.panCSVFields);
             this.tapCSV.Controls.Add(this.panCSVBottom);
             this.tapCSV.Controls.Add(this.panCSV);
+            resources.ApplyResources(this.tapCSV, "tapCSV");
             this.tapCSV.Name = "tapCSV";
             // 
             // panCSVFields
@@ -672,11 +728,11 @@
             // 
             // panCSVBottom
             // 
-            resources.ApplyResources(this.panCSVBottom, "panCSVBottom");
             this.panCSVBottom.Controls.Add(this.chkCSVUTC);
             this.panCSVBottom.Controls.Add(this.cmbDateFormat);
             this.panCSVBottom.Controls.Add(this.txtCSVDateFormat);
             this.panCSVBottom.Controls.Add(this.lblCSVDateFormat);
+            resources.ApplyResources(this.panCSVBottom, "panCSVBottom");
             this.panCSVBottom.Name = "panCSVBottom";
             // 
             // chkCSVUTC
@@ -702,7 +758,6 @@
             // 
             // panCSV
             // 
-            resources.ApplyResources(this.panCSV, "panCSV");
             this.panCSV.Controls.Add(this.lblCSVSeparator);
             this.panCSV.Controls.Add(this.lblCSVQualifier);
             this.panCSV.Controls.Add(this.cmdCSVHeaderTab);
@@ -714,6 +769,7 @@
             this.panCSV.Controls.Add(this.cmbCSVNewLine);
             this.panCSV.Controls.Add(this.txtCSVQualifier);
             this.panCSV.Controls.Add(this.cmbCSVQualifierUsage);
+            resources.ApplyResources(this.panCSV, "panCSV");
             this.panCSV.Name = "panCSV";
             // 
             // lblCSVSeparator
@@ -760,10 +816,10 @@
             // 
             // cmbCSVNewLine
             // 
-            resources.ApplyResources(this.cmbCSVNewLine, "cmbCSVNewLine");
             this.cmbCSVNewLine.Items.Add(resources.GetString("cmbCSVNewLine.Items"));
             this.cmbCSVNewLine.Items.Add(resources.GetString("cmbCSVNewLine.Items1"));
             this.cmbCSVNewLine.Items.Add(resources.GetString("cmbCSVNewLine.Items2"));
+            resources.ApplyResources(this.cmbCSVNewLine, "cmbCSVNewLine");
             this.cmbCSVNewLine.Name = "cmbCSVNewLine";
             // 
             // txtCSVQualifier
@@ -773,11 +829,16 @@
             // 
             // cmbCSVQualifierUsage
             // 
-            resources.ApplyResources(this.cmbCSVQualifierUsage, "cmbCSVQualifierUsage");
             this.cmbCSVQualifierUsage.Items.Add(resources.GetString("cmbCSVQualifierUsage.Items"));
             this.cmbCSVQualifierUsage.Items.Add(resources.GetString("cmbCSVQualifierUsage.Items1"));
             this.cmbCSVQualifierUsage.Items.Add(resources.GetString("cmbCSVQualifierUsage.Items2"));
+            resources.ApplyResources(this.cmbCSVQualifierUsage, "cmbCSVQualifierUsage");
             this.cmbCSVQualifierUsage.Name = "cmbCSVQualifierUsage";
+            // 
+            // notFormatInfo
+            // 
+            resources.ApplyResources(this.notFormatInfo, "notFormatInfo");
+            this.notFormatInfo.BalloonChanged += new Microsoft.WindowsCE.Forms.BalloonChangedEventHandler(this.notFormatInfo_BalloonChanged);
             // 
             // AdvancedConfigForm
             // 
@@ -789,6 +850,7 @@
             this.Menu = this.mmnMain;
             this.MinimizeBox = false;
             this.Name = "AdvancedConfigForm";
+            this.Closed += new System.EventHandler(this.AdvancedConfigForm_Closed);
             this.panTime.ResumeLayout(false);
             this.tabMain.ResumeLayout(false);
             this.tapGeneral.ResumeLayout(false);
@@ -801,10 +863,13 @@
             this.panLanguage.ResumeLayout(false);
             this.tapKML.ResumeLayout(false);
             this.panKML.ResumeLayout(false);
+            this.panKmlFormatInfo.ResumeLayout(false);
             this.panKMLDescFormat.ResumeLayout(false);
             this.panKMLNameFormat.ResumeLayout(false);
             this.tabWindowsDriver.ResumeLayout(false);
             this.tapDiagnostic.ResumeLayout(false);
+            this.panEmpty.ResumeLayout(false);
+            this.panBeepEvery.ResumeLayout(false);
             this.tapCSV.ResumeLayout(false);
             this.panCSVFields.ResumeLayout(false);
             this.panCSVBottom.ResumeLayout(false);
@@ -826,8 +891,6 @@
         private System.Windows.Forms.CheckBox chkStartImmediatelly;
         private System.Windows.Forms.Label lblKMLDescFormat;
         private MyTextBox txtKMLDescFormat;
-        private System.Windows.Forms.Label lblKMLFormattingHelp;
-        private System.Windows.Forms.LinkLabel llbStringFormat;
         private MyTextBox txtKMLNameFormat;
         private System.Windows.Forms.Label lblKMLNameFormat;
         private System.Windows.Forms.Label lblPointPlacemark;
@@ -863,7 +926,6 @@
         private System.Windows.Forms.Label lblLogFormat;
         private MyTextBox txtLogFormat;
         private System.Windows.Forms.Button cmdLogFormatTest;
-        private System.Windows.Forms.Label lblLogFormatHelp;
         private System.Windows.Forms.CheckBox chkInfoPane;
         private System.Windows.Forms.Label lblSpeedUnit;
         private System.Windows.Forms.ComboBox cmbSpeedUnit;
@@ -909,5 +971,16 @@
         private System.Windows.Forms.Panel panLanguage;
         private System.Windows.Forms.ComboBox cmbLanguage;
         private System.Windows.Forms.Label lblLanguage;
+        private System.Windows.Forms.Label lblKmlAsterisk;
+        private System.Windows.Forms.Panel panBeepEvery;
+        private System.Windows.Forms.Button btnKmlFormatInfo;
+        private Microsoft.WindowsCE.Forms.Notification notFormatInfo;
+        private System.Windows.Forms.Panel panKmlFormatInfo;
+        private System.Windows.Forms.Button cmdDisplayFormatInfo;
+        private System.Windows.Forms.Panel panEmpty;
+        private System.Windows.Forms.NumericUpDown nudEmpty;
+        private System.Windows.Forms.Label lblEmpty;
+        private System.Windows.Forms.Label lblEmptyPx;
+        private System.Windows.Forms.Label lblEmptyI;
     }
 }

@@ -13,7 +13,7 @@
     <PlatformFamilyName>PocketPC</PlatformFamilyName>
     <PlatformID>b2c48bd2-963d-4549-9169-1fa021dce484</PlatformID>
     <OSVersion>5.2</OSVersion>
-    <DeployDirSuffix>GPSTracka</DeployDirSuffix>
+    <DeployDirSuffix>Storage Card\Temp\Debug\GPSTrackA</DeployDirSuffix>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <NativePlatformName>Windows Mobile 6 Professional SDK</NativePlatformName>
     <FormFactorID>
@@ -25,6 +25,7 @@
     <SccProvider>SAK</SccProvider>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>GpsTrackaKeyFile.snk</AssemblyOriginatorKeyFile>
+    <DeployDirPrefix>\</DeployDirPrefix>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -91,34 +92,39 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdvancedConfig.cs">
+    <Compile Include="AdvancedConfig.cs" />
+    <Compile Include="AdvancedConfigForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdvancedConfig.Designer.cs">
-      <DependentUpon>AdvancedConfig.cs</DependentUpon>
+    <Compile Include="AdvancedConfigForm.Designer.cs">
+      <DependentUpon>AdvancedConfigForm.cs</DependentUpon>
     </Compile>
     <Compile Include="BeepWrapper.cs" />
-    <Compile Include="GpsPoint.cs" />
+    <Compile Include="Gps\GpsPoint.cs" />
     <Compile Include="GpsStatistics.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GPSWrapper.cs" />
-    <Compile Include="MyTextBox.cs">
+    <Compile Include="Gps\GpsPosition.cs" />
+    <Compile Include="Gps\GpsProvider.cs" />
+    <Compile Include="Gps\GpsSatellite.cs" />
+    <Compile Include="Gps\MSGpsWrapper.cs" />
+    <Compile Include="Controls\MyTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Gps\OpenNetGpsWrapper.cs" />
     <Compile Include="SattelitesView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SattelitesView.Designer.cs">
       <DependentUpon>SattelitesView.cs</DependentUpon>
     </Compile>
-    <Compile Include="StatusBarWithItems.cs">
+    <Compile Include="Controls\StatusBarWithItems.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ColorPicker.cs">
+    <Compile Include="Controls\ColorPicker.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ColorPicker.Designer.cs">
+    <Compile Include="Controls\ColorPicker.Designer.cs">
       <DependentUpon>ColorPicker.cs</DependentUpon>
     </Compile>
     <Compile Include="ConfigurationManager.cs" />
@@ -136,16 +142,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AdvancedConfig.cs.resx">
-      <DependentUpon>AdvancedConfig.cs</DependentUpon>
+    <EmbeddedResource Include="AdvancedConfigForm.cs.resx">
+      <DependentUpon>AdvancedConfigForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdvancedConfig.resx">
-      <DependentUpon>AdvancedConfig.cs</DependentUpon>
+    <EmbeddedResource Include="AdvancedConfigForm.resx">
+      <DependentUpon>AdvancedConfigForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ColorPicker.cs.resx">
+    <EmbeddedResource Include="Controls\ColorPicker.cs.resx">
       <DependentUpon>ColorPicker.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ColorPicker.resx">
+    <EmbeddedResource Include="Controls\ColorPicker.resx">
       <DependentUpon>ColorPicker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FolderBrowseDialog.cs.resx">
@@ -154,13 +160,15 @@
     <EmbeddedResource Include="FolderBrowseDialog.resx">
       <DependentUpon>FolderBrowseDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyTextBox.cs.resx">
+    <EmbeddedResource Include="Controls\MyTextBox.cs.resx">
       <DependentUpon>MyTextBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyTextBox.resx">
+    <EmbeddedResource Include="Controls\MyTextBox.resx">
       <DependentUpon>MyTextBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.cs.resx" />
+    <EmbeddedResource Include="Properties\Resources.cs.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="SattelitesView.cs.resx">
       <DependentUpon>SattelitesView.cs</DependentUpon>
     </EmbeddedResource>
@@ -194,6 +202,7 @@
     <Content Include="Help\GPSTracka.htm">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\tip.ico" />
     <None Include="GpsTrackaKeyFile.snk" />
     <None Include="logo.jpg" />
     <None Include="Resources\eventlogInfo.ico" />

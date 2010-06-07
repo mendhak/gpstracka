@@ -7,7 +7,7 @@ using System.Windows.Forms;
 namespace GPSTracka
 {
     /// <summary><see cref="StatusBar"/> with intems</summary>
-    class ItemsStatusBar : StatusBar
+    class ItemsStatusBar : Label
     {
         public ItemsStatusBar()
             : base()
