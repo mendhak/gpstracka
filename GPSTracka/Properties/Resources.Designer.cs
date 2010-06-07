@@ -141,6 +141,15 @@ namespace GPSTracka.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Distance.
+        /// </summary>
+        internal static string Distance {
+            get {
+                return ResourceManager.GetString("Distance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please select a proper file path.
         /// </summary>
         internal static string err_BadPath {
@@ -323,6 +332,15 @@ namespace GPSTracka.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error saving file:.
+        /// </summary>
+        internal static string err_SavingFile {
+            get {
+                return ResourceManager.GetString("err_SavingFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Select folder, please..
         /// </summary>
         internal static string err_SelectFolderPlease {
@@ -456,6 +474,15 @@ namespace GPSTracka.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No statistic to save..
+        /// </summary>
+        internal static string msg_NoStatisticToSave {
+            get {
+                return ResourceManager.GetString("msg_NoStatisticToSave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Opening....
         /// </summary>
         internal static string Opening {
@@ -533,6 +560,15 @@ namespace GPSTracka.Properties {
         internal static string Satellite_Stopped {
             get {
                 return ResourceManager.GetString("Satellite_Stopped", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save statistic.
+        /// </summary>
+        internal static string SaveStatistic {
+            get {
+                return ResourceManager.GetString("SaveStatistic", resourceCulture);
             }
         }
         

@@ -364,4 +364,16 @@ Value = {1}</value>
   <data name="stat_Saved" xml:space="preserve">
     <value>Saved: {0}</value>
   </data>
+  <data name="msg_NoStatisticToSave" xml:space="preserve">
+    <value>No statistic to save.</value>
+  </data>
+  <data name="SaveStatistic" xml:space="preserve">
+    <value>Save statistic</value>
+  </data>
+  <data name="err_SavingFile" xml:space="preserve">
+    <value>Error saving file:</value>
+  </data>
+  <data name="Distance" xml:space="preserve">
+    <value>Distance</value>
+  </data>
 </root>

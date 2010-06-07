@@ -121,7 +121,7 @@ namespace GPSTracka
         {
             if (snr == 0) return Color.Black;
             if (!active || snr < 10) return Color.Red;
-            if (snr < 37) return Color.Yellow;
+            if (snr <= 20) return Color.Yellow;
             return Color.FromArgb(0, 255, 0);
         }
 
@@ -173,6 +173,7 @@ namespace GPSTracka
 
         private void panPosition_Paint(object sender, PaintEventArgs e)
         {
+            //Paint the big circle
             Rectangle rect;
 
             if (panPosition.ClientRectangle.Width > panPosition.ClientRectangle.Height)
@@ -198,15 +199,18 @@ namespace GPSTracka
                 return;
             }
 
+            //Small circles for satellites
             foreach (var sat in satellites)
             {
+                const int minRadius = 10;
+                const int maxRadius = 25;
                 float elevationPx = (90 - (float)sat.Elevation) / 90 * rect.Width / 2;
                 float azimuthRad = (float)sat.Azimuth * (float)Math.PI / 180;
                 float xPx = elevationPx * (float)Math.Sin(azimuthRad);
                 float yPx = elevationPx * (float)Math.Cos(azimuthRad);
                 int x = rect.Left + rect.Width / 2 + (int)xPx;
                 int y = rect.Top + rect.Height / 2 - (int)yPx;
-                int radius = 10 + 20 * sat.SignalToNoiseRatio / 100;
+                int radius = minRadius + (int)((float)maxRadius * ((float)sat.SignalToNoiseRatio / (float)100));
                 if (sat.SignalToNoiseRatio == 0)
                 {
                     e.Graphics.DrawEllipse(new Pen(Color.Black),

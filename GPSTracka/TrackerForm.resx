@@ -133,7 +133,7 @@
     <value>True</value>
   </data>
   <data name="TextBoxRawLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 214</value>
+    <value>240, 194</value>
   </data>
   <data name="TextBoxRawLog.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -577,7 +577,7 @@
     <value>Bottom</value>
   </data>
   <data name="panInfoPane.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 214</value>
+    <value>0, 194</value>
   </data>
   <data name="panInfoPane.Size" type="System.Drawing.Size, System.Drawing">
     <value>240, 80</value>
@@ -594,8 +594,14 @@
   <data name="&gt;&gt;panInfoPane.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="stsStatus.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
   <data name="stsStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 272</value>
+    <value>0, 274</value>
+  </data>
+  <data name="stsStatus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 20</value>
   </data>
   <data name="stsStatus.Text" xml:space="preserve">
     <value>Press Start</value>
@@ -611,6 +617,27 @@
   </data>
   <data name="&gt;&gt;stsStatus.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="panHelper.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="panHelper.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 294</value>
+  </data>
+  <data name="panHelper.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 0</value>
+  </data>
+  <data name="&gt;&gt;panHelper.Name" xml:space="preserve">
+    <value>panHelper</value>
+  </data>
+  <data name="&gt;&gt;panHelper.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panHelper.Parent" xml:space="preserve">
+    <value>mainPanel</value>
+  </data>
+  <data name="&gt;&gt;panHelper.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="mainPanel.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>

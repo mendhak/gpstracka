@@ -17,9 +17,13 @@ namespace GPSTracka
         /// </summary>
         public enum BeepAlert
         {
+            /// <summary>Hand, stop or critical error</summary>
             Hand = 16,
+            /// <summary>Question</summary>
             Question = 32,
+            /// <summary>Warning</summary>
             Exclamation = 48,
+            /// <summary>Another type</summary>
             Asterisk = 64,
         }
  
