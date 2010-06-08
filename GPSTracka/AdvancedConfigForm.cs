@@ -79,12 +79,17 @@ namespace GPSTracka
             txtCSVDateFormat.Text = AdvancedConfig.CsvDateFormat;
             chkCSVUTC.Checked = AdvancedConfig.CsvUtc;
             if (!string.IsNullOrEmpty(AdvancedConfig.Language))
-                foreach (System.Globalization.CultureInfo ci in cmbLanguage.Items)
+            {
+                foreach (object item in cmbLanguage.Items)
+                {
+                    var ci = item as System.Globalization.CultureInfo;
                     if (ci != null && ci.Name == AdvancedConfig.Language)
                     {
                         cmbLanguage.SelectedItem = ci;
                         break;
                     }
+                }
+            }
         }
 
         private void tmiOK_Click(object sender, EventArgs e)

@@ -845,7 +845,7 @@ namespace GPSTracka
                 kmlDocument.LoadXml(b.ToString());
             }
 
-            //Appedn data about current point
+            //Append data about current point
             XmlNamespaceManager nsmgr = new XmlNamespaceManager(kmlDocument.NameTable);
             nsmgr.AddNamespace("def", KmlNs);
 
@@ -896,7 +896,7 @@ namespace GPSTracka
             {
                 using (var w = XmlWriter.Create(currentFileName, xmlWriterSettings))
                 {
-                    kmlDocument.Save(currentFileName);
+                    kmlDocument.Save(w);
                 }
             }
             catch (Exception ex)
@@ -1235,7 +1235,7 @@ namespace GPSTracka
 
                     if (satelliteWindowOpen)
                     {
-                        return;
+                        return;//Should never happen because we use ShowDialog for satellites window
                     }
                     StopGpsLogging();
                 }

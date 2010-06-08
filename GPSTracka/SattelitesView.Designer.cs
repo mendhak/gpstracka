@@ -29,7 +29,6 @@
             this.mmnMain = new System.Windows.Forms.MainMenu();
             this.mniClose = new System.Windows.Forms.MenuItem();
             this.mniView = new System.Windows.Forms.MenuItem();
-            this.lblI = new System.Windows.Forms.Label();
             this.panSatellites = new System.Windows.Forms.Panel();
             this.bsSatellites = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridTableStyle1 = new System.Windows.Forms.DataGridTableStyle();
@@ -67,11 +66,6 @@
             // 
             resources.ApplyResources(this.mniView, "mniView");
             this.mniView.Click += new System.EventHandler(this.mniView_Click);
-            // 
-            // lblI
-            // 
-            resources.ApplyResources(this.lblI, "lblI");
-            this.lblI.Name = "lblI";
             // 
             // panSatellites
             // 
@@ -173,7 +167,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             resources.ApplyResources(this, "$this");
             this.Controls.Add(this.tabSatellites);
-            this.Controls.Add(this.lblI);
             this.Menu = this.mmnMain;
             this.Name = "SatellitesView";
             this.Closed += new System.EventHandler(this.SatellitesView_Closed);
@@ -188,7 +181,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblI;
         private System.Windows.Forms.Panel panSatellites;
         private System.Windows.Forms.MenuItem mniClose;
         private System.Windows.Forms.BindingSource bsSatellites;

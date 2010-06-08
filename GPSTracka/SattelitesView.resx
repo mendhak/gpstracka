@@ -127,39 +127,15 @@
     <value>Switch &amp;view</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lblI.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="lblI.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="lblI.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 34</value>
-  </data>
-  <data name="lblI.Text" xml:space="preserve">
-    <value>GPS logging is disabled until you close this window.</value>
-  </data>
-  <data name="&gt;&gt;lblI.Name" xml:space="preserve">
-    <value>lblI</value>
-  </data>
-  <data name="&gt;&gt;lblI.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblI.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblI.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="panSatellites.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="panSatellites.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
   <data name="panSatellites.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 211</value>
+    <value>240, 245</value>
   </data>
   <data name="&gt;&gt;panSatellites.Name" xml:space="preserve">
     <value>panSatellites</value>
@@ -195,7 +171,7 @@
     <value>0, 0</value>
   </data>
   <data name="tapStrength.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 211</value>
+    <value>240, 245</value>
   </data>
   <data name="tapStrength.Text" xml:space="preserve">
     <value>Signal strength</value>
@@ -250,7 +226,7 @@
     <value>0, 0</value>
   </data>
   <data name="lvwSatellites.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 208</value>
+    <value>240, 245</value>
   </data>
   <data name="lvwSatellites.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -271,7 +247,7 @@
     <value>0, 0</value>
   </data>
   <data name="tapDetails.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 208</value>
+    <value>240, 245</value>
   </data>
   <data name="tapDetails.Text" xml:space="preserve">
     <value>Details</value>
@@ -295,7 +271,7 @@
     <value>0, 0</value>
   </data>
   <data name="panPosition.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 211</value>
+    <value>240, 245</value>
   </data>
   <data name="&gt;&gt;panPosition.Name" xml:space="preserve">
     <value>panPosition</value>
@@ -313,7 +289,7 @@
     <value>0, 0</value>
   </data>
   <data name="tapSatellites.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 211</value>
+    <value>240, 245</value>
   </data>
   <data name="tapSatellites.Text" xml:space="preserve">
     <value>Satellites</value>
@@ -334,10 +310,10 @@
     <value>Fill</value>
   </data>
   <data name="tabSatellites.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 34</value>
+    <value>0, 0</value>
   </data>
   <data name="tabSatellites.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 234</value>
+    <value>240, 268</value>
   </data>
   <data name="tabSatellites.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>

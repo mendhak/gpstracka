@@ -57,8 +57,8 @@ namespace GPSTracka
         private void GpsSatellite(GpsProvider sender, GpsSatelliteEventArgs e)
         {
             //Don't want the form to lock up if nothing's happening.
-            System.Threading.Thread.Sleep(200); 
-
+            System.Threading.Thread.Sleep(200);
+            if (this.IsDisposed) return;
             if (InvokeRequired)
             {
                 if ((DateTime.Now - lastGpsSatellite).TotalMilliseconds < 200)
@@ -92,6 +92,7 @@ namespace GPSTracka
             {
                 lblId[i].Text = sat.ID.ToString();
                 lblSnr[i].Tag = sat.SignalToNoiseRatio;
+                lblSnr[i].Text = sat.SignalToNoiseRatio.ToString();
                 lblSnr[i].BackColor = GetColorFromSnr(sat.SignalToNoiseRatio, sat.Active);
                 lblSnr[i].ForeColor = Color.FromArgb((byte)~lblSnr[i].BackColor.R, (byte)~lblSnr[i].BackColor.G, (byte)~lblSnr[i].BackColor.B);
 
@@ -100,8 +101,7 @@ namespace GPSTracka
                     sat.SignalToNoiseRatio.ToString(),
                     sat.Active.ToString(),
                     sat.Azimuth.ToString(),
-                    sat.Elevation.ToString()/*,
-                    sat.Channel.ToString()*/
+                    sat.Elevation.ToString()
                 });
                 lvwSatellites.Items.Add(itm);
 
@@ -134,7 +134,7 @@ namespace GPSTracka
             for (int i = 0; i < count; i++)
             {
                 panSatellites.Controls.Add(lblId[i] = new Label { TextAlign = ContentAlignment.TopCenter, Text = "" });
-                panSatellites.Controls.Add(lblSnr[i] = new Label { Tag = 0, Text = "" });
+                panSatellites.Controls.Add(lblSnr[i] = new Label { Tag = 0, Text = "", TextAlign = ContentAlignment.TopCenter });
             }
             PosLabels();
         }
