@@ -229,7 +229,7 @@ namespace GPSTracka
             {
                 using (var file = System.IO.File.Open(path, FileMode.Create, FileAccess.Write, FileShare.Read))
                 {
-                    using (var w = new System.IO.StreamWriter(file))
+                    using (var w = new System.IO.StreamWriter(file,System.Text.Encoding.UTF8))
                     {
                         w.WriteLine(Properties.Resources.stat_StartTime, StartTime);
                         w.WriteLine(Properties.Resources.stat_AverageSpeed, AverageSpeed * AdvancedConfig.SpeedMultiplier, AdvancedConfig.SpeedUnitName);

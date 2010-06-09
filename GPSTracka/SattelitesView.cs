@@ -39,6 +39,23 @@ namespace GPSTracka
             gps.Satellite += GpsSatellite;
         }
 
+        /// <summary>Gets value indicating if this object has already been disposed</summary>
+        public bool IsDisposed { get; private set; }
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+            IsDisposed = true;
+        }
+
         private void mniClose_Click(object sender, EventArgs e)
         {
             Close();
