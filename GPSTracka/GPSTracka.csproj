@@ -54,6 +54,7 @@
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.WindowsCE.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=969db8053d3322ac, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\Microsoft.NET\SDK\CompactFramework\v2.0\WindowsCE\Microsoft.WindowsCE.Forms.dll</HintPath>
@@ -112,6 +113,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Gps\OpenNetGpsWrapper.cs" />
+    <Compile Include="OpenFileDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpenFileDialog.Designer.cs">
+      <DependentUpon>OpenFileDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="SattelitesView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +141,7 @@
     <Compile Include="FolderBrowseDialog.Designer.cs">
       <DependentUpon>FolderBrowseDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="ShellLink.cs" />
     <Compile Include="TrackerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +173,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\MyTextBox.resx">
       <DependentUpon>MyTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpenFileDialog.cs.resx">
+      <DependentUpon>OpenFileDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpenFileDialog.resx">
+      <DependentUpon>OpenFileDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.cs.resx">
       <SubType>Designer</SubType>
@@ -210,6 +224,10 @@
     <None Include="SCIENCE1.ICO" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Tools.WinCE\Tools.WinCE.vbproj">
+      <Project>{C821B202-67EF-47C4-81EF-96DA77B8B725}</Project>
+      <Name>Tools.WinCE</Name>
+    </ProjectReference>
     <ProjectReference Include="Microsoft.Location\Microsoft.WindowsMobile.Samples.Location.csproj">
       <Project>{DB77C1EE-A383-4CD5-A107-1C7C26A9E6B8}</Project>
       <Name>Microsoft.WindowsMobile.Samples.Location</Name>

@@ -13,10 +13,13 @@ namespace GPSTracka
     /// <summary>Foldeer browse dialog</summary>
     public partial class FolderBrowseDialog : Form
     {
+        private Dictionary<string, int> imageIndexes = new Dictionary<string, int>();
         /// <summary>CTor</summary>
         public FolderBrowseDialog()
         {
             InitializeComponent();
+            imlImages.ImageSize = OpenNETCF.Windows.Forms.SystemInformation2.SmallIconSize;
+
             tvwTree.Nodes[0].Expand();
         }
 
@@ -34,8 +37,27 @@ namespace GPSTracka
                 foreach (string folder in directories)
                 {
                     var node = e.Node.Nodes.Add(Path.GetFileName(folder));
-                    node.SelectedImageIndex = 0;
-                    node.ImageIndex = 0;
+                    int iindex=0;
+                    if (imageIndexes.ContainsKey(folder))
+                    {
+                        iindex = imageIndexes[folder];
+                    }
+                    else
+                    {
+                        Icon icon = null;
+                        try
+                        {
+                            icon = Tools.IOt.FileSystemTools.GetIcon(folder, false, true);
+                            if (icon != null)
+                            {
+                                imlImages.Images.Add(icon);
+                                iindex = imlImages.Images.Count - 1;
+                                imageIndexes.Add(folder, iindex);
+                            }
+                        }
+                        catch { }
+                    }
+                    node.ImageIndex = node.SelectedImageIndex = iindex;
                     var subnode = node.Nodes.Add(Properties.Resources.PleaseWait);
                     subnode.ImageIndex = -1;
                     subnode.SelectedImageIndex = -2;
@@ -44,17 +66,16 @@ namespace GPSTracka
             }
         }
 
-        private void tvwTree_AfterExpand(object sender, TreeViewEventArgs e)
-        {
-            e.Node.ImageIndex = 1;
-            e.Node.SelectedImageIndex = 1;
-        }
+        //private void tvwTree_AfterExpand(object sender, TreeViewEventArgs e)
+        //{
+        //    e.Node.ImageIndex = 1;
+        //    e.Node.SelectedImageIndex = 1;
+        //}
 
-        private void tvwTree_AfterCollapse(object sender, TreeViewEventArgs e)
-        {
-            e.Node.ImageIndex = 0;
-            e.Node.SelectedImageIndex = 0;
-        }
+        //private void tvwTree_AfterCollapse(object sender, TreeViewEventArgs e)
+        //{
+        //    e.Node.ImageIndex = e.Node.SelectedImageIndex = imageIndexes.ContainsKey(e.Node.FullPath.Replace("\\\\", "\\")) ? imageIndexes[e.Node.FullPath.Replace("\\\\", "\\")] : 0;
+        //}
         /// <summary>Gets or sest path of currently selecte folder</summary>
         /// <value>When path baing set dos not exists (or it is not folder); the neares existing parent is selected.</value>
         public string SelectedPath

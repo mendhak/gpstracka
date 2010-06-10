@@ -376,4 +376,7 @@ Value = {1}</value>
   <data name="Distance" xml:space="preserve">
     <value>Distance</value>
   </data>
+  <data name="fil_NmeaTxt" xml:space="preserve">
+    <value>NMEA files (*.NMEA)|*.NMEA|Text files (*.txt)|*.txt|NMEA + Text|*.txt;*.nmea|All files (*.*)|*</value>
+  </data>
 </root>

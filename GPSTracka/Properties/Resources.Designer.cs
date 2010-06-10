@@ -375,6 +375,15 @@ namespace GPSTracka.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to NMEA files (*.NMEA)|*.NMEA|Text files (*.txt)|*.txt|NMEA + Text|*.txt;*.nmea|All files (*.*)|*.
+        /// </summary>
+        internal static string fil_NmeaTxt {
+            get {
+                return ResourceManager.GetString("fil_NmeaTxt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Format.
         /// </summary>
         internal static string Format {

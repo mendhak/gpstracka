@@ -117,62 +117,118 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="tvwTree.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 268</value>
+  <metadata name="mmnMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="mniOK.Text" xml:space="preserve">
+    <value>&amp;OK</value>
   </data>
-  <data name="resource" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAOvgAA
-        Dr4B6kKxwAAAAhJJREFUOE+lkm1IU1EYx6/fJYRIErMmRYE20EgCpQ/Wp2FBUVFQg2AookUWyWAkq1zJ
-        JrkabMwX2tSbeKeIyAhDsaAXIbTEMK1Wa2q67Fa3Jtu898K/nXMQsygGO4f/t+f3e57ncNLAgUvpEEEq
-        lwt9eIte3v5XPgamkIyYI7A4P4D41/s0UVFAJOSAr/0WkpFwpPDPdHsa0dVmRVerFXxLAzqbb8LrsrA4
-        62nsllo6IdftbcSKNLIu8Z9+KKIPymcv1E9OqEEblBkz4pOXsfy8Ej8e6WGqMTAB6UQEqyvEpB7IYgeU
-        hQQYskIN1EF+dQGxMQMij0/g+wMdXjZnrQnIeKsC+Vs/5C/8Onhl6iJi4+WIPDlF4UWhCKP2dFQbTrIJ
-        PIl9iIB0VsR7UBbdtLPy3ozfYWmoDOLAfszxu/HQlo4zx3RM0HbnKh2f7hxuhTpnT8DXGPyiEstPT0Ma
-        PkzhsLAHs3d3wH89A2UHS5jA3VSH6FJ/4sE8UOcdFJZf1zL4mZ7B/lKEfUVY6MxDwJUD4comlOzVMoHT
-        ZkI07KOvrQQtDJ6oYvDIkTWYz0ewRYPp25nwGLOh3aVhAkeDEVKwA0vjNZgd1OFd3z68EbSYbN+JUXcu
-        hps06Kvfih5zFu1MYNelbcjdkskE5EPcMJ2D8fxZVOiP4vihAygtLkRB3nZatHnjhn+GCpL57/+rSVnw
-        C5fIcQxgIS4CAAAAAElFTkSuQmCC
-</value>
+  <data name="mniCancel.Text" xml:space="preserve">
+    <value>&amp;Cancel</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tvwTree.Name" xml:space="preserve">
-    <value>tvwTree</value>
-  </data>
-  <data name="&gt;&gt;mniCancel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tvwTree.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tvwTree.ImageIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="mniOK.Text" xml:space="preserve">
-    <value>&amp;OK</value>
+  <metadata name="imlImages.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>124, 17</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="resource" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAOvAAA
+        DrwBlbxySQAAAg9JREFUOE+lkutLU2Ecx88fIBGEonRxUhSYg4okSHphvRoWFBYJOghGIaZkkQxGstSV
+        bJKrwca80KaexDNDRIYYiQZdhMgKw66rOTVddqpjk22ec+DbnudBzEIZjIfvu9/n87vwcOBSeyni4LjQ
+        l4+4z9v/y1RgEsnMxhFYnB1A/McgTVQUEAk54Ou4hWQkHCn8Nz2eJnS3W9HdZgXf2oiulpvwuiwszgYa
+        u6WGTsj1eJuwLI2sSfy3H4rog/LNC/WrE2rQBuW9GfGJq1h6Xo7FR3qYqg1MQDoRwcoKMakXstgJZS4B
+        hqxQA7WQ31xC7IUBkcdn8OuBDq9aslYFZLwVgfyzH/J3fg28PHkZsfHziDwpofC8kI8xexouGs6yCTyJ
+        fYiAdFbEe1Dm3bSz8tmMv2HpYRHEgSOY4fMwaktDWbGOCdrvXKfj053DbVBn7Am4jsEvy7H0tBTS8AkK
+        h4UDmL67C/76zSg6VsAE7uZaRBf6EwfzQJ11UFh+W8PgZ3oG+wsR9uVjrisXAdd2CNfSUXBQywROmwnR
+        sI9eWwlaGPy6gsEjJ1dhfi+CrRq8u50Bj3ErtHs0TOBoNEIKdmJhvBrTQzp86juED4IWEx27MebOwXCz
+        Bn0NO9BrzqKdCey6ko2cbRlMQD7EDVMljFXncEF/CqePH0Xh4f3Yl7uTFmVu2bRuqCCZ/75RTcqCPwi+
+        ju0qNyCcAAAAAElFTkSuQmCC
+</value>
   </data>
-  <data name="treeNode2.Text" xml:space="preserve">
-    <value>please wait ...</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Select folder</value>
-  </data>
-  <data name="&gt;&gt;tvwTree.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TreeView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="resource1" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALDAAA
+        CwwBP0AiyAAAAjFJREFUOE+lk1tI01Ecx89DDz1ZZEUhFFg++DIIiqgeQoooDMEoC5IuQplFhWGI89Km
+        trtbWqu5rF1cUzcr0y5oJRTKCNG8jBJTs6CoFDNDJW+f/ptgDSMEOXxfDuf7/X1+5/yOQCxsLdCOEP6W
+        51S6THPU2vSI+bCJgLmr3c7YkDeoX4NuJvpteBwFzCdEeJ1GRgfLQsxTXyxM+FMpu62ltFiF7Vou1is5
+        3DDIuapJDyET5XY9o9/ss5WnJTNdcvAn/1NzAu6UaPj52RrEDphrK/VBPfHoqHFruF+qwmPLw21V4jBf
+        4lZhFsVGOWZ9RpBGlFpVDH8oIoDd26CgqszIVK8S+vJD9V7a68mEzjR4c4a2igRcN00ImzmPH91a+Gjg
+        QXkBvjrDzKG/W2g9Cs37mWyMZexpDO+cMtKS46mrtiBKChV8f6ukrzGbKreB6R4FdJyaCWhLkoyHmPTF
+        MVa/i+HH2xio3IAyJUpqR7onaYqExZjNQHsGd116Wl5KJJ2pUsAJaElk+lU84y/2MFK7ncGqjXwtj6b5
+        8lIOx0YGqwcDzDo5HfU53HPpoDsHXku4TQcYb9jLyLMYhmo20++R8cm+Hr8hHEXyOs6mHJl9SlGkTsfr
+        0OKvPk2zSczKZ1hEvWYxD3OXUJG1Alt6BNcvrCVRqu51qv8EmPIvYlKcRJ1xjMxzBzmfFMfxhJ3s272F
+        HVtlbJJFER0ZwZrVy1m5LIxV4WGhgzSfef/fmQX/xt8t1IselA9HqAAAAABJRU5ErkJggg==
+</value>
   </data>
   <data name="tvwTree.Indent" type="System.Int32, mscorlib">
     <value>16</value>
   </data>
-  <data name="treeNode2.ImageIndex" type="System.Int32, mscorlib">
-    <value>-2</value>
-  </data>
-  <data name="&gt;&gt;mmnMain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MainMenu, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="tvwTree.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
   <data name="tvwTree.Nodes" xml:space="preserve">
     <value>\</value>
+  </data>
+  <data name="treeNode2.ImageIndex" type="System.Int32, mscorlib">
+    <value>-2</value>
+  </data>
+  <data name="treeNode2.SelectedImageIndex" type="System.Int32, mscorlib">
+    <value>-2</value>
+  </data>
+  <data name="treeNode2.Text" xml:space="preserve">
+    <value>please wait ...</value>
+  </data>
+  <data name="treeNode1.Text" xml:space="preserve">
+    <value>\</value>
+  </data>
+  <data name="tvwTree.SelectedImageIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tvwTree.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 268</value>
+  </data>
+  <data name="tvwTree.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tvwTree.Name" xml:space="preserve">
+    <value>tvwTree</value>
+  </data>
+  <data name="&gt;&gt;tvwTree.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TreeView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tvwTree.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tvwTree.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="$this.FormFactorShadowProperty" xml:space="preserve">
+    <value>Pocket_PC</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Skin" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="$this.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>240, 268</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -226,93 +282,37 @@
         /f0AAf39AAH9/QABWTEAAfDwAAHw8AABAP0A/6mpAf+lgP//fH3///D9
 </value>
   </data>
-  <data name="&gt;&gt;tvwTree.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="tvwTree.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="tvwTree.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>240, 268</value>
-  </data>
-  <data name="resource1" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALDQAA
-        Cw0B7QfALAAAAjdJREFUOE+lk11Ik1Ecxt+gi64ssqIQCiwvvBkERVQXIUUUhmCUBUkfQplFhWEMp65N
-        TTc3t7RWc1mbura5WZlaodWgUCRE82OUmJoFRaUsM3Tk1693r2ANIwTP4bk5nOf3f845/7MIAWFBIwhY
-        yBR8bc+pshvnqL3lEfMBC0FzT6eNwLBH0i+/g4lBK+6yQuYDETzlBsb8zhDz1BczE75UnHe0VJTkYb2e
-        jeWqkpt6Bdc08pBkgsumY+ybbbbytGimRwG+5H9qDuBuqYafny1S7KC5vkon6Ym7gFqHhgcVebitOTgs
-        aspMl7ldlEmJQYFJly6lESoseYx8KCYYu79RRbXTwFS/GgZyQ/VeXOvLgO40eHOWjsoE7LeMCFZTDj96
-        tfBRz0NXIc0N+plNfx+h/Ri0HmCyKZbA0xjelctIS46nocaMUFqk4vtbNQNNWVQ79Ez3qaDr9AygI0k0
-        HmayOY6Adzcjj7czVLURdUqUeBzxnoJNaDZkMdSZzj27jraXYpLuVBFwEtoSmX4Vz/iLvYzW78BfvYmv
-        rmharyzjSGykVF0CmAoUdHmV3LcXQK8SXotxWw4y3riP0WcxDNduYdAt45NtAz59OKrk9ZxLOTr7lEJx
-        vhxPmRZfzRlajcKsmvWL8WqWUJe9lMrMlVjlEdy4uI5EsbqnPP8PwJh7CaPqFPnpx8k4f4gLSXGcSNjF
-        /j1b2blNxmZZFNGREaxds4JVy8NYHR4W2kjz6ff/7VnQTwyCfwO83m09wqBEjAAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="&gt;&gt;mniOK.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="treeNode1.Text" xml:space="preserve">
-    <value>\</value>
-  </data>
-  <data name="tvwTree.SelectedImageIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tvwTree.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;imlImages.Name" xml:space="preserve">
-    <value>imlImages</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Select folder</value>
   </data>
   <data name="&gt;&gt;mmnMain.Name" xml:space="preserve">
     <value>mmnMain</value>
   </data>
-  <data name="$this.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;mniCancel.Name" xml:space="preserve">
-    <value>mniCancel</value>
-  </data>
-  <data name="mniCancel.Text" xml:space="preserve">
-    <value>&amp;Cancel</value>
-  </data>
-  <data name="treeNode2.SelectedImageIndex" type="System.Int32, mscorlib">
-    <value>-2</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>FolderBrowseDialog</value>
-  </data>
-  <data name="tvwTree.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <data name="&gt;&gt;mmnMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MainMenu, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;mniOK.Name" xml:space="preserve">
     <value>mniOK</value>
   </data>
+  <data name="&gt;&gt;mniOK.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mniCancel.Name" xml:space="preserve">
+    <value>mniCancel</value>
+  </data>
+  <data name="&gt;&gt;mniCancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;imlImages.Name" xml:space="preserve">
+    <value>imlImages</value>
+  </data>
   <data name="&gt;&gt;imlImages.Type" xml:space="preserve">
     <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <metadata name="$this.FormFactorShadowProperty" xml:space="preserve">
-    <value>Pocket_PC</value>
-  </metadata>
-  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="$this.Skin" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="imlImages.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>124, 17</value>
-  </metadata>
-  <metadata name="mmnMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FolderBrowseDialog</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

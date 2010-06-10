@@ -41,6 +41,7 @@
             this.tabMain = new System.Windows.Forms.TabControl();
             this.tapGeneral = new System.Windows.Forms.TabPage();
             this.panGeneral = new System.Windows.Forms.Panel();
+            this.chkDoNotPause = new System.Windows.Forms.CheckBox();
             this.txtKeepAwake = new GPSTracka.MyTextBox();
             this.lblInvalidMaxPositions = new System.Windows.Forms.Label();
             this.lblAwakeDevices = new System.Windows.Forms.Label();
@@ -87,6 +88,12 @@
             this.txtKMLNameFormat = new GPSTracka.MyTextBox();
             this.cmdTestName = new System.Windows.Forms.Button();
             this.tabWindowsDriver = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtDemoFile = new GPSTracka.MyTextBox();
+            this.lblDemoFile = new System.Windows.Forms.Label();
+            this.cmdDemoFile = new System.Windows.Forms.Button();
+            this.chkDemoMode = new System.Windows.Forms.CheckBox();
+            this.lblCOMPort = new System.Windows.Forms.Label();
             this.chkSeaLevelAltitude = new System.Windows.Forms.CheckBox();
             this.lblWindowsDriverI = new System.Windows.Forms.Label();
             this.tapDiagnostic = new System.Windows.Forms.TabPage();
@@ -144,6 +151,7 @@
             this.panKMLDescFormat.SuspendLayout();
             this.panKMLNameFormat.SuspendLayout();
             this.tabWindowsDriver.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.tapDiagnostic.SuspendLayout();
             this.panEmpty.SuspendLayout();
             this.panBeepEvery.SuspendLayout();
@@ -253,6 +261,7 @@
             // panGeneral
             // 
             resources.ApplyResources(this.panGeneral, "panGeneral");
+            this.panGeneral.Controls.Add(this.chkDoNotPause);
             this.panGeneral.Controls.Add(this.panTime);
             this.panGeneral.Controls.Add(this.txtKeepAwake);
             this.panGeneral.Controls.Add(this.lblInvalidMaxPositions);
@@ -267,6 +276,11 @@
             this.panGeneral.Controls.Add(this.lblMinimalDistance);
             this.panGeneral.Controls.Add(this.chkStartImmediatelly);
             this.panGeneral.Name = "panGeneral";
+            // 
+            // chkDoNotPause
+            // 
+            resources.ApplyResources(this.chkDoNotPause, "chkDoNotPause");
+            this.chkDoNotPause.Name = "chkDoNotPause";
             // 
             // txtKeepAwake
             // 
@@ -568,9 +582,46 @@
             // tabWindowsDriver
             // 
             resources.ApplyResources(this.tabWindowsDriver, "tabWindowsDriver");
+            this.tabWindowsDriver.Controls.Add(this.panel1);
+            this.tabWindowsDriver.Controls.Add(this.chkDemoMode);
+            this.tabWindowsDriver.Controls.Add(this.lblCOMPort);
             this.tabWindowsDriver.Controls.Add(this.chkSeaLevelAltitude);
             this.tabWindowsDriver.Controls.Add(this.lblWindowsDriverI);
             this.tabWindowsDriver.Name = "tabWindowsDriver";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.txtDemoFile);
+            this.panel1.Controls.Add(this.lblDemoFile);
+            this.panel1.Controls.Add(this.cmdDemoFile);
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Name = "panel1";
+            // 
+            // txtDemoFile
+            // 
+            resources.ApplyResources(this.txtDemoFile, "txtDemoFile");
+            this.txtDemoFile.Name = "txtDemoFile";
+            // 
+            // lblDemoFile
+            // 
+            resources.ApplyResources(this.lblDemoFile, "lblDemoFile");
+            this.lblDemoFile.Name = "lblDemoFile";
+            // 
+            // cmdDemoFile
+            // 
+            resources.ApplyResources(this.cmdDemoFile, "cmdDemoFile");
+            this.cmdDemoFile.Name = "cmdDemoFile";
+            this.cmdDemoFile.Click += new System.EventHandler(this.cmdDemoFile_Click);
+            // 
+            // chkDemoMode
+            // 
+            resources.ApplyResources(this.chkDemoMode, "chkDemoMode");
+            this.chkDemoMode.Name = "chkDemoMode";
+            // 
+            // lblCOMPort
+            // 
+            resources.ApplyResources(this.lblCOMPort, "lblCOMPort");
+            this.lblCOMPort.Name = "lblCOMPort";
             // 
             // chkSeaLevelAltitude
             // 
@@ -867,6 +918,7 @@
             this.panKMLDescFormat.ResumeLayout(false);
             this.panKMLNameFormat.ResumeLayout(false);
             this.tabWindowsDriver.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.tapDiagnostic.ResumeLayout(false);
             this.panEmpty.ResumeLayout(false);
             this.panBeepEvery.ResumeLayout(false);
@@ -982,5 +1034,12 @@
         private System.Windows.Forms.Label lblEmpty;
         private System.Windows.Forms.Label lblEmptyPx;
         private System.Windows.Forms.Label lblEmptyI;
+        private System.Windows.Forms.CheckBox chkDoNotPause;
+        private System.Windows.Forms.CheckBox chkDemoMode;
+        private System.Windows.Forms.Label lblCOMPort;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button cmdDemoFile;
+        private System.Windows.Forms.Label lblDemoFile;
+        private MyTextBox txtDemoFile;
     }
 }

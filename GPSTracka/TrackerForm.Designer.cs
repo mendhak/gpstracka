@@ -126,7 +126,7 @@
             this.mainPanel.Controls.Add(this.panInfoPane);
             this.mainPanel.Controls.Add(this.stsStatus);
             this.mainPanel.Controls.Add(this.panHelper);
-            resources.ApplyResources(this.mainPanel, "mainPanel");
+                    resources.ApplyResources(this.mainPanel, "mainPanel");
             this.mainPanel.Name = "mainPanel";
             // 
             // TextBoxRawLog

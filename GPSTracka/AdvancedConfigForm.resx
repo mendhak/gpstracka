@@ -217,7 +217,7 @@
     <value>panGeneral</value>
   </data>
   <data name="&gt;&gt;panTime.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="lblAltitudeCorrection.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 23</value>
@@ -238,7 +238,7 @@
     <value>panGeneral</value>
   </data>
   <data name="&gt;&gt;lblAltitudeCorrection.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="nudAltitudeCorrection.Location" type="System.Drawing.Point, System.Drawing">
     <value>100, 20</value>
@@ -259,7 +259,7 @@
     <value>panGeneral</value>
   </data>
   <data name="&gt;&gt;nudAltitudeCorrection.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="chkStartImmediatelly.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 42</value>
@@ -348,6 +348,21 @@
   <data name="panGeneral.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="chkDoNotPause.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="chkDoNotPause.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 128</value>
+  </data>
+  <data name="chkDoNotPause.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 20</value>
+  </data>
+  <data name="chkDoNotPause.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="chkDoNotPause.Text" xml:space="preserve">
+    <value>Satellites: Ignore polling interval</value>
+  </data>
   <data name="txtKeepAwake.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
@@ -370,7 +385,7 @@
     <value>panGeneral</value>
   </data>
   <data name="&gt;&gt;txtKeepAwake.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="lblInvalidMaxPositions.Location" type="System.Drawing.Point, System.Drawing">
     <value>133, 87</value>
@@ -391,7 +406,7 @@
     <value>panGeneral</value>
   </data>
   <data name="&gt;&gt;lblInvalidMaxPositions.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="lblAwakeDevices.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 108</value>
@@ -412,7 +427,7 @@
     <value>panGeneral</value>
   </data>
   <data name="&gt;&gt;lblAwakeDevices.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="nudInvalidMax.Location" type="System.Drawing.Point, System.Drawing">
     <value>70, 84</value>
@@ -433,7 +448,7 @@
     <value>panGeneral</value>
   </data>
   <data name="&gt;&gt;nudInvalidMax.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="lblInvalidMaxAfter.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 87</value>
@@ -454,7 +469,7 @@
     <value>panGeneral</value>
   </data>
   <data name="&gt;&gt;lblInvalidMaxAfter.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="lblMinimalDistanceM.Location" type="System.Drawing.Point, System.Drawing">
     <value>162, 65</value>
@@ -475,7 +490,7 @@
     <value>panGeneral</value>
   </data>
   <data name="&gt;&gt;lblMinimalDistanceM.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="nudMinimalDistance.Location" type="System.Drawing.Point, System.Drawing">
     <value>100, 62</value>
@@ -496,7 +511,7 @@
     <value>panGeneral</value>
   </data>
   <data name="&gt;&gt;nudMinimalDistance.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="lblAltCorrM.Location" type="System.Drawing.Point, System.Drawing">
     <value>200, 23</value>
@@ -517,7 +532,7 @@
     <value>panGeneral</value>
   </data>
   <data name="&gt;&gt;lblAltCorrM.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="lblMinimalDistance.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 65</value>
@@ -538,7 +553,7 @@
     <value>panGeneral</value>
   </data>
   <data name="&gt;&gt;lblMinimalDistance.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="panGeneral.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1434,6 +1449,147 @@
   <data name="tabWindowsDriver.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="txtDemoFile.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="txtDemoFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>74, 0</value>
+  </data>
+  <data name="txtDemoFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 25</value>
+  </data>
+  <data name="txtDemoFile.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;txtDemoFile.Name" xml:space="preserve">
+    <value>txtDemoFile</value>
+  </data>
+  <data name="&gt;&gt;txtDemoFile.Type" xml:space="preserve">
+    <value>Microsoft.CompactFramework.Design.UnsafeControl, Microsoft.CompactFramework.Design, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;txtDemoFile.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;txtDemoFile.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblDemoFile.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="lblDemoFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="lblDemoFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 25</value>
+  </data>
+  <data name="lblDemoFile.Text" xml:space="preserve">
+    <value>Demo file</value>
+  </data>
+  <data name="&gt;&gt;lblDemoFile.Name" xml:space="preserve">
+    <value>lblDemoFile</value>
+  </data>
+  <data name="&gt;&gt;lblDemoFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblDemoFile.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;lblDemoFile.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cmdDemoFile.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="cmdDemoFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>213, 0</value>
+  </data>
+  <data name="cmdDemoFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 25</value>
+  </data>
+  <data name="cmdDemoFile.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="cmdDemoFile.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="&gt;&gt;cmdDemoFile.Name" xml:space="preserve">
+    <value>cmdDemoFile</value>
+  </data>
+  <data name="&gt;&gt;cmdDemoFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cmdDemoFile.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;cmdDemoFile.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 74</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 25</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>tabWindowsDriver</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="chkDemoMode.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="chkDemoMode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 54</value>
+  </data>
+  <data name="chkDemoMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 20</value>
+  </data>
+  <data name="chkDemoMode.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="chkDemoMode.Text" xml:space="preserve">
+    <value>&amp;Demo mode</value>
+  </data>
+  <data name="lblCOMPort.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="lblCOMPort.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 9pt, style=Bold</value>
+  </data>
+  <data name="lblCOMPort.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 37</value>
+  </data>
+  <data name="lblCOMPort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 17</value>
+  </data>
+  <data name="lblCOMPort.Text" xml:space="preserve">
+    <value>COM port</value>
+  </data>
+  <data name="lblCOMPort.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
+  </data>
+  <data name="&gt;&gt;lblCOMPort.Name" xml:space="preserve">
+    <value>lblCOMPort</value>
+  </data>
+  <data name="&gt;&gt;lblCOMPort.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCOMPort.Parent" xml:space="preserve">
+    <value>tabWindowsDriver</value>
+  </data>
+  <data name="&gt;&gt;lblCOMPort.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="chkSeaLevelAltitude.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
@@ -1441,7 +1597,7 @@
     <value>0, 17</value>
   </data>
   <data name="chkSeaLevelAltitude.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 20</value>
+    <value>240, 20</value>
   </data>
   <data name="chkSeaLevelAltitude.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1459,7 +1615,7 @@
     <value>0, 0</value>
   </data>
   <data name="lblWindowsDriverI.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 17</value>
+    <value>240, 17</value>
   </data>
   <data name="lblWindowsDriverI.Text" xml:space="preserve">
     <value>Windows Intermediate GPS driver</value>
@@ -1477,16 +1633,16 @@
     <value>tabWindowsDriver</value>
   </data>
   <data name="&gt;&gt;lblWindowsDriverI.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="tabWindowsDriver.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
   <data name="tabWindowsDriver.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 242</value>
+    <value>240, 245</value>
   </data>
   <data name="tabWindowsDriver.Text" xml:space="preserve">
-    <value>Win GPS</value>
+    <value>GPS driver</value>
   </data>
   <data name="&gt;&gt;tabWindowsDriver.Name" xml:space="preserve">
     <value>tabWindowsDriver</value>
@@ -1510,7 +1666,7 @@
     <value>0, 71</value>
   </data>
   <data name="lblEmptyI.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 30</value>
+    <value>232, 30</value>
   </data>
   <data name="lblEmptyI.Text" xml:space="preserve">
     <value>Use when you have problems seeing status bar on main form</value>
@@ -1537,7 +1693,7 @@
     <value>150, 0</value>
   </data>
   <data name="nudEmpty.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 22</value>
+    <value>64, 22</value>
   </data>
   <data name="nudEmpty.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -1582,7 +1738,7 @@
     <value>Right</value>
   </data>
   <data name="lblEmptyPx.Location" type="System.Drawing.Point, System.Drawing">
-    <value>222, 0</value>
+    <value>214, 0</value>
   </data>
   <data name="lblEmptyPx.Size" type="System.Drawing.Size, System.Drawing">
     <value>18, 30</value>
@@ -1609,7 +1765,7 @@
     <value>0, 41</value>
   </data>
   <data name="panEmpty.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 30</value>
+    <value>232, 30</value>
   </data>
   <data name="&gt;&gt;panEmpty.Name" xml:space="preserve">
     <value>panEmpty</value>
@@ -1630,7 +1786,7 @@
     <value>70, 0</value>
   </data>
   <data name="nudBeepEvery.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 22</value>
+    <value>149, 22</value>
   </data>
   <data name="nudBeepEvery.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -1675,7 +1831,7 @@
     <value>Right</value>
   </data>
   <data name="lblBeepEveryS.Location" type="System.Drawing.Point, System.Drawing">
-    <value>227, 0</value>
+    <value>219, 0</value>
   </data>
   <data name="lblBeepEveryS.Size" type="System.Drawing.Size, System.Drawing">
     <value>13, 22</value>
@@ -1702,7 +1858,7 @@
     <value>0, 19</value>
   </data>
   <data name="panBeepEvery.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 22</value>
+    <value>232, 22</value>
   </data>
   <data name="&gt;&gt;panBeepEvery.Name" xml:space="preserve">
     <value>panBeepEvery</value>
@@ -1723,7 +1879,7 @@
     <value>0, 0</value>
   </data>
   <data name="chkNMEA.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 19</value>
+    <value>232, 19</value>
   </data>
   <data name="chkNMEA.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -1735,7 +1891,7 @@
     <value>0, 0</value>
   </data>
   <data name="tapDiagnostic.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 245</value>
+    <value>232, 242</value>
   </data>
   <data name="tapDiagnostic.Text" xml:space="preserve">
     <value>Misc</value>

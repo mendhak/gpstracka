@@ -371,5 +371,23 @@ namespace GPSTracka
         {
             notFormatInfo.Visible = false;
         }
+
+        private void cmdDemoFile_Click(object sender, EventArgs e)
+        {
+            using (var ofd = new OpenFileDialog()
+            {
+                Filter = Resources.fil_NmeaTxt,
+                DefaultExt = "nmea",
+                FilterIndex = 2
+            })
+            {
+                try { ofd.FileName = txtDemoFile.Text; }
+                catch { }
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    txtDemoFile.Text = ofd.FileName;
+                }
+            }
+        }
     }
 }

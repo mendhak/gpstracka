@@ -54,17 +54,17 @@
             resources.ApplyResources(this.tvwTree, "tvwTree");
             this.tvwTree.ImageList = this.imlImages;
             this.tvwTree.Name = "tvwTree";
-            resources.ApplyResources(treeNode1, "treeNode1");
             treeNode2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             resources.ApplyResources(treeNode2, "treeNode2");
             treeNode1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode2});
+            resources.ApplyResources(treeNode1, "treeNode1");
             this.tvwTree.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode1});
             this.tvwTree.ShowRootLines = false;
-            this.tvwTree.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.tvwTree_AfterCollapse);
+            //this.tvwTree.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.tvwTree_AfterCollapse);
             this.tvwTree.BeforeExpand += new System.Windows.Forms.TreeViewCancelEventHandler(this.tvwTree_BeforeExpand);
-            this.tvwTree.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.tvwTree_AfterExpand);
+            //this.tvwTree.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.tvwTree_AfterExpand);
             this.imlImages.Images.Clear();
             this.imlImages.Images.Add(((System.Drawing.Image)(resources.GetObject("resource"))));
             this.imlImages.Images.Add(((System.Drawing.Image)(resources.GetObject("resource1"))));
