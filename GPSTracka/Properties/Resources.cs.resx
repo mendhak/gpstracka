@@ -356,4 +356,94 @@ Hodnota = {1}</value>
   <data name="stat_Saved" xml:space="preserve">
     <value>Uloženo: {0}</value>
   </data>
+  <data name="msg_NoStatisticToSave" xml:space="preserve">
+    <value>Žádná statistika k uložení.</value>
+  </data>
+  <data name="SaveStatistic" xml:space="preserve">
+    <value>Uložit statistiku</value>
+  </data>
+  <data name="err_SavingFile" xml:space="preserve">
+    <value>Chyba při uládání souboru:</value>
+  </data>
+  <data name="Distance" xml:space="preserve">
+    <value>Vzdálenost</value>
+  </data>
+  <data name="fil_NmeaTxt" xml:space="preserve">
+    <value>Soubory NMEA (*.NMEA)|*.NMEA|Textové soubory (*.txt)|*.txt|NMEA + text|*.txt;*.nmea|Všechny soubory (*.*)|*</value>
+  </data>
+  <data name="err_LoadDirectory" xml:space="preserve">
+    <value>Nemohu načíst složku {0}.</value>
+  </data>
+  <data name="fileAttr_Archive" xml:space="preserve">
+    <value>A</value>
+  </data>
+  <data name="fileAttr_Compressed" xml:space="preserve">
+    <value>C</value>
+  </data>
+  <data name="fileAttr_Device" xml:space="preserve">
+    <value>D</value>
+  </data>
+  <data name="fileAttr_Directory" xml:space="preserve">
+    <value>F</value>
+  </data>
+  <data name="fileAttr_Encrypted" xml:space="preserve">
+    <value>E</value>
+  </data>
+  <data name="fileAttr_Hidden" xml:space="preserve">
+    <value>H</value>
+  </data>
+  <data name="fileAttr_NotContentIndexed" xml:space="preserve">
+    <value>N</value>
+  </data>
+  <data name="fileAttr_Offline" xml:space="preserve">
+    <value>O</value>
+  </data>
+  <data name="fileAttr_ReadOnly" xml:space="preserve">
+    <value>R</value>
+  </data>
+  <data name="fileAttr_SparseFile" xml:space="preserve">
+    <value>P</value>
+  </data>
+  <data name="fileAttr_System" xml:space="preserve">
+    <value>S</value>
+  </data>
+  <data name="fileAttr_Temporary" xml:space="preserve">
+    <value>T</value>
+  </data>
+  <data name="err_NavigatingToParentFolder" xml:space="preserve">
+    <value>Chyba při přechodu do nadřazené složky</value>
+  </data>
+  <data name="FileDialogTitle" xml:space="preserve">
+    <value>Dialog soubor</value>
+  </data>
+  <data name="err_CombineWildcardsAndFolders" xml:space="preserve">
+    <value>Není možno kombinovat zástupné znaky a složky</value>
+  </data>
+  <data name="err_ApplyingFiler" xml:space="preserve">
+    <value>Chyba při aplikaci filtru '{0}'.</value>
+  </data>
+  <data name="err_FileNotFound" xml:space="preserve">
+    <value>Soubor {0} nenalezen.</value>
+  </data>
+  <data name="err_InvalidFileName" xml:space="preserve">
+    <value>Neplatné jméno souboru {0}.</value>
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>Opravdu chccete smazat vybraný soubor či složku?</value>
+  </data>
+  <data name="err_Delete" xml:space="preserve">
+    <value>Soubor nebo složka {0} namůže být smazán: {1}</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Smazat</value>
+  </data>
+  <data name="err_QuotesInPath" xml:space="preserve">
+    <value>Cesta k souboru nesmí obsahovat uvozovky.</value>
+  </data>
+  <data name="err_InvalidLinkFile_Hash" xml:space="preserve">
+    <value>Neplatný zástupce (# nenalezeno)</value>
+  </data>
+  <data name="err_InvalidLinkFile_Quote" xml:space="preserve">
+    <value>Neplatný zástupce (chybí zavírací uvozovka)</value>
+  </data>
 </root>

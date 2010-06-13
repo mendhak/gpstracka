@@ -19,7 +19,7 @@ namespace GPSTracka
             }
             set
             {
-                if (file.IndexOf("\"") >= 0) throw new ArgumentException("File path cannot contain quotes.", "value");
+                if (file.IndexOf("\"") >= 0) throw new ArgumentException(Properties.Resources.err_QuotesInPath, "value");
                 file = value;
             }
         }
@@ -44,12 +44,12 @@ namespace GPSTracka
             {
                 string data = lnk.ReadToEnd();
                 int pathStart = data.IndexOf('#' )+1;
-                if (pathStart == 0) throw new System.IO.IOException("Invalid link file (# not found)");
+                if (pathStart == 0) throw new System.IO.IOException(Properties.Resources.err_InvalidLinkFile_Hash);
                 if (data.Length <= pathStart) File = "";
                 else if (data[pathStart] == '"')
                 {
                     int pathEnd = data.IndexOf('"', pathStart +1)-1;
-                    if (pathEnd < 0) throw new System.IO.IOException("Invalid link file (missing end quote)");
+                    if (pathEnd < 0) throw new System.IO.IOException(Properties.Resources.err_InvalidLinkFile_Quote);
                     File = data.Substring(pathStart + 1, pathEnd - pathStart);
                     if (data.Length > pathEnd + 1 && data[pathEnd + 1] == ' ') Arguments = data.Substring(pathEnd + 2);
                 }

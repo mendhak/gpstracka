@@ -39,12 +39,12 @@
             this.cohSize = new System.Windows.Forms.ColumnHeader();
             this.cohAttributes = new System.Windows.Forms.ColumnHeader();
             this.imlLargeIcons = new System.Windows.Forms.ImageList();
+            this.imlSmallIcons = new System.Windows.Forms.ImageList();
             this.panSelection = new System.Windows.Forms.Panel();
             this.lblFileName = new System.Windows.Forms.Label();
             this.txtFileName = new System.Windows.Forms.TextBox();
             this.lblFilter = new System.Windows.Forms.Label();
             this.cmbFilter = new System.Windows.Forms.ComboBox();
-            this.imlSmallIcons = new System.Windows.Forms.ImageList();
             this.panTop = new System.Windows.Forms.Panel();
             this.cmdUp = new OpenNETCF.Windows.Forms.Button2();
             this.lblPath = new System.Windows.Forms.Label();
@@ -86,6 +86,7 @@
             this.lvwFiles.ItemActivate += new System.EventHandler(this.lvwFiles_ItemActivate);
             this.lvwFiles.SelectedIndexChanged += new System.EventHandler(this.lvwFiles_SelectedIndexChanged);
             this.lvwFiles.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lvwFiles_ColumnClick);
+            this.lvwFiles.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lvwFiles_KeyDown);
             // 
             // cohName
             // 
@@ -109,6 +110,9 @@
             this.imlLargeIcons.Images.Clear();
             this.imlLargeIcons.Images.Add(((System.Drawing.Image)(resources.GetObject("resource"))));
             this.imlLargeIcons.Images.Add(((System.Drawing.Icon)(resources.GetObject("resource1"))));
+            this.imlSmallIcons.Images.Clear();
+            this.imlSmallIcons.Images.Add(((System.Drawing.Image)(resources.GetObject("resource2"))));
+            this.imlSmallIcons.Images.Add(((System.Drawing.Icon)(resources.GetObject("resource3"))));
             // 
             // panSelection
             // 
@@ -140,9 +144,6 @@
             resources.ApplyResources(this.cmbFilter, "cmbFilter");
             this.cmbFilter.Name = "cmbFilter";
             this.cmbFilter.SelectedIndexChanged += new System.EventHandler(this.cmbFilter_SelectedIndexChanged);
-            this.imlSmallIcons.Images.Clear();
-            this.imlSmallIcons.Images.Add(((System.Drawing.Image)(resources.GetObject("resource2"))));
-            this.imlSmallIcons.Images.Add(((System.Drawing.Icon)(resources.GetObject("resource3"))));
             // 
             // panTop
             // 
@@ -206,8 +207,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             resources.ApplyResources(this, "$this");
-            this.Controls.Add(this.panSelection);
             this.Controls.Add(this.lvwFiles);
+            this.Controls.Add(this.panSelection);
             this.Controls.Add(this.panTop);
             this.KeyPreview = true;
             this.Menu = this.mmnMain;

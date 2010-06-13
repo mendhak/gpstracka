@@ -763,7 +763,7 @@
     <value>0, 20</value>
   </data>
   <data name="lvwFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 248</value>
+    <value>240, 204</value>
   </data>
   <metadata name="imlSmallIcons.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>348, 27</value>
@@ -1359,6 +1359,75 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lvwFiles.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblFileName.Name" xml:space="preserve">
+    <value>lblFileName</value>
+  </data>
+  <data name="&gt;&gt;lblFileName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFileName.Parent" xml:space="preserve">
+    <value>panSelection</value>
+  </data>
+  <data name="&gt;&gt;lblFileName.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtFileName.Name" xml:space="preserve">
+    <value>txtFileName</value>
+  </data>
+  <data name="&gt;&gt;txtFileName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtFileName.Parent" xml:space="preserve">
+    <value>panSelection</value>
+  </data>
+  <data name="&gt;&gt;txtFileName.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblFilter.Name" xml:space="preserve">
+    <value>lblFilter</value>
+  </data>
+  <data name="&gt;&gt;lblFilter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFilter.Parent" xml:space="preserve">
+    <value>panSelection</value>
+  </data>
+  <data name="&gt;&gt;lblFilter.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;cmbFilter.Name" xml:space="preserve">
+    <value>cmbFilter</value>
+  </data>
+  <data name="&gt;&gt;cmbFilter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cmbFilter.Parent" xml:space="preserve">
+    <value>panSelection</value>
+  </data>
+  <data name="&gt;&gt;cmbFilter.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="panSelection.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="panSelection.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 224</value>
+  </data>
+  <data name="panSelection.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 44</value>
+  </data>
+  <data name="&gt;&gt;panSelection.Name" xml:space="preserve">
+    <value>panSelection</value>
+  </data>
+  <data name="&gt;&gt;panSelection.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panSelection.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panSelection.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="lblFileName.Location" type="System.Drawing.Point, System.Drawing">
@@ -1451,72 +1520,82 @@
   <data name="&gt;&gt;cmbFilter.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="panSelection.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
+  <data name="&gt;&gt;cmdUp.Name" xml:space="preserve">
+    <value>cmdUp</value>
   </data>
-  <data name="panSelection.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 224</value>
+  <data name="&gt;&gt;cmdUp.Type" xml:space="preserve">
+    <value>Microsoft.CompactFramework.Design.UnsafeControl, Microsoft.CompactFramework.Design, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="panSelection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 44</value>
+  <data name="&gt;&gt;cmdUp.Parent" xml:space="preserve">
+    <value>panTop</value>
   </data>
-  <data name="&gt;&gt;panSelection.Name" xml:space="preserve">
-    <value>panSelection</value>
+  <data name="&gt;&gt;cmdUp.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;panSelection.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblPath.Name" xml:space="preserve">
+    <value>lblPath</value>
+  </data>
+  <data name="&gt;&gt;lblPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPath.Parent" xml:space="preserve">
+    <value>panTop</value>
+  </data>
+  <data name="&gt;&gt;lblPath.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;cmdViewMode.Name" xml:space="preserve">
+    <value>cmdViewMode</value>
+  </data>
+  <data name="&gt;&gt;cmdViewMode.Type" xml:space="preserve">
+    <value>Microsoft.CompactFramework.Design.UnsafeControl, Microsoft.CompactFramework.Design, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;cmdViewMode.Parent" xml:space="preserve">
+    <value>panTop</value>
+  </data>
+  <data name="&gt;&gt;cmdViewMode.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="panTop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panTop.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panTop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 20</value>
+  </data>
+  <data name="&gt;&gt;panTop.Name" xml:space="preserve">
+    <value>panTop</value>
+  </data>
+  <data name="&gt;&gt;panTop.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panSelection.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panTop.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;panSelection.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;panTop.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="cmdUp.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
   </data>
   <data name="cmdUp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        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
-        /lhqBwAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAKtSURBVDhPZZP7T5JRGMf5J/SP6JfWamar5S28p2Ku
+        1pitUdPZll2dXbTMnJe2nC1rZVmp4I1MRM3EwMQ7iIhXlBDkLhdBEUla+/ZySuerZ/vubGfn83me9zl7
+        GQAYrqkyq0tZarcrirEqfwzbeAEso/dhGs6DmdrNI/nYMNUjhn8cjP3rvwCbxlq4ZirgmCqDR1cDi7YO
+        gS0J/gSkJHGCEzisCD0o2RH89nchGL+7FS5NFbR9WdCrP2Ld0UngVGU4LmvjSWid7BcEfB345f0CTS8H
+        y3PvD8B7JZHc8BAGEShLEfB3YtsnoOA2bHlasPj1EoGDSej5Vz13NQN5a2ykiE6Tc9JJUOCcLMH2Zjv8
+        G5+x5W7GppOLhS42NKpqaKerkdh3jIB37BfBWUgm8O4sgwIHNX3/Oh8+dxO8zgas2z5gTngBS8pKaKgE
+        BTk6FjJVzJ2untIEq/Ii+NYa4XXUUXAt3KY3mG0/h/Fv1yGnEhSwBk8itiMMXX0sqARsegc2WSE27J/g
+        sb7DmvE1nPoXmG5Lw6jwKoGDYQrC0ClKg9PphLIlkS6wjj2Ex1IDl/EVHLoqrGqeYYp/FkzREcT2HCXD
+        EopSMS/NIILJ5ni6wDxyDy5DNRzLlbBpKmBZKCFVBlpZGOKnY2WUDf3weegG04lA0cikC0xDd2HXPodt
+        qRzm+WIYZwqhaIpDf2MipM1JBFweSCHJ7NVigneGLjBIb8G6WArz3BMYpgugn8zHBFVF0sDEAC92Fw4K
+        EngzkHOj6YKVH7kwzRbBoHoAvSIPy7Kb5JK4PvqAQCNOhqwhUkN7Rp3kGn5KsrEovgK1mAN1P4e6FAVh
+        1Sl0v4yAnBdDhDJuFIGp3KYJtN+zQ9TdmRHU2+coW5PeUt84OFYX4X2UdSim/EZY6IFfeM/BX26DgCc7
+        ZbIIAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="cmdUp.Location" type="System.Drawing.Point, System.Drawing">
@@ -1608,27 +1687,6 @@
     <value>panTop</value>
   </data>
   <data name="&gt;&gt;cmdViewMode.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="panTop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="panTop.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="panTop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 20</value>
-  </data>
-  <data name="&gt;&gt;panTop.Name" xml:space="preserve">
-    <value>panTop</value>
-  </data>
-  <data name="&gt;&gt;panTop.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panTop.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panTop.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <metadata name="cmnView.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

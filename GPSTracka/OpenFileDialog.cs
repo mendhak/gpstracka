@@ -56,13 +56,13 @@ namespace GPSTracka
             {
                 try
                 {
-                    LoadFolder("/", SelectedFilter);
+                    LoadFolder("\\", SelectedFilter);
                 }
                 catch
                 {
-                    MessageBox.Show("Cannot load directory /.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show(string.Format(Properties.Resources.err_LoadDirectory, "\\"), Properties.Resources.err_ErrorTitleMsg, MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
                 }
-                currentDirectory = "/";
+                currentDirectory = "\\";
             }
 
             foreach (var item in filters)
@@ -85,58 +85,56 @@ namespace GPSTracka
             while (imlSmallIcons.Images.Count > 2) imlSmallIcons.Images.RemoveAt(2);
             var folder = true;
             var masks = string.IsNullOrEmpty(mask)? new string[]{} : mask.Split(';');
-            foreach (var array in new string[][] { Directory.GetDirectories(path), Directory.GetFiles(path) })
-            {
-                foreach (var itemPath in array)
-                {
-                    if(!folder && masks.Length>0){
-                        bool fits=true;
-                        foreach(string msk in masks ){
-                            if(Microsoft.VisualBasic.CompilerServices.StringType.StrLikeText(Path.GetFileName(itemPath),msk)){
-                                fits=true;
-                                break;
+            var oc = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
+            try {
+                foreach (var array in new string[][] { Directory.GetDirectories(path), Directory.GetFiles(path) }) {
+                    foreach (var itemPath in array) {
+                        if (!folder && masks.Length > 0) {
+                            bool fits = false;
+                            foreach (string msk in masks) {
+                                if (Microsoft.VisualBasic.CompilerServices.StringType.StrLikeText(Path.GetFileName(itemPath), msk)) {
+                                    fits = true;
+                                    break;
+                                }
                             }
+                            if (!fits) continue;
                         }
-                        if(!fits)continue;
-                    }
-                    var item = new ListViewItem();
-                    item.Text = Path.GetFileName(itemPath);
-                    item.ImageIndex = folder ? 0 : 1;
-                    try
-                    {
-                        var largeIcon = Tools.IOt.FileSystemTools.GetIcon(itemPath, true, true);
-                        var smallIcon = Tools.IOt.FileSystemTools.GetIcon(itemPath, false, true);
-                        if (largeIcon != null && smallIcon != null)
-                        {
-                            imlSmallIcons.Images.Add(smallIcon);
-                            imlLargeIcons.Images.Add(largeIcon);
-                            item.ImageIndex = imlLargeIcons.Images.Count - 1;
+                        var item = new ListViewItem();
+                        item.Text = Path.GetFileName(itemPath);
+                        item.ImageIndex = folder ? 0 : 1;
+                        try {
+                            var largeIcon = Tools.IOt.FileSystemTools.GetIcon(itemPath, true, true);
+                            var smallIcon = Tools.IOt.FileSystemTools.GetIcon(itemPath, false, true);
+                            if (largeIcon != null && smallIcon != null) {
+                                imlSmallIcons.Images.Add(smallIcon);
+                                imlLargeIcons.Images.Add(largeIcon);
+                                item.ImageIndex = imlLargeIcons.Images.Count - 1;
+                            }
+                        } catch { }
+                        if (folder) {
+                            var fsi = new DirectoryInfo(itemPath);
+                            item.Tag = fsi;
+                            item.SubItems.Add(fsi.LastWriteTime.ToString("F"));
+                            item.SubItems.Add("");
+                            item.SubItems.Add(attrributesToString(fsi.Attributes));
+                        } else {
+                            var fsi = new FileInfo(itemPath);
+                            item.Tag = fsi;
+                            item.SubItems.Add(fsi.LastWriteTime.ToString("F"));
+                            item.SubItems.Add(fsi.Length.ToString());
+                            item.SubItems.Add(attrributesToString(fsi.Attributes));
                         }
+                        lvwFiles.Items.Add(item);
                     }
-                    catch { }
-                    if (folder)
-                    {
-                        var fsi = new DirectoryInfo(itemPath);
-                        item.Tag = fsi;
-                        item.SubItems.Add(fsi.LastWriteTime.ToString("F"));
-                        item.SubItems.Add("");
-                        item.SubItems.Add(attrributesToString(fsi.Attributes));
-                    }
-                    else
-                    {
-                        var fsi = new FileInfo(itemPath);
-                        item.Tag = fsi;
-                        item.SubItems.Add(fsi.LastWriteTime.ToString("F"));
-                        item.SubItems.Add(fsi.Length.ToString());
-                        item.SubItems.Add(attrributesToString(fsi.Attributes));
-                    }
-                    lvwFiles.Items.Add(item);
+                    folder = false;
                 }
-                folder = false;
+                if (sortIndex >= 0) Sort();
+                currentDirectory = path;
+                lblPath.Text = currentDirectory;
+            } finally {
+                Cursor.Current = oc;
             }
-            if (sortIndex >= 0) Sort();
-            currentDirectory = path;
-            lblPath.Text = currentDirectory;
         }
         /// <summary>Converts file or folder attributes to string</summary>
         /// <param name="attributes">Attrutes to get string representation of</param>
@@ -144,18 +142,18 @@ namespace GPSTracka
         private static string attrributesToString(FileAttributes attributes)
         {
             StringBuilder b = new StringBuilder();
-            if ((attributes & FileAttributes.Archive) != 0) b.Append("A"); //A
-            if ((attributes & FileAttributes.Compressed ) != 0) b.Append("C");//C
-            if ((attributes & FileAttributes.Device ) != 0) b.Append("D"); //D
-            if ((attributes & FileAttributes.Directory ) != 0) b.Append("F");//F
-            if ((attributes & FileAttributes.Encrypted ) != 0) b.Append("E"); //E
-            if ((attributes & FileAttributes.Hidden ) != 0) b.Append("H"); //H
-            if ((attributes & FileAttributes.NotContentIndexed ) != 0) b.Append("N");//N
-            if ((attributes & FileAttributes.Offline ) != 0) b.Append("O"); //O
-            if ((attributes & FileAttributes.ReadOnly ) != 0) b.Append("R");//R
-            if ((attributes & FileAttributes.SparseFile ) != 0) b.Append("P");//P
-            if ((attributes & FileAttributes.System ) != 0) b.Append("S"); //S
-            if ((attributes & FileAttributes.Temporary ) != 0) b.Append("T");//T
+            if ((attributes & FileAttributes.Archive) != 0) b.Append(Properties.Resources.fileAttr_Archive); //A
+            if ((attributes & FileAttributes.Compressed ) != 0) b.Append(Properties.Resources.fileAttr_Compressed);//C
+            if ((attributes & FileAttributes.Device ) != 0) b.Append(Properties.Resources.fileAttr_Device); //D
+            if ((attributes & FileAttributes.Directory ) != 0) b.Append(Properties.Resources.fileAttr_Directory);//F
+            if ((attributes & FileAttributes.Encrypted ) != 0) b.Append(Properties.Resources.fileAttr_Encrypted); //E
+            if ((attributes & FileAttributes.Hidden ) != 0) b.Append(Properties.Resources.fileAttr_Hidden); //H
+            if ((attributes & FileAttributes.NotContentIndexed ) != 0) b.Append(Properties.Resources.fileAttr_NotContentIndexed);//N
+            if ((attributes & FileAttributes.Offline ) != 0) b.Append(Properties.Resources.fileAttr_Offline); //O
+            if ((attributes & FileAttributes.ReadOnly ) != 0) b.Append(Properties.Resources.fileAttr_ReadOnly);//R
+            if ((attributes & FileAttributes.SparseFile ) != 0) b.Append(Properties.Resources.fileAttr_SparseFile);//P
+            if ((attributes & FileAttributes.System ) != 0) b.Append(Properties.Resources.fileAttr_System); //S
+            if ((attributes & FileAttributes.Temporary ) != 0) b.Append(Properties.Resources.fileAttr_Temporary);//T
             return b.ToString();
         }
 #endregion
@@ -263,16 +261,16 @@ namespace GPSTracka
             //Up one level
             else if (fileName == "..")
             {
-                if (currentDirectory == "/") return false;
+                if (currentDirectory == "\\") return false;
                 var parts = currentDirectory.Replace(Path.AltDirectorySeparatorChar, Path.DirectorySeparatorChar).TrimEnd(Path.DirectorySeparatorChar).Split(Path.DirectorySeparatorChar);
                 try
                 {
                     string newPath = string.Join(Path.DirectorySeparatorChar.ToString(), parts, 0, parts.Length - 1);
-                    LoadFolder(string.IsNullOrEmpty(newPath) ? "/" : newPath, SelectedFilter);
+                    LoadFolder(string.IsNullOrEmpty(newPath) ? "\\" : newPath, SelectedFilter);
                 }
                 catch
                 {
-                    MessageBox.Show("Error navigating to parent folder", "File dialog", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show(Properties.Resources.err_NavigatingToParentFolder, Properties.Resources.FileDialogTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
                 }
                 return false;
             }
@@ -309,7 +307,7 @@ namespace GPSTracka
             //Wildcards + directories (not supported)
             else if ((fileName.IndexOf('*') >= 0 || fileName.IndexOf('?') >= 0) && (fileName.IndexOf(Path.DirectorySeparatorChar) >= 0 || fileName.IndexOf(Path.AltDirectorySeparatorChar) >= 0))
             {
-                MessageBox.Show("Cannot combine wildcards and folders", "File dialog", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                MessageBox.Show(Properties.Resources.err_CombineWildcardsAndFolders, Properties.Resources.FileDialogTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
                 return false;
             }
             //Wildcards - set filter
@@ -321,7 +319,7 @@ namespace GPSTracka
                 }
                 catch
                 {
-                    MessageBox.Show(string.Format("Error applying filer '{0}'.", fileName), "File dialog", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show(string.Format(Properties.Resources.err_ApplyingFiler, fileName), Properties.Resources.FileDialogTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
                 }
                 return false;
             }
@@ -345,7 +343,7 @@ namespace GPSTracka
                 }
                 catch
                 {
-                    MessageBox.Show(string.Format("Cannot load folder {0}.", fileName), "File dialog", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show(string.Format(Properties.Resources.err_LoadDirectory, fileName), Properties.Resources.FileDialogTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
                 }
                 return false;
             }
@@ -356,6 +354,7 @@ namespace GPSTracka
                 {
                     if (File.Exists(Path.Combine(currentDirectory, fileName)))
                     {
+                        fileName = Path.Combine(currentDirectory, fileName);
                         return AcceptFilename(fileName, followLinks);
                     }
                     else if (Directory.Exists(Path.Combine(currentDirectory, fileName)))
@@ -364,18 +363,18 @@ namespace GPSTracka
                         LoadFolder(fileName, SelectedFilter);
                     }
                     else if (AddExtension && !string.IsNullOrEmpty(DefaultExt) &&
-                        File.Exists(Path.Combine(currentDirectory, fileName = fileName + (DefaultExt.StartsWith(".") ? "" : ".") + DefaultExt)))
+                        File.Exists(fileName = Path.Combine(currentDirectory, fileName + (DefaultExt.StartsWith(".") ? "" : ".") + DefaultExt)))
                     {
                         return AcceptFilename(fileName, followLinks);
                     }
                     else
                     {
-                        MessageBox.Show(string.Format("File {0} not found.", fileName), "File dialog", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show(string.Format(Properties.Resources.err_FileNotFound, fileName), Properties.Resources.FileDialogTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
                     }
                 }
                 catch
                 {
-                    MessageBox.Show(string.Format("Invalid file name {0}.", fileName), "File dialog", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show(string.Format(Properties.Resources.err_InvalidFileName, fileName), Properties.Resources.FileDialogTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
                 }
                 return false;
             }
@@ -418,16 +417,17 @@ namespace GPSTracka
 
         /// <summary>Raises the <see cref="System.Windows.Forms.Control.KeyDown"/> event.</summary>
         /// <param name="e">A <see  cref="System.Windows.Forms.KeyEventArgs"/> that contains the event data.</param>
-        protected override void OnKeyDown(KeyEventArgs e)
-        {
+        protected override void OnKeyDown(KeyEventArgs e) {
             base.OnKeyDown(e);
-            if (e.KeyCode == Keys.Escape || e.KeyCode == (Keys)166 /*Keys.BrowserBack*/)
-            {
+            if (e.KeyCode == Keys.Escape || e.KeyCode == (Keys)166 /*Keys.BrowserBack*/) {
                 allowClose = true;
                 DialogResult = DialogResult.Cancel;
                 Close();
+                e.Handled = true;
+            } else if (e.KeyCode == Keys.Enter) {
+                Close();
+                e.Handled = true;
             }
-
         }
 
         private void lvwFiles_SelectedIndexChanged(object sender, EventArgs e)
@@ -452,8 +452,10 @@ namespace GPSTracka
 
         private void cmbFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!loading)
+            if (!loading) {
                 FilterIndex = cmbFilter.SelectedIndex;
+                LoadFolder(currentDirectory, SelectedFilter);
+            }
         }
 
         private void cmnView_Popup(object sender, EventArgs e)
@@ -537,6 +539,26 @@ namespace GPSTracka
         private void cmdUp_Click(object sender, EventArgs e)
         {
             FollowPath("..", false);
+        }
+
+        private void lvwFiles_KeyDown(object sender, KeyEventArgs e) {
+            if (e.KeyCode == Keys.Back) {
+                FollowPath("..", false);
+                e.Handled = true;
+            } else if (e.KeyCode == Keys.Delete ) {
+                if(lvwFiles.SelectedIndices.Count > 0 && MessageBox.Show(Properties.Resources.ConfirmDelete, Properties.Resources.Delete, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes) {
+                    foreach (int index in lvwFiles.SelectedIndices) {
+                        var fsi = (FileSystemInfo)lvwFiles.Items[index].Tag;
+                        try {
+                            fsi.Delete();
+                        } catch (Exception ex) {
+                            MessageBox.Show(string.Format(Properties.Resources.err_Delete, fsi.FullName, ex.Message));
+                        }
+                    }
+                    LoadFolder(currentDirectory, SelectedFilter);
+                }
+                e.Handled = true;
+            }
         }
 
     }

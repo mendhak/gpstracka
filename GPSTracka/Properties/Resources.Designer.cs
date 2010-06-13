@@ -76,6 +76,15 @@ namespace GPSTracka.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you really want to delete selected file or folder?.
+        /// </summary>
+        internal static string ConfirmDelete {
+            get {
+                return ResourceManager.GetString("ConfirmDelete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you really want to exit?
         ///GPS Logging will stop..
         /// </summary>
@@ -141,6 +150,15 @@ namespace GPSTracka.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        internal static string Delete {
+            get {
+                return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Distance.
         /// </summary>
         internal static string Distance {
@@ -150,11 +168,29 @@ namespace GPSTracka.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error applying filer &apos;{0}&apos;..
+        /// </summary>
+        internal static string err_ApplyingFiler {
+            get {
+                return ResourceManager.GetString("err_ApplyingFiler", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please select a proper file path.
         /// </summary>
         internal static string err_BadPath {
             get {
                 return ResourceManager.GetString("err_BadPath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cannot combine wildcards and folders.
+        /// </summary>
+        internal static string err_CombineWildcardsAndFolders {
+            get {
+                return ResourceManager.GetString("err_CombineWildcardsAndFolders", resourceCulture);
             }
         }
         
@@ -186,6 +222,16 @@ namespace GPSTracka.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to File or directory {0} cannot be deleted:
+        ///{1}.
+        /// </summary>
+        internal static string err_Delete {
+            get {
+                return ResourceManager.GetString("err_Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ERROR.
         /// </summary>
         internal static string err_ERROR {
@@ -213,6 +259,15 @@ namespace GPSTracka.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to File {0} not found..
+        /// </summary>
+        internal static string err_FileNotFound {
+            get {
+                return ResourceManager.GetString("err_FileNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Help file {0} is not availbale.
         ///{1}.
         /// </summary>
@@ -228,6 +283,15 @@ namespace GPSTracka.Properties {
         internal static string err_InvalidCSVDateFormat {
             get {
                 return ResourceManager.GetString("err_InvalidCSVDateFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid file name {0}..
+        /// </summary>
+        internal static string err_InvalidFileName {
+            get {
+                return ResourceManager.GetString("err_InvalidFileName", resourceCulture);
             }
         }
         
@@ -269,11 +333,47 @@ namespace GPSTracka.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid link file (# not found).
+        /// </summary>
+        internal static string err_InvalidLinkFile_Hash {
+            get {
+                return ResourceManager.GetString("err_InvalidLinkFile_Hash", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid link file (missing end quote).
+        /// </summary>
+        internal static string err_InvalidLinkFile_Quote {
+            get {
+                return ResourceManager.GetString("err_InvalidLinkFile_Quote", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Given log format is invalid.
         /// </summary>
         internal static string err_InvalidLogFormat {
             get {
                 return ResourceManager.GetString("err_InvalidLogFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cannot load directory {0}..
+        /// </summary>
+        internal static string err_LoadDirectory {
+            get {
+                return ResourceManager.GetString("err_LoadDirectory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error navigating to parent folder.
+        /// </summary>
+        internal static string err_NavigatingToParentFolder {
+            get {
+                return ResourceManager.GetString("err_NavigatingToParentFolder", resourceCulture);
             }
         }
         
@@ -332,6 +432,15 @@ namespace GPSTracka.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to File path cannot contain quotes..
+        /// </summary>
+        internal static string err_QuotesInPath {
+            get {
+                return ResourceManager.GetString("err_QuotesInPath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error saving file:.
         /// </summary>
         internal static string err_SavingFile {
@@ -380,6 +489,123 @@ namespace GPSTracka.Properties {
         internal static string fil_NmeaTxt {
             get {
                 return ResourceManager.GetString("fil_NmeaTxt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A.
+        /// </summary>
+        internal static string fileAttr_Archive {
+            get {
+                return ResourceManager.GetString("fileAttr_Archive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to C.
+        /// </summary>
+        internal static string fileAttr_Compressed {
+            get {
+                return ResourceManager.GetString("fileAttr_Compressed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to D.
+        /// </summary>
+        internal static string fileAttr_Device {
+            get {
+                return ResourceManager.GetString("fileAttr_Device", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to F.
+        /// </summary>
+        internal static string fileAttr_Directory {
+            get {
+                return ResourceManager.GetString("fileAttr_Directory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to E.
+        /// </summary>
+        internal static string fileAttr_Encrypted {
+            get {
+                return ResourceManager.GetString("fileAttr_Encrypted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to H.
+        /// </summary>
+        internal static string fileAttr_Hidden {
+            get {
+                return ResourceManager.GetString("fileAttr_Hidden", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to N.
+        /// </summary>
+        internal static string fileAttr_NotContentIndexed {
+            get {
+                return ResourceManager.GetString("fileAttr_NotContentIndexed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O.
+        /// </summary>
+        internal static string fileAttr_Offline {
+            get {
+                return ResourceManager.GetString("fileAttr_Offline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to R.
+        /// </summary>
+        internal static string fileAttr_ReadOnly {
+            get {
+                return ResourceManager.GetString("fileAttr_ReadOnly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to P.
+        /// </summary>
+        internal static string fileAttr_SparseFile {
+            get {
+                return ResourceManager.GetString("fileAttr_SparseFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to S.
+        /// </summary>
+        internal static string fileAttr_System {
+            get {
+                return ResourceManager.GetString("fileAttr_System", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to T.
+        /// </summary>
+        internal static string fileAttr_Temporary {
+            get {
+                return ResourceManager.GetString("fileAttr_Temporary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File dialog.
+        /// </summary>
+        internal static string FileDialogTitle {
+            get {
+                return ResourceManager.GetString("FileDialogTitle", resourceCulture);
             }
         }
         
